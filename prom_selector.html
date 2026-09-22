@@ -870,38 +870,41 @@ const SITES = [
         titre: "Qui appeler",
         resume: "Dans l'ordre, du plus urgent au technique",
         blocs: [
+          {t:'stop', lab:"Si le natel est sur un réseau français", txt:"À Genève, un téléphone accroche souvent une antenne française. Dans ce cas les numéros suisses en 0… ne passent pas, et le 118 ou le 117 tombent sur les secours français. Composer le 112, qui fonctionne sur tous les réseaux, et utiliser les numéros en +41 ci-dessous."},
           {t:'tel', titre:"Urgences", items:[
-            {nom:"Pompiers", role:"Feu confirmé, doute non levé dans le délai", num:"118"},
-            {nom:"Police", role:"Effraction réelle constatée, refus de légitimation, conflit", num:"117"},
-            {nom:"Urgences sanitaires", role:"Malaise, blessure", num:"144"}
+            {nom:"Urgence tous réseaux", role:"Fonctionne aussi depuis une antenne française — à privilégier en cas de doute", num:"112"},
+            {nom:"Pompiers", role:"Feu confirmé, doute non levé dans le délai — réseau suisse uniquement", num:"118"},
+            {nom:"Police", role:"Effraction réelle constatée, refus de légitimation, conflit — réseau suisse uniquement", num:"117"},
+            {nom:"Urgences sanitaires", role:"Malaise, blessure — réseau suisse uniquement", num:"144"}
           ]},
           {t:'tel', titre:"Centrale et astreinte", items:[
-            {nom:"Certas", role:"REGM n° 324.199 — faire le complément à 30", num:"0844 800 811"},
+            {nom:"Certas", role:"REGM n° 324.199 — faire le complément à 30", num:"+41 844 800 811"},
             {nom:"Astreinte RDZ", role:"Lucas Gimenez (lun-ven) · Laurent Heinrich (week-end et fériés) · Rodolphe De Zordi (en cas d'absence)", num:"+41 79 339 13 41"}
           ]},
           {t:'tel', titre:"Client et technique du site", items:[
             {nom:"M. Grégory Barla", role:"Responsable sécurité et incendie IHEID — astreinte P1", num:"+33 6 15 84 54 16"},
-            {nom:"M. Grégory Barla", role:"Second numéro, GSM urgence", num:"077 814 23 39"},
-            {nom:"M. Christophe Verdon", role:"Responsable technique REGM — questions techniques du site uniquement", num:"076 548 48 48"}
+            {nom:"M. Grégory Barla", role:"Second numéro, GSM urgence (numéro suisse)", num:"+41 77 814 23 39"},
+            {nom:"M. Christophe Verdon", role:"Responsable technique REGM — questions techniques du site uniquement", num:"+41 76 548 48 48"}
           ]},
+          {t:'manque', txt:"Numéros spéciaux suisses — les 0800, 0844 et 0900 (Certas, Otis, Alvazzi, Bouygues, Bavitech) sont souvent injoignables depuis une ligne ou une antenne françaises, même en +41. À vérifier avec chaque prestataire, et à demander en priorité pour Certas : un numéro géographique de secours en +41 22 ou +41 44."},
           {t:'sous', titre:"Prestataires techniques (17)", blocs:[
             {t:'tel', items:[
-              {nom:"Chubb Sicli", role:"Centrale alarme, incendie, vidéo, sono, extinction — site 64100550 · True Vision : admin / Regm@2020", num:"022 794 37 54"},
-              {nom:"Bavitech", role:"Contrôle d'accès, anti-intrusion, interphonie — appeler depuis le natel d'astreinte, le fixe ne passe pas", num:"0900 115 115"},
-              {nom:"Bavitech (2e numéro)", role:"Relevé sur l'autocollant du clavier Honeywell — deux numéros selon la source, à vérifier lequel est actif", num:"022 594 60 60"},
-              {nom:"Jomos", role:"Surpression et protection incendie (Morillon/Budé)", num:"062 386 17 99"},
-              {nom:"Otis", role:"Ascenseurs — A=75NJ9379 · B=75NJ9380 · C=75NJ9381 · E=75NJ9382 · G=75NJ9383 · H=75NJ9384", num:"0800 365 24 7"},
-              {nom:"AS Ascenseur", role:"Personne bloquée dans l'ascenseur, 24h/24 — installation 10573241", num:"022 918 50 70"},
-              {nom:"ElTop", role:"Électricité Morillon — répondeur avec n° d'astreinte dès 17h et le week-end", num:"022 338 21 21"},
-              {nom:"Bouygues", role:"Électricité Budé · supervision MCR, sous-station, CO2 parking", num:"0844 88 77 88"},
-              {nom:"Alvazzi", role:"Chauffage, ventilation, eau chaude", num:"0800 442 884"},
-              {nom:"Eaux-Secours", role:"Sanitaire, plomberie", num:"022 771 40 00"},
-              {nom:"Amoudruz SA", role:"Débouchage, curage colonne de chute", num:"022 329 05 24"},
-              {nom:"TUS Hotline", role:"Transmission d'alarme, application TUS", num:"058 910 73 33"},
-              {nom:"Léman Nuisible", role:"Désinfection, dératisation, insectes", num:"076 475 35 37"},
-              {nom:"Sottas SA", role:"Constructions métalliques — volets, fenêtres, portes extérieures", num:"079 150 08 08"},
-              {nom:"Lamelle Glass & Store SA", role:"Vitres", num:"022 782 08 88"},
-              {nom:"Frères Ischi", role:"Laveries, distributeurs, machines fitness", num:"022 539 18 60"}
+              {nom:"Chubb Sicli", role:"Centrale alarme, incendie, vidéo, sono, extinction — site 64100550 · True Vision : admin / Regm@2020", num:"+41 22 794 37 54"},
+              {nom:"Bavitech", role:"Contrôle d'accès, anti-intrusion, interphonie — appeler depuis le natel d'astreinte, le fixe ne passe pas", num:"+41 900 115 115"},
+              {nom:"Bavitech (2e numéro)", role:"Relevé sur l'autocollant du clavier Honeywell — deux numéros selon la source, à vérifier lequel est actif", num:"+41 22 594 60 60"},
+              {nom:"Jomos", role:"Surpression et protection incendie (Morillon/Budé)", num:"+41 62 386 17 99"},
+              {nom:"Otis", role:"Ascenseurs — A=75NJ9379 · B=75NJ9380 · C=75NJ9381 · E=75NJ9382 · G=75NJ9383 · H=75NJ9384", num:"+41 800 365 24 7"},
+              {nom:"AS Ascenseur", role:"Personne bloquée dans l'ascenseur, 24h/24 — installation 10573241", num:"+41 22 918 50 70"},
+              {nom:"ElTop", role:"Électricité Morillon — répondeur avec n° d'astreinte dès 17h et le week-end", num:"+41 22 338 21 21"},
+              {nom:"Bouygues", role:"Électricité Budé · supervision MCR, sous-station, CO2 parking", num:"+41 844 88 77 88"},
+              {nom:"Alvazzi", role:"Chauffage, ventilation, eau chaude", num:"+41 800 442 884"},
+              {nom:"Eaux-Secours", role:"Sanitaire, plomberie", num:"+41 22 771 40 00"},
+              {nom:"Amoudruz SA", role:"Débouchage, curage colonne de chute", num:"+41 22 329 05 24"},
+              {nom:"TUS Hotline", role:"Transmission d'alarme, application TUS", num:"+41 58 910 73 33"},
+              {nom:"Léman Nuisible", role:"Désinfection, dératisation, insectes", num:"+41 76 475 35 37"},
+              {nom:"Sottas SA", role:"Constructions métalliques — volets, fenêtres, portes extérieures", num:"+41 79 150 08 08"},
+              {nom:"Lamelle Glass & Store SA", role:"Vitres", num:"+41 22 782 08 88"},
+              {nom:"Frères Ischi", role:"Laveries, distributeurs, machines fitness", num:"+41 22 539 18 60"}
             ]}
           ]}
         ]
@@ -1546,7 +1549,7 @@ function fmtPoint(str){
 
 /* ---------------- Parcours d'intervention en 6 étapes ---------------- */
 const URG_ASTREINTE = "+41 79 339 13 41";
-const URG_CERTAS = "0844 800 811";
+const URG_CERTAS = "+41 844 800 811";
 
 function telHref(n){ return 'tel:' + String(n).replace(/[^+0-9]/g,''); }
 
@@ -1663,6 +1666,7 @@ function etapesHtml(site){
         ${PROCS.map((pr, i) => `<button type="button" class="${['feu','asserv','evac'][i] || 'asserv'}" data-proc="${i}">${pr.court}<small>pas à pas</small></button>`).join('')}
       </div>
       <div class="urgbar">
+      <a class="rouge" href="tel:112">112<small>Tous réseaux</small></a>
       <a class="rouge" href="tel:118">118<small>Pompiers</small></a>
       <a class="rouge" href="tel:117">117<small>Police</small></a>
       <a href="${telHref(URG_ASTREINTE)}">Astreinte<small>RDZ</small></a>
