@@ -297,7 +297,7 @@
   .e-num li::before{counter-increment:etnum;content:counter(etnum);position:absolute;left:12px;top:13px;
     width:25px;height:25px;border-radius:50%;background:var(--navy);color:#fff;
     display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;}
-  .e-num li b{display:block;font-size:14.5px;}
+  .e-num li > b{display:block;font-size:14.5px;}
   .e-num li span{display:block;color:var(--muted);margin-top:5px;line-height:1.55;}
   .e-puce{display:inline-block;width:13px;height:13px;border-radius:3px;margin-right:7px;
     vertical-align:-1px;border:1px solid rgba(0,0,0,.25);}
@@ -362,7 +362,7 @@
   .proc-head .cpt{font-size:13px;color:#c6d3ee;margin-top:3px;font-weight:600;}
   .proc-head button{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);color:#fff;
     border-radius:9px;padding:9px 13px;font-size:13px;font-weight:700;font-family:inherit;cursor:pointer;}
-  .proc-body{padding:14px 16px 90px;}
+  .proc-body{padding:14px 16px 150px;}
   .proc-it{display:flex;gap:13px;align-items:flex-start;background:var(--card);border:1px solid var(--border);
     border-radius:12px;padding:15px 14px;margin-bottom:11px;cursor:pointer;}
   .proc-it .coche{flex:none;width:30px;height:30px;border-radius:50%;border:2px solid var(--border);
@@ -371,7 +371,7 @@
   .proc-it.fait .coche{background:var(--green);border-color:var(--green);color:#fff;}
   .proc-it.fait .coche::after{content:"✓";}
   .proc-it.fait .coche .n{display:none;}
-  .proc-it b{display:block;font-size:16px;line-height:1.3;}
+  .proc-it > div > b{display:block;font-size:16px;line-height:1.3;}
   .proc-it span{display:block;color:var(--muted);font-size:14.5px;line-height:1.55;margin-top:5px;}
   .proc-reset{position:fixed;left:16px;right:16px;bottom:calc(16px + env(safe-area-inset-bottom, 0px));
     background:var(--card);border:1px solid var(--border);border-radius:10px;padding:12px;
@@ -940,9 +940,9 @@ const SITES = [
             "##Si la quittance est impossible## ou si l'alarme repart systématiquement : appeler Sicli au 022 794 37 54."
           ]},
           {t:'num', titre:"Remise des asservissements après alarme incendie", court:"Asservissements", items:[
-            {a:"Quittancer les 3 boîtiers de surpression orange", d:"Morillon : sortie de secours bloc A, RDC. Budé : entrée 8B, bloc H. Clé sur arrêt, attendre 10 secondes avant de repasser sur AUTO — sinon un contacteur peut rester bloqué."},
+            {a:"Quittancer les 3 boîtiers de surpression orange", d:"<b>Morillon</b> — sortie de secours bloc A, RDC.<br><b>Budé</b> — entrée 8B, bloc H.<br>Clé sur arrêt, attendre 10 secondes avant de repasser sur AUTO : sinon un contacteur peut rester bloqué."},
             {a:"Ratisser tous les étages", d:"Remettre les portes coupe-feu en fonction."},
-            {a:"Quittancer les boutons de ventilation dans l'ordre", d:"Morillon : 8e étage → 5e étage → sous-sol local 1.10. Budé : 9e étage → 4e étage local 2.461/2.039 → sous-sol local 2.23."},
+            {a:"Quittancer les boutons de ventilation dans l'ordre", d:"<b>Morillon</b> — 8e étage → 5e étage → sous-sol local 1.10.<br><b>Budé</b> — 9e étage → 4e étage local 2.461/2.039 → sous-sol local 2.23."},
             {a:"Vérifier les ascenseurs", d:"Ils doivent s'être remis en service automatiquement."},
             {a:"Consigner", d:"Classeur REGM et rapport GuardTek. Si les pompiers sont intervenus : aviser M. De Zordi, puis l'IHEID."}
           ]},
