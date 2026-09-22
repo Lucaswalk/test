@@ -291,10 +291,29 @@
   .e-sub{margin:18px 0 8px;font-size:13px;font-weight:700;color:var(--navy);}
   .e-list{margin:12px 0 0;padding-left:18px;font-size:14px;line-height:1.6;}
   .e-list li{margin-bottom:8px;}
-  .e-num{margin:10px 0 0;padding-left:20px;font-size:14px;line-height:1.55;}
-  .e-num li{margin-bottom:12px;}
-  .e-num li b{display:block;}
-  .e-num li span{display:block;color:var(--muted);margin-top:3px;}
+  .e-num{margin:12px 0 0;padding:0;list-style:none;counter-reset:etnum;font-size:14px;line-height:1.6;}
+  .e-num li{position:relative;margin-bottom:12px;padding:13px 14px 13px 48px;
+    background:#fbfcfe;border:1px solid var(--border);border-radius:10px;}
+  .e-num li::before{counter-increment:etnum;content:counter(etnum);position:absolute;left:12px;top:13px;
+    width:25px;height:25px;border-radius:50%;background:var(--navy);color:#fff;
+    display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;}
+  .e-num li b{display:block;font-size:14.5px;}
+  .e-num li span{display:block;color:var(--muted);margin-top:5px;line-height:1.55;}
+  .e-puce{display:inline-block;width:13px;height:13px;border-radius:3px;margin-right:7px;
+    vertical-align:-1px;border:1px solid rgba(0,0,0,.25);}
+  .e-puce.noir{background:#15181f;}
+  .e-puce.rouge{background:#d8352a;}
+  .e-puce.vert{background:#1e7a46;}
+  .e-choix{margin-top:12px;display:flex;flex-direction:column;gap:10px;}
+  .e-choix-it{border:1px solid var(--border);border-left:5px solid #c9d0dd;border-radius:10px;
+    padding:12px 14px;background:#fbfcfe;font-size:14px;line-height:1.55;}
+  .e-choix-it.vert{border-left-color:#1e7a46;}
+  .e-choix-it.orange{border-left-color:#c07800;}
+  .e-choix-it.rouge{border-left-color:#d8352a;}
+  .e-choix-t{font-weight:700;font-size:14.5px;margin-bottom:5px;}
+  .e-choix-it.vert .e-choix-t{color:#176537;}
+  .e-choix-it.orange .e-choix-t{color:#8f5a00;}
+  .e-choix-it.rouge .e-choix-t{color:#a92a20;}
   .e-stop{margin-top:14px;background:var(--red-bg);border:1px solid #f3c6c0;color:#7a2015;
     border-radius:10px;padding:12px 13px;font-size:13.5px;line-height:1.55;}
   .e-stop b{display:block;text-transform:none;margin-bottom:3px;}
@@ -325,19 +344,63 @@
   .e-gps-row a.min{flex:0 0 auto;background:var(--card);color:var(--navy);border:1px solid var(--border);
     font-size:12.5px;font-weight:600;padding:12px 13px;}
   .e-gps-lab{font-size:12.5px;color:var(--muted);font-weight:600;}
-  .urgbar{position:sticky;bottom:0;z-index:20;display:flex;gap:7px;padding:10px 16px 12px;
-    background:linear-gradient(to top, var(--bg) 72%, rgba(244,246,251,0));}
+  .proc-lanceur{margin-top:10px;width:100%;background:var(--navy);color:#fff;border:none;
+    border-radius:10px;padding:12px;font-size:14px;font-weight:700;font-family:inherit;cursor:pointer;}
+  .proc-full[hidden]{display:none !important;}
+  .proc-menu{position:fixed;inset:0;z-index:60;background:rgba(15,31,61,.55);display:flex;
+    align-items:flex-end;justify-content:center;}
+  .proc-menu-in{background:var(--card);width:100%;max-width:560px;border-radius:16px 16px 0 0;padding:16px 16px 22px;}
+  .proc-menu-in h4{margin:0 0 12px;font-size:15px;}
+  .proc-menu-in button{display:block;width:100%;text-align:left;background:#fbfcfe;border:1px solid var(--border);
+    border-radius:10px;padding:14px;margin-bottom:9px;font-size:15px;font-weight:700;font-family:inherit;
+    color:var(--navy);cursor:pointer;}
+  .proc-menu-in .fermer{background:none;border:none;color:var(--muted);font-weight:600;text-align:center;margin:4px 0 0;}
+  .proc-full{position:fixed;inset:0;z-index:70;background:var(--bg);overflow-y:auto;}
+  .proc-head{position:sticky;top:0;background:var(--navy);color:#fff;padding:16px;
+    padding-top:calc(16px + env(safe-area-inset-top, 0px));display:flex;align-items:center;gap:12px;}
+  .proc-head h3{margin:0;font-size:17px;flex:1;line-height:1.25;color:#fff;}
+  .proc-head .cpt{font-size:13px;color:#c6d3ee;margin-top:3px;font-weight:600;}
+  .proc-head button{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);color:#fff;
+    border-radius:9px;padding:9px 13px;font-size:13px;font-weight:700;font-family:inherit;cursor:pointer;}
+  .proc-body{padding:14px 16px 90px;}
+  .proc-it{display:flex;gap:13px;align-items:flex-start;background:var(--card);border:1px solid var(--border);
+    border-radius:12px;padding:15px 14px;margin-bottom:11px;cursor:pointer;}
+  .proc-it .coche{flex:none;width:30px;height:30px;border-radius:50%;border:2px solid var(--border);
+    display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:700;color:var(--muted);}
+  .proc-it.fait{background:#f0f8f3;border-color:#bfe0cd;}
+  .proc-it.fait .coche{background:var(--green);border-color:var(--green);color:#fff;}
+  .proc-it.fait .coche::after{content:"✓";}
+  .proc-it.fait .coche .n{display:none;}
+  .proc-it b{display:block;font-size:16px;line-height:1.3;}
+  .proc-it span{display:block;color:var(--muted);font-size:14.5px;line-height:1.55;margin-top:5px;}
+  .proc-reset{position:fixed;left:16px;right:16px;bottom:calc(16px + env(safe-area-inset-bottom, 0px));
+    background:var(--card);border:1px solid var(--border);border-radius:10px;padding:12px;
+    font-size:13.5px;font-weight:700;font-family:inherit;color:var(--navy);cursor:pointer;max-width:528px;margin:0 auto;}
+  .barres{position:sticky;bottom:0;z-index:20;padding:10px 16px 12px;
+    background:linear-gradient(to top, var(--bg) 78%, rgba(244,246,251,0));}
+  .procbar{display:flex;gap:7px;margin-bottom:7px;}
+  .procbar button{flex:1;border:none;border-radius:10px;padding:11px 3px;font-family:inherit;color:#fff;
+    font-size:12px;font-weight:700;line-height:1.2;cursor:pointer;text-align:center;}
+  .procbar button small{display:block;font-size:10px;font-weight:600;opacity:.85;margin-top:2px;}
+  .procbar button.feu{background:#c26a00;}
+  .procbar button.asserv{background:#16305c;}
+  .procbar button.evac{background:#8f1d15;}
+  .urgbar{display:flex;gap:7px;}
   .urgbar a{flex:1;text-align:center;text-decoration:none;border-radius:10px;padding:11px 4px;
     font-size:12.5px;font-weight:700;line-height:1.25;border:1px solid var(--border);background:var(--card);color:var(--navy);}
   .urgbar a.rouge{background:var(--red);border-color:var(--red);color:#fff;}
+  .urgbar button{flex:1;text-align:center;border-radius:10px;padding:11px 4px;font-size:12.5px;font-weight:700;
+    line-height:1.25;border:1px solid var(--navy);background:var(--navy);color:#fff;font-family:inherit;cursor:pointer;}
+  .urgbar button small{display:block;font-size:10.5px;font-weight:600;opacity:.8;margin-top:2px;}
   .urgbar a small{display:block;font-size:10.5px;font-weight:600;opacity:.75;margin-top:2px;}
 
   @media print{
     .demo-banner,.search-wrap,.quick-filters,.results-count,.back,.actions,footer.app-footer{display:none !important;}
-    .urgbar,.step-count{display:none !important;}
+    .barres,.step-count,.proc-lanceur,.proc-full{display:none !important;}
     .step-body{display:block !important;}
     .step-chev{display:none !important;}
     .e-sous-body{display:block !important;}
+    .e-num li,.e-choix-it{break-inside:avoid;}
     .list{display:none !important;}
     body{background:#fff;}
   }
@@ -656,6 +719,51 @@ const SITES = [
   {
     statut: "complet",
     prom: "324 199", client: "REGM",
+    blocsRondes: [
+      {t:'kv', items:[
+        {k:"Ronde de fermeture", v:"01h00 — obligatoire, sécurité incendie"},
+        {k:"Rondes de prévention", v:"Vers 23h00 puis 00h00 — recommandées, pour prévenir les résidents"}
+      ]},
+      {t:'stop', lab:"Avant la ronde de 01h00", txt:"La centrale incendie repasse en transmission directe dès 23h30. La remettre en mode DIFFÉRÉE jusqu'à 01h30, sinon la fermeture des cuisines déclenche une alarme et part aux pompiers."},
+      {t:'liste', titre:"Ce que couvre la ronde de 01h00", items:[
+        "Fermeture des cuisines communes.",
+        "Fermeture des jardins et salles de jeux — interdits après 23h00.",
+        "Contrôle des risques d'incendie et des dégradations.",
+        "Prévention de la consommation d'alcool en cuisine."
+      ]},
+      {t:'num', titre:"Les 4 rondes, dans l'ordre", items:[
+        {a:"Cuisines", d:"Éteindre fours, plaques, hottes et micro-ondes. Lumières éteintes, fenêtres fermées (sauf forte odeur). Contrôler le nettoyage (Armanda) et l'état du mobilier."},
+        {a:"Jardins et potagers", d:"Vérifier qu'il ne reste personne, et contrôler les fuites d'eau."},
+        {a:"Salle de jeux", d:"Contrôle du mobilier."},
+        {a:"Annexes", d:"Cuisines du restaurant : contrôle incendie et lumières. Toitures, caves et local vélo doivent être fermés en permanence."}
+      ]},
+      {t:'liste', titre:"En cas d'anomalie", items:[
+        "Dégradation, oubli d'extinction, présence non autorisée → ##rapport GuardTek##, type Sécurité ou Incendie selon la nature, en mentionnant le ##bloc et le niveau##."
+      ]}
+    ],
+    blocsNotes: [
+      {t:'liste', titre:"Stationnement et dénonciation", items:[
+        "##Stylo bleu uniquement.##",
+        "Codes d'infraction : ~~B31A~~ interdiction de parquer · ~~B32A~~ hors cases · ~~B37B~~ circulation interdite.",
+        "##Feuillet 1## (original) remis à la police sous 10 jours · ##feuillet 2## (rose) conservé en loge · ##feuillets 3 et 4## déposés sur le pare-brise.",
+        "Rapport de dénonciation dans GuardTek, avec photo du véhicule et de la dénonciation remplie."
+      ]},
+      {t:'liste', titre:"Théâtre REGM", items:[
+        "##Cales-portes## à l'accueil pour maintenir la porte ouverte — à retirer en fin d'utilisation.",
+        "##Lumières et stores## — boutons muraux I/O et flèches à droite de la porte du bas, ou tablette Crestron sous le pupitre.",
+        "##Télécommandes## dans le placard bas de la salle : blanche pour la HiFi, noire pour les écrans et la TV.",
+        "En fin d'utilisation : tout éteindre, tout ranger, et vérifier que personne ne reste dans la salle."
+      ]},
+      {t:'sous', titre:"Historique des corrections de la fiche", blocs:[
+        {t:'liste', items:[
+          "##27.08.2026## — les données du site voisin MDE (bâtiment distinct, av. de France 20-22) ont été retirées de cette fiche : transmetteur, prestataires et numéro Certas propres à MDE. Voir la fiche MDE.",
+          "##27.08.2026## — centrale anti-intrusion Bavitech documentée pour la première fois (photo transmise) : code de manipulation et grille des zones à l'étape 2.",
+          "##27.08.2026## — procédure complète de la centrale incendie intégrée, d'après la fiche réflexe RDZ v1.0 du 17.08.2026.",
+          "##27.08.2026## — le numéro 079 749 35 36 cité dans la fiche réflexe comme astreinte RDZ est en fait le natel de service de l'agent MDP. La vraie astreinte est le +41 79 339 13 41.",
+          "##27.08.2026## — M. Verdon n'est pas une ligne d'astreinte RDZ mais le responsable technique REGM uniquement."
+        ]}
+      ]}
+    ],
     etapes: [
       {
         titre: "Le site",
@@ -677,7 +785,7 @@ const SITES = [
             {z:"Annexes", d:"Shop, bibliothèque, théâtre, GISA, salles d'études, fitness, salle polyvalente, toitures, caves, local vélo"}
           ]},
           {t:'liste', items:[
-            "##Identifier un résident## — Starrez, recherche par n° de chambre ou par nom, onglet Occupancy Details : le locataire en cours porte le statut « In Room »."
+            "##Identifier un résident## — depuis l'<a href=\"https://rdz-2026.github.io/RDZ_Agent/application/mobile.html\" target=\"_blank\" rel=\"noopener\">application Agent RDZ</a> : recherche par n° de chambre ou par nom, onglet Occupancy Details, le locataire en cours porte le statut « In Room »."
           ]},
           {t:'gps', titre:"Y aller", items:[
             {label:"Destination approximative — campus, pas l'entrée", dest:"Résidence Grand Morillon IHEID, Genève"}
@@ -693,9 +801,9 @@ const SITES = [
             {k:"PROM incendie (Certas)", v:"324 199", code:true},
             {k:"Identification Certas", v:"complément à 30"},
             {k:"Centrale incendie — code opérateur", v:"2228", code:true},
-            {k:"Centrale effraction — code de manipulation", v:"200 280", code:true}
+            {k:"Centrale effraction — code de manipulation", v:"200 280", code:true},
+            {k:"Mot de passe Certas", v:"Complément numérique à 30 — le même que l'identification ci-dessus"}
           ]},
-          {t:'manque', txt:"Mot de passe Certas (celui que l'agent donne pour s'identifier auprès de la centrale) — non renseigné dans les documents reçus."},
           {t:'stop', txt:"À 23h30, la centrale anti-intrusion s'enclenche automatiquement : laisser faire, ne pas taper le code (consigne affichée sur le clavier)."},
           {t:'liste', items:[
             "##Centrale effraction## — Bavitech Systems, clavier Honeywell, écran affichant « Grand Morillon » + date/heure.",
@@ -729,23 +837,32 @@ const SITES = [
             "##Toitures, caves (-1 Budé, 3 accès) et local vélo (2 accès)## — fermés en permanence, cadenas à code ~~118~~.",
             "##Casiers à colis Keynius## — écran d'accueil → « Login with PIN » → code ~~768979~~ (ne pas divulguer) → « Manage lockers » → ouvrir le casier indiqué. Vérifier l'identité du résident et noter l'intervention au rapport."
           ]},
-          {t:'manque', txt:"Par quelle porte l'agent entre la nuit, et laquelle est accessible sans badge en cas de défaut SALTO — non documenté."}
+          {t:'liste', titre:"Si ça ne s'ouvre pas", items:[
+            "##Défaut SALTO ou coupure de courant## — les boîtiers sont autonomes sur batterie, l'accès reste possible. Passer notamment par la porte de la loge sécurité.",
+            "##Badge oublié ou perdu## — un badge de secours se trouve dans le pylône devant la porte du garage, code ~~1357~~."
+          ]}
         ]
       },
       {
         titre: "Clés",
-        resume: "Ce qu'il faut emporter pour pouvoir intervenir",
+        resume: "Trousseau REGM — coffre à clés de la loge",
         blocs: [
-          {t:'manque', txt:"Étape à compléter — aucune information sur les clés ne figure dans les documents reçus pour ce site."},
-          {t:'liste', titre:"Seuls éléments connus à ce jour", items:[
-            "##Cadenas à code 118## — toitures, caves, local vélo.",
-            "##Boîtier d'impulsion de secours## — dans le coffre à l'administration."
+          {t:'kv', items:[
+            {k:"Où le trouver", v:"Coffre à clés de la loge sécurité"}
           ]},
-          {t:'liste', titre:"À fournir pour compléter cette étape", items:[
-            "Composition du trousseau d'astreinte et emplacement où le récupérer.",
-            "Correspondance clé ↔ porte (a minima : loge, local centrale, locaux techniques, accès toiture).",
-            "Clé SI pompiers : existe-t-elle sur ce site, où, et qui est autorisé à l'utiliser.",
-            "Code ou clé du coffre à clés, et conduite à tenir si une clé manque au retour."
+          {t:'liste', titre:"Composition du trousseau REGM", items:[
+            "Clé des ##coffres à extincteurs##.",
+            "Clé du ##boîtier pompiers##.",
+            "2 clés de ##surpression, boîtiers JOMOS## — pastille n° ~~101651~~.",
+            "2 clés ##tempo parking##.",
+            "Clé du ##boîtier vert SALTO## (Alarm Exit Control).",
+            "Clé ##porte balade## — sert aussi pour la porte extérieure de l'ascenseur et les fenêtres coulissantes d'accès à la balade.",
+            "2 clés des ##cadenas SERBECO## (bennes)."
+          ]},
+          {t:'manque', txt:"Point ouvert — le coffre à clés ne peut pas être fermé pour l'instant : ni code, ni clé."},
+          {t:'liste', titre:"S'il manque une clé", items:[
+            "##Pas d'urgence## (aucun problème de fermeture du site) — rapport et message à Laurent et Lucas.",
+            "##Urgence## (site non hermétique, risque pour le client, nécessité d'agir sur le moment) — appel direct à Laurent ou Lucas."
           ]}
         ]
       },
@@ -797,16 +914,23 @@ const SITES = [
             {k:"Où est la centrale", v:"Loge sécurité — c'est aussi là que se trouvent le boîtier SONO, le gilet d'évacuation, le mégaphone et la liste des résidents"},
             {k:"Source", v:"Fiche réflexe RDZ v1.0 du 17.08.2026"}
           ]},
-          {t:'num', titre:"Alarme feu — les 4 premières minutes", items:[
-            {a:"Rejoindre la centrale en loge sécurité", d:"3 minutes s'écoulent entre le déclenchement et la transmission automatique aux pompiers."},
-            {a:"Bouton NOIR — Arrêt buzzer", d:"Coupe le buzzer. L'alarme reste active."},
-            {a:"Molette — Identifier la zone", d:"Code opérateur 2228. Lire à l'écran le bâtiment (Morillon ou Budé), le niveau, la zone et le type de détecteur. Confirmer la localisation dans AppVision."},
-            {a:"Bouton ROUGE — Arrêt sirène", d:"Ouvre 5 minutes pour la levée de doute sur zone. Radio ouverte, ne pas courir. À l'échéance, transmission automatique aux pompiers."}
+          {t:'kv', titre:"Alarme feu — les délais qui courent", items:[
+            {k:"Dès le déclenchement", v:"3 minutes avant la transmission automatique aux pompiers"},
+            {k:"Après le bouton rouge", v:"5 minutes de plus pour la levée de doute sur zone"}
           ]},
-          {t:'liste', titre:"Sur zone, selon ce qui est constaté", items:[
-            "##Rien constaté (fausse alarme)## — bouton VERT pour quittancer et réarmer, quittancer les asservissements, consigner au classeur REGM et rapport GuardTek.",
-            "##Feu naissant, maîtrisable## — attaquer avec l'extincteur ou la couverture anti-feu. Une fois le feu éteint et vérifié : bouton VERT, asservissements, rapport GuardTek.",
-            "##Non maîtrisable, ou délai dépassé## — déclencheur manuel ou 118 immédiatement, déclencher l'évacuation, accueillir et guider les secours. Réarmement par les pompiers uniquement."
+          {t:'num', titre:"Les premiers gestes, à la centrale", court:"Alarme feu", items:[
+            {a:"Rejoindre la centrale en loge sécurité", d:"3 minutes s'écoulent entre le déclenchement et la transmission automatique aux pompiers."},
+            {a:"Bouton NOIR — Arrêt buzzer", puce:'noir', d:"Coupe le buzzer. L'alarme reste active."},
+            {a:"Molette — Identifier la zone", d:"Code opérateur 2228. Lire à l'écran le bâtiment (Morillon ou Budé), le niveau, la zone et le type de détecteur. Confirmer la localisation dans AppVision."},
+            {a:"Bouton ROUGE — Arrêt sirène", puce:'rouge', d:"Ouvre 5 minutes pour la levée de doute sur zone. Radio ouverte, ne pas courir. À l'échéance, transmission automatique aux pompiers."}
+          ]},
+          {t:'choix', titre:"Sur zone, selon ce qui est constaté", items:[
+            {couleur:'vert', titre:"Rien constaté — fausse alarme",
+             txt:"Bouton <b>VERT</b> pour quittancer et réarmer. Puis quittancer les asservissements, consigner au classeur REGM et au rapport GuardTek."},
+            {couleur:'orange', titre:"Feu naissant, maîtrisable",
+             txt:"Attaquer avec l'extincteur ou la couverture anti-feu. Une fois le feu éteint <b>et vérifié</b> : bouton <b>VERT</b>, asservissements, rapport GuardTek."},
+            {couleur:'rouge', titre:"Non maîtrisable, ou délai dépassé",
+             txt:"Déclencheur manuel ou 118 immédiatement. Déclencher l'évacuation, accueillir et guider les secours. Réarmement par les pompiers uniquement."}
           ]},
           {t:'stop', txt:"Le bouton vert annule la transmission aux pompiers. Ne jamais réarmer tant que le feu n'est pas éteint et vérifié, ni lorsque les secours sont engagés."},
           {t:'liste', titre:"Alarme dérangement", items:[
@@ -815,14 +939,14 @@ const SITES = [
             "Consigner au classeur REGM et au rapport GuardTek.",
             "##Si la quittance est impossible## ou si l'alarme repart systématiquement : appeler Sicli au 022 794 37 54."
           ]},
-          {t:'num', titre:"Remise des asservissements après alarme incendie", items:[
+          {t:'num', titre:"Remise des asservissements après alarme incendie", court:"Asservissements", items:[
             {a:"Quittancer les 3 boîtiers de surpression orange", d:"Morillon : sortie de secours bloc A, RDC. Budé : entrée 8B, bloc H. Clé sur arrêt, attendre 10 secondes avant de repasser sur AUTO — sinon un contacteur peut rester bloqué."},
             {a:"Ratisser tous les étages", d:"Remettre les portes coupe-feu en fonction."},
             {a:"Quittancer les boutons de ventilation dans l'ordre", d:"Morillon : 8e étage → 5e étage → sous-sol local 1.10. Budé : 9e étage → 4e étage local 2.461/2.039 → sous-sol local 2.23."},
             {a:"Vérifier les ascenseurs", d:"Ils doivent s'être remis en service automatiquement."},
             {a:"Consigner", d:"Classeur REGM et rapport GuardTek. Si les pompiers sont intervenus : aviser M. De Zordi, puis l'IHEID."}
           ]},
-          {t:'num', titre:"Évacuation — 5 phases", items:[
+          {t:'num', titre:"Évacuation — 5 phases", court:"Évacuation", items:[
             {a:"Détection", d:"Actionner le déclencheur manuel le plus proche (couloirs et issues de secours de tous les étages, sous-sol compris, entrées 8A/8B/10A). Vérifier que la diode rouge clignote."},
             {a:"Déclenchement SONO", d:"Boîtier en loge sécurité : appuyer sur le bâtiment concerné (Morillon 10A/10B, Budé 8A/8B, ou les deux), attendre la diode bleue HOLD, puis presser le bouton rouge ÉVACUATION."},
             {a:"Coordination", d:"Gilet d'évacuation, mégaphone et liste des résidents — étagères de la loge, liste affichée sur le placard."},
@@ -832,8 +956,7 @@ const SITES = [
           {t:'stop', txt:"Personne ne rentre dans le bâtiment avant autorisation explicite des pompiers ou de M. Barla."},
           {t:'liste', titre:"À savoir", items:[
             "##Petite alarme## — fermeture des portes coupe-feu seules. ##Grande alarme## — asservissements complets : ascenseurs, ventilation, clapets, surpression.",
-            "##Zone mise hors service## (travaux, permis feu) — plus aucune détection : surveillance humaine obligatoire jusqu'à la remise en service en fin de travaux.",
-            "##Avant la fermeture de 01h00## — la centrale repasse en transmission directe dès 23h30 : la remettre en mode DIFFÉRÉ jusqu'à 01h30 pour fermer les cuisines sans déclencher d'alarme intempestive."
+            "##Zone mise hors service## (travaux, permis feu) — plus aucune détection : surveillance humaine obligatoire jusqu'à la remise en service en fin de travaux."
           ]},
           {t:'manque', txt:"Conduite à tenir en cas d'alarme effraction sur ce site : aucune procédure REGM dans les documents reçus (celle de Seujet existe, elle ne s'applique pas ici). À demander."}
         ]
@@ -1438,10 +1561,14 @@ function blocHtml(b){
       return titre + `<ul class="e-list">${b.items.map(i => `<li>${fmtPoint(i)}</li>`).join('')}</ul>`;
     case 'num':
       return titre + `<ol class="e-num">${b.items.map(i =>
-        `<li><b>${i.a}</b>${i.d ? `<span>${i.d}</span>` : ''}</li>`
-      ).join('')}</ol>`;
+        `<li><b>${i.puce ? `<span class="e-puce ${i.puce}"></span>` : ''}${i.a}</b>${i.d ? `<span>${i.d}</span>` : ''}</li>`
+      ).join('')}</ol>${b.court !== undefined ? `<button class="proc-lanceur" data-proc="${b._i}" type="button">Suivre pas à pas — ${b.court}</button>` : ''}`;
+    case 'choix':
+      return titre + `<div class="e-choix">${b.items.map(i =>
+        `<div class="e-choix-it ${i.couleur}"><div class="e-choix-t">${i.titre}</div>${i.txt}</div>`
+      ).join('')}</div>`;
     case 'stop':
-      return `<div class="e-stop"><b>Stop</b>${b.txt}</div>`;
+      return `<div class="e-stop"><b>${b.lab || 'Stop'}</b>${b.txt}</div>`;
     case 'manque':
       return `<div class="e-manque"><b>À compléter</b>${b.txt}</div>`;
     case 'table':
@@ -1465,7 +1592,23 @@ function blocHtml(b){
   return '';
 }
 
+let PROCS = [];
+let PROC_FAIT = {};
+
+function construireProcs(site){
+  PROCS = [];
+  PROC_FAIT = {};
+  site.etapes.forEach(e => e.blocs.forEach(b => {
+    if(b.t === 'num' && b.court){
+      b._i = PROCS.length;
+      PROCS.push({court: b.court, titre: b.titre, items: b.items});
+      PROC_FAIT[b._i] = [];
+    }
+  }));
+}
+
 function etapesHtml(site){
+  construireProcs(site);
   const steps = site.etapes.map((e, i) => `
     <div class="step${i === 0 ? ' open vu' : ''}">
       <button class="step-head" type="button" aria-expanded="${i === 0 ? 'true' : 'false'}">
@@ -1477,8 +1620,10 @@ function etapesHtml(site){
     </div>`).join('');
 
   const compl = [];
-  if(site.rondes) compl.push(`<h3><span class="ic">🔦</span> Rondes et fermeture</h3><div class="v">${site.rondes}</div>`);
-  if(site.particularites) compl.push(`<h3 style="margin-top:16px;"><span class="ic">📌</span> Particularités et réserves sur les données</h3><div class="v">${site.particularites}</div>`);
+  if(site.blocsRondes) compl.push(`<h3><span class="ic">🔦</span> Rondes et fermeture</h3>${site.blocsRondes.map(b => blocHtml(b)).join('')}`);
+  else if(site.rondes) compl.push(`<h3><span class="ic">🔦</span> Rondes et fermeture</h3><div class="v">${site.rondes}</div>`);
+  if(site.blocsNotes) compl.push(`<h3 style="margin-top:22px;"><span class="ic">📌</span> Consignes particulières</h3>${site.blocsNotes.map(b => blocHtml(b)).join('')}`);
+  else if(site.particularites) compl.push(`<h3 style="margin-top:16px;"><span class="ic">📌</span> Particularités et réserves sur les données</h3><div class="v">${site.particularites}</div>`);
   if(site.annexes && site.annexes.length) compl.push(`<h3 style="margin-top:16px;"><span class="ic">📎</span> Documents de référence</h3><ul class="e-list">${site.annexes.map(a => `<li>${a}</li>`).join('')}</ul>`);
 
   return `
@@ -1513,13 +1658,58 @@ function etapesHtml(site){
 
     ${compl.length ? `<div class="card" style="margin-top:6px;">${compl.join('')}</div>` : ''}
 
-    <div class="urgbar">
+    <div class="barres">
+      <div class="procbar">
+        ${PROCS.map((pr, i) => `<button type="button" class="${['feu','asserv','evac'][i] || 'asserv'}" data-proc="${i}">${pr.court}<small>pas à pas</small></button>`).join('')}
+      </div>
+      <div class="urgbar">
       <a class="rouge" href="tel:118">118<small>Pompiers</small></a>
       <a class="rouge" href="tel:117">117<small>Police</small></a>
       <a href="${telHref(URG_ASTREINTE)}">Astreinte<small>RDZ</small></a>
       <a href="${telHref(URG_CERTAS)}">Certas<small>Centrale</small></a>
+      </div>
+    </div>
+
+    <div class="proc-full" id="procFull" hidden>
+      <div class="proc-head">
+        <div style="flex:1;"><h3 id="procTitre"></h3><div class="cpt" id="procCpt"></div></div>
+        <button type="button" id="procFermer">Fermer</button>
+      </div>
+      <div class="proc-body" id="procBody"></div>
+      <button class="proc-reset" type="button" id="procReset">Tout décocher</button>
     </div>
   `;
+}
+
+let PROC_OUVERTE = null;
+
+function dessinerProc(){
+  const pr = PROCS[PROC_OUVERTE];
+  if(!pr) return;
+  const faits = PROC_FAIT[PROC_OUVERTE] || [];
+  document.getElementById('procTitre').textContent = pr.court;
+  document.getElementById('procCpt').textContent = faits.length + ' sur ' + pr.items.length + ' — ' + pr.titre;
+  document.getElementById('procBody').innerHTML = pr.items.map((it, i) => `
+    <div class="proc-it${faits.indexOf(i) >= 0 ? ' fait' : ''}" data-i="${i}">
+      <div class="coche"><span class="n">${i + 1}</span></div>
+      <div><b>${it.puce ? `<span class="e-puce ${it.puce}"></span>` : ''}${it.a}</b>${it.d ? `<span>${it.d}</span>` : ''}</div>
+    </div>`).join('');
+  document.getElementById('procBody').querySelectorAll('.proc-it').forEach(el => {
+    el.addEventListener('click', () => {
+      const i = parseInt(el.dataset.i, 10);
+      const f = PROC_FAIT[PROC_OUVERTE];
+      const k = f.indexOf(i);
+      if(k >= 0){ f.splice(k, 1); } else { f.push(i); }
+      dessinerProc();
+    });
+  });
+}
+
+function ouvrirProc(i){
+  PROC_OUVERTE = i;
+  document.getElementById('procFull').hidden = false;
+  window.scrollTo(0, 0);
+  dessinerProc();
 }
 
 function majCompteur(){
@@ -1543,6 +1733,18 @@ function brancherEtapes(){
     });
   });
   majCompteur();
+
+  const plein = document.getElementById('procFull');
+  if(!plein) return;
+
+  detailEl.querySelectorAll('.procbar button[data-proc], .proc-lanceur').forEach(btn => {
+    btn.addEventListener('click', () => ouvrirProc(parseInt(btn.dataset.proc, 10)));
+  });
+  document.getElementById('procFermer').addEventListener('click', () => { plein.hidden = true; });
+  document.getElementById('procReset').addEventListener('click', () => {
+    PROC_FAIT[PROC_OUVERTE] = [];
+    dessinerProc();
+  });
 }
 
 function fieldsHtml(site){
