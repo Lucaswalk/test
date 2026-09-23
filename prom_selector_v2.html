@@ -62,6 +62,14 @@
     text-align:center;
   }
   .demo-banner strong{font-weight:700;}
+  details.demo-banner{padding:0;text-align:left;}
+  details.demo-banner > summary{padding:9px 62px 9px 20px;cursor:pointer;font-size:12px;line-height:1.45;
+    list-style:none;display:block;position:relative;}
+  details.demo-banner > summary::-webkit-details-marker{display:none;}
+  details.demo-banner > summary::after{content:"Lire";position:absolute;right:20px;top:9px;
+    font-weight:700;opacity:.75;}
+  details.demo-banner[open] > summary::after{content:"Masquer";}
+  .banner-texte{padding:0 20px 12px;font-size:12.5px;line-height:1.55;}
   .demo-banner.confidential{
     background:#fdecea;border-bottom:1px solid #f3c6c0;color:#7a2015;
   }
@@ -396,8 +404,9 @@
   .urgbar a small{display:block;font-size:10.5px;font-weight:600;opacity:.75;margin-top:2px;}
 
   @media print{
-    .demo-banner,.search-wrap,.quick-filters,.results-count,.back,.actions,footer.app-footer{display:none !important;}
+    .search-wrap,.quick-filters,.results-count,.back,.actions,footer.app-footer{display:none !important;}
     .barres,.step-count,.proc-lanceur,.proc-full{display:none !important;}
+    .banner-texte{display:block !important;}
     .step-body{display:block !important;}
     .step-chev{display:none !important;}
     .e-sous-body{display:block !important;}
@@ -435,9 +444,16 @@
     <button id="lockBtn" type="button">Verrouiller</button>
   </header>
 
-  <div class="demo-banner confidential">
-    🔒 <strong>STRICTEMENT CONFIDENTIEL.</strong> Les fiches Bellevue, Collex, Papeterie, Seujet, DLCC, REGM, AJF Barton, Rothschild, MDE, MDP et Moynier contiennent des données réelles issues de vos cahiers des charges (codes, contacts, procédures). Les autres fiches (MSF, CTN, HDLT, Michelle-Nicod) sont <strong>incomplètes</strong> — leur cahier des charges n'a pas encore été fourni. Cette fiche contient également des données personnelles réelles (interdictions de site nominatives) : à ne transmettre qu'aux personnes autorisées. Fichier à usage interne uniquement, ne pas transférer.
-  </div>
+  <details class="demo-banner confidential">
+    <summary>🔒 <strong>Strictement confidentiel</strong> — usage interne, ne pas transférer</summary>
+    <div class="banner-texte">
+      Les fiches Bellevue, Collex, Papeterie, Seujet, DLCC, REGM, AJF Barton, Rothschild, MDE, MDP et Moynier
+      contiennent des données réelles issues de vos cahiers des charges : codes, contacts, procédures.
+      Les fiches MSF, CTN, HDLT et Michelle-Nicod sont <strong>incomplètes</strong>, leur cahier des charges
+      n'ayant pas encore été fourni. Certaines fiches contiennent aussi des données personnelles réelles
+      (interdictions de site nominatives) : à ne transmettre qu'aux personnes autorisées.
+    </div>
+  </details>
 
   <div class="search-wrap">
     <div class="search-field">
