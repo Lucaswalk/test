@@ -1,0 +1,1176 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<title>RDZ Sécurité — Recherche site (code PROM)</title>
+<style>
+  :root{
+    --navy:#0f1f3d;
+    --navy-2:#16305c;
+    --blue:#2f6fed;
+    --blue-light:#eaf1ff;
+    --bg:#f4f6fb;
+    --card:#ffffff;
+    --text:#161c2c;
+    --muted:#5b6478;
+    --border:#dfe4ee;
+    --red:#c0392b;
+    --red-bg:#fdecea;
+    --orange:#b5651d;
+    --orange-bg:#fdf2e6;
+    --purple:#6c3483;
+    --purple-bg:#f2e8f7;
+    --green:#1e7a46;
+    --green-bg:#e8f6ee;
+    --graybadge:#3a4a63;
+    --graybadge-bg:#e8ecf3;
+    --radius:14px;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    -webkit-font-smoothing:antialiased;
+  }
+  .app{max-width:760px;margin:0 auto;padding:0 0 60px;}
+  header.top{
+    background:linear-gradient(135deg,var(--navy) 0%,var(--navy-2) 100%);
+    color:#fff;
+    padding:22px 20px 26px;
+  }
+  header.top .brand{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:.3px;font-size:15px;opacity:.9;}
+  header.top .brand .dot{width:9px;height:9px;border-radius:50%;background:#4ade80;box-shadow:0 0 0 3px rgba(74,222,128,.25);}
+  header.top h1{margin:10px 0 4px;font-size:22px;line-height:1.3;}
+  header.top p.sub{margin:0;font-size:13.5px;color:#c6d3ee;}
+  header.top #lockBtn{
+    margin-top:14px;background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.28);
+    border-radius:8px;padding:7px 14px;font-size:12.5px;font-weight:600;cursor:pointer;font-family:inherit;
+  }
+  header.top #lockBtn:hover{background:rgba(255,255,255,.2);}
+  header.top #lockBtn:focus-visible{outline:2px solid #fff;outline-offset:2px;}
+
+  .demo-banner{
+    background:#fff4d6;
+    border-bottom:1px solid #f0d998;
+    color:#6b4e00;
+    padding:10px 20px;
+    font-size:12.5px;
+    line-height:1.5;
+    text-align:center;
+  }
+  .demo-banner strong{font-weight:700;}
+  .demo-banner.confidential{
+    background:#fdecea;border-bottom:1px solid #f3c6c0;color:#7a2015;
+  }
+
+  .search-wrap{padding:18px 20px 6px;display:flex;flex-direction:column;gap:14px;}
+  .search-field label{display:block;font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.4px;margin:0 4px 6px;}
+  .search-box{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    background:var(--card);
+    border:1.5px solid var(--border);
+    border-radius:999px;
+    padding:12px 16px;
+    box-shadow:0 2px 10px rgba(15,31,61,.06);
+  }
+  .search-box:focus-within{border-color:var(--blue);}
+  .search-box svg{flex:none;color:var(--muted);}
+  .search-box input{
+    border:none;outline:none;flex:1;font-size:16px;background:transparent;color:var(--text);
+  }
+  .search-box input::placeholder{color:#9aa3b5;}
+  .search-hint{font-size:12px;color:var(--muted);padding:2px 6px 0;}
+  .placeholder{padding:50px 26px;text-align:center;color:var(--muted);}
+  .placeholder .pic{font-size:34px;margin-bottom:10px;}
+  .placeholder .t{font-size:14.5px;line-height:1.6;max-width:340px;margin:0 auto;}
+
+  /* Login gate */
+  .login-screen{
+    min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;
+    background:linear-gradient(160deg,var(--navy) 0%, var(--navy-2) 55%, #1c3d75 100%);
+  }
+  .login-card{
+    background:#fff;border-radius:18px;padding:32px 26px;max-width:360px;width:100%;
+    box-shadow:0 20px 50px rgba(0,0,0,.35);text-align:center;
+  }
+  .login-card .brand2{display:flex;align-items:center;justify-content:center;gap:8px;font-weight:700;letter-spacing:.3px;font-size:13px;color:var(--navy);margin-bottom:14px;}
+  .login-card .brand2 .dot{width:8px;height:8px;border-radius:50%;background:#22c55e;}
+  .login-card .lockwrap{
+    width:54px;height:54px;border-radius:50%;background:var(--blue-light);color:var(--blue);
+    display:flex;align-items:center;justify-content:center;margin:0 auto 14px;font-size:24px;
+  }
+  .login-card h2{margin:0 0 6px;font-size:19px;}
+  .login-card p.desc{margin:0 0 20px;font-size:13.5px;color:var(--muted);line-height:1.5;}
+  .login-box{
+    display:flex;align-items:center;gap:8px;border:1.5px solid var(--border);border-radius:12px;
+    padding:12px 14px;margin-bottom:10px;
+  }
+  .login-box input{border:none;outline:none;flex:1;font-size:16px;letter-spacing:2px;text-align:center;background:transparent;color:var(--text);}
+  .login-error{color:var(--red);font-size:13px;font-weight:600;min-height:18px;margin-bottom:8px;}
+  .login-btn{
+    width:100%;border:none;background:var(--navy);color:#fff;padding:13px;border-radius:12px;
+    font-size:15px;font-weight:700;cursor:pointer;
+  }
+  .login-btn:active{opacity:.85;}
+  .login-demo-note{margin-top:16px;font-size:11.5px;color:var(--muted);line-height:1.5;text-align:left;background:#f6f8fc;border-radius:10px;padding:10px 12px;}
+
+  .quick-filters{display:flex;gap:8px;padding:12px 20px 0;flex-wrap:wrap;}
+  .chip{
+    border:1.5px solid var(--border);
+    background:var(--card);
+    color:var(--muted);
+    font-size:12.5px;
+    font-weight:600;
+    padding:6px 12px;
+    border-radius:999px;
+    cursor:pointer;
+    user-select:none;
+    transition:.15s;
+  }
+  .chip.active{border-color:transparent;color:#fff;}
+  .chip[data-type="Effraction"].active{background:var(--red);}
+  .chip[data-type="Incendie"].active{background:var(--orange);}
+  .chip[data-type="Agression"].active{background:var(--purple);}
+  .chip[data-type="Poste"].active{background:var(--blue);}
+  .chip[data-type="all"].active{background:var(--navy);}
+
+  .results-count{padding:14px 20px 4px;font-size:12.5px;color:var(--muted);font-weight:600;}
+
+  .list{padding:6px 20px 10px;display:flex;flex-direction:column;gap:10px;}
+  .row{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    padding:14px 16px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:10px;
+    cursor:pointer;
+    transition:.15s;
+  }
+  .row:hover{border-color:var(--blue);box-shadow:0 2px 10px rgba(47,111,237,.12);}
+  .row .rl .prom{font-size:11px;letter-spacing:.5px;color:var(--muted);font-weight:700;}
+  .row .rl .name{font-size:16px;font-weight:700;margin-top:2px;display:flex;align-items:center;gap:6px;}
+  .row .rl .addr{font-size:12.5px;color:var(--muted);margin-top:2px;}
+  .row .rbadges{display:flex;flex-direction:column;gap:4px;align-items:flex-end;}
+  .badge{
+    font-size:11px;font-weight:700;padding:4px 10px;border-radius:999px;white-space:nowrap;
+  }
+  .badge.Effraction{color:var(--red);background:var(--red-bg);}
+  .badge.Incendie{color:var(--orange);background:var(--orange-bg);}
+  .badge.Agression{color:var(--purple);background:var(--purple-bg);}
+  .badge.Poste{color:var(--blue);background:var(--blue-light);}
+  .badge.partiel{color:#8a6d00;background:#fff2cc;}
+  .tiny-flag{font-size:10px;font-weight:800;letter-spacing:.3px;padding:2px 7px;border-radius:999px;background:#fff2cc;color:#8a6d00;}
+  .tiny-flag.ok{background:var(--green-bg);color:var(--green);}
+
+  .empty{padding:40px 20px;text-align:center;color:var(--muted);font-size:14px;}
+
+  /* Detail view */
+  .detail{padding:14px 20px 10px;}
+  .back{
+    display:inline-flex;align-items:center;gap:6px;background:none;border:none;color:var(--blue);
+    font-size:14px;font-weight:600;cursor:pointer;padding:6px 0;margin-bottom:8px;
+  }
+  .card{
+    background:var(--card);border:1px solid var(--border);border-radius:var(--radius);
+    padding:18px 18px 6px;margin-bottom:14px;box-shadow:0 2px 10px rgba(15,31,61,.05);
+  }
+  .card h3{
+    margin:0 0 12px;font-size:12px;letter-spacing:.6px;text-transform:uppercase;color:var(--muted);
+    display:flex;align-items:center;gap:8px;
+  }
+  .card h3 .ic{width:20px;height:20px;display:inline-flex;align-items:center;justify-content:center;border-radius:6px;background:var(--blue-light);color:var(--blue);flex:none;}
+  .head-card{padding-top:16px;}
+  .head-card .top-row{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;}
+  .head-card .prom-big{font-size:12px;font-weight:700;letter-spacing:.5px;color:var(--muted);}
+  .head-card h2{margin:2px 0 4px;font-size:21px;}
+  .head-card .addr{font-size:14px;color:var(--muted);}
+  .badge-row{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end;}
+  .field{margin-bottom:12px;}
+  .field .k{font-size:11.5px;color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:.3px;margin-bottom:3px;}
+  .field .v{font-size:15px;line-height:1.45;}
+  .mono{
+    font-family:"SFMono-Regular",Consolas,"Liberation Mono",Menlo,monospace;
+    background:#f3f5fa;border:1px solid var(--border);border-radius:8px;padding:8px 10px;
+    display:inline-block;font-size:15px;font-weight:700;letter-spacing:.5px;
+  }
+  .pw{
+    background:var(--red-bg);color:var(--red);border:1px dashed #e6b3ac;
+  }
+  .code-list{display:flex;flex-direction:column;gap:8px;margin-bottom:12px;}
+  .code-item{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:9px 10px;background:#f8f9fc;border-radius:8px;font-size:14px;}
+  .code-item .lbl{color:var(--muted);}
+  .zone-list{display:flex;flex-direction:column;gap:6px;}
+  .zone-item{display:flex;gap:10px;font-size:14.5px;padding:8px 10px;background:#f8f9fc;border-radius:8px;}
+  .zone-item .zc{font-weight:700;color:var(--blue);flex:none;min-width:34px;}
+  .pt-label{font-weight:700;color:var(--navy-2);}
+  .pt-code{
+    font-family:"SFMono-Regular",Consolas,"Liberation Mono",Menlo,monospace;
+    background:var(--blue-light);border:1px solid #b7cdfa;border-radius:6px;
+    padding:1px 7px;font-weight:700;color:var(--navy-2);letter-spacing:.4px;
+    display:inline-block;
+  }
+  .group-table{width:100%;border-collapse:collapse;font-size:13.5px;margin-bottom:4px;}
+  .group-table th{text-align:left;font-size:11px;text-transform:uppercase;color:var(--muted);padding:6px 8px;border-bottom:1px solid var(--border);}
+  .group-table td{padding:7px 8px;border-bottom:1px solid var(--border);vertical-align:top;}
+  .group-table td.g{font-weight:700;color:var(--blue);}
+  .contact-item{display:flex;justify-content:space-between;gap:10px;padding:9px 0;border-bottom:1px solid var(--border);font-size:14.5px;}
+  .contact-item:last-child{border-bottom:none;}
+  .contact-item .role{color:var(--muted);font-size:12.5px;}
+  .contact-item a{color:var(--blue);text-decoration:none;font-weight:600;}
+  .note-box{
+    background:var(--blue-light);border-radius:10px;padding:12px 14px;font-size:14px;line-height:1.5;color:var(--navy);margin-bottom:12px;
+  }
+  .particularites{background:#fff8e8;border-radius:10px;padding:12px 14px;font-size:14px;line-height:1.5;color:#6b4e00;margin-bottom:12px;}
+  .warn-box{
+    background:#fdecea;border:1px solid #f3c6c0;border-radius:10px;padding:14px 16px;font-size:14.5px;line-height:1.6;color:#7a2015;margin-bottom:12px;
+  }
+  .annex-list{display:flex;flex-direction:column;gap:6px;font-size:13.5px;margin-bottom:4px;}
+  .annex-list .a-item{padding:8px 10px;background:#f8f9fc;border-radius:8px;}
+  .presta-list{display:flex;flex-direction:column;gap:6px;}
+  .presta-item{padding:9px 10px;background:#f8f9fc;border-radius:8px;font-size:13.5px;}
+  .presta-item .prow{display:flex;justify-content:space-between;align-items:baseline;gap:10px;}
+  .presta-item .psvc{color:var(--muted);font-size:12px;}
+  .presta-item .psoc{font-weight:700;}
+  .presta-item a{color:var(--blue);text-decoration:none;font-weight:600;white-space:nowrap;}
+  .presta-item .pnote{color:var(--muted);font-size:12px;margin-top:3px;}
+  .interdit-list{display:flex;flex-direction:column;gap:6px;}
+  .interdit-item{padding:9px 10px;background:#fdf2f2;border:1px solid #f5d3d3;border-radius:8px;font-size:13.5px;}
+  .interdit-item .irow{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:4px 10px;}
+  .interdit-item .iname{font-weight:700;}
+  .interdit-item .iexp{color:#b42318;font-size:12px;white-space:nowrap;font-weight:600;}
+  .interdit-item .imotif{margin-top:2px;}
+  .interdit-item .idate{color:var(--muted);font-size:12px;margin-top:3px;}
+  .annex-list .a-item b{color:var(--text);}
+  .actions{display:flex;gap:10px;padding:4px 0 18px;}
+  .btn{
+    flex:1;border:none;border-radius:10px;padding:12px 14px;font-size:14px;font-weight:700;cursor:pointer;
+    display:flex;align-items:center;justify-content:center;gap:6px;
+  }
+  .btn.primary{background:var(--navy);color:#fff;}
+  .btn.ghost{background:var(--card);color:var(--navy);border:1.5px solid var(--border);}
+
+  footer.app-footer{
+    padding:18px 20px 30px;text-align:center;color:var(--muted);font-size:12px;line-height:1.6;
+  }
+  footer.app-footer b{color:var(--text);}
+
+  /* ----- Parcours d'intervention en étapes ----- */
+  .maj-info{margin-top:7px;font-size:11.5px;color:var(--muted);}
+  .step-count{padding:14px 20px 4px;font-size:12.5px;color:var(--muted);font-weight:600;}
+  .steps-wrap{padding:6px 16px 0;}
+  .step{background:var(--card);border:1px solid var(--border);border-radius:14px;margin-bottom:10px;overflow:hidden;}
+  .step-head{width:100%;display:flex;align-items:center;gap:12px;background:none;border:none;
+    padding:15px 14px;text-align:left;cursor:pointer;font-family:inherit;}
+  .step-head:focus-visible{outline:2px solid var(--navy);outline-offset:-2px;}
+  .step-n{flex:none;width:28px;height:28px;border-radius:50%;background:var(--navy);color:#fff;
+    display:flex;align-items:center;justify-content:center;font-size:13.5px;font-weight:700;}
+  .step.vu .step-n{background:var(--green);}
+  .step.vu .step-n::after{content:"✓";}
+  .step.vu .step-n .num{display:none;}
+  .step-t{flex:1;min-width:0;}
+  .step-t b{display:block;font-size:15.5px;line-height:1.25;}
+  .step-t span{display:block;font-size:12.5px;color:var(--muted);margin-top:2px;}
+  .step-chev{flex:none;color:var(--muted);font-size:13px;transition:transform .18s;}
+  .step.open .step-chev{transform:rotate(180deg);}
+  .step-body{display:none;padding:2px 16px 18px;border-top:1px solid var(--border);}
+  .step.open .step-body{display:block;}
+
+  .e-kv{margin-top:14px;}
+  .e-kv-row{display:flex;flex-wrap:wrap;gap:2px 12px;padding:8px 0;border-bottom:1px solid #eef1f7;}
+  .e-kv-row:last-child{border-bottom:none;}
+  .e-k{flex:0 0 150px;font-size:12.5px;color:var(--muted);font-weight:600;}
+  .e-v{flex:1;min-width:180px;font-size:14px;line-height:1.5;}
+  .e-v.e-code{font-weight:700;font-size:17px;letter-spacing:.5px;color:var(--navy);}
+  .e-sub{margin:18px 0 8px;font-size:13px;font-weight:700;color:var(--navy);}
+  .e-list{margin:12px 0 0;padding-left:18px;font-size:14px;line-height:1.6;}
+  .e-list li{margin-bottom:8px;}
+  .e-num{margin:12px 0 0;padding:0;list-style:none;counter-reset:etnum;font-size:14px;line-height:1.6;}
+  .e-num li{position:relative;margin-bottom:12px;padding:13px 14px 13px 48px;
+    background:#fbfcfe;border:1px solid var(--border);border-radius:10px;}
+  .e-num li::before{counter-increment:etnum;content:counter(etnum);position:absolute;left:12px;top:13px;
+    width:25px;height:25px;border-radius:50%;background:var(--navy);color:#fff;
+    display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;}
+  .e-num li > b{display:block;font-size:14.5px;}
+  .e-num li > span{display:block;color:var(--muted);margin-top:5px;line-height:1.55;}
+  .e-puce{display:inline-block;width:13px;height:13px;border-radius:3px;margin-right:7px;
+    vertical-align:-1px;border:1px solid rgba(0,0,0,.25);}
+  .e-puce.noir{background:#15181f;}
+  .e-puce.rouge{background:#d8352a;}
+  .e-puce.vert{background:#1e7a46;}
+  .e-choix{margin-top:12px;display:flex;flex-direction:column;gap:10px;}
+  .e-choix-it{border:1px solid var(--border);border-left:5px solid #c9d0dd;border-radius:10px;
+    padding:12px 14px;background:#fbfcfe;font-size:14px;line-height:1.55;}
+  .e-choix-it.vert{border-left-color:#1e7a46;}
+  .e-choix-it.orange{border-left-color:#c07800;}
+  .e-choix-it.rouge{border-left-color:#d8352a;}
+  .e-choix-t{font-weight:700;font-size:14.5px;margin-bottom:5px;}
+  .e-choix-it.vert .e-choix-t{color:#176537;}
+  .e-choix-it.orange .e-choix-t{color:#8f5a00;}
+  .e-choix-it.rouge .e-choix-t{color:#a92a20;}
+  .e-stop{margin-top:14px;background:var(--red-bg);border:1px solid #f3c6c0;color:#7a2015;
+    border-radius:10px;padding:12px 13px;font-size:13.5px;line-height:1.55;}
+  .e-stop b{display:block;text-transform:none;margin-bottom:3px;}
+  .e-manque{margin-top:14px;background:#fff4d6;border:1px solid #f0d998;color:#6b4e00;
+    border-radius:10px;padding:12px 13px;font-size:13px;line-height:1.55;}
+  .e-manque b{display:block;margin-bottom:3px;}
+  .e-table{margin-top:8px;border:1px solid var(--border);border-radius:10px;overflow:hidden;}
+  .e-trow{display:flex;flex-wrap:wrap;gap:2px 12px;padding:9px 12px;border-bottom:1px solid #eef1f7;font-size:13.5px;}
+  .e-trow:last-child{border-bottom:none;}
+  .e-tz{flex:0 0 150px;font-weight:700;color:var(--navy);}
+  .e-td{flex:1;min-width:170px;line-height:1.5;}
+  .e-tels{margin-top:8px;display:flex;flex-direction:column;gap:8px;}
+  .e-tel{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;
+    text-decoration:none;color:inherit;border:1px solid var(--border);border-radius:10px;padding:11px 13px;background:#fbfcfe;}
+  .e-tel:hover{border-color:var(--navy);}
+  .e-tel-nom{font-weight:700;font-size:14px;}
+  .e-tel-role{font-size:12px;color:var(--muted);line-height:1.45;margin-top:2px;}
+  .e-tel-num{flex:none;font-weight:700;font-size:15px;color:var(--navy);white-space:nowrap;}
+  .e-sous{margin-top:14px;border:1px solid var(--border);border-radius:10px;padding:0 12px;}
+  .e-sous summary{cursor:pointer;padding:11px 0;font-size:13.5px;font-weight:700;color:var(--navy);}
+  .e-sous-body{padding-bottom:12px;}
+
+  .e-gps{margin-top:12px;display:flex;flex-direction:column;gap:8px;}
+  .e-gps-row{display:flex;gap:8px;align-items:stretch;}
+  .e-gps-row a{display:flex;align-items:center;justify-content:center;gap:7px;text-decoration:none;
+    border-radius:10px;padding:12px 10px;font-size:14px;font-weight:700;line-height:1.2;text-align:center;}
+  .e-gps-row a.maj{flex:1;background:var(--navy);color:#fff;}
+  .e-gps-row a.min{flex:0 0 auto;background:var(--card);color:var(--navy);border:1px solid var(--border);
+    font-size:12.5px;font-weight:600;padding:12px 13px;}
+  .e-gps-lab{font-size:12.5px;color:var(--muted);font-weight:600;}
+  .proc-lanceur{margin-top:10px;width:100%;background:var(--navy);color:#fff;border:none;
+    border-radius:10px;padding:12px;font-size:14px;font-weight:700;font-family:inherit;cursor:pointer;}
+  .proc-full[hidden]{display:none !important;}
+  .proc-menu{position:fixed;inset:0;z-index:60;background:rgba(15,31,61,.55);display:flex;
+    align-items:flex-end;justify-content:center;}
+  .proc-menu-in{background:var(--card);width:100%;max-width:560px;border-radius:16px 16px 0 0;padding:16px 16px 22px;}
+  .proc-menu-in h4{margin:0 0 12px;font-size:15px;}
+  .proc-menu-in button{display:block;width:100%;text-align:left;background:#fbfcfe;border:1px solid var(--border);
+    border-radius:10px;padding:14px;margin-bottom:9px;font-size:15px;font-weight:700;font-family:inherit;
+    color:var(--navy);cursor:pointer;}
+  .proc-menu-in .fermer{background:none;border:none;color:var(--muted);font-weight:600;text-align:center;margin:4px 0 0;}
+  .proc-full{position:fixed;inset:0;z-index:70;background:var(--bg);overflow-y:auto;}
+  .proc-head{position:sticky;top:0;background:var(--navy);color:#fff;padding:16px;
+    padding-top:calc(16px + env(safe-area-inset-top, 0px));display:flex;align-items:center;gap:12px;}
+  .proc-head h3{margin:0;font-size:17px;flex:1;line-height:1.25;color:#fff;}
+  .proc-head .cpt{font-size:13px;color:#c6d3ee;margin-top:3px;font-weight:600;}
+  .proc-head button{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);color:#fff;
+    border-radius:9px;padding:9px 13px;font-size:13px;font-weight:700;font-family:inherit;cursor:pointer;}
+  .proc-body{padding:14px 16px 150px;}
+  .proc-it{display:flex;gap:13px;align-items:flex-start;background:var(--card);border:1px solid var(--border);
+    border-radius:12px;padding:15px 14px;margin-bottom:11px;cursor:pointer;}
+  .proc-it .coche{flex:none;width:30px;height:30px;border-radius:50%;border:2px solid var(--border);
+    display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:700;color:var(--muted);}
+  .proc-it.fait{background:#f0f8f3;border-color:#bfe0cd;}
+  .proc-it.fait .coche{background:var(--green);border-color:var(--green);color:#fff;}
+  .proc-it.fait .coche::after{content:"✓";}
+  .proc-it.fait .coche .n{display:none;}
+  .proc-it > div > b{display:block;font-size:16px;line-height:1.3;}
+  .proc-it > div > span{display:block;color:var(--muted);font-size:14.5px;line-height:1.55;margin-top:5px;}
+  .proc-reset{position:fixed;left:16px;right:16px;bottom:calc(16px + env(safe-area-inset-bottom, 0px));
+    background:var(--card);border:1px solid var(--border);border-radius:10px;padding:12px;
+    font-size:13.5px;font-weight:700;font-family:inherit;color:var(--navy);cursor:pointer;max-width:528px;margin:0 auto;}
+  .barres{position:sticky;bottom:0;z-index:20;padding:10px 16px 12px;
+    background:linear-gradient(to top, var(--bg) 78%, rgba(244,246,251,0));}
+  .procbar{display:flex;gap:7px;margin-bottom:7px;}
+  .procbar button{flex:1;border:none;border-radius:10px;padding:11px 3px;font-family:inherit;color:#fff;
+    font-size:12px;font-weight:700;line-height:1.2;cursor:pointer;text-align:center;}
+  .procbar button small{display:block;font-size:10px;font-weight:600;opacity:.85;margin-top:2px;}
+  .procbar button.feu{background:#c26a00;}
+  .procbar button.asserv{background:#16305c;}
+  .procbar button.evac{background:#8f1d15;}
+  .urgbar{display:flex;gap:7px;}
+  .urgbar a{flex:1;text-align:center;text-decoration:none;border-radius:10px;padding:11px 4px;
+    font-size:12.5px;font-weight:700;line-height:1.25;border:1px solid var(--border);background:var(--card);color:var(--navy);}
+  .urgbar a.rouge{background:var(--red);border-color:var(--red);color:#fff;}
+  .urgbar button{flex:1;text-align:center;border-radius:10px;padding:11px 4px;font-size:12.5px;font-weight:700;
+    line-height:1.25;border:1px solid var(--navy);background:var(--navy);color:#fff;font-family:inherit;cursor:pointer;}
+  .urgbar button small{display:block;font-size:10.5px;font-weight:600;opacity:.8;margin-top:2px;}
+  .urgbar a small{display:block;font-size:10.5px;font-weight:600;opacity:.75;margin-top:2px;}
+
+  @media print{
+    .demo-banner,.search-wrap,.quick-filters,.results-count,.back,.actions,footer.app-footer{display:none !important;}
+    .barres,.step-count,.proc-lanceur,.proc-full{display:none !important;}
+    .step-body{display:block !important;}
+    .step-chev{display:none !important;}
+    .e-sous-body{display:block !important;}
+    .e-num li,.e-choix-it{break-inside:avoid;}
+    .list{display:none !important;}
+    body{background:#fff;}
+  }
+</style>
+</head>
+<body>
+
+<div class="login-screen" id="loginScreen">
+  <div class="login-card">
+    <div class="brand2"><span class="dot"></span> RDZ SECURITY MANAGEMENT</div>
+    <div class="lockwrap">🔐</div>
+    <h2>Accès agent</h2>
+    <p class="desc">Saisissez votre code d'accès pour consulter les fiches client.</p>
+    <div class="login-box">
+      <input id="accessCodeInput" type="password" inputmode="text" autocapitalize="none" autocorrect="off" spellcheck="false" autocomplete="off" placeholder="Code d'accès" maxlength="60">
+    </div>
+    <div class="login-error" id="loginError"></div>
+    <button class="login-btn" id="loginBtn">Entrer</button>
+    <div class="login-demo-note">
+      Le code n'est pas inscrit dans ce fichier : seule son empreinte y figure, et une empreinte ne se lit pas à l'envers. La vérification se fait dans le navigateur, sans serveur — elle bloque l'ouverture de l'écran, pas la lecture du fichier par quelqu'un qui sait où regarder. Ce fichier reste donc <b>strictement interne</b> : ne pas le transférer, ne pas le publier.
+    </div>
+  </div>
+</div>
+
+<div class="app" id="appScreen" style="display:none;">
+
+  <header class="top">
+    <div class="brand"><span class="dot"></span> RDZ SECURITY MANAGEMENT</div>
+    <h1>Recherche site par code PROM</h1>
+    <p class="sub">Astreinte téléphonique &amp; patrouille — consultation rapide des fiches client</p>
+    <button id="lockBtn" type="button">Verrouiller</button>
+  </header>
+
+  <div class="demo-banner confidential">
+    🔒 <strong>STRICTEMENT CONFIDENTIEL.</strong> Les fiches Bellevue, Collex, Papeterie, Seujet, DLCC, REGM, AJF Barton, Rothschild, MDE, MDP et Moynier contiennent des données réelles issues de vos cahiers des charges (codes, contacts, procédures). Les autres fiches (MSF, CTN, HDLT, Michelle-Nicod) sont <strong>incomplètes</strong> — leur cahier des charges n'a pas encore été fourni. Cette fiche contient également des données personnelles réelles (interdictions de site nominatives) : à ne transmettre qu'aux personnes autorisées. Fichier à usage interne uniquement, ne pas transférer.
+  </div>
+
+  <div class="search-wrap">
+    <div class="search-field">
+      <label for="promInput">Recherche par code PROM</label>
+      <div class="search-box">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+        <input id="promInput" type="text" inputmode="search" autocomplete="off" placeholder="Ex : 321482" autofocus>
+      </div>
+    </div>
+    <div class="search-field">
+      <label for="nameInput">Recherche par nom du client</label>
+      <div class="search-box">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+        <input id="nameInput" type="text" inputmode="search" autocomplete="off" placeholder="Ex : Seujet">
+      </div>
+    </div>
+    <div class="search-hint">Astuce : les espaces dans le code PROM ne sont pas nécessaires. Vous pouvez combiner les deux champs.</div>
+  </div>
+
+  <div class="quick-filters" id="filters">
+    <div class="chip active" data-type="all">Tous</div>
+    <div class="chip" data-type="Effraction">🔴 Effraction</div>
+    <div class="chip" data-type="Incendie">🟠 Incendie</div>
+    <div class="chip" data-type="Agression">🟣 Agression</div>
+    <div class="chip" data-type="Poste">🔵 Poste fixe</div>
+  </div>
+
+  <div class="results-count" id="resultsCount"></div>
+  <div class="placeholder" id="placeholder">
+    <div class="pic">🔎</div>
+    <div class="t">Aucun site n'est affiché par défaut.<br>Entrez un code PROM ou un nom de client ci-dessus pour retrouver une fiche.</div>
+  </div>
+  <div class="list" id="list"></div>
+  <div class="empty" id="empty" style="display:none;">Aucun site ne correspond à cette recherche.</div>
+
+  <div class="detail" id="detail" style="display:none;"></div>
+
+  <footer class="app-footer">
+    <p><b>Prototype v1.14</b> — module de consultation client par code PROM, inspiré d'AMSET.</p>
+    <p>Données en mémoire uniquement (rien n'est sauvegardé si la page est rechargée). Prochaines étapes possibles : connexion à votre vraie base client,
+    chiffrement des fiches, droits d'accès par agent, historique des consultations, intégration native dans l'appli AGENT RDZ.</p>
+  </footer>
+</div>
+
+<script src="fiches.js"></script>
+<script>
+// ============================================================
+// BASE DE DONNÉES CLIENTS
+// Les fiches Bellevue / Collex / Papeterie / Seujet / DLCC sont
+// construites à partir des cahiers des charges RDZ officiels fournis
+// (M.A.J. 01.04.2026). Les autres fiches proviennent uniquement du
+// logigramme d'astreinte et restent incomplètes (statut "partiel").
+// ============================================================
+// Annexe S.03 "Interdiction d'entrée" (IHEID) — s'applique identiquement aux 5 bâtiments
+// listés sur les formulaires reçus : Maison de la Paix (MDP), Villa Barton, Bâtiment Rothschild,
+// Résidence Michelle-Nicod (non encore intégrée comme fiche à part) et Résidence Av. de France (MDE).
+// Dates d'expiration reprises telle quelles depuis la "Liste interdictions.xlsx" fournie par le client.
+/* ---------------- Données ----------------
+   Les fiches sont dans le fichier fiches.js, à côté de ce fichier.
+   Elles se modifient avec rdz_fiches_editeur.html, jamais ici. */
+const RDZ_DATA = (typeof window !== 'undefined' && window.RDZ_FICHES) ? window.RDZ_FICHES : null;
+const SITES = RDZ_DATA ? RDZ_DATA.sites : [];
+if(RDZ_DATA && RDZ_DATA.interdictions){
+  SITES.forEach(s => {
+    const g = s.groupeInterdictions && RDZ_DATA.interdictions[s.groupeInterdictions];
+    if(g){ s.interdictions = g.liste; s.interdictionsProcedure = g.procedure; }
+  });
+}
+
+// ---------------- Login gate ----------------
+/* ---------- RDZ — empreinte de code d'accès (SHA-256 pur JS, sans dépendance) ----------
+   Identique dans l'appli et dans le générateur d'empreinte : ne modifier que dans les deux
+   fichiers à la fois, sinon les empreintes ne correspondront plus. */
+var RDZ_ITER = 40000;
+
+function _rdzUtf8(str){
+  var out=[], i, c, c2, cp;
+  for(i=0;i<str.length;i++){
+    c=str.charCodeAt(i);
+    if(c<0x80){ out.push(c); }
+    else if(c<0x800){ out.push(0xc0|(c>>6), 0x80|(c&63)); }
+    else if(c>=0xd800 && c<0xdc00){
+      c2=str.charCodeAt(++i);
+      cp=0x10000+((c-0xd800)<<10)+(c2-0xdc00);
+      out.push(0xf0|(cp>>18), 0x80|((cp>>12)&63), 0x80|((cp>>6)&63), 0x80|(cp&63));
+    }
+    else { out.push(0xe0|(c>>12), 0x80|((c>>6)&63), 0x80|(c&63)); }
+  }
+  return out;
+}
+
+var _RDZ_K=[
+0x428a2f98,0x71374491,0xb5c0fbcf,0xe9b5dba5,0x3956c25b,0x59f111f1,0x923f82a4,0xab1c5ed5,
+0xd807aa98,0x12835b01,0x243185be,0x550c7dc3,0x72be5d74,0x80deb1fe,0x9bdc06a7,0xc19bf174,
+0xe49b69c1,0xefbe4786,0x0fc19dc6,0x240ca1cc,0x2de92c6f,0x4a7484aa,0x5cb0a9dc,0x76f988da,
+0x983e5152,0xa831c66d,0xb00327c8,0xbf597fc7,0xc6e00bf3,0xd5a79147,0x06ca6351,0x14292967,
+0x27b70a85,0x2e1b2138,0x4d2c6dfc,0x53380d13,0x650a7354,0x766a0abb,0x81c2c92e,0x92722c85,
+0xa2bfe8a1,0xa81a664b,0xc24b8b70,0xc76c51a3,0xd192e819,0xd6990624,0xf40e3585,0x106aa070,
+0x19a4c116,0x1e376c08,0x2748774c,0x34b0bcb5,0x391c0cb3,0x4ed8aa4a,0x5b9cca4f,0x682e6ff3,
+0x748f82ee,0x78a5636f,0x84c87814,0x8cc70208,0x90befffa,0xa4506ceb,0xbef9a3f7,0xc67178f2];
+
+function _rdzRotr(x,n){ return (x>>>n)|(x<<(32-n)); }
+
+var _rdzW = new Int32Array(64);
+var _rdzBuf = new Uint8Array(256);
+
+function rdzSha256(str){
+  var bytes, i, j, len, n, c;
+  // chemin rapide ASCII (cas courant : sel hexadécimal + empreinte hexadécimale)
+  var ascii = true;
+  for(i=0;i<str.length;i++){ if(str.charCodeAt(i)>127){ ascii=false; break; } }
+  if(ascii && str.length+9 <= 256){
+    len = str.length;
+    bytes = _rdzBuf;
+    for(i=0;i<len;i++){ bytes[i]=str.charCodeAt(i); }
+  } else {
+    var arr=_rdzUtf8(str);
+    len=arr.length;
+    bytes = (len+9<=256) ? _rdzBuf : new Uint8Array(len+72);
+    for(i=0;i<len;i++){ bytes[i]=arr[i]; }
+  }
+  var bitLen=len*8;
+  n = len+1;
+  bytes[len]=0x80;
+  while(n%64!==56){ bytes[n]=0; n++; }
+  bytes[n]=0;bytes[n+1]=0;bytes[n+2]=0;bytes[n+3]=0;
+  bytes[n+4]=(bitLen>>>24)&255;bytes[n+5]=(bitLen>>>16)&255;bytes[n+6]=(bitLen>>>8)&255;bytes[n+7]=bitLen&255;
+  n+=8;
+
+  var H0=0x6a09e667,H1=0xbb67ae85,H2=0x3c6ef372,H3=0xa54ff53a,
+      H4=0x510e527f,H5=0x9b05688c,H6=0x1f83d9ab,H7=0x5be0cd19;
+  var w=_rdzW, a,b,c2,d,e,f,g,h,s0,s1,ch,maj,t1,t2;
+  for(i=0;i<n;i+=64){
+    for(j=0;j<16;j++){
+      w[j]=(bytes[i+4*j]<<24)|(bytes[i+4*j+1]<<16)|(bytes[i+4*j+2]<<8)|bytes[i+4*j+3];
+    }
+    for(j=16;j<64;j++){
+      s0=_rdzRotr(w[j-15],7)^_rdzRotr(w[j-15],18)^(w[j-15]>>>3);
+      s1=_rdzRotr(w[j-2],17)^_rdzRotr(w[j-2],19)^(w[j-2]>>>10);
+      w[j]=(w[j-16]+s0+w[j-7]+s1)|0;
+    }
+    a=H0;b=H1;c2=H2;d=H3;e=H4;f=H5;g=H6;h=H7;
+    for(j=0;j<64;j++){
+      s1=_rdzRotr(e,6)^_rdzRotr(e,11)^_rdzRotr(e,25);
+      ch=(e&f)^((~e)&g);
+      t1=(h+s1+ch+_RDZ_K[j]+w[j])|0;
+      s0=_rdzRotr(a,2)^_rdzRotr(a,13)^_rdzRotr(a,22);
+      maj=(a&b)^(a&c2)^(b&c2);
+      t2=(s0+maj)|0;
+      h=g;g=f;f=e;e=(d+t1)|0;d=c2;c2=b;b=a;a=(t1+t2)|0;
+    }
+    H0=(H0+a)|0;H1=(H1+b)|0;H2=(H2+c2)|0;H3=(H3+d)|0;
+    H4=(H4+e)|0;H5=(H5+f)|0;H6=(H6+g)|0;H7=(H7+h)|0;
+  }
+  var hs=[H0,H1,H2,H3,H4,H5,H6,H7], out='';
+  for(i=0;i<8;i++){ out += ('00000000'+(hs[i]>>>0).toString(16)).slice(-8); }
+  return out;
+}
+
+/* Normalisation : espaces en trop supprimés, casse ignorée.
+   L'agent peut taper « RDZ Prototype » ou « rdz  prototype », c'est accepté. */
+function rdzNormalise(code){
+  return String(code).trim().replace(/\s+/g,' ').toLowerCase();
+}
+
+/* Dérivation lente : ralentit une attaque par essais successifs. */
+function rdzEmpreinte(code, sel){
+  var h = rdzSha256(sel + '|' + rdzNormalise(code));
+  for(var i=1;i<RDZ_ITER;i++){ h = rdzSha256(sel + h); }
+  return h;
+}
+
+/* Empreinte du code d'accès.
+   Ces deux valeurs ne permettent PAS de retrouver le code : elles servent uniquement
+   à vérifier celui qui est saisi. Pour changer le code, générer un nouveau couple
+   avec l'outil « rdz_empreinte_code.html » et remplacer les deux lignes ci-dessous. */
+var ACCESS_SALT = "7f3c91a20d5e4b86";
+var ACCESS_HASH = "0ffc6276a9d64843aaeca6c5e45da57ae59c50dbba7f4800a7c4c038c06fe8e3";
+
+const loginScreen = document.getElementById('loginScreen');
+const appScreen = document.getElementById('appScreen');
+const accessCodeInput = document.getElementById('accessCodeInput');
+const loginBtn = document.getElementById('loginBtn');
+const loginError = document.getElementById('loginError');
+
+let essais = 0;
+let verrouJusqua = 0;
+
+function tryLogin(){
+  const reste = Math.ceil((verrouJusqua - Date.now())/1000);
+  if(reste > 0){
+    loginError.textContent = "Trop de tentatives. Réessayez dans " + reste + " s.";
+    return;
+  }
+  const val = accessCodeInput.value;
+  if(!val.trim()){
+    loginError.textContent = "Saisissez votre code d'accès.";
+    accessCodeInput.focus();
+    return;
+  }
+  loginError.textContent = "";
+  loginBtn.disabled = true;
+  loginBtn.textContent = "Vérification…";
+  // laisse le navigateur afficher l'état avant le calcul (~0,2 à 1,5 s selon l'appareil)
+  setTimeout(function(){
+    let ok = false;
+    try { ok = (rdzEmpreinte(val, ACCESS_SALT) === ACCESS_HASH); } catch(e){ ok = false; }
+    loginBtn.disabled = false;
+    loginBtn.textContent = "Entrer";
+    if(ok){
+      essais = 0;
+      accessCodeInput.value = '';
+      loginScreen.style.display = 'none';
+      appScreen.style.display = 'block';
+      document.getElementById('promInput').focus();
+    } else {
+      essais++;
+      accessCodeInput.value = '';
+      if(essais >= 5){
+        essais = 0;
+        verrouJusqua = Date.now() + 30000;
+        loginError.textContent = "Trop de tentatives. Réessayez dans 30 s.";
+      } else {
+        loginError.textContent = "Code incorrect.";
+        accessCodeInput.focus();
+      }
+    }
+  }, 30);
+}
+loginBtn.addEventListener('click', tryLogin);
+accessCodeInput.addEventListener('keydown', e => { if(e.key === 'Enter') tryLogin(); });
+
+if(!SITES.length){
+  const z = document.getElementById('loginError');
+  if(z){ z.textContent = "Fichier fiches.js introuvable — voir le message après connexion."; }
+  const app = document.getElementById('appScreen');
+  if(app){
+    const d = document.createElement('div');
+    d.style.cssText = 'margin:16px;padding:16px;border-radius:12px;background:#fdecea;border:1px solid #f3c6c0;color:#7a2015;line-height:1.6;';
+    d.innerHTML = '<b>Aucune fiche chargée.</b><br>Le fichier <b>fiches.js</b> est introuvable. Il contient toutes les données des sites et doit se trouver dans le <b>même dossier</b> que cette page, aux côtés de prom_selector.html. Déposez-le sur GitHub, puis rechargez cette page.';
+    app.insertBefore(d, app.firstChild);
+  }
+}
+
+document.getElementById('lockBtn').addEventListener('click', function(){
+  location.reload();
+});
+
+// ---------------- App logic ----------------
+const listEl = document.getElementById('list');
+const emptyEl = document.getElementById('empty');
+const placeholderEl = document.getElementById('placeholder');
+const detailEl = document.getElementById('detail');
+const resultsCountEl = document.getElementById('resultsCount');
+const promInput = document.getElementById('promInput');
+const nameInput = document.getElementById('nameInput');
+const filtersEl = document.getElementById('filters');
+
+let activeType = 'all';
+
+function normalize(s){
+  return (s||'').toString().toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/\s+/g,'');
+}
+
+function matchesProm(site, q){
+  if(!q) return true;
+  const nq = normalize(q);
+  if(normalize(site.prom).includes(nq)) return true;
+  if(site.transmetteurs && site.transmetteurs.some(t => normalize(t.code).includes(nq))) return true;
+  return false;
+}
+function matchesName(site, q){
+  if(!q) return true;
+  const nq = normalize(q);
+  return normalize(site.client).includes(nq) || normalize(site.nomComplet).includes(nq) || normalize(site.adresse).includes(nq);
+}
+
+function render(){
+  const promQ = promInput.value.trim();
+  const nameQ = nameInput.value.trim();
+  const hasQuery = promQ.length > 0 || nameQ.length > 0;
+  const hasFilter = activeType !== 'all';
+
+  if(!hasQuery && !hasFilter){
+    listEl.innerHTML = '';
+    listEl.style.display = 'none';
+    emptyEl.style.display = 'none';
+    placeholderEl.style.display = 'block';
+    resultsCountEl.textContent = '';
+    return;
+  }
+  placeholderEl.style.display = 'none';
+  listEl.style.display = 'flex';
+
+  const filtered = SITES.filter(s => (activeType==='all' || s.types.includes(activeType)) && matchesProm(s, promQ) && matchesName(s, nameQ));
+
+  listEl.innerHTML = '';
+  if(filtered.length === 0){
+    emptyEl.style.display = 'block';
+    resultsCountEl.textContent = '';
+    return;
+  }
+  emptyEl.style.display = 'none';
+  resultsCountEl.textContent = filtered.length + ' site' + (filtered.length>1?'s':'') + ' trouvé' + (filtered.length>1?'s':'');
+
+  filtered.forEach((s) => {
+    const realIdx = SITES.indexOf(s);
+    const row = document.createElement('div');
+    row.className = 'row';
+    row.innerHTML = `
+      <div class="rl">
+        <div class="prom">PROM ${s.prom}</div>
+        <div class="name">${s.client} ${s.statut==='partiel' ? '<span class="tiny-flag">Incomplet</span>' : '<span class="tiny-flag ok">Vérifié</span>'}</div>
+        <div class="addr">${s.adresse}</div>
+      </div>
+      <div class="rbadges">
+        ${s.types.map(t => `<div class="badge ${t}">${t}</div>`).join('')}
+      </div>
+    `;
+    row.addEventListener('click', () => showDetail(realIdx));
+    listEl.appendChild(row);
+  });
+}
+
+function fieldsHtmlPartial(site){
+  return `
+    <div class="card head-card">
+      <div class="top-row">
+        <div>
+          <div class="prom-big">PROM ${site.prom}</div>
+          <h2>${site.client}</h2>
+          <div class="addr">${site.nomComplet}</div>
+        </div>
+        <div class="badge-row">${site.types.map(t => `<div class="badge ${t}">${t}</div>`).join('')}</div>
+      </div>
+      ${site.adresse && site.adresse !== 'Non communiquée' ? `
+      <div class="field" style="margin-top:14px;">
+        <div class="k">Adresse</div>
+        <div class="v">📍 ${site.adresse}</div>
+      </div>` : ''}
+    </div>
+    <div class="card">
+      <div class="warn-box">
+        ⚠️ <b>Fiche incomplète.</b> Le cahier des charges de ce site n'a pas encore été fourni au module. Seuls le code PROM et le type d'alarme (visibles sur le logigramme d'astreinte), ou les éléments ponctuels précisés ci-dessus, sont connus.
+        <br><br>
+        Avant toute intervention : contacter la centrale CERTAS et l'astreinte téléphonique RDZ pour obtenir l'adresse, les codes d'accès et les consignes à jour.
+      </div>
+    </div>
+
+    ${site.interdictions && site.interdictions.length ? `
+    <div class="card">
+      <h3><span class="ic">🚫</span> Interdictions de site en cours</h3>
+      <div class="interdit-list">
+        ${site.interdictions.map(p => `
+          <div class="interdit-item">
+            <div class="irow"><span class="iname">${p.nom}</span><span class="iexp">jusqu'au ${p.expiration}</span></div>
+            <div class="imotif">${p.motif}</div>
+            <div class="idate">Notifiée le ${p.dateEffet}${p.note ? ' — ' + p.note : ''}</div>
+          </div>
+        `).join('')}
+      </div>
+      ${site.interdictionsProcedure ? `<div class="note-box" style="margin-top:10px;">${site.interdictionsProcedure}</div>` : ''}
+    </div>` : ''}
+  `;
+}
+
+/* Mise en forme du texte saisi dans l'éditeur. Trois conventions, les mêmes partout :
+     ##texte##        -> en gras
+     ~~texte~~        -> en évidence (code, numéro)
+     [[texte|adresse]] -> lien
+   Un retour à la ligne dans le champ produit un retour à la ligne à l'écran. */
+function fmtPoint(str){
+  if(!str) return '';
+  return String(str)
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+    .replace(/\[\[([^|\]]+)\|([^\]]+)\]\]/g, '<a href="$2" target="_blank" rel="noopener">$1</a>')
+    .replace(/##(.+?)##/g, '<span class="pt-label">$1</span>')
+    .replace(/~~(.+?)~~/g, '<span class="pt-code">$1</span>')
+    .replace(/\n/g, '<br>');
+}
+
+/* ---------------- Parcours d'intervention en 6 étapes ---------------- */
+const URG_ASTREINTE = "+41 79 339 13 41";
+const URG_CERTAS = "+41 844 800 811";
+
+function telHref(n){ return 'tel:' + String(n).replace(/[^+0-9]/g,''); }
+
+function blocHtml(b){
+  const titre = b.titre ? `<div class="e-sub">${fmtPoint(b.titre)}</div>` : '';
+  switch(b.t){
+    case 'kv':
+      return titre + `<div class="e-kv">${b.items.map(i =>
+        `<div class="e-kv-row"><div class="e-k">${fmtPoint(i.k)}</div><div class="e-v${i.code ? ' e-code' : ''}">${fmtPoint(i.v)}</div></div>`
+      ).join('')}</div>`;
+    case 'liste':
+      return titre + `<ul class="e-list">${b.items.map(i => `<li>${fmtPoint(i)}</li>`).join('')}</ul>`;
+    case 'num':
+      return titre + `<ol class="e-num">${b.items.map(i =>
+        `<li><b>${i.puce ? `<span class="e-puce ${i.puce}"></span>` : ''}${fmtPoint(i.a)}</b>${i.d ? `<span>${fmtPoint(i.d)}</span>` : ''}</li>`
+      ).join('')}</ol>${b.court !== undefined ? `<button class="proc-lanceur" data-proc="${b._i}" type="button">Suivre pas à pas — ${b.court}</button>` : ''}`;
+    case 'choix':
+      return titre + `<div class="e-choix">${b.items.map(i =>
+        `<div class="e-choix-it ${i.couleur}"><div class="e-choix-t">${fmtPoint(i.titre)}</div>${fmtPoint(i.txt)}</div>`
+      ).join('')}</div>`;
+    case 'stop':
+      return `<div class="e-stop"><b>${fmtPoint(b.lab) || 'Stop'}</b>${fmtPoint(b.txt)}</div>`;
+    case 'manque':
+      return `<div class="e-manque"><b>À compléter</b>${fmtPoint(b.txt)}</div>`;
+    case 'table':
+      return titre + `<div class="e-table">${b.items.map(i =>
+        `<div class="e-trow"><div class="e-tz">${fmtPoint(i.z)}</div><div class="e-td">${fmtPoint(i.d)}</div></div>`
+      ).join('')}</div>`;
+    case 'tel':
+      return titre + `<div class="e-tels">${b.items.map(i =>
+        `<a class="e-tel" href="${telHref(i.num)}"><div><div class="e-tel-nom">${fmtPoint(i.nom)}</div><div class="e-tel-role">${fmtPoint(i.role)}</div></div><div class="e-tel-num">${i.num}</div></a>`
+      ).join('')}</div>`;
+    case 'gps':
+      return titre + `<div class="e-gps">${b.items.map(i => `
+        ${i.label ? `<div class="e-gps-lab">${i.label}</div>` : ''}
+        <div class="e-gps-row">
+          <a class="maj" href="https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(i.dest)}" target="_blank" rel="noopener">Itinéraire depuis ma position</a>
+          <a class="min" href="https://maps.apple.com/?daddr=${encodeURIComponent(i.dest)}&dirflg=d" target="_blank" rel="noopener">Plans</a>
+        </div>`).join('')}</div>`;
+    case 'sous':
+      return `<details class="e-sous"><summary>${b.titre}</summary><div class="e-sous-body">${b.blocs.map(x => blocHtml(x)).join('')}</div></details>`;
+  }
+  return '';
+}
+
+let PROCS = [];
+let PROC_FAIT = {};
+
+function construireProcs(site){
+  PROCS = [];
+  PROC_FAIT = {};
+  site.etapes.forEach(e => e.blocs.forEach(b => {
+    if(b.t === 'num' && b.court){
+      b._i = PROCS.length;
+      PROCS.push({court: b.court, titre: b.titre, items: b.items});
+      PROC_FAIT[b._i] = [];
+    }
+  }));
+}
+
+function etapesHtml(site){
+  construireProcs(site);
+  const steps = site.etapes.map((e, i) => `
+    <div class="step${i === 0 ? ' open vu' : ''}">
+      <button class="step-head" type="button" aria-expanded="${i === 0 ? 'true' : 'false'}">
+        <span class="step-n"><span class="num">${i + 1}</span></span>
+        <span class="step-t"><b>${e.titre}</b><span>${e.resume}</span></span>
+        <span class="step-chev">▾</span>
+      </button>
+      <div class="step-body">${e.blocs.map(b => blocHtml(b)).join('')}</div>
+    </div>`).join('');
+
+  const compl = [];
+  if(site.blocsRondes) compl.push(`<h3><span class="ic">🔦</span> Rondes et fermeture</h3>${site.blocsRondes.map(b => blocHtml(b)).join('')}`);
+  else if(site.rondes) compl.push(`<h3><span class="ic">🔦</span> Rondes et fermeture</h3><div class="v">${site.rondes}</div>`);
+  if(site.blocsNotes) compl.push(`<h3 style="margin-top:22px;"><span class="ic">📌</span> Consignes particulières</h3>${site.blocsNotes.map(b => blocHtml(b)).join('')}`);
+  else if(site.particularites) compl.push(`<h3 style="margin-top:16px;"><span class="ic">📌</span> Particularités et réserves sur les données</h3><div class="v">${site.particularites}</div>`);
+  if(site.annexes && site.annexes.length) compl.push(`<h3 style="margin-top:16px;"><span class="ic">📎</span> Documents de référence</h3><ul class="e-list">${site.annexes.map(a => `<li>${a}</li>`).join('')}</ul>`);
+
+  return `
+    <div class="card head-card">
+      <div class="top-row">
+        <div>
+          <div class="prom-big">PROM ${site.prom}</div>
+          <h2>${site.client}</h2>
+          <div class="addr">${site.nomComplet}</div>
+          ${site.majLe ? `<div class="maj-info">Fiche mise à jour le ${site.majLe}${site.majPar ? ' par ' + site.majPar : ''}</div>` : ''}
+        </div>
+        <div class="badge-row">${site.types.map(t => `<div class="badge ${t}">${t}</div>`).join('')}</div>
+      </div>
+    </div>
+
+    <div class="step-count" id="stepCount"></div>
+    <div class="steps-wrap">${steps}</div>
+
+    ${site.interdictions && site.interdictions.length ? `
+    <div class="card" style="margin-top:6px;">
+      <h3><span class="ic">🚫</span> Interdictions de site en cours</h3>
+      <div class="interdit-list">
+        ${site.interdictions.map(p => `
+          <div class="interdit-item">
+            <div class="irow"><span class="iname">${p.nom}</span><span class="iexp">jusqu'au ${p.expiration}</span></div>
+            <div class="imotif">${p.motif}</div>
+            <div class="idate">Notifiée le ${p.dateEffet}${p.note ? ' — ' + p.note : ''}</div>
+          </div>
+        `).join('')}
+      </div>
+      ${site.interdictionsProcedure ? `<div class="note-box" style="margin-top:10px;">${site.interdictionsProcedure}</div>` : ''}
+    </div>` : ''}
+
+    ${compl.length ? `<div class="card" style="margin-top:6px;">${compl.join('')}</div>` : ''}
+
+    <div class="barres">
+      <div class="procbar">
+        ${PROCS.map((pr, i) => `<button type="button" class="${['feu','asserv','evac'][i] || 'asserv'}" data-proc="${i}">${pr.court}<small>pas à pas</small></button>`).join('')}
+      </div>
+      <div class="urgbar">
+      <a class="rouge" href="tel:112">112<small>Tous réseaux</small></a>
+      <a class="rouge" href="tel:118">118<small>Pompiers</small></a>
+      <a class="rouge" href="tel:117">117<small>Police</small></a>
+      <a href="${telHref(URG_ASTREINTE)}">Astreinte<small>RDZ</small></a>
+      <a href="${telHref(URG_CERTAS)}">Certas<small>Centrale</small></a>
+      </div>
+    </div>
+
+    <div class="proc-full" id="procFull" hidden>
+      <div class="proc-head">
+        <div style="flex:1;"><h3 id="procTitre"></h3><div class="cpt" id="procCpt"></div></div>
+        <button type="button" id="procFermer">Fermer</button>
+      </div>
+      <div class="proc-body" id="procBody"></div>
+      <button class="proc-reset" type="button" id="procReset">Tout décocher</button>
+    </div>
+  `;
+}
+
+let PROC_OUVERTE = null;
+
+function dessinerProc(){
+  const pr = PROCS[PROC_OUVERTE];
+  if(!pr) return;
+  const faits = PROC_FAIT[PROC_OUVERTE] || [];
+  document.getElementById('procTitre').textContent = pr.court;
+  document.getElementById('procCpt').textContent = faits.length + ' sur ' + pr.items.length + ' — ' + pr.titre;
+  document.getElementById('procBody').innerHTML = pr.items.map((it, i) => `
+    <div class="proc-it${faits.indexOf(i) >= 0 ? ' fait' : ''}" data-i="${i}">
+      <div class="coche"><span class="n">${i + 1}</span></div>
+      <div><b>${it.puce ? `<span class="e-puce ${it.puce}"></span>` : ''}${fmtPoint(it.a)}</b>${it.d ? `<span>${fmtPoint(it.d)}</span>` : ''}</div>
+    </div>`).join('');
+  document.getElementById('procBody').querySelectorAll('.proc-it').forEach(el => {
+    el.addEventListener('click', () => {
+      const i = parseInt(el.dataset.i, 10);
+      const f = PROC_FAIT[PROC_OUVERTE];
+      const k = f.indexOf(i);
+      if(k >= 0){ f.splice(k, 1); } else { f.push(i); }
+      dessinerProc();
+    });
+  });
+}
+
+function ouvrirProc(i){
+  PROC_OUVERTE = i;
+  document.getElementById('procFull').hidden = false;
+  window.scrollTo(0, 0);
+  dessinerProc();
+}
+
+function majCompteur(){
+  const el = document.getElementById('stepCount');
+  if(!el) return;
+  const total = detailEl.querySelectorAll('.step').length;
+  const vues = detailEl.querySelectorAll('.step.vu').length;
+  el.textContent = vues + ' sur ' + total + ' étapes consultées';
+}
+
+function brancherEtapes(){
+  const heads = detailEl.querySelectorAll('.step-head');
+  if(!heads.length) return;
+  heads.forEach(h => {
+    h.addEventListener('click', () => {
+      const st = h.parentElement;
+      const ouvert = st.classList.toggle('open');
+      h.setAttribute('aria-expanded', ouvert ? 'true' : 'false');
+      if(ouvert) st.classList.add('vu');
+      majCompteur();
+    });
+  });
+  majCompteur();
+
+  const plein = document.getElementById('procFull');
+  if(!plein) return;
+
+  detailEl.querySelectorAll('.procbar button[data-proc], .proc-lanceur').forEach(btn => {
+    btn.addEventListener('click', () => ouvrirProc(parseInt(btn.dataset.proc, 10)));
+  });
+  document.getElementById('procFermer').addEventListener('click', () => { plein.hidden = true; });
+  document.getElementById('procReset').addEventListener('click', () => {
+    PROC_FAIT[PROC_OUVERTE] = [];
+    dessinerProc();
+  });
+}
+
+function fieldsHtml(site){
+  if(site.statut === 'partiel') return fieldsHtmlPartial(site);
+  if(site.etapes) return etapesHtml(site);
+  return `
+    <div class="card head-card">
+      <div class="top-row">
+        <div>
+          <div class="prom-big">PROM ${site.prom}</div>
+          <h2>${site.client}</h2>
+          <div class="addr">${site.nomComplet}</div>
+        </div>
+        <div class="badge-row">${site.types.map(t => `<div class="badge ${t}">${t}</div>`).join('')}</div>
+      </div>
+      <div class="field" style="margin-top:14px;">
+        <div class="k">Adresse</div>
+        <div class="v">📍 ${site.adresse}</div>
+      </div>
+    </div>
+
+    ${site.transmetteurs && site.transmetteurs.length ? `
+    <div class="card">
+      <h3><span class="ic">📡</span> Transmetteurs</h3>
+      <div class="code-list">
+        ${site.transmetteurs.map(t => `<div class="code-item"><span class="lbl">${t.label}</span><span class="mono">${t.code}</span></div>`).join('')}
+      </div>
+    </div>` : ''}
+
+    ${site.acces && site.acces.length ? `
+    <div class="card">
+      <h3><span class="ic">🚪</span> Points d'accès</h3>
+      ${site.acces.map(a => `<div class="field" style="margin-bottom:10px;"><div class="v">${fmtPoint(a)}</div></div>`).join('')}
+    </div>` : ''}
+
+    ${site.manipulationBase && site.manipulationBase.length ? `
+    <div class="card">
+      <h3><span class="ic">🔧</span> Manipulations de base</h3>
+      ${site.manipulationBase.map(m => `<div class="field" style="margin-bottom:10px;"><div class="v">${fmtPoint(m)}</div></div>`).join('')}
+    </div>` : ''}
+
+    ${site.zoning && site.zoning.length ? `
+    <div class="card">
+      <h3><span class="ic">🗺️</span> Zoning / pointeaux</h3>
+      <div class="zone-list">
+        ${site.zoning.map(z => `<div class="zone-item"><span class="zc">${z.zone}</span><span>${z.desc}</span></div>`).join('')}
+      </div>
+    </div>` : ''}
+
+    ${site.contacts && site.contacts.length ? `
+    <div class="card">
+      <h3><span class="ic">👤</span> Contacts / liste client</h3>
+      ${site.contacts.map(c => `
+        <div class="contact-item">
+          <div>
+            <div>${c.nom}</div>
+            <div class="role">${c.role}</div>
+          </div>
+          <a href="tel:${c.tel.replace(/[^\d+]/g,'')}">${c.tel}</a>
+        </div>
+      `).join('')}
+      ${site.astreinte ? `<div class="field" style="margin-top:10px;margin-bottom:0;"><div class="k">Astreinte téléphonique RDZ</div><div class="v mono">${site.astreinte}</div></div>` : ''}
+    </div>` : ''}
+
+    ${site.prestataires && site.prestataires.length ? `
+    <div class="card">
+      <h3><span class="ic">🛠️</span> Prestataires techniques</h3>
+      <div class="presta-list">
+        ${site.prestataires.map(p => `
+          <div class="presta-item">
+            <div class="prow">
+              <div><div class="psoc">${p.societe}</div><div class="psvc">${p.service}</div></div>
+              <a href="tel:${p.tel.split('/')[0].trim().replace(/[^\d+]/g,'')}">${p.tel}</a>
+            </div>
+            ${p.note ? `<div class="pnote">${p.note}</div>` : ''}
+          </div>
+        `).join('')}
+      </div>
+    </div>` : ''}
+
+    ${site.interdictions && site.interdictions.length ? `
+    <div class="card">
+      <h3><span class="ic">🚫</span> Interdictions de site en cours</h3>
+      <div class="interdit-list">
+        ${site.interdictions.map(p => `
+          <div class="interdit-item">
+            <div class="irow"><span class="iname">${p.nom}</span><span class="iexp">jusqu'au ${p.expiration}</span></div>
+            <div class="imotif">${p.motif}</div>
+            <div class="idate">Notifiée le ${p.dateEffet}${p.note ? ' — ' + p.note : ''}</div>
+          </div>
+        `).join('')}
+      </div>
+      ${site.interdictionsProcedure ? `<div class="note-box" style="margin-top:10px;">${site.interdictionsProcedure}</div>` : ''}
+    </div>` : ''}
+
+    ${(site.consignes || site.particularites) ? `
+    <div class="card">
+      <h3><span class="ic">📋</span> Consignes d'intervention</h3>
+      ${site.consignes ? `<div class="note-box">${site.consignes}</div>` : ''}
+      ${site.particularites ? `<h3 style="margin-top:2px;"><span class="ic">⚠️</span> Particularités</h3><div class="particularites" style="margin-bottom:14px;">${site.particularites}</div>` : ''}
+    </div>` : ''}
+
+  `;
+}
+
+function showDetail(index){
+  const site = SITES[index];
+  document.querySelector('.search-wrap').style.display = 'none';
+  filtersEl.style.display = 'none';
+  resultsCountEl.style.display = 'none';
+  listEl.style.display = 'none';
+  emptyEl.style.display = 'none';
+  placeholderEl.style.display = 'none';
+
+  detailEl.style.display = 'block';
+  detailEl.innerHTML = `
+    <button class="back" id="backBtn">← Retour à la recherche</button>
+    ${fieldsHtml(site)}
+    <div class="actions">
+      <button class="btn primary" onclick="window.print()">🖨️ Imprimer / PDF</button>
+      <button class="btn ghost" id="closeBtn">Fermer la fiche</button>
+    </div>
+  `;
+  brancherEtapes();
+  document.getElementById('backBtn').addEventListener('click', closeDetail);
+  document.getElementById('closeBtn').addEventListener('click', closeDetail);
+  window.scrollTo(0,0);
+}
+
+function closeDetail(){
+  detailEl.style.display = 'none';
+  document.querySelector('.search-wrap').style.display = 'flex';
+  filtersEl.style.display = 'flex';
+  resultsCountEl.style.display = 'block';
+  render();
+}
+
+promInput.addEventListener('input', render);
+nameInput.addEventListener('input', render);
+filtersEl.querySelectorAll('.chip').forEach(chip => {
+  chip.addEventListener('click', () => {
+    filtersEl.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
+    chip.classList.add('active');
+    activeType = chip.dataset.type;
+    render();
+  });
+});
+
+render();
+</script>
+</body>
+</html>

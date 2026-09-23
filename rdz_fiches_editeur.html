@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RDZ — Éditeur des fiches PROM</title>
+<style>
+  :root{
+    --navy:#0f1f3d; --navy-2:#16305c; --bg:#f4f6fb; --card:#fff;
+    --text:#161c2c; --muted:#5b6478; --border:#dfe4ee; --green:#1e7a46; --red:#b42318; --or:#c07800;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;font-size:14px;}
+  header{background:linear-gradient(135deg,var(--navy),var(--navy-2));color:#fff;padding:16px 20px;
+    position:sticky;top:0;z-index:30;}
+  header .brand{font-size:12.5px;font-weight:700;opacity:.85;letter-spacing:.3px;}
+  header h1{margin:6px 0 12px;font-size:19px;}
+  .barre{display:flex;flex-wrap:wrap;gap:9px;align-items:center;}
+  .barre select,.barre input{padding:9px 11px;border-radius:9px;border:1px solid #cfd8ea;font-family:inherit;font-size:14px;}
+  .barre select{min-width:220px;}
+  .barre input{min-width:180px;}
+  .barre button{padding:9px 14px;border-radius:9px;border:none;font-family:inherit;font-size:13.5px;
+    font-weight:700;cursor:pointer;background:rgba(255,255,255,.16);color:#fff;border:1px solid rgba(255,255,255,.3);}
+  .barre button.vert{background:#1e7a46;border-color:#1e7a46;}
+  .wrap{max-width:900px;margin:0 auto;padding:18px 16px 80px;}
+  .avert{background:#fff4d6;border:1px solid #f0d998;color:#6b4e00;border-radius:10px;padding:12px 14px;
+    line-height:1.55;margin-bottom:16px;}
+  .carte{background:var(--card);border:1px solid var(--border);border-radius:13px;padding:16px;margin-bottom:14px;}
+  .carte > h2{margin:0 0 14px;font-size:16px;color:var(--navy);}
+  .etape{background:var(--card);border:1px solid var(--border);border-radius:13px;margin-bottom:14px;overflow:hidden;}
+  .etape > summary{padding:14px 16px;cursor:pointer;font-weight:700;font-size:15.5px;color:var(--navy);
+    display:flex;align-items:center;gap:10px;}
+  .etape > summary .n{width:25px;height:25px;border-radius:50%;background:var(--navy);color:#fff;flex:none;
+    display:flex;align-items:center;justify-content:center;font-size:12.5px;}
+  .etape-in{padding:0 16px 16px;}
+  .champ{margin-bottom:11px;}
+  .champ label{display:block;font-size:12px;font-weight:700;color:var(--muted);margin-bottom:4px;}
+  .champ input[type=text],.champ textarea,.champ select{width:100%;padding:9px 11px;border:1px solid var(--border);
+    border-radius:8px;font-family:inherit;font-size:14px;background:#fff;}
+  .champ textarea{min-height:64px;resize:vertical;line-height:1.5;}
+  .champ.inline{display:flex;align-items:center;gap:8px;}
+  .champ.inline label{margin:0;}
+  .bloc{border:1px solid var(--border);border-radius:11px;padding:13px;margin-bottom:12px;background:#fbfcfe;}
+  .bloc-tete{display:flex;align-items:center;gap:8px;margin-bottom:10px;}
+  .bloc-type{flex:1;font-weight:700;font-size:13px;color:var(--navy);}
+  .bloc-tete button{border:1px solid var(--border);background:#fff;border-radius:7px;padding:5px 9px;
+    font-size:12.5px;cursor:pointer;font-family:inherit;}
+  .bloc-tete button.sup{color:var(--red);border-color:#f0c9c4;}
+  .ligne{border:1px dashed #d7dEEA;border-radius:9px;padding:11px;margin-bottom:9px;background:#fff;}
+  .ligne-tete{display:flex;justify-content:space-between;align-items:center;margin-bottom:7px;}
+  .ligne-tete span{font-size:11.5px;font-weight:700;color:var(--muted);}
+  .ligne-tete button{border:none;background:none;color:var(--red);font-size:12.5px;cursor:pointer;font-family:inherit;font-weight:700;}
+  .ajout{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:6px;}
+  .ajout select{padding:8px 10px;border-radius:8px;border:1px solid var(--border);font-family:inherit;font-size:13.5px;}
+  .ajout button{padding:8px 13px;border-radius:8px;border:1px solid var(--navy);background:var(--navy);color:#fff;
+    font-family:inherit;font-size:13.5px;font-weight:700;cursor:pointer;}
+  .ajout button.clair{background:#fff;color:var(--navy);}
+  .vide{color:var(--muted);font-size:13px;padding:8px 0;}
+  .pied{position:fixed;left:0;right:0;bottom:0;background:var(--card);border-top:1px solid var(--border);
+    padding:11px 16px;display:flex;gap:10px;align-items:center;justify-content:center;z-index:40;}
+  .pied button{padding:11px 18px;border-radius:9px;border:none;background:var(--green);color:#fff;
+    font-family:inherit;font-size:14.5px;font-weight:700;cursor:pointer;}
+  .pied .etat{font-size:12.5px;color:var(--muted);}
+  .sous-blocs{border-left:3px solid var(--border);padding-left:12px;margin-top:10px;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="brand">RDZ SECURITY MANAGEMENT</div>
+  <h1>Éditeur des fiches PROM</h1>
+  <div class="barre">
+    <select id="selSite"></select>
+    <input id="nomEditeur" type="text" placeholder="Votre nom" autocomplete="off">
+    <button type="button" id="btnImport">Importer un fiches.js</button>
+    <input type="file" id="fichierImport" accept=".js" hidden>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="avert">
+    <b>Avant de modifier :</b> téléchargez toujours le <b>fiches.js</b> le plus récent du dépôt et importez-le ici.
+    Vous êtes plusieurs à pouvoir éditer — si deux personnes partent d'une version différente, la dernière déposée
+    écrase l'autre. Chaque fiche garde la date et le nom de la dernière modification, visibles par les agents.
+  </div>
+  <div class="carte" style="background:#eef3ff;border-color:#c9d8f5;">
+    <h2>Comment écrire dans les champs</h2>
+    <div style="line-height:1.75;">
+      Le texte s'écrit normalement. Trois raccourcis, valables dans <b>tous</b> les champs :<br>
+      <code>##texte##</code> met en <b>gras</b> — pour un nom de bâtiment, un mot-clé.<br>
+      <code>~~texte~~</code> met en évidence — pour un code, un numéro de local.<br>
+      <code>[[Application Agent|https://…]]</code> crée un lien cliquable.<br>
+      Un retour à la ligne dans le champ produit un retour à la ligne à l'écran.
+      Ne rien écrire d'autre entre chevrons : le texte s'affiche tel quel.
+    </div>
+  </div>
+  <div id="corps"></div>
+</div>
+
+<div class="pied">
+  <span class="etat" id="etat">Aucune modification</span>
+  <button type="button" id="btnTelecharger">Télécharger fiches.js</button>
+</div>
+
+<script src="fiches.js"></script>
+<script>
+/* ============ Modèle ============ */
+let DATA = null;
+let iSite = 0;
+let modifie = false;
+
+const TYPES = {
+  kv:     {nom:"Champs et valeurs",       titre:true, champs:[
+            {k:'k', lab:"Intitulé"},
+            {k:'v', lab:"Valeur", long:true},
+            {k:'code', lab:"Afficher en gros (code, numéro)", bool:true}]},
+  liste:  {nom:"Liste à puces",           titre:true, lignes:true},
+  num:    {nom:"Procédure à cocher",      titre:true, extra:[{k:'court', lab:"Nom du bouton dans la barre (laisser vide si ce n'est pas une procédure d'urgence)"}],
+           champs:[{k:'a', lab:"Action"},
+                   {k:'d', lab:"Détail", long:true},
+                   {k:'puce', lab:"Pastille de couleur", options:['', 'noir', 'rouge', 'vert']}]},
+  choix:  {nom:"Cas de figure colorés",   titre:true, champs:[
+            {k:'couleur', lab:"Couleur", options:['vert', 'orange', 'rouge']},
+            {k:'titre', lab:"Titre du cas"},
+            {k:'txt', lab:"Conduite à tenir", long:true}]},
+  tel:    {nom:"Numéros à appeler",       titre:true, champs:[
+            {k:'nom', lab:"Nom"},
+            {k:'role', lab:"Quand l'appeler", long:true},
+            {k:'num', lab:"Numéro (format +41 …)"}]},
+  table:  {nom:"Tableau à deux colonnes", titre:true, champs:[
+            {k:'z', lab:"Colonne de gauche"},
+            {k:'d', lab:"Colonne de droite", long:true}]},
+  gps:    {nom:"Bouton itinéraire",       titre:true, champs:[
+            {k:'label', lab:"Libellé au-dessus du bouton"},
+            {k:'dest', lab:"Destination (adresse ou coordonnées GPS)"}]},
+  stop:   {nom:"Avertissement rouge",     simple:[
+            {k:'lab', lab:"Titre (par défaut : Stop)"},
+            {k:'txt', lab:"Texte", long:true}]},
+  manque: {nom:"Point à compléter (jaune)", simple:[{k:'txt', lab:"Texte", long:true}]},
+  sous:   {nom:"Bloc repliable",          titre:true, sous:true}
+};
+
+const ETAPES_MODELE = [
+  {titre:"Le site",               resume:"Ce que l'agent doit savoir avant d'arriver"},
+  {titre:"Transmetteurs et codes", resume:"PROM, codes de centrale, décodage des zones"},
+  {titre:"Points d'accès",        resume:"Comment entrer et ouvrir"},
+  {titre:"Clés",                  resume:"Ce qu'il faut emporter pour pouvoir intervenir"},
+  {titre:"Qui appeler",           resume:"Dans l'ordre, du plus urgent au technique"},
+  {titre:"Process d'intervention", resume:"Centrale, quittance, asservissements, évacuation"}
+];
+
+/* ============ Utilitaires ============ */
+function ech(t){ return String(t == null ? '' : t).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+function site(){ return DATA.sites[iSite]; }
+function touche(){
+  modifie = true;
+  document.getElementById('etat').textContent = "Modifications non enregistrées — pensez à télécharger";
+}
+function auj(){
+  const d = new Date();
+  return d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0') + '-' + String(d.getDate()).padStart(2,'0');
+}
+
+/* ============ Rendu ============ */
+function rendreSelect(){
+  const sel = document.getElementById('selSite');
+  sel.innerHTML = DATA.sites.map((s, i) =>
+    `<option value="${i}"${i === iSite ? ' selected' : ''}>${ech(s.client)} — PROM ${ech(s.prom)}${s.etapes ? '' : '  (ancien format)'}</option>`
+  ).join('');
+}
+
+function champ(lab, val, oninput, long, options, bool){
+  if(bool){
+    return `<div class="champ inline"><input type="checkbox" ${val ? 'checked' : ''} data-act="${oninput}"><label>${lab}</label></div>`;
+  }
+  if(options){
+    return `<div class="champ"><label>${lab}</label><select data-act="${oninput}">` +
+      options.map(o => `<option value="${o}"${String(val || '') === o ? ' selected' : ''}>${o === '' ? '(aucune)' : o}</option>`).join('') +
+      `</select></div>`;
+  }
+  if(long){
+    return `<div class="champ"><label>${lab}</label><textarea data-act="${oninput}">${ech(val)}</textarea></div>`;
+  }
+  return `<div class="champ"><label>${lab}</label><input type="text" data-act="${oninput}" value="${ech(val)}"></div>`;
+}
+
+function rendreBloc(b, chemin){
+  const T = TYPES[b.t];
+  if(!T) return `<div class="bloc"><div class="vide">Type de bloc inconnu : ${ech(b.t)}</div></div>`;
+  let h = `<div class="bloc">
+    <div class="bloc-tete">
+      <div class="bloc-type">${T.nom}</div>
+      <button type="button" data-act="mv|${chemin}|-1">↑</button>
+      <button type="button" data-act="mv|${chemin}|1">↓</button>
+      <button type="button" class="sup" data-act="sup|${chemin}">Supprimer</button>
+    </div>`;
+
+  if(T.titre) h += champ("Titre du bloc (facultatif)", b.titre || '', `set|${chemin}|titre`);
+  if(T.extra) T.extra.forEach(c => { h += champ(c.lab, b[c.k] || '', `set|${chemin}|${c.k}`); });
+
+  if(T.simple){
+    T.simple.forEach(c => { h += champ(c.lab, b[c.k] || '', `set|${chemin}|${c.k}`, c.long); });
+  } else if(T.lignes){
+    h += champ("Une ligne par point.",
+      (b.items || []).join('\n'), `lignes|${chemin}`, true);
+  } else if(T.sous){
+    h += `<div class="sous-blocs">` +
+      (b.blocs || []).map((sb, j) => rendreBloc(sb, chemin + '.' + j)).join('') +
+      ajoutBloc(chemin) + `</div>`;
+  } else if(T.champs){
+    h += (b.items || []).map((it, j) => {
+      let l = `<div class="ligne"><div class="ligne-tete"><span>Ligne ${j+1}</span>
+        <button type="button" data-act="supitem|${chemin}|${j}">Retirer</button></div>`;
+      T.champs.forEach(c => { l += champ(c.lab, it[c.k] || '', `setitem|${chemin}|${j}|${c.k}`, c.long, c.options, c.bool); });
+      return l + `</div>`;
+    }).join('');
+    h += `<div class="ajout"><button type="button" class="clair" data-act="additem|${chemin}">+ Ajouter une ligne</button></div>`;
+  }
+  return h + `</div>`;
+}
+
+function ajoutBloc(chemin){
+  return `<div class="ajout">
+    <select data-role="typebloc">${Object.keys(TYPES).map(k => `<option value="${k}">${TYPES[k].nom}</option>`).join('')}</select>
+    <button type="button" data-act="addbloc|${chemin}">+ Ajouter ce bloc</button>
+  </div>`;
+}
+
+function rendre(){
+  const s = site();
+  let h = `<div class="carte"><h2>Identité du site</h2>
+    ${champ("Client (nom court affiché en gros)", s.client, "site|client")}
+    ${champ("Code PROM", s.prom, "site|prom")}
+    ${champ("Nom complet", s.nomComplet || '', "site|nomComplet", true)}
+    ${champ("Adresse", s.adresse || '', "site|adresse")}
+    ${champ("Types d'alarme, séparés par une virgule (Incendie, Effraction, Agression, Poste)", (s.types || []).join(', '), "types")}
+    <div class="vide">Dernière modification : ${s.majLe ? ech(s.majLe) + (s.majPar ? ' par ' + ech(s.majPar) : '') : "jamais enregistrée par l'éditeur"}</div>
+  </div>`;
+
+  if(!s.etapes){
+    h += `<div class="carte"><h2>Structure en 6 étapes</h2>
+      <div class="vide">Cette fiche est encore à l'ancien format : elle s'affiche en liste continue dans l'appli.</div>
+      <div class="ajout"><button type="button" data-act="creeretapes">Créer la structure en 6 étapes</button></div>
+    </div>`;
+  } else {
+    s.etapes.forEach((e, i) => {
+      h += `<details class="etape"${i === 0 ? ' open' : ''}>
+        <summary><span class="n">${i+1}</span>${ech(e.titre)}</summary>
+        <div class="etape-in">
+          ${champ("Titre de l'étape", e.titre, `etape|${i}|titre`)}
+          ${champ("Sous-titre", e.resume || '', `etape|${i}|resume`)}
+          ${(e.blocs || []).map((b, j) => rendreBloc(b, i + '.' + j)).join('') || "<div class=\"vide\">Aucun bloc pour l'instant.</div>"}
+          ${ajoutBloc(String(i))}
+        </div></details>`;
+    });
+  }
+  document.getElementById('corps').innerHTML = h;
+  brancher();
+}
+
+/* ============ Navigation dans le modèle ============ */
+function parBloc(chemin){
+  const p = String(chemin).split('.');
+  let b = site().etapes[parseInt(p[0], 10)].blocs[parseInt(p[1], 10)];
+  for(let i = 2; i < p.length; i++){ b = b.blocs[parseInt(p[i], 10)]; }
+  return b;
+}
+function parParent(chemin){
+  const p = String(chemin).split('.');
+  if(p.length === 2) return site().etapes[parseInt(p[0], 10)].blocs;
+  let b = site().etapes[parseInt(p[0], 10)].blocs[parseInt(p[1], 10)];
+  for(let i = 2; i < p.length - 1; i++){ b = b.blocs[parseInt(p[i], 10)]; }
+  return b.blocs;
+}
+
+function blocVide(t){
+  if(t === 'stop') return {t:'stop', lab:'', txt:''};
+  if(t === 'manque') return {t:'manque', txt:''};
+  if(t === 'liste') return {t:'liste', titre:'', items:['']};
+  if(t === 'sous') return {t:'sous', titre:'', blocs:[]};
+  const b = {t:t, titre:'', items:[{}]};
+  return b;
+}
+
+/* ============ Actions ============ */
+function brancher(){
+  document.querySelectorAll('[data-act]').forEach(el => {
+    const a = el.dataset.act.split('|');
+    const type = a[0];
+
+    if(el.tagName === 'BUTTON'){
+      el.addEventListener('click', () => {
+        if(type === 'sup'){ const l = parParent(a[1]); l.splice(parseInt(a[1].split('.').pop(), 10), 1); }
+        else if(type === 'mv'){
+          const l = parParent(a[1]), i = parseInt(a[1].split('.').pop(), 10), j = i + parseInt(a[2], 10);
+          if(j < 0 || j >= l.length) return;
+          const x = l.splice(i, 1)[0]; l.splice(j, 0, x);
+        }
+        else if(type === 'supitem'){ parBloc(a[1]).items.splice(parseInt(a[2], 10), 1); }
+        else if(type === 'additem'){ const b = parBloc(a[1]); b.items = b.items || []; b.items.push({}); }
+        else if(type === 'addbloc'){
+          const sel = el.parentElement.querySelector('[data-role=typebloc]');
+          const nb = blocVide(sel.value);
+          if(a[1].indexOf('.') < 0){ site().etapes[parseInt(a[1], 10)].blocs.push(nb); }
+          else { const b = parBloc(a[1]); b.blocs = b.blocs || []; b.blocs.push(nb); }
+        }
+        else if(type === 'creeretapes'){
+          site().etapes = ETAPES_MODELE.map(m => ({titre:m.titre, resume:m.resume, blocs:[]}));
+        }
+        touche(); rendre();
+      });
+      return;
+    }
+
+    const maj = () => {
+      const v = el.type === 'checkbox' ? el.checked : el.value;
+      if(type === 'site'){ site()[a[1]] = v; }
+      else if(type === 'types'){ site().types = String(v).split(',').map(x => x.trim()).filter(Boolean); }
+      else if(type === 'etape'){ site().etapes[parseInt(a[1], 10)][a[2]] = v; }
+      else if(type === 'set'){ const b = parBloc(a[1]); if(v === '' || v === false){ delete b[a[2]]; } else { b[a[2]] = v; } }
+      else if(type === 'lignes'){ parBloc(a[1]).items = String(v).split('\n').filter(x => x.trim() !== ''); }
+      else if(type === 'setitem'){
+        const it = parBloc(a[1]).items[parseInt(a[2], 10)];
+        if(v === '' || v === false){ delete it[a[3]]; } else { it[a[3]] = v; }
+      }
+      touche();
+    };
+    el.addEventListener(el.tagName === 'SELECT' || el.type === 'checkbox' ? 'change' : 'input', maj);
+  });
+}
+
+/* ============ Chargement et export ============ */
+function charger(obj){
+  DATA = obj;
+  DATA.sites.forEach(s => { if(s.etapes){ s.etapes.forEach(e => { e.blocs = e.blocs || []; }); } });
+  iSite = 0;
+  rendreSelect(); rendre();
+}
+
+document.getElementById('selSite').addEventListener('change', e => { iSite = parseInt(e.target.value, 10); rendre(); });
+
+document.getElementById('btnImport').addEventListener('click', () => document.getElementById('fichierImport').click());
+document.getElementById('fichierImport').addEventListener('change', e => {
+  const f = e.target.files[0];
+  if(!f) return;
+  const r = new FileReader();
+  r.onload = () => {
+    try{
+      const t = r.result;
+      const d = t.indexOf('{', t.indexOf('RDZ_FICHES'));
+      const obj = JSON.parse(t.slice(d, t.lastIndexOf('}') + 1));
+      if(!obj.sites) throw new Error('pas de sites');
+      charger(obj);
+      modifie = false;
+      document.getElementById('etat').textContent = "Fichier importé : " + obj.sites.length + " fiches";
+    }catch(err){
+      alert("Ce fichier n'est pas un fiches.js valide. Reprenez celui du dépôt GitHub.");
+    }
+  };
+  r.readAsText(f);
+});
+
+document.getElementById('btnTelecharger').addEventListener('click', () => {
+  const nom = document.getElementById('nomEditeur').value.trim();
+  if(!nom){ alert("Indiquez votre nom en haut de page avant de télécharger : il est enregistré avec la fiche."); return; }
+  site().majLe = auj();
+  site().majPar = nom;
+  DATA.majLe = auj();
+  DATA.majPar = nom;
+  const txt = "/* RDZ — Données des fiches PROM (module AMSET).\n   Fichier produit par rdz_fiches_editeur.html — à ne pas modifier à la main.\n   Dernière modification : " + auj() + " par " + nom + " */\nwindow.RDZ_FICHES = " + JSON.stringify(DATA, null, 2) + ";\n";
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(new Blob([txt], {type:'text/javascript'}));
+  a.download = 'fiches.js';
+  document.body.appendChild(a); a.click(); document.body.removeChild(a);
+  modifie = false;
+  document.getElementById('etat').textContent = "Fichier téléchargé — déposez-le sur GitHub";
+});
+
+window.addEventListener('beforeunload', e => { if(modifie){ e.preventDefault(); e.returnValue = ''; } });
+
+if(window.RDZ_FICHES){ charger(JSON.parse(JSON.stringify(window.RDZ_FICHES))); }
+else { document.getElementById('corps').innerHTML =
+  '<div class="carte"><h2>Fichier de données introuvable</h2><div class="vide">Placez fiches.js dans le même dossier que cette page, ou utilisez le bouton « Importer un fiches.js ».</div></div>'; }
+</script>
+</body>
+</html>
