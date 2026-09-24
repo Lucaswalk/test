@@ -693,10 +693,6 @@ window.RDZ_FICHES = {
                   "v": "IHEID — Geneva Graduate Institute"
                 },
                 {
-                  "k": "Adresse",
-                  "v": "Campus résidentiel IHEID, bâtiments Morillon et Budé — adresse postale précise non confirmée dans les documents reçus"
-                },
-                {
                   "k": "Occupation",
                   "v": "≈ 318 résidents, présence permanente jour et nuit"
                 }
