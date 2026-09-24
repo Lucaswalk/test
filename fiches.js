@@ -1253,7 +1253,7 @@ window.RDZ_FICHES = {
         "Incendie",
         "Effraction"
       ],
-      "adresse": "Grand Morillon Student House, Rue Michelle- Nicod 8, 1202 Genève avec l'astreinte",
+      "adresse": "Grand Morillon Student House, Rue Michelle- Nicod 8, 1202 Genève",
       "transmetteurs": [
         {
           "label": "Incendie REGM",
