@@ -1,9 +1,10 @@
 /* RDZ — Données des fiches PROM (module AMSET).
-   Fichier produit par rdz_fiches_editeur.html — à ne pas modifier à la main. */
+   Fichier produit par rdz_fiches_editeur.html — à ne pas modifier à la main.
+   Dernière modification : 2026-09-24 par Gimenez */
 window.RDZ_FICHES = {
   "format": 1,
-  "majLe": "2026-09-23",
-  "majPar": "",
+  "majLe": "2026-09-24",
+  "majPar": "Gimenez",
   "interdictions": {
     "IHEID": {
       "liste": [
@@ -238,7 +239,9 @@ window.RDZ_FICHES = {
         "A.02 — Liste des pointeaux de ronde (ci-dessus)",
         "A.03 — Fiche réflexe : procédures d'intervention",
         "A.04 — Interdiction d'entrée : formulaire vierge et procédure (aucune interdiction nominative reçue à ce jour)"
-      ]
+      ],
+      "majLe": "2026-09-24",
+      "majPar": "Gimenez"
     },
     {
       "statut": "complet",
@@ -1254,7 +1257,7 @@ window.RDZ_FICHES = {
         "Incendie",
         "Effraction"
       ],
-      "adresse": "Campus résidentiel IHEID, bâtiments Morillon et Budé — adresse précise non communiquée dans les documents reçus, à confirmer avec l'astreinte",
+      "adresse": "Grand Morillon Student House, Rue Michelle- Nicod 8, 1202 Genève avec l'astreinte",
       "transmetteurs": [
         {
           "label": "Incendie REGM",
@@ -1472,7 +1475,9 @@ window.RDZ_FICHES = {
         "Rapport d'ouverture SALTO — collecte et lecture PPD",
         "Utilisation Starrez — recherche de locataire",
         "Théâtre REGM — guide d'utilisation agent"
-      ]
+      ],
+      "majLe": "2026-09-24",
+      "majPar": "Gimenez"
     },
     {
       "statut": "complet",
