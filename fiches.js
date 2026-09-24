@@ -1248,7 +1248,7 @@ window.RDZ_FICHES = {
           ]
         }
       ],
-      "nomComplet": "REGM — Résidence Grand Morillon (IHEID / Geneva Graduate Institute), bâtiments Morillon (10A/10B) &amp; Budé (8A/8B)",
+      "nomComplet": "REGM — Résidence Grand Morillon (IHEID / Geneva Graduate Institute), bâtiments Morillon (10A/10B) & Budé (8A/8B)",
       "types": [
         "Incendie",
         "Effraction"
