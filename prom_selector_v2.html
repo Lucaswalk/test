@@ -498,7 +498,11 @@
   </footer>
 </div>
 
-<script src="fiches.js"></script>
+<script>
+/* Charge les fiches en forçant le navigateur à aller les rechercher à chaque ouverture :
+   sans cela, une mise à jour déposée sur GitHub peut mettre plusieurs minutes à apparaître. */
+document.write('<scr' + 'ipt src="fiches.js?t=' + Date.now() + '"><\/scr' + 'ipt>');
+</script>
 <script>
 // ============================================================
 // BASE DE DONNÉES CLIENTS
