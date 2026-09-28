@@ -1,6 +1,5 @@
 /* RDZ — Données des fiches PROM (module AMSET).
-   Fichier produit par rdz_fiches_editeur.html — à ne pas modifier à la main.
-   Dernière modification : 2026-09-24 par Gimenez */
+   Fichier produit par rdz_fiches_editeur.html — à ne pas modifier à la main. */
 window.RDZ_FICHES = {
   "format": 1,
   "majLe": "2026-09-24",
@@ -1177,24 +1176,48 @@ window.RDZ_FICHES = {
             },
             {
               "t": "num",
-              "titre": "Remise des asservissements après alarme incendie",
+              "titre": "Remise en route des asservissements après alarme incendie",
               "court": "Asservissements",
               "items": [
                 {
                   "a": "Quittancer les 3 boîtiers de surpression orange",
-                  "d": "##Morillon## — sortie de secours bloc A, RDC.\n##Budé## — entrée 8B, bloc H.\nClé sur arrêt, attendre 10 secondes avant de repasser sur AUTO : sinon un contacteur peut rester bloqué."
+                  "d": "##Morillon## — sortie de secours bloc A, RDC.\n##Budé## — entrée 8B bloc H, sur votre gauche.\nMettre la clé et tourner sur ##arrêt##. Attendre ##10 secondes## avant de revenir sur AUTO : trop vite, un contacteur peut rester bloqué et le boîtier ne repasse plus en opérationnel."
                 },
                 {
-                  "a": "Ratisser tous les étages",
-                  "d": "Remettre les portes coupe-feu en fonction."
+                  "a": "Vérifier les diodes des boîtiers",
+                  "d": "La diode jaune ##Perturbation## doit cesser de clignoter et la diode bleue ##Opérationnel## rester fixe : la quittance a fonctionné. Si une diode continue de clignoter, un dérangement remonte au central feu — appeler ##JOMOS##."
                 },
                 {
-                  "a": "Quittancer les boutons de ventilation dans l'ordre",
-                  "d": "##Morillon## — 8e étage → 5e étage → sous-sol local 1.10.\n##Budé## — 9e étage → 4e étage local 2.461/2.039 → sous-sol local 2.23."
+                  "a": "Morillon — 8e étage, bouton 1",
+                  "d": "Grande salle polyvalente, local sur la gauche (console SST80 MO). Le bouton est allumé : appuyer dessus pour l'éteindre. Même principe pour tous les boutons suivants.\nPrendre ensuite les escaliers et ##vérifier que l'exutoire s'est bien refermé##."
+                },
+                {
+                  "a": "Morillon — 5e étage, bouton 2",
+                  "d": "Ratisser chaque niveau en descendant pour remettre les portes coupe-feu en ordre. Au 5e, le bouton se trouve dans un local en face de l'ascenseur, bloc D (console SST50 MO)."
+                },
+                {
+                  "a": "Morillon — sous-sol, bouton 3",
+                  "d": "Continuer de ratisser les étages jusqu'au sous-sol. Local ##1.10 Centrale de ventilation## (console SST01 MO)."
+                },
+                {
+                  "a": "Budé — 9e étage",
+                  "d": "Vérifier que l'exutoire s'est bien refermé, puis descendre par les escaliers en ratissant chaque niveau."
+                },
+                {
+                  "a": "Budé — 4e étage, bouton 1",
+                  "d": "Bloc H, au-dessus du restaurant : local ##2.461 Local monobloc## (console SST40 BU)."
+                },
+                {
+                  "a": "Budé — rez-de-chaussée, bouton 2",
+                  "d": "Côté boîtes aux lettres, bloc E, au fond : local ##2.039 Local monobloc## (console SST10 BU)."
+                },
+                {
+                  "a": "Budé — sous-sol, bouton 3",
+                  "d": "Local ##2.23 Local de ventilation## (console SST01 Budé)."
                 },
                 {
                   "a": "Vérifier les ascenseurs",
-                  "d": "Ils doivent s'être remis en service automatiquement."
+                  "d": "Ils se quittancent automatiquement, mais il faut contrôler qu'ils sont bien revenus en service."
                 },
                 {
                   "a": "Consigner",
@@ -1763,7 +1786,555 @@ window.RDZ_FICHES = {
         "Formulaire permis de feu",
         "Plan RDC MDE (implantation SALTO / centrales feu / locaux techniques)"
       ],
-      "groupeInterdictions": "IHEID"
+      "groupeInterdictions": "IHEID",
+      "etapes": [
+        {
+          "titre": "Le site",
+          "resume": "Ce que l'agent doit savoir avant d'arriver",
+          "blocs": [
+            {
+              "t": "kv",
+              "items": [
+                {
+                  "k": "Code PROM",
+                  "v": "323 710",
+                  "code": true
+                },
+                {
+                  "k": "Type d'alarme",
+                  "v": "Incendie"
+                },
+                {
+                  "k": "Client",
+                  "v": "IHEID — Maison des Étudiants Picciotto"
+                },
+                {
+                  "k": "Occupation",
+                  "v": "Locataires : étudiants et civils de toutes nationalités, employés d'organisations internationales, direction et administration IHEID"
+                },
+                {
+                  "k": "Voisinage",
+                  "v": "Bâtiment voisin de [[REGM|#]] — même astreinte RDZ et une partie des mêmes prestataires. L'intervention se coordonne avec l'agent MDP/REGM."
+                }
+              ]
+            },
+            {
+              "t": "gps",
+              "titre": "Y aller",
+              "items": [
+                {
+                  "label": "Accès piéton par l'avenue de France ou par la passerelle de la Paix",
+                  "dest": "Maison des Étudiants Picciotto, Avenue de France 20, 1202 Genève"
+                }
+              ]
+            },
+            {
+              "t": "table",
+              "titre": "Organisation du bâtiment",
+              "items": [
+                {
+                  "z": "Centrale feu mère",
+                  "d": "RDC — poste principal de la centrale incendie Siemens"
+                },
+                {
+                  "z": "Escaliers bât. 20 et 22",
+                  "d": "Chacun équipé de sa propre centrale feu secondaire"
+                },
+                {
+                  "z": "Salles PCR",
+                  "d": "Côté voie ferrée et côté lac — fermeture à 01h00"
+                },
+                {
+                  "z": "Admin MDE",
+                  "d": "Loge administration — doubles des clés de chambre rangés par numéro, accès par la clé multipass MDP"
+                },
+                {
+                  "z": "Fitness",
+                  "d": "Fermeture à 22h00 — penser à vérifier les toilettes"
+                },
+                {
+                  "z": "Locaux techniques RDC",
+                  "d": "Chaufferie et ventilation SIG, local technique IS, local femme de ménage, local déchets, local vélo, laverie, zone poubelle"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "titre": "Transmetteurs et codes",
+          "resume": "PROM, centrale Siemens, niveaux d'accès",
+          "blocs": [
+            {
+              "t": "kv",
+              "items": [
+                {
+                  "k": "PROM incendie (Certas)",
+                  "v": "323 710",
+                  "code": true
+                },
+                {
+                  "k": "Identification Certas",
+                  "v": "Complément à 30"
+                },
+                {
+                  "k": "Transmission",
+                  "v": "TUS, mode direct 24h/7j"
+                }
+              ]
+            },
+            {
+              "t": "liste",
+              "titre": "Centrale incendie Siemens FC20xx",
+              "items": [
+                "L'accès se fait par un ##code utilisateur à 4 chiffres##, qui détermine ce que l'on a le droit de faire.",
+                "##Niveau 1## — tout le monde : arrêt du buzzer uniquement.",
+                "##Niveau 2.1## — agent de sécurité : droits restreints.",
+                "##Niveau 2.2## — chargé de sécurité : droits élargis.",
+                "##Niveau 3## — technicien Siemens."
+              ]
+            },
+            {
+              "t": "manque",
+              "txt": "Le code à 4 chiffres de l'agent (niveau 2.1) ne figure pas dans les documents reçus. Sans lui, impossible de quittancer une alarme sur place : à obtenir en priorité."
+            }
+          ]
+        },
+        {
+          "titre": "Points d'accès",
+          "resume": "Comment entrer et ouvrir",
+          "blocs": [
+            {
+              "t": "liste",
+              "items": [
+                "##Badge personnel SALTO## — accès courant au bâtiment.",
+                "##Pass Général## — à récupérer dans le coffre-fort Sécurité à la MDP. Ne pas le prendre hors urgence ou ouverture de chambre : utiliser les ##clés pompiers## dans ce second cas.",
+                "##Loge admin MDE## — ouverture par la clé multipass MDP.",
+                "##Porte d'entrée## — sous vidéosurveillance, avec rapport d'ouvertures consultable."
+              ]
+            },
+            {
+              "t": "manque",
+              "txt": "Par quelle porte l'agent entre la nuit, et laquelle reste accessible en cas de défaut SALTO ou de coupure de courant : non documenté."
+            }
+          ]
+        },
+        {
+          "titre": "Clés",
+          "resume": "Ce qu'il faut emporter pour pouvoir intervenir",
+          "blocs": [
+            {
+              "t": "kv",
+              "items": [
+                {
+                  "k": "Coffre à clé Admin MDE",
+                  "v": "Code ~~357~~ — consigne permanente du 17.09.2026"
+                },
+                {
+                  "k": "Pass Général",
+                  "v": "Coffre-fort Sécurité à la MDP"
+                }
+              ]
+            },
+            {
+              "t": "liste",
+              "titre": "Éléments connus",
+              "items": [
+                "##Clé SI## — remise en service des ascenseurs après alarme (cylindre rouge pompier).",
+                "##Trousseau désenfumage## — boîte à clés du local derrière l'administration, pour ouvrir l'exutoire du 9e étage.",
+                "##Pass MDE## — local ménage et local SIG lors de la quittance des asservissements.",
+                "##Clé multipass MDP## — ouvre la loge admin MDE.",
+                "##2 clefs « Boîte clef serrure 2 »## — à la MDP, pour le distributeur de clés.",
+                "##Doubles des chambres## — loge admin MDE, rangés par numéro de chambre.",
+                "##Clés pompiers## — pour ouvrir une chambre, à la place du Pass Général."
+              ]
+            },
+            {
+              "t": "stop",
+              "lab": "Remise de badge ou de clé de chambre",
+              "txt": "Depuis le 17.08.2026, aucune remise hors des horaires du Housing (lun-ven 08h00-12h30 et 13h30-17h00, fermé week-ends et fériés), sauf mail préalable du Housing. Étudiant qui se présente hors horaires : rester courtois, le renvoyer au Housing, noter dans GUARDTEK."
+            },
+            {
+              "t": "manque",
+              "txt": "Il manque encore la composition complète du trousseau MDE, l'endroit exact où le récupérer, et la conduite à tenir s'il manque une clé au retour."
+            }
+          ]
+        },
+        {
+          "titre": "Qui appeler",
+          "resume": "Dans l'ordre, du plus urgent au technique",
+          "blocs": [
+            {
+              "t": "stop",
+              "lab": "Si le natel est sur un réseau français",
+              "txt": "À Genève, un téléphone accroche souvent une antenne française. Dans ce cas les numéros suisses en 0… ne passent pas, et le 118 ou le 117 tombent sur les secours français. Composer le 112, qui fonctionne sur tous les réseaux, et utiliser les numéros en +41 ci-dessous."
+            },
+            {
+              "t": "tel",
+              "titre": "Urgences",
+              "items": [
+                {
+                  "nom": "Urgence tous réseaux",
+                  "role": "Fonctionne aussi depuis une antenne française — à privilégier en cas de doute",
+                  "num": "112"
+                },
+                {
+                  "nom": "Pompiers",
+                  "role": "Feu confirmé, doute non levé — réseau suisse uniquement",
+                  "num": "118"
+                },
+                {
+                  "nom": "Police",
+                  "role": "Urgence — réseau suisse uniquement",
+                  "num": "117"
+                }
+              ]
+            },
+            {
+              "t": "tel",
+              "titre": "Centrale, terrain et astreinte",
+              "items": [
+                {
+                  "nom": "Certas",
+                  "role": "MDE n° 323.710 — faire le complément à 30",
+                  "num": "+41 844 800 811"
+                },
+                {
+                  "nom": "Agent MDP — natel de service",
+                  "role": "Couvre les urgences MDE en journée et coordonne l'intervention sur place. C'est ce numéro qu'on appelle pour une urgence terrain. À récupérer à la REGM, joignable 24h/7j.",
+                  "num": "+41 79 749 35 36"
+                },
+                {
+                  "nom": "Astreinte RDZ",
+                  "role": "Ligne hiérarchique, pour décider ou faire remonter. Lucas Gimenez (lun-ven) · Laurent Heinrich (week-end et fériés) · Rodolphe De Zordi (en cas d'absence).",
+                  "num": "+41 79 339 13 41"
+                }
+              ]
+            },
+            {
+              "t": "stop",
+              "lab": "Ne pas confondre les deux numéros",
+              "txt": "Le natel finissant par ##35 36## est l'agent MDP en poste : urgence terrain. Celui finissant par ##13 41## est l'astreinte RDZ : décision et remontée. Le cahier des charges du 01.04.2026 présente le premier comme « astreinte RDZ » — c'est une erreur d'étiquette à corriger dans le document."
+            },
+            {
+              "t": "tel",
+              "titre": "Client et hiérarchie",
+              "items": [
+                {
+                  "nom": "M. Barla",
+                  "role": "Responsable sécurité et incendie IHEID",
+                  "num": "+41 22 908 59 63"
+                },
+                {
+                  "nom": "M. Barla",
+                  "role": "Second numéro, GSM urgence",
+                  "num": "+41 77 814 23 39"
+                },
+                {
+                  "nom": "M. De Zordi",
+                  "role": "Directeur RDZ",
+                  "num": "+41 76 634 17 92"
+                },
+                {
+                  "nom": "Service Housing IHEID",
+                  "role": "Lun-ven 8h-17h, option 2 — clés, badges, arrivées d'étudiants",
+                  "num": "+41 22 908 45 01"
+                },
+                {
+                  "nom": "Police Municipale",
+                  "role": "Dim-mer 6h-minuit · Jeu-sam 6h-3h",
+                  "num": "+41 22 418 22 22"
+                }
+              ]
+            },
+            {
+              "t": "sous",
+              "titre": "Technique et prestataires",
+              "blocs": [
+                {
+                  "t": "tel",
+                  "items": [
+                    {
+                      "nom": "Siemens",
+                      "role": "Boîtiers et centrale d'alarme incendie",
+                      "num": "+41 842 842 033"
+                    },
+                    {
+                      "nom": "Aprotec",
+                      "role": "Éclairages de secours et exutoires",
+                      "num": "+41 22 343 81 30"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "t": "liste",
+              "titre": "Demande d'intervention technique",
+              "items": [
+                "Par mail à ##maintenance.residences@graduateinstitute.ch##, ou par GuardTek.",
+                "Pour tout problème urgent : contacter M. Barla ou la technique avant d'agir."
+              ]
+            }
+          ]
+        },
+        {
+          "titre": "Process d'intervention",
+          "resume": "Centrale incendie, quittance, distributeur de clés",
+          "blocs": [
+            {
+              "t": "kv",
+              "items": [
+                {
+                  "k": "Où est la centrale",
+                  "v": "Centrale feu mère au RDC. Les escaliers des bâtiments 20 et 22 ont chacun leur propre centrale secondaire."
+                },
+                {
+                  "k": "Délai d'intervention",
+                  "v": "Moins de 10 minutes, en coordination avec l'agent MDP/REGM"
+                }
+              ]
+            },
+            {
+              "t": "num",
+              "titre": "Alarme incendie — les premiers gestes",
+              "court": "Alarme feu",
+              "items": [
+                {
+                  "a": "Prendre l'information",
+                  "d": "L'intervention part d'un appel du client ou de Certas. Prise d'info auprès de TUS ou de Certas avant de se déplacer."
+                },
+                {
+                  "a": "À la centrale : arrêt des signaux sonores",
+                  "d": "Appuyer sur « Arrêt signaux sonores » puis saisir le code utilisateur à 4 chiffres."
+                },
+                {
+                  "a": "Lire la zone concernée",
+                  "d": "L'écran indique le lieu de la zone en alarme."
+                },
+                {
+                  "a": "Se rendre sur place pour la levée de doute",
+                  "d": "Puis appliquer l'un des trois cas ci-dessous."
+                }
+              ]
+            },
+            {
+              "t": "choix",
+              "titre": "Sur zone, selon ce qui est constaté",
+              "items": [
+                {
+                  "couleur": "vert",
+                  "titre": "Alarme bénigne",
+                  "txt": "Utiliser la fonction ##Réarmement## de la centrale, puis quittancer les asservissements et rédiger le rapport."
+                },
+                {
+                  "couleur": "orange",
+                  "titre": "Doute non levé",
+                  "txt": "Ne pas réarmer. Appeler le 118 et faire intervenir les secours."
+                },
+                {
+                  "couleur": "rouge",
+                  "titre": "Feu confirmé",
+                  "txt": "Actionner un ##déclencheur manuel## : la transmission à distance est immédiate. Appeler le 118, accueillir et guider les secours, diriger l'évacuation vers les points de rassemblement."
+                }
+              ]
+            },
+            {
+              "t": "num",
+              "titre": "Remise en route des asservissements après alarme incendie",
+              "court": "Asservissements",
+              "items": [
+                {
+                  "a": "Remettre les ascenseurs des allées 20 et 22",
+                  "d": "Ils ne se quittancent ##pas## automatiquement. Prendre la ##clé SI##, l'introduire dans le cylindre rouge pompier, tourner sur ##R##, puis revenir sur la position initiale ##0##. Faire un essai pour vérifier que la quittance a fonctionné."
+                },
+                {
+                  "a": "Local ménage au RDC — boutons 1 et 2",
+                  "d": "Entrer avec le ##pass MDE##. Le local se trouve au fond : il contient 2 tableaux. Les diodes des boutons sont allumées en rouge — appuyer dessus pour qu'elles s'éteignent. Même principe pour tous les boutons suivants."
+                },
+                {
+                  "a": "Local SIG côté allée 20 — bouton 3",
+                  "d": "Entrer également avec le pass MDE."
+                },
+                {
+                  "a": "Ouvrir l'exutoire pour accéder à la toiture",
+                  "d": "Prendre le ##trousseau désenfumage## dans la boîte à clés du local situé derrière l'administration. Dans l'une des deux allées, ouvrir le ##boîtier de désenfumage bleu## et appuyer ##1 fois## sur le bouton central noir : une diode rouge s'allume et l'exutoire du 9e étage s'ouvre."
+                },
+                {
+                  "a": "Monter sur la toiture — boutons 4 et 5",
+                  "d": "Ascenseur jusqu'au 9e étage. L'échelle est contre le mur côté lac : retirer le cadenas et monter.\nSur le toit, chaque allée a son monobloc : ouvrir la porte, appuyer sur le bouton ##Quittance alarme incendie##, puis faire de même pour l'autre allée."
+                },
+                {
+                  "a": "Refermer l'exutoire",
+                  "d": "Redescendre, ranger l'échelle, revenir au RDC et appuyer ##2 fois## sur le petit bouton du boîtier de désenfumage. L'exutoire se referme et la lumière rouge s'éteint. ##Remonter au 9e étage pour vérifier## qu'il est bien fermé."
+                }
+              ]
+            },
+            {
+              "t": "stop",
+              "lab": "Sur la toiture",
+              "txt": "Rester du côté monobloc et ne pas s'attarder sur le toit."
+            },
+            {
+              "t": "stop",
+              "lab": "Exutoire qui ne se referme pas",
+              "txt": "Si le bouton jaune « Attention » clignote sur le boîtier de désenfumage et que l'exutoire reste ouvert, appeler Aprotec : ils guident une manipulation de fermeture provisoire. ##Ne jamais laisser un exutoire ouvert.##"
+            },
+            {
+              "t": "stop",
+              "txt": "Une zone mise hors service ne génère plus aucune alarme ni avertissement. À réserver aux cas nécessaires (travaux, détecteur défectueux), avec surveillance humaine, et à remettre en service dès que possible."
+            },
+            {
+              "t": "num",
+              "titre": "Distributeur de clés — étudiant qui ne peut pas récupérer sa clé au check-in",
+              "items": [
+                {
+                  "a": "Vérifier l'identité et la réservation",
+                  "d": "Contrôler la personne dans le listing MDE avant toute remise."
+                },
+                {
+                  "a": "Récupérer les clés à la MDP",
+                  "d": "Clé multipass au coffre, puis les 2 clefs « Boîte clef serrure 2 »."
+                },
+                {
+                  "a": "Ouvrir le distributeur",
+                  "d": "Il se trouve dans le couloir. Récupérer la clé de la chambre et la remettre au client. Un badge peut être proposé via l'ordinateur MDE."
+                },
+                {
+                  "a": "Si le distributeur est vide",
+                  "d": "Accéder à la loge admin MDE avec la clé multipass (code du coffre sur le drive ou dans GuardTek) et prendre le double rangé au numéro de la chambre. Clé d'origine remise sans signature ; ##double remis uniquement contre signature## sur le cahier."
+                },
+                {
+                  "a": "Rapport au Housing",
+                  "d": "Obligatoire dans tous les cas, par l'agent REGM."
+                }
+              ]
+            },
+            {
+              "t": "liste",
+              "titre": "Permis de feu",
+              "items": [
+                "Obligatoire pour tout travail par point chaud : soudage, tronçonnage, découpage, meulage.",
+                "Formulaire à faire remplir et signer par l'entreprise exécutante ##avant## le début des travaux.",
+                "Poser les caches de protection sur les détecteurs concernés, et désactiver la zone via la centrale si nécessaire.",
+                "Remettre la zone en service dès la fin des travaux."
+              ]
+            },
+            {
+              "t": "manque",
+              "txt": "Points de rassemblement en cas d'évacuation : non précisés dans les documents reçus pour ce site."
+            },
+            {
+              "t": "liste",
+              "titre": "Intrusion ou dégradation constatée",
+              "items": [
+                "Signaler ##immédiatement## : police au ##117##, puis astreinte RDZ.",
+                "Ne pas intervenir seul face à une personne présente sur place.",
+                "Photos, heure, localisation, puis rapport GuardTek."
+              ]
+            }
+          ]
+        }
+      ],
+      "blocsRondes": [
+        {
+          "t": "kv",
+          "items": [
+            {
+              "k": "Fréquence",
+              "v": "2 rondes de contrôle minimum par nuit — une avant minuit, une après minuit"
+            }
+          ]
+        },
+        {
+          "t": "liste",
+          "titre": "Les deux types de ronde",
+          "items": [
+            "##Ronde étanchéité, au RDC## — tester manuellement la fermeture des accès.",
+            "##Ronde étage## — vérifier le verrouillage des accès balcon. ##Ne jamais regarder dans les chambres.##"
+          ]
+        },
+        {
+          "t": "liste",
+          "titre": "À vérifier à chaque passage",
+          "items": [
+            "Issues de secours fermées et non obstruées, panneaux lumineux en état.",
+            "Absence de stationnement sauvage sur l'esplanade et sur les voies de fuite.",
+            "Éléments de sécurité, éclairages, et propreté du local poubelle."
+          ]
+        },
+        {
+          "t": "table",
+          "titre": "Horaires de fermeture",
+          "items": [
+            {
+              "z": "22h00",
+              "d": "Salle Fitness — vérifier les toilettes"
+            },
+            {
+              "z": "01h00",
+              "d": "Salle PCR"
+            },
+            {
+              "z": "01h00",
+              "d": "Espaces communs du RDC — ronde étanchéité, fermeture testée manuellement"
+            }
+          ]
+        }
+      ],
+      "blocsNotes": [
+        {
+          "t": "liste",
+          "titre": "Gestion des poubelles",
+          "items": [
+            "Sortie des conteneurs entre ##19h00 la veille## et ##6h00 le jour de la collecte##, emplacement avenue de France 20-22.",
+            "Jours de collecte organique, papier et ordures selon le calendrier de la Ville de Genève, avec reports lors des jours fériés."
+          ]
+        },
+        {
+          "t": "liste",
+          "titre": "Objets trouvés",
+          "items": [
+            "Dépôt à la ##réception MDP##, du lundi au vendredi de 8h à 17h.",
+            "##Hors horaires## : rapport écrit, puis dépôt au coffre-fort sécurité MDP."
+          ]
+        },
+        {
+          "t": "liste",
+          "titre": "Gestion d'events",
+          "items": [
+            "Vérifier le matériel de secours : trousse, extincteurs, défibrillateur.",
+            "Contrôler que les voies de fuite restent dégagées.",
+            "Filtrage à l'entrée si le client le demande.",
+            "Sécurité des biens et des personnes pendant toute la durée de l'événement."
+          ]
+        },
+        {
+          "t": "liste",
+          "titre": "Divers",
+          "items": [
+            "##Salage et déneigement## — parvis et allée, avec le service FM en semaine ; prendre l'initiative le week-end.",
+            "##Assistance PMR## — protocole en cas de crise d'épilepsie disponible sur demande.",
+            "##Rapport écrit obligatoire## pour chaque incident, objet trouvé ou intervention hors routine."
+          ]
+        },
+        {
+          "t": "liste",
+          "titre": "Tenue et comportement",
+          "items": [
+            "Polo et veste sécurité, pantalon noir, chaussures noires.",
+            "Interdit : fumer ou téléphoner en présence des clients, familiarité avec les clients, le staff ou les étudiants, entrer dans une chambre sans autorisation, regarder dans les chambres lors des rondes en coursives."
+          ]
+        },
+        {
+          "t": "liste",
+          "titre": "Stationnement",
+          "items": [
+            "Parking souterrain MDP uniquement, comme pour MDP.",
+            "Stationnement devant P1 et P2 interdit sauf urgence.",
+            "Signaler tout véhicule stationné sur un accès pompiers."
+          ]
+        }
+      ]
     },
     {
       "statut": "complet",
