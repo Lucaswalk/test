@@ -73,6 +73,7 @@
   <div class="barre">
     <select id="selSite"></select>
     <input id="nomEditeur" type="text" placeholder="Votre nom" autocomplete="off">
+    <button type="button" id="btnNouveau" class="vert">+ Nouveau client</button>
     <button type="button" id="btnImport">Importer un fiches.js</button>
     <input type="file" id="fichierImport" accept=".js" hidden>
   </div>
@@ -166,7 +167,7 @@ function auj(){
 function rendreSelect(){
   const sel = document.getElementById('selSite');
   sel.innerHTML = DATA.sites.map((s, i) =>
-    `<option value="${i}"${i === iSite ? ' selected' : ''}>${ech(s.client)} — PROM ${ech(s.prom)}${s.etapes ? '' : '  (ancien format)'}</option>`
+    `<option value="${i}"${i === iSite ? ' selected' : ''}>${s.archive ? '🗄 ' : ''}${ech(s.client)} — PROM ${ech(s.prom)}${s.archive ? '  (archivé)' : (s.etapes ? '' : '  (ancien format)')}</option>`
   ).join('');
 }
 
@@ -236,6 +237,11 @@ function rendre(){
     ${champ("Adresse", s.adresse || '', "site|adresse")}
     ${champ("Types d'alarme, séparés par une virgule (Incendie, Effraction, Agression, Poste)", (s.types || []).join(', '), "types")}
     <div class="vide">Dernière modification : ${s.majLe ? ech(s.majLe) + (s.majPar ? ' par ' + ech(s.majPar) : '') : "jamais enregistrée par l'éditeur"}</div>
+    <div class="ajout">
+      <button type="button" class="clair" data-act="archiver">${s.archive ? 'Réactiver ce client' : 'Archiver — contrat terminé'}</button>
+      <button type="button" class="clair" data-act="supsite" style="color:#b42318;border-color:#f0c9c4;">Supprimer définitivement cette fiche</button>
+    </div>
+    ${s.archive ? `<div class="avert" style="margin:12px 0 0;">Fiche archivée${s.archiveLe ? ' le ' + ech(s.archiveLe) : ''} : elle n'apparaît plus dans les résultats de recherche des agents, mais reste consultable sous « Contrat terminé ».</div>` : ''}
   </div>`;
 
   if(!s.etapes){
@@ -305,6 +311,29 @@ function brancher(){
           if(a[1].indexOf('.') < 0){ site().etapes[parseInt(a[1], 10)].blocs.push(nb); }
           else { const b = parBloc(a[1]); b.blocs = b.blocs || []; b.blocs.push(nb); }
         }
+        else if(type === 'archiver'){
+          const s2 = site();
+          if(s2.archive){
+            if(!confirm("Réactiver « " + s2.client + " » ? La fiche réapparaîtra normalement dans la recherche des agents.")) return;
+            delete s2.archive; delete s2.archiveLe;
+          } else {
+            if(!confirm("Archiver « " + s2.client + " » ?\n\nLa fiche sortira des résultats de recherche des agents et s'affichera comme contrat terminé. Rien n'est supprimé : elle reste consultable et réactivable.")) return;
+            s2.archive = true; s2.archiveLe = auj();
+          }
+          touche(); rendreSelect(); rendre();
+          return;
+        }
+        else if(type === 'supsite'){
+          const nom = site().client;
+          const saisi = prompt("Suppression définitive de la fiche « " + nom + " ».\n\nPour confirmer, recopiez le nom du client exactement :");
+          if(saisi === null) return;
+          if(saisi.trim() !== nom){ alert("Le nom ne correspond pas. Rien n'a été supprimé."); return; }
+          DATA.sites.splice(iSite, 1);
+          if(!DATA.sites.length){ alert("Il ne reste aucune fiche."); return; }
+          iSite = 0;
+          touche(); rendreSelect(); rendre();
+          return;
+        }
         else if(type === 'creeretapes'){
           site().etapes = ETAPES_MODELE.map(m => ({titre:m.titre, resume:m.resume, blocs:[]}));
         }
@@ -339,6 +368,29 @@ function charger(obj){
 }
 
 document.getElementById('selSite').addEventListener('change', e => { iSite = parseInt(e.target.value, 10); rendre(); });
+
+document.getElementById('btnNouveau').addEventListener('click', () => {
+  const nom = prompt("Nom court du nouveau client, tel qu'il s'affichera en gros sur la fiche (ex. ERGON Seujet) :");
+  if(nom === null) return;
+  if(!nom.trim()){ alert("Le nom du client est obligatoire."); return; }
+  if(DATA.sites.some(x => x.client.toLowerCase() === nom.trim().toLowerCase())){
+    alert("Une fiche porte déjà ce nom. Choisissez-en un autre, ou modifiez la fiche existante.");
+    return;
+  }
+  const prom = prompt("Code PROM du site (laisser vide si aucun — la fiche restera alors introuvable par une recherche PROM, seulement par le nom du client) :") || "";
+  DATA.sites.push({
+    statut: "complet",
+    prom: prom.trim(),
+    client: nom.trim(),
+    nomComplet: "",
+    types: [],
+    adresse: "",
+    etapes: ETAPES_MODELE.map(m => ({titre:m.titre, resume:m.resume, blocs:[]}))
+  });
+  iSite = DATA.sites.length - 1;
+  touche(); rendreSelect(); rendre();
+  window.scrollTo(0, 0);
+});
 
 document.getElementById('btnImport').addEventListener('click', () => document.getElementById('fichierImport').click());
 document.getElementById('fichierImport').addEventListener('change', e => {

@@ -271,6 +271,12 @@
   footer.app-footer b{color:var(--text);}
 
   /* ----- Parcours d'intervention en étapes ----- */
+  .addr-postale{margin-top:6px;font-size:13.5px;font-weight:600;color:var(--navy-2);}
+  .archive-titre{margin:18px 4px 8px;font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.4px;}
+  .row.archive{opacity:.62;}
+  .tiny-flag.arch{background:#fdecea;color:#7a2015;border-color:#f3c6c0;}
+  .archive-bandeau{margin:14px 16px 0;padding:12px 14px;border-radius:10px;background:#fdecea;
+    border:1px solid #f3c6c0;color:#7a2015;font-size:13px;font-weight:600;line-height:1.5;}
   .maj-info{margin-top:7px;font-size:11.5px;color:var(--muted);}
   .step-count{padding:14px 20px 4px;font-size:12.5px;color:var(--muted);font-weight:600;}
   .steps-wrap{padding:6px 16px 0;}
@@ -752,16 +758,20 @@ function render(){
   placeholderEl.style.display = 'none';
   listEl.style.display = 'flex';
 
-  const filtered = SITES.filter(s => (activeType==='all' || s.types.includes(activeType)) && matchesProm(s, promQ) && matchesName(s, nameQ));
+  const trouves = SITES.filter(s => (activeType==='all' || s.types.includes(activeType)) && matchesProm(s, promQ) && matchesName(s, nameQ));
+  const filtered = trouves.filter(s => !s.archive);
+  const archives = trouves.filter(s => s.archive);
 
   listEl.innerHTML = '';
-  if(filtered.length === 0){
+  if(filtered.length === 0 && archives.length === 0){
     emptyEl.style.display = 'block';
     resultsCountEl.textContent = '';
     return;
   }
   emptyEl.style.display = 'none';
-  resultsCountEl.textContent = filtered.length + ' site' + (filtered.length>1?'s':'') + ' trouvé' + (filtered.length>1?'s':'');
+  resultsCountEl.textContent = filtered.length
+    ? filtered.length + ' site' + (filtered.length>1?'s':'') + ' trouvé' + (filtered.length>1?'s':'')
+    : 'Aucun site actif';
 
   filtered.forEach((s) => {
     const realIdx = SITES.indexOf(s);
@@ -780,6 +790,26 @@ function render(){
     row.addEventListener('click', () => showDetail(realIdx));
     listEl.appendChild(row);
   });
+
+  if(archives.length){
+    const t = document.createElement('div');
+    t.className = 'archive-titre';
+    t.textContent = archives.length > 1 ? 'Contrats terminés' : 'Contrat terminé';
+    listEl.appendChild(t);
+    archives.forEach((s) => {
+      const realIdx = SITES.indexOf(s);
+      const row = document.createElement('div');
+      row.className = 'row archive';
+      row.innerHTML = `
+        <div class="rl">
+          <div class="prom">PROM ${s.prom}</div>
+          <div class="name">${s.client} <span class="tiny-flag arch">Contrat terminé</span></div>
+          <div class="addr">RDZ n'intervient plus sur ce site${s.archiveLe ? ' depuis le ' + s.archiveLe : ''} — fiche conservée pour consultation</div>
+        </div>`;
+      row.addEventListener('click', () => showDetail(realIdx));
+      listEl.appendChild(row);
+    });
+  }
 }
 
 function fieldsHtmlPartial(site){
@@ -832,7 +862,7 @@ function fieldsHtmlPartial(site){
 function fmtPoint(str){
   if(!str) return '';
   return String(str)
-    .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+    .replace(/</g, '&lt;').replace(/>/g, '&gt;')
     .replace(/\[\[([^|\]]+)\|([^\]]+)\]\]/g, '<a href="$2" target="_blank" rel="noopener">$1</a>')
     .replace(/##(.+?)##/g, '<span class="pt-label">$1</span>')
     .replace(/~~(.+?)~~/g, '<span class="pt-code">$1</span>')
@@ -927,13 +957,15 @@ function etapesHtml(site){
         <div>
           <div class="prom-big">PROM ${site.prom}</div>
           <h2>${site.client}</h2>
-          <div class="addr">${site.nomComplet}</div>
+          <div class="addr">${fmtPoint(site.nomComplet)}</div>
+          ${site.adresse ? `<div class="addr-postale">${fmtPoint(site.adresse)}</div>` : ''}
           ${site.majLe ? `<div class="maj-info">Fiche mise à jour le ${site.majLe}${site.majPar ? ' par ' + site.majPar : ''}</div>` : ''}
         </div>
         <div class="badge-row">${site.types.map(t => `<div class="badge ${t}">${t}</div>`).join('')}</div>
       </div>
     </div>
 
+    ${site.archive ? `<div class="archive-bandeau">Contrat terminé${site.archiveLe ? ' le ' + site.archiveLe : ''} — RDZ n'intervient plus sur ce site. Fiche conservée pour consultation uniquement.</div>` : ''}
     <div class="step-count" id="stepCount"></div>
     <div class="steps-wrap">${steps}</div>
 
@@ -1165,6 +1197,14 @@ function showDetail(index){
       <button class="btn ghost" id="closeBtn">Fermer la fiche</button>
     </div>
   `;
+  if(SITES[index] && SITES[index].archive && !detailEl.querySelector('.archive-bandeau')){
+    const d = document.createElement('div');
+    d.className = 'archive-bandeau';
+    d.textContent = "Contrat terminé" + (SITES[index].archiveLe ? ' le ' + SITES[index].archiveLe : '') +
+      " — RDZ n'intervient plus sur ce site. Fiche conservée pour consultation uniquement.";
+    detailEl.insertBefore(d, detailEl.firstChild);
+  }
+
   brancherEtapes();
   document.getElementById('backBtn').addEventListener('click', closeDetail);
   document.getElementById('closeBtn').addEventListener('click', closeDetail);
