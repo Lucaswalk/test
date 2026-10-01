@@ -240,7 +240,498 @@ window.RDZ_FICHES = {
         "A.04 — Interdiction d'entrée : formulaire vierge et procédure (aucune interdiction nominative reçue à ce jour)"
       ],
       "majLe": "2026-09-24",
-      "majPar": "Gimenez"
+      "majPar": "Gimenez",
+      "etapes": [
+        {
+          "titre": "Le site",
+          "resume": "Ce que l'agent doit savoir avant d'arriver",
+          "blocs": [
+            {
+              "t": "kv",
+              "items": [
+                {
+                  "k": "PROM incendie — bâtiment",
+                  "v": "466 874",
+                  "code": true
+                },
+                {
+                  "k": "PROM incendie — piscine",
+                  "v": "466 852",
+                  "code": true
+                },
+                {
+                  "k": "PROM effraction",
+                  "v": "461 324",
+                  "code": true
+                },
+                {
+                  "k": "Identification Certas",
+                  "v": "Complément à 30, pour les trois transmetteurs"
+                },
+                {
+                  "k": "Client",
+                  "v": "ERGON — propriété privée de Bellevue"
+                },
+                {
+                  "k": "Occupation",
+                  "v": "Propriétaires de façon ponctuelle · agriculteur, jardinier, intendant, cuisiniers · visiteurs"
+                }
+              ]
+            },
+            {
+              "t": "gps",
+              "titre": "Y aller",
+              "items": [
+                {
+                  "label": "Accès par le portail n°2",
+                  "dest": "Chemin des Tuileries 3-5, 1293 Bellevue"
+                }
+              ]
+            },
+            {
+              "t": "stop",
+              "lab": "Alarme enclenchée 24h/24",
+              "txt": "##Prévenir Certas avant chaque ouverture et chaque fermeture.## Le site n'est jamais désarmé : toute entrée non annoncée déclenche une intervention."
+            },
+            {
+              "t": "liste",
+              "titre": "Propriété privée — ce qui est interdit",
+              "items": [
+                "##Sur-chaussures obligatoires## avant d'entrer dans le bâtiment.",
+                "Interdit : fumer ou téléphoner devant les clients, ##utiliser l'ascenseur##, ##utiliser les WC##, ##prendre des photos##.",
+                "##Ne pas ouvrir le portail n°3.##",
+                "##Ronde extérieure à pied uniquement## — jamais en véhicule.",
+                "Stationnement sous le porche de la porte d'entrée arrière, en respectant le cheminement prescrit."
+              ]
+            },
+            {
+              "t": "liste",
+              "titre": "Personnes rencontrées sur le terrain",
+              "items": [
+                "##Intrus par le bas du terrain## — raccompagner à la sortie. En cas de refus de présenter une pièce d'identité : ##117##.",
+                "##Deux chiens## entrent occasionnellement sur le site, probablement ceux du n°9 (consigne du 16.09.2026) — prendre des photos, noter la position et si possible la voie d'accès, puis rédiger un événement GuardTek. Propriétaire : ##+41 78 202 62 10##."
+              ]
+            }
+          ]
+        },
+        {
+          "titre": "Transmetteurs et codes",
+          "resume": "Trois transmetteurs, deux prestataires",
+          "blocs": [
+            {
+              "t": "kv",
+              "items": [
+                {
+                  "k": "Incendie bâtiment",
+                  "v": "~~466 874~~ — maintenance ##Technik-Alarm##"
+                },
+                {
+                  "k": "Incendie piscine",
+                  "v": "~~466 852~~ — maintenance ##Siemens##"
+                },
+                {
+                  "k": "Effraction",
+                  "v": "~~461 324~~"
+                },
+                {
+                  "k": "Identification",
+                  "v": "Complément à 30"
+                }
+              ]
+            },
+            {
+              "t": "table",
+              "titre": "Où sont les centrales et consoles",
+              "items": [
+                {
+                  "z": "Pointeau 13",
+                  "d": "Centrale d'alarme du parking"
+                },
+                {
+                  "z": "Pointeau 17",
+                  "d": "Centrale d'alarme, entrée bureau au rez"
+                },
+                {
+                  "z": "Pointeau 18",
+                  "d": "Centrale d'alarme, loge sécurité au 1er étage"
+                },
+                {
+                  "z": "Pointeaux 19 · 20 · 21",
+                  "d": "Consoles techniques : chaufferie, production de froid, « Carrier » — toutes au rez"
+                },
+                {
+                  "z": "Pointeaux 23 · 25",
+                  "d": "Consoles techniques piscine : Minerg, puis console piscine"
+                }
+              ]
+            },
+            {
+              "t": "manque",
+              "txt": "Aucun code d'accès de centrale n'est documenté pour ce site, ni pour l'effraction ni pour l'incendie. Un agent peut constater une alarme mais ne peut rien quittancer. À obtenir."
+            }
+          ]
+        },
+        {
+          "titre": "Points d'accès",
+          "resume": "Comment entrer et circuler",
+          "blocs": [
+            {
+              "t": "liste",
+              "items": [
+                "##Trousseau de clés et badge## remis en début de poste.",
+                "##Sur-chaussures## obligatoires avant d'entrer dans le bâtiment — à vérifier à la prise de poste.",
+                "Entrée du site par le ##portail n°2##. Le ##portail n°3 ne s'ouvre pas##.",
+                "##Ascenseur interdit## : escaliers uniquement."
+              ]
+            },
+            {
+              "t": "stop",
+              "lab": "Zone Garage — temporisation très courte",
+              "txt": "Avant de réarmer la zone Garage, ##attendre le « Click » d'ouverture complète##. Lancer le réarmement trop tôt fait repartir l'alarme."
+            },
+            {
+              "t": "liste",
+              "titre": "Prise de poste",
+              "items": [
+                "Annoncer sa position par ##radio##.",
+                "Vérifier le matériel, sur-chaussures comprises.",
+                "##Lancer la ronde sur GuardTek.##"
+              ]
+            }
+          ]
+        },
+        {
+          "titre": "Clés",
+          "resume": "Trousseau remis en début de poste",
+          "blocs": [
+            {
+              "t": "kv",
+              "items": [
+                {
+                  "k": "Remise",
+                  "v": "Trousseau et badge du bâtiment Bellevue, remis à la prise de poste"
+                }
+              ]
+            },
+            {
+              "t": "manque",
+              "txt": "Composition du trousseau, références des clés et correspondance clé ↔ porte : non documentées. Bellevue ne figure pas dans l'inventaire ##Clefs IS / RDZ##. À relever lors d'une prochaine prise de poste."
+            },
+            {
+              "t": "liste",
+              "titre": "S'il manque une clé",
+              "items": [
+                "##Pas d'urgence## — rapport et message à Laurent et Lucas.",
+                "##Urgence## (site non hermétique, risque pour le client) — appel direct à Laurent ou Lucas."
+              ]
+            }
+          ]
+        },
+        {
+          "titre": "Qui appeler",
+          "resume": "Dans l'ordre, du plus urgent au technique",
+          "blocs": [
+            {
+              "t": "stop",
+              "lab": "Si le natel est sur un réseau français",
+              "txt": "Bellevue est proche de la frontière : un téléphone y accroche parfois une antenne française. Dans ce cas les numéros suisses en 0… ne passent pas, et le 118 ou le 117 tombent sur les secours français. Composer le 112, qui fonctionne sur tous les réseaux, et utiliser les numéros en +41 ci-dessous."
+            },
+            {
+              "t": "tel",
+              "titre": "Urgences",
+              "items": [
+                {
+                  "nom": "Urgence tous réseaux",
+                  "role": "Fonctionne aussi depuis une antenne française — à privilégier en cas de doute",
+                  "num": "112"
+                },
+                {
+                  "nom": "Pompiers",
+                  "role": "Feu confirmé, doute non levé",
+                  "num": "118"
+                },
+                {
+                  "nom": "Police",
+                  "role": "##Effraction réelle constatée## · refus de présenter une pièce d'identité",
+                  "num": "117"
+                }
+              ]
+            },
+            {
+              "t": "tel",
+              "titre": "Centrale et astreinte",
+              "items": [
+                {
+                  "nom": "Certas",
+                  "role": "Incendie 466.874 et 466.852 · Effraction 461.324 — complément à 30. ##À prévenir avant chaque ouverture et fermeture.##",
+                  "num": "+41 844 800 811"
+                },
+                {
+                  "nom": "Astreinte RDZ",
+                  "role": "Ligne hiérarchique. Lucas Gimenez (lun-ven) · Laurent Heinrich (week-end et fériés) · Rodolphe De Zordi (en cas d'absence).",
+                  "num": "+41 79 339 13 41"
+                }
+              ]
+            },
+            {
+              "t": "tel",
+              "titre": "Client",
+              "items": [
+                {
+                  "nom": "M. Ferlicoq",
+                  "role": "Technical Manager ERGON — responsable du site, mobile",
+                  "num": "+41 79 917 32 40"
+                },
+                {
+                  "nom": "M. Ferlicoq",
+                  "role": "Technical Manager ERGON — ligne fixe",
+                  "num": "+41 22 959 03 50"
+                },
+                {
+                  "nom": "M. Guth",
+                  "role": "Directeur ERGON",
+                  "num": "+41 79 450 75 21"
+                },
+                {
+                  "nom": "M. De Zordi",
+                  "role": "Directeur RDZ",
+                  "num": "+41 76 634 17 92"
+                }
+              ]
+            },
+            {
+              "t": "stop",
+              "lab": "Ligne « Client 24/7 » — usage réservé",
+              "txt": "Le numéro direct de M. Ferlicoq en 24/7 (##+33 6 75 30 04 63## ou ##+41 22 959 07 20##) ne s'utilise qu'##avec l'accord préalable de Rodolphe ou de Guillaume##. Ce n'est pas une ligne d'astreinte ordinaire."
+            },
+            {
+              "t": "sous",
+              "titre": "Personnel du site et prestataires",
+              "blocs": [
+                {
+                  "t": "tel",
+                  "items": [
+                    {
+                      "nom": "M. Nunes",
+                      "role": "Intendant — statut à confirmer, voir les réserves en bas de fiche",
+                      "num": "+41 79 880 00 65"
+                    },
+                    {
+                      "nom": "M. Toinet",
+                      "role": "Jardinier — technique, jours ouvrables",
+                      "num": "+41 79 752 05 57"
+                    },
+                    {
+                      "nom": "M. Cretegny",
+                      "role": "Agriculteur et éleveur — mobile",
+                      "num": "+41 79 342 60 47"
+                    },
+                    {
+                      "nom": "M. Cretegny",
+                      "role": "Agriculteur et éleveur — ligne fixe",
+                      "num": "+41 22 755 13 50"
+                    },
+                    {
+                      "nom": "Technik-Alarm",
+                      "role": "Intrusion et incendie du bâtiment — transmetteur 466 874",
+                      "num": "+41 22 797 17 27"
+                    },
+                    {
+                      "nom": "Siemens",
+                      "role": "Intrusion et incendie de la piscine — transmetteur 466 852",
+                      "num": "+41 842 842 033"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "titre": "Process d'intervention",
+          "resume": "Effraction, alarme technique, fuite d'eau",
+          "blocs": [
+            {
+              "t": "num",
+              "titre": "Alarme effraction — transmetteur 461 324",
+              "court": "Effraction",
+              "items": [
+                {
+                  "a": "Contrôle extérieur complet",
+                  "d": "Faire le tour, vérifier tous les accès. ##Avant d'entrer où que ce soit.##"
+                },
+                {
+                  "a": "Appeler Certas",
+                  "d": "##Dès la fin du contrôle extérieur##, avant d'entrer dans le parking ou le bâtiment : cela limite le temps de déclenchement."
+                },
+                {
+                  "a": "Prévenir son collègue par radio",
+                  "d": "Si rien n'est constaté à l'extérieur, entrer dans le bâtiment."
+                },
+                {
+                  "a": "Identifier la zone en alarme",
+                  "d": "Puis investiguer à l'intérieur."
+                },
+                {
+                  "a": "Rendre compte",
+                  "d": "Certas, puis le client si nécessaire. Rapport GuardTek."
+                }
+              ]
+            },
+            {
+              "t": "stop",
+              "lab": "Si une effraction réelle est constatée",
+              "txt": "##NE PAS ENTRER.## Appeler immédiatement la police au ##117##, se placer en observation à distance, puis aviser l'astreinte RDZ."
+            },
+            {
+              "t": "num",
+              "titre": "Fuite d'eau",
+              "court": "Fuite d'eau",
+              "items": [
+                {
+                  "a": "Contenir",
+                  "d": "Placer des contenants sous la fuite, protéger la moquette et tout ce qui est électrique."
+                },
+                {
+                  "a": "Couper si nécessaire",
+                  "d": "Connaître à l'avance l'emplacement de la vanne — à repérer lors d'une ronde, pas au moment de la fuite."
+                },
+                {
+                  "a": "Si la fuite est importante",
+                  "d": "##Rester sur place##, joindre le superviseur et le client."
+                },
+                {
+                  "a": "Faire intervenir",
+                  "d": "Organiser une intervention externe si besoin, puis rapport GuardTek avec photos."
+                }
+              ]
+            },
+            {
+              "t": "liste",
+              "titre": "Alarme technique — 24h/24",
+              "items": [
+                "Aviser ##M. Ferlicoq##, puis l'astreinte RDZ, qui préviendra ##EQUANS##.",
+                "En cas de doute, solliciter ##Rodolphe, joignable 24h/24##."
+              ]
+            },
+            {
+              "t": "stop",
+              "lab": "Les grilles du jardin",
+              "txt": "##Toutes les grilles sont sous alarme.## Ne jamais les déplacer sans l'accord du client. En cas de déchets verts accumulés dessous : événement GuardTek avec photos, sans y toucher."
+            }
+          ]
+        }
+      ],
+      "blocsRondes": [
+        {
+          "t": "table",
+          "titre": "Fréquence",
+          "items": [
+            {
+              "z": "Nuit, lun-dim",
+              "d": "##2 rondes complètes et 2 rondes extérieures minimum.## Au moins un passage au terrain mitoyen de jour ##et## un de nuit."
+            },
+            {
+              "z": "Sam · dim · fériés, de jour",
+              "d": "2 complètes et 2 extérieures, ou 3 complètes — environ 40 minutes par ronde"
+            },
+            {
+              "z": "En cas de retard",
+              "d": "Un seul passage au terrain mitoyen est toléré par nuit, ##à justifier auprès du superviseur##"
+            },
+            {
+              "z": "Règle générale",
+              "d": "##Varier les heures de passage## : la régularité se repère de l'extérieur"
+            }
+          ]
+        },
+        {
+          "t": "table",
+          "titre": "Parcours extérieur (1 à 12)",
+          "items": [
+            {
+              "z": "1",
+              "d": "Portail entrée 5 — départ de ronde"
+            },
+            {
+              "z": "2 · 3 · 4",
+              "d": "Porte principale du bâtiment · porte droite passerelle · porte arrière"
+            },
+            {
+              "z": "5 · 6",
+              "d": "Porte de sortie de secours piscine · Portail 3"
+            },
+            {
+              "z": "7 · 8",
+              "d": "Porte du local technique cascade, à l'extérieur · porte tourniquet"
+            },
+            {
+              "z": "9 · 10 · 11",
+              "d": "Sortie de secours du bâtiment, côté · porte gauche passerelle · porte sous passerelle"
+            },
+            {
+              "z": "12",
+              "d": "Porte de l'escalier de secours du parking — ##marque officiellement la fin du parcours extérieur##"
+            }
+          ]
+        },
+        {
+          "t": "table",
+          "titre": "Parcours intérieur (13 à 28)",
+          "items": [
+            {
+              "z": "13 à 16",
+              "d": "Centrale d'alarme du parking · groupe de secours 1 · local technique entretien · groupe de secours 2"
+            },
+            {
+              "z": "17 · 18",
+              "d": "Centrale d'alarme entrée bureau au rez · centrale d'alarme loge sécurité au 1er"
+            },
+            {
+              "z": "19 · 20 · 21",
+              "d": "Consoles techniques : chaufferie près de la porte d'entrée du rez, production de froid, « Carrier »"
+            },
+            {
+              "z": "22 à 26",
+              "d": "Zone piscine 1 · console Minerg · zone piscine 2 · console piscine · sortie de secours du local technique piscine"
+            },
+            {
+              "z": "27 · 28",
+              "d": "Bureau du dernier étage · Portail entrée 5, sortie"
+            }
+          ]
+        },
+        {
+          "t": "liste",
+          "titre": "À contrôler pendant la ronde",
+          "items": [
+            "##Déchets verts## : vérifier l'absence d'accumulation sous les grilles du jardin — sans jamais les déplacer.",
+            "Absence de problème technique apparent : fuites, dégâts, verrouillage.",
+            "Présence de personnes sur le terrain, en particulier par le bas de la propriété."
+          ]
+        }
+      ],
+      "blocsNotes": [
+        {
+          "t": "liste",
+          "titre": "Tenue et comportement",
+          "items": [
+            "Polo et veste sécurité, pantalon noir, chaussures noires, ##sur-chaussures## dans le bâtiment.",
+            "Interdit : fumer ou téléphoner devant les clients, utiliser l'ascenseur, utiliser les WC, prendre des photos, ouvrir le portail n°3, faire la ronde extérieure en véhicule."
+          ]
+        },
+        {
+          "t": "liste",
+          "titre": "Réserves sur les données",
+          "items": [
+            "Le cahier des charges du 01.04.2026 indique à la fois qu'##il n'y a pas d'intendant permanent## sur site et liste ##M. Nunes comme intendant## avec un numéro actif — statut réel à vérifier.",
+            "L'adresse figure comme « Chemin des Tuileries 3 » sur la page de localisation et « 3-5 » ailleurs dans le même document.",
+            "La numérotation des annexes ne concorde pas avec les noms de fichiers reçus : l'interdiction d'entrée est tantôt A.03, tantôt A.04.",
+            "Le formulaire « Interdiction d'entrée » reçu est un ##gabarit vierge## : aucune interdiction nominative en cours pour ce site.",
+            "##Aucun code de centrale## n'a été communiqué pour ce site."
+          ]
+        }
+      ]
     },
     {
       "statut": "complet",
@@ -339,6 +830,413 @@ window.RDZ_FICHES = {
         "S.01 — Porte automatique du sas jours fériés/week-end",
         "S.02 — Ronde extérieure Collex (itinéraire et pointeaux)",
         "S.03 — Interdiction de site (formulaire vierge, procédure)"
+      ],
+      "etapes": [
+        {
+          "titre": "Le site",
+          "resume": "Ce que l'agent doit savoir avant d'arriver",
+          "blocs": [
+            {
+              "t": "kv",
+              "items": [
+                {
+                  "k": "PROM incendie",
+                  "v": "320 805",
+                  "code": true
+                },
+                {
+                  "k": "Effraction",
+                  "v": "##Pas de code numérique dédié## — l'alarme se gère par badge et trousseau"
+                },
+                {
+                  "k": "Identification Certas",
+                  "v": "Complément à 30"
+                },
+                {
+                  "k": "Client",
+                  "v": "ERGON — site de Collex"
+                },
+                {
+                  "k": "Occupation",
+                  "v": "Bâtiment vide la plupart du temps. Ponctuellement des techniciens et des visiteurs."
+                }
+              ]
+            },
+            {
+              "t": "gps",
+              "titre": "Y aller",
+              "items": [
+                {
+                  "label": "Stationner devant la grille de chantier d'entrée",
+                  "dest": "Route de Collex 45, 1293 Bellevue"
+                }
+              ]
+            },
+            {
+              "t": "stop",
+              "lab": "Recherche dans l'appli",
+              "txt": "L'effraction n'a pas de code PROM. Ce site se trouve par le PROM incendie ~~320 805~~ ou en tapant ##Collex## dans le champ nom du client."
+            },
+            {
+              "t": "liste",
+              "titre": "Règles du site",
+              "items": [
+                "##Sur-chaussures obligatoires en cas de pluie.##",
+                "##Ronde extérieure à pied uniquement## — jamais en voiture.",
+                "Interdit : fumer, appels personnels en présence de clients, ##prendre des photos##.",
+                "##Parking occupé le week-end## — location probable par le Country Club voisin : faire un rapport et ##laisser les véhicules en place##."
+              ]
+            }
+          ]
+        },
+        {
+          "titre": "Transmetteurs et codes",
+          "resume": "Un seul transmetteur, pas de code de centrale",
+          "blocs": [
+            {
+              "t": "kv",
+              "items": [
+                {
+                  "k": "Incendie",
+                  "v": "PROM ~~320 805~~, complément à 30"
+                },
+                {
+                  "k": "Effraction",
+                  "v": "Gérée par badge et trousseau, sans transmetteur numéroté"
+                }
+              ]
+            },
+            {
+              "t": "manque",
+              "txt": "##Aucun code de centrale n'est documenté pour ce site## — ni pour l'incendie, ni pour l'effraction. Un agent peut constater une alarme mais ne peut rien quittancer sur place. À obtenir."
+            }
+          ]
+        },
+        {
+          "titre": "Points d'accès",
+          "resume": "Une entrée peu évidente, à connaître avant d'arriver",
+          "blocs": [
+            {
+              "t": "num",
+              "titre": "Entrer dans le bâtiment",
+              "items": [
+                {
+                  "a": "Depuis le parking, longer le bâtiment par la gauche",
+                  "d": ""
+                },
+                {
+                  "a": "Descendre l'escalier",
+                  "d": "Il est ##caché derrière le buisson## — c'est le point que personne ne trouve la première fois."
+                },
+                {
+                  "a": "Ouvrir la porte rouge",
+                  "d": "Avec la ##clé pass##."
+                },
+                {
+                  "a": "Traverser le parking",
+                  "d": "Jusqu'à une ##double porte sur la gauche##."
+                },
+                {
+                  "a": "Traverser le vestibule",
+                  "d": "Jusqu'aux ascenseurs."
+                },
+                {
+                  "a": "Monter au rez-de-chaussée",
+                  "d": "Puis traverser le hall d'entrée jusqu'aux portes automatiques."
+                }
+              ]
+            },
+            {
+              "t": "num",
+              "titre": "Ressortir si les portes sont verrouillées",
+              "items": [
+                {
+                  "a": "Prendre l'ascenseur jusqu'au niveau -1",
+                  "d": ""
+                },
+                {
+                  "a": "Passer la double porte du vestibule",
+                  "d": "##À refermer à clé derrière soi.##"
+                },
+                {
+                  "a": "Sortir par la porte de secours",
+                  "d": "Au fond du parking."
+                }
+              ]
+            },
+            {
+              "t": "liste",
+              "titre": "Portes automatiques du hall",
+              "items": [
+                "##Boîtier de commande## : dans le hall, ##sur le mur de gauche##, près des portes automatiques.",
+                "Bouton rond central = menu.",
+                "Flèche droite jusqu'à la lettre ##O## = ouvrir · flèche gauche jusqu'à la lettre ##F## = fermer et verrouiller.",
+                "Valider avec le bouton central."
+              ]
+            },
+            {
+              "t": "stop",
+              "lab": "Porte automatique du sas",
+              "txt": "La programmation ne fait ##aucune distinction entre la semaine et le week-end##, malgré le nom de l'annexe. La première porte s'ouvre pour le facteur ; ##la seconde doit impérativement rester verrouillée##. ##Ne jamais intervenir sur la programmation.##"
+            }
+          ]
+        },
+        {
+          "titre": "Clés",
+          "resume": "Trousseau et badge — à récupérer à la loge REGM",
+          "blocs": [
+            {
+              "t": "kv",
+              "items": [
+                {
+                  "k": "Où les récupérer",
+                  "v": "##Loge REGM##, avant la prise de poste — trousseau, badge et téléphone de patrouille"
+                }
+              ]
+            },
+            {
+              "t": "liste",
+              "titre": "Élément connu",
+              "items": [
+                "##Clé pass## — ouvre la porte rouge de l'entrée, en bas de l'escalier caché."
+              ]
+            },
+            {
+              "t": "manque",
+              "txt": "Composition complète du trousseau et références des clés non documentées. L'inventaire ##Clefs IS / RDZ## contient six clés Papeterie et Collex, toutes sans désignation : c'est l'occasion de les identifier."
+            },
+            {
+              "t": "liste",
+              "titre": "S'il manque une clé",
+              "items": [
+                "##Pas d'urgence## — rapport et message à Laurent et Lucas.",
+                "##Urgence## (site non hermétique, risque pour le client) — appel direct à Laurent ou Lucas."
+              ]
+            }
+          ]
+        },
+        {
+          "titre": "Qui appeler",
+          "resume": "Dans l'ordre, du plus urgent au technique",
+          "blocs": [
+            {
+              "t": "stop",
+              "lab": "Si le natel est sur un réseau français",
+              "txt": "Collex est proche de la frontière : un téléphone y accroche parfois une antenne française. Dans ce cas les numéros suisses en 0… ne passent pas, et le 118 ou le 117 tombent sur les secours français. Composer le 112, qui fonctionne sur tous les réseaux, et utiliser les numéros en +41 ci-dessous."
+            },
+            {
+              "t": "tel",
+              "titre": "Urgences",
+              "items": [
+                {
+                  "nom": "Urgence tous réseaux",
+                  "role": "Fonctionne aussi depuis une antenne française — à privilégier en cas de doute",
+                  "num": "112"
+                },
+                {
+                  "nom": "Pompiers",
+                  "role": "Feu confirmé, doute non levé",
+                  "num": "118"
+                },
+                {
+                  "nom": "Police",
+                  "role": "Effraction réelle, occupation de la cabane, refus de légitimation",
+                  "num": "117"
+                },
+                {
+                  "nom": "Police Municipale",
+                  "role": "Dim-mer 6h-minuit · Jeu-sam 6h-3h",
+                  "num": "+41 22 418 22 22"
+                }
+              ]
+            },
+            {
+              "t": "tel",
+              "titre": "Centrale et astreinte",
+              "items": [
+                {
+                  "nom": "Certas",
+                  "role": "Incendie 320.805 — complément à 30",
+                  "num": "+41 844 800 811"
+                },
+                {
+                  "nom": "Téléphone de patrouille",
+                  "role": "Ligne du poste",
+                  "num": "+41 22 552 26 99"
+                },
+                {
+                  "nom": "Astreinte RDZ",
+                  "role": "Ligne hiérarchique. Lucas Gimenez (lun-ven) · Laurent Heinrich (week-end et fériés) · Rodolphe De Zordi (en cas d'absence).",
+                  "num": "+41 79 339 13 41"
+                }
+              ]
+            },
+            {
+              "t": "tel",
+              "titre": "Client et technique",
+              "items": [
+                {
+                  "nom": "M. Cédric Nunes",
+                  "role": "Responsable technique — ##c'est lui qu'on appelle en cas d'alarme incendie##. Joignable à toute heure, par téléphone de préférence.",
+                  "num": "+41 79 880 00 65"
+                },
+                {
+                  "nom": "M. Ferlicoq",
+                  "role": "Technical Manager ERGON — mobile",
+                  "num": "+41 79 917 32 40"
+                },
+                {
+                  "nom": "M. Ferlicoq",
+                  "role": "Technical Manager ERGON — ligne fixe",
+                  "num": "+41 22 959 03 50"
+                },
+                {
+                  "nom": "M. De Zordi",
+                  "role": "Directeur RDZ",
+                  "num": "+41 76 634 17 92"
+                }
+              ]
+            },
+            {
+              "t": "stop",
+              "lab": "Erreur dans le cahier des charges",
+              "txt": "Le CDC du 01.04.2026 annonce « Astreinte téléphonique RDZ 24h/7j : ~~+41 22 552 26 99~~ ». C'est le ##téléphone de patrouille##, pas l'astreinte. L'astreinte RDZ est le ##+41 79 339 13 41##."
+            }
+          ]
+        },
+        {
+          "titre": "Process d'intervention",
+          "resume": "Alarme incendie, intrusions, fermeture",
+          "blocs": [
+            {
+              "t": "num",
+              "titre": "Alarme incendie",
+              "court": "Alarme feu",
+              "items": [
+                {
+                  "a": "Prendre l'information",
+                  "d": "L'intervention part d'un appel du client ou de Certas."
+                },
+                {
+                  "a": "Appeler M. Nunes",
+                  "d": "C'est la procédure propre à ce site : le concierge est prévenu dès le départ."
+                },
+                {
+                  "a": "Se rendre sur place et lever le doute",
+                  "d": "Entrée par l'escalier caché, porte rouge, clé pass."
+                },
+                {
+                  "a": "Si le feu est confirmé",
+                  "d": "##118##, accueil et guidage des secours. Ne pas tenter de réarmer : aucun code de centrale n'est disponible sur ce site."
+                },
+                {
+                  "a": "Rendre compte",
+                  "d": "Certas, M. Nunes, puis rapport GuardTek."
+                }
+              ]
+            },
+            {
+              "t": "liste",
+              "titre": "Personnes non autorisées",
+              "items": [
+                "##Cabane occupée dans les bois##, traces de squat, soirée en cours : signaler et consigner.",
+                "##Parking sauvage## : rapport, sans faire déplacer les véhicules.",
+                "Refus de légitimation ou occupation persistante : ##117##.",
+                "Rapport GuardTek systématique."
+              ]
+            },
+            {
+              "t": "liste",
+              "titre": "Fermeture",
+              "items": [
+                "S'assurer que ##tous les accès sont verrouillés##.",
+                "Accompagner le personnel présent sur site si nécessaire.",
+                "Vérifier que la seconde porte du sas est bien restée verrouillée."
+              ]
+            }
+          ]
+        }
+      ],
+      "blocsRondes": [
+        {
+          "t": "kv",
+          "items": [
+            {
+              "k": "Nuit",
+              "v": "##2 rondes minimum## — une avant minuit, une après. Horaires indicatifs : ronde complète en cas de doute ou de bruit inhabituel."
+            },
+            {
+              "k": "Sam · dim · fériés",
+              "v": "2 rondes extérieures"
+            },
+            {
+              "k": "Règle",
+              "v": "##Passer obligatoirement par la cabane à chaque passage.##"
+            }
+          ]
+        },
+        {
+          "t": "table",
+          "titre": "Parcours — 8 points",
+          "items": [
+            {
+              "z": "1",
+              "d": "Face arrière du bâtiment — étanchéité des deux portes de secours, des fenêtres et des grilles ; dégradations, graffitis, déchets"
+            },
+            {
+              "z": "2",
+              "d": "##Cabane## — traces de squat, déchets, soirées interdites"
+            },
+            {
+              "z": "3",
+              "d": "Portes principales — vérifier le verrouillage. ##La première peut s'ouvrir en semaine, c'est normal.##"
+            },
+            {
+              "z": "4",
+              "d": "Entrée du parking, au sous-sol"
+            },
+            {
+              "z": "5",
+              "d": "Local TGBT et chaufferie — ##le mode « chaud » est normal##. Vérifier aussi l'arrivée d'eau du bâtiment."
+            },
+            {
+              "z": "6 · 7 · 8",
+              "d": "Rez, 1er et 2e étage — contrôle du local électrique à chaque niveau, et fermeture des toilettes près des ascenseurs"
+            }
+          ]
+        }
+      ],
+      "blocsNotes": [
+        {
+          "t": "liste",
+          "titre": "Tenue et comportement",
+          "items": [
+            "Polo et veste sécurité, pantalon noir, chaussures noires.",
+            "Sur-chaussures en cas de pluie.",
+            "Interdit : fumer, appels personnels devant les clients, prendre des photos."
+          ]
+        },
+        {
+          "t": "liste",
+          "titre": "Interdiction de site",
+          "items": [
+            "Formulaire « Interdiction d'entrée dans un bâtiment », notifié par la direction d'Ergon SA.",
+            "##Durée maximale : 36 mois.## Prend effet dès la notification.",
+            "En cas de non-respect : ##plainte pénale pour violation de domicile, art. 186 CP##.",
+            "##Copie systématique à la Police cantonale.##",
+            "La personne concernée signe, reçoit une copie en mains propres, et peut demander une reconsidération auprès d'Ergon SA.",
+            "C'est un ##gabarit vierge## : aucune interdiction nominative transmise pour ce site à ce jour."
+          ]
+        },
+        {
+          "t": "liste",
+          "titre": "Réserves sur les données",
+          "items": [
+            "Le formulaire d'interdiction orthographie l'adresse « Colex » — coquille du document d'origine.",
+            "Le tableau des annexes du cahier des charges comporte une ligne ##« S.04 / TECHNIQUE / T.03 » tronquée##, sans description : annexe probablement non transmise, à confirmer.",
+            "##Aucun code de centrale## n'a été communiqué pour ce site."
+          ]
+        }
       ]
     },
     {
@@ -408,8 +1306,8 @@ window.RDZ_FICHES = {
       ],
       "contacts": [
         {
-          "nom": "M. Nunes",
-          "role": "Intendant du site — WhatsApp à toute heure",
+          "nom": "M. Cédric Nunes",
+          "role": "Responsable technique, Espace Versoix — demande à être ##appelé directement## pour tout problème technique, pas seulement avisé par rapport (01.10.2026). WhatsApp à toute heure.",
           "tel": "+41 79 880 00 65"
         },
         {
@@ -435,12 +1333,504 @@ window.RDZ_FICHES = {
       ],
       "astreinte": "+41 22 552 26 99 (téléphone de patrouille) — astreinte RDZ : +41 79 339 13 41. Correction (27.08.2026) : le numéro +41 79 749 35 36 précédemment relié ici à « l'astreinte RDZ » est en réalité le natel de l'agent MDP (matériel de site, sans rapport avec ce site Papeterie) ; le lien fait dans une version précédente de cette fiche entre le téléphone de patrouille et ce numéro était donc probablement erroné — à reconfirmer avec le client quel numéro joindre en priorité depuis ce site.",
       "rondes": "20h-23h (tous les jours) : ronde complète intérieure + ronde d'étanchéité bâtiment principal (~45 min). Minuit-7h : ronde d'étanchéité + contrôle extérieur parking et village (~30 min). Samedi/dimanche/fériés 7h-20h : ronde d'étanchéité + contrôle extérieur. Parcours complet : 29 pointeaux répartis en 3 zones — voir Zoning ci-dessus (bâtiment principal 1-20, zone Logements 21-23, ronde Parking 24-29).",
-      "consignes": "Intervention Archives (24h/7j) : alerte Protectas avec validation de M. Nunes → déplacement du patrouilleur pour levée de doute → désactiver l'alarme et vérifier les 6 salles d'archives → si présence : légitimation + appel 117 si nécessaire ; si RAS : rendre compte à M. Nunes par WhatsApp, réactiver l'alarme, refermer à clé, rédiger un rapport. Bâtiment bureaux : certaines zones sont confiées à des sociétés concurrentes — NE PAS ouvrir ces portes (risque d'intervention armée) ; ne pas entrer dans un bureau privé sans autorisation explicite.",
-      "particularites": "Pression sprinkler < 10 bars → rapport GuardTek immédiat + contact M. Nunes ou astreinte RDZ. Lumières automatiques du parking : rapport GuardTek en cas de dysfonctionnement. Problèmes techniques 1er niveau : consulter le RETEX sur Teams, sinon M. Nunes (jusqu'à 23h), sinon astreinte RDZ. Le site borde une voie ferrée (contour du bâtiment principal côté voie ferrée, à contrôler lors des rondes) et comprend une composante résidentielle (Villa + Logements, pointeaux 21-23 de la ronde) qui n'était pas documentée précédemment. Voisinage identifié sur le plan : « Coty Geneva SA » et « MR menuiserie agencement ».",
+      "consignes": "##CONSIGNE TEMPORAIRE — fuite d'eau 1er étage, depuis le 30.09.2026.## Fuite au plafond, goutte-à-goutte, origine probable un cumulus en fin de vie. Un seau de rétention est en place : ##le vider à chaque ronde## pour éviter le débordement, et noter l'évolution au rapport. Consigne à supprimer dès que le technicien est intervenu.\n\nIntervention Archives (24h/7j) : alerte Protectas avec validation de M. Nunes → déplacement du patrouilleur pour levée de doute → désactiver l'alarme et vérifier les 6 salles d'archives → si présence : légitimation + appel 117 si nécessaire ; si RAS : rendre compte à M. Nunes par WhatsApp, réactiver l'alarme, refermer à clé, rédiger un rapport. Bâtiment bureaux : certaines zones sont confiées à des sociétés concurrentes — NE PAS ouvrir ces portes (risque d'intervention armée) ; ne pas entrer dans un bureau privé sans autorisation explicite.",
+      "particularites": "##Problème technique constaté (fuite, panne, dégât) : téléphoner à M. Nunes.## Il l'a demandé explicitement le 01.10.2026 — le rapport écrit ne suffit pas, l'appel permet une intervention le jour même. Pression sprinkler < 10 bars → rapport GuardTek immédiat + contact M. Nunes ou astreinte RDZ. Lumières automatiques du parking : rapport GuardTek en cas de dysfonctionnement. Problèmes techniques 1er niveau : consulter le RETEX sur Teams, sinon M. Nunes (jusqu'à 23h), sinon astreinte RDZ. Le site borde une voie ferrée (contour du bâtiment principal côté voie ferrée, à contrôler lors des rondes) et comprend une composante résidentielle (Villa + Logements, pointeaux 21-23 de la ronde) qui n'était pas documentée précédemment. Voisinage identifié sur le plan : « Coty Geneva SA » et « MR menuiserie agencement ».",
       "annexes": [
         "A.01 — Accès toit (procédure sécurisée)",
         "A.02 — Ronde (parcours complet, 29 pointeaux : bâtiment principal, zone Logements, parking)",
         "A.03 — Local archives (accès et procédure d'intervention)"
+      ],
+      "etapes": [
+        {
+          "titre": "Le site",
+          "resume": "Ce que l'agent doit savoir avant d'arriver",
+          "blocs": [
+            {
+              "t": "kv",
+              "items": [
+                {
+                  "k": "PROM incendie",
+                  "v": "320 917",
+                  "code": true
+                },
+                {
+                  "k": "Effraction",
+                  "v": "Transmetteur ##Archives SETE à Versoix##, sans code numérique — alarme gérée par ##Protectas##, pas par Certas"
+                },
+                {
+                  "k": "Identification",
+                  "v": "Complément à 30"
+                },
+                {
+                  "k": "Client",
+                  "v": "ERGON — site Papeterie, avec les archives SETE Versoix"
+                },
+                {
+                  "k": "Occupation",
+                  "v": "Responsable technique avec bureau sur place · entreprises locataires · Protectas. Aux abords : promeneurs et riverains, personnes sans abri, taggeurs."
+                }
+              ]
+            },
+            {
+              "t": "gps",
+              "titre": "Y aller",
+              "items": [
+                {
+                  "label": "Stationnement sur le parking extérieur, devant l'entrée principale",
+                  "dest": "Chemin de la Papeterie 1, 1290 Versoix"
+                }
+              ]
+            },
+            {
+              "t": "stop",
+              "lab": "Recherche dans l'appli",
+              "txt": "L'effraction n'a ##pas de code PROM##. Ce site se trouve par le PROM incendie ~~320 917~~ ou en tapant ##Papeterie## dans le champ nom du client."
+            },
+            {
+              "t": "table",
+              "titre": "Organisation du site",
+              "items": [
+                {
+                  "z": "Bâtiment principal",
+                  "d": "Bureaux sur 4 étages, locaux techniques au rez, local ménage, local monobloc, local sprinkler, local arrivée d'eau."
+                },
+                {
+                  "z": "Archives SETE",
+                  "d": "6 salles d'archives, alarme propre gérée par Protectas, clavier et centrale sur place."
+                },
+                {
+                  "z": "Zone Logements",
+                  "d": "Villa, zone technique et logements — contrôle manuel de la fermeture du bâtiment extérieur."
+                },
+                {
+                  "z": "Parking couvert",
+                  "d": "Deux niveaux, portes intérieures et extérieures, escalier de secours."
+                },
+                {
+                  "z": "Toit",
+                  "d": "Accès par la porte de secours du 4e étage — voir l'étape 6, l'accès est réglementé."
+                },
+                {
+                  "z": "Abords",
+                  "d": "Village, façade côté voie ferrée. Une terrasse est explicitement ##exclue## du contrôle."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "titre": "Transmetteurs et codes",
+          "resume": "Deux alarmes, deux centrales distinctes",
+          "blocs": [
+            {
+              "t": "kv",
+              "items": [
+                {
+                  "k": "Incendie — Certas",
+                  "v": "PROM ~~320 917~~, complément à 30"
+                },
+                {
+                  "k": "Effraction Archives — Protectas",
+                  "v": "Centrale « Archives SETE à Versoix – chemin de la Papeterie », sans code numérique"
+                },
+                {
+                  "k": "Clavier alarme Archives",
+                  "v": "Toucher ##NO## pour activer le clavier, puis saisir ~~2244~~ pour armer ou désarmer. Le chiffre en bas à droite de l'écran indique le nombre de caractères saisis."
+                }
+              ]
+            },
+            {
+              "t": "stop",
+              "lab": "Centrale d'alarme Archives",
+              "txt": "Le boîtier se trouve dans la ##salle Archive 1##. ##Contacter M. Nunes avant de faire intervenir Technik Alarm##, jamais directement."
+            }
+          ]
+        },
+        {
+          "titre": "Points d'accès",
+          "resume": "Comment entrer et ouvrir",
+          "blocs": [
+            {
+              "t": "liste",
+              "items": [
+                "##Trousseau de 4 clés## — bâtiment principal, locaux techniques, parking, archives.",
+                "##Connecteurs de porte## — salle d'archives 5 et porte du couloir menant au SAS ascenseur.",
+                "##Portails et entrées extérieures## — contrôle à chaque ronde."
+              ]
+            },
+            {
+              "t": "stop",
+              "lab": "Portes à ne pas ouvrir",
+              "txt": "Dans le bâtiment bureaux, certaines zones sont confiées à des ##sociétés de sécurité concurrentes##. ##Ne pas ouvrir ces portes## : le cahier des charges mentionne un risque d'intervention armée. Les bureaux privés ne s'ouvrent pas non plus sans autorisation explicite."
+            }
+          ]
+        },
+        {
+          "titre": "Clés",
+          "resume": "Trousseau Papeterie — 4 clés",
+          "blocs": [
+            {
+              "t": "liste",
+              "titre": "Composition du trousseau",
+              "items": [
+                "Clé du ##bâtiment principal##.",
+                "Clé des ##locaux techniques##.",
+                "Clé du ##parking##.",
+                "Clé des ##archives##."
+              ]
+            },
+            {
+              "t": "manque",
+              "txt": "Références des clés non documentées. L'inventaire ##Clefs IS / RDZ## contient six clés Papeterie et Collex, toutes sans désignation : c'est l'occasion de les identifier et de les rattacher à ces quatre usages."
+            },
+            {
+              "t": "liste",
+              "titre": "S'il manque une clé",
+              "items": [
+                "##Pas d'urgence## — rapport et message à Laurent et Lucas.",
+                "##Urgence## (site non hermétique, risque pour le client) — appel direct à Laurent ou Lucas."
+              ]
+            }
+          ]
+        },
+        {
+          "titre": "Qui appeler",
+          "resume": "Dans l'ordre, du plus urgent au technique",
+          "blocs": [
+            {
+              "t": "stop",
+              "lab": "Si le natel est sur un réseau français",
+              "txt": "Versoix est proche de la frontière : un téléphone y accroche parfois une antenne française. Dans ce cas les numéros suisses en 0… ne passent pas, et le 118 ou le 117 tombent sur les secours français. Composer le 112, qui fonctionne sur tous les réseaux, et utiliser les numéros en +41 ci-dessous."
+            },
+            {
+              "t": "tel",
+              "titre": "Urgences",
+              "items": [
+                {
+                  "nom": "Urgence tous réseaux",
+                  "role": "Fonctionne aussi depuis une antenne française — à privilégier en cas de doute",
+                  "num": "112"
+                },
+                {
+                  "nom": "Pompiers",
+                  "role": "Feu confirmé, doute non levé — réseau suisse uniquement",
+                  "num": "118"
+                },
+                {
+                  "nom": "Police",
+                  "role": "Personne présente dans les archives, refus de légitimation, intrusion",
+                  "num": "117"
+                },
+                {
+                  "nom": "Police Municipale",
+                  "role": "Dim-mer 6h-minuit · Jeu-sam 6h-3h",
+                  "num": "+41 22 418 22 22"
+                }
+              ]
+            },
+            {
+              "t": "tel",
+              "titre": "Centrales d'alarme",
+              "items": [
+                {
+                  "nom": "Protectas",
+                  "role": "Centrale des archives SETE — c'est elle qui déclenche l'intervention Archives",
+                  "num": "+41 58 123 02 00"
+                },
+                {
+                  "nom": "Certas",
+                  "role": "Incendie — PROM 320 917, complément à 30",
+                  "num": "+41 844 800 811"
+                }
+              ]
+            },
+            {
+              "t": "tel",
+              "titre": "Client et technique",
+              "items": [
+                {
+                  "nom": "M. Cédric Nunes",
+                  "role": "Responsable technique du site, Espace Versoix. ##Joignable à toute heure, par téléphone de préférence## — il l'a demandé explicitement. WhatsApp également.",
+                  "num": "+41 79 880 00 65"
+                },
+                {
+                  "nom": "M. Ferlicoq",
+                  "role": "Technical Manager ERGON — mobile",
+                  "num": "+41 79 917 32 40"
+                },
+                {
+                  "nom": "M. Ferlicoq",
+                  "role": "Technical Manager ERGON — ligne fixe",
+                  "num": "+41 22 959 03 50"
+                }
+              ]
+            },
+            {
+              "t": "tel",
+              "titre": "RDZ",
+              "items": [
+                {
+                  "nom": "Téléphone de patrouille",
+                  "role": "Ligne du poste",
+                  "num": "+41 22 552 26 99"
+                },
+                {
+                  "nom": "Astreinte RDZ",
+                  "role": "Ligne hiérarchique. Lucas Gimenez (lun-ven) · Laurent Heinrich (week-end et fériés) · Rodolphe De Zordi (en cas d'absence).",
+                  "num": "+41 79 339 13 41"
+                },
+                {
+                  "nom": "M. De Zordi",
+                  "role": "Directeur RDZ",
+                  "num": "+41 76 634 17 92"
+                }
+              ]
+            },
+            {
+              "t": "stop",
+              "lab": "Deux erreurs dans le cahier des charges",
+              "txt": "Le CDC du 01.04.2026 annonce ##deux numéros différents## comme « astreinte RDZ 24h/7j » : le ~~+41 79 749 35 36~~ en page Équipement, qui est le natel de l'agent MDP, et le ~~+41 22 552 26 99~~ en page Contacts, qui est le téléphone de patrouille. ##Ni l'un ni l'autre n'est l'astreinte.## Le bon numéro est le ##+41 79 339 13 41##."
+            }
+          ]
+        },
+        {
+          "titre": "Process d'intervention",
+          "resume": "Archives, incendie, eau, accès toit",
+          "blocs": [
+            {
+              "t": "num",
+              "titre": "Intervention Archives SETE — 24h/7j",
+              "court": "Archives",
+              "items": [
+                {
+                  "a": "Alerte Protectas",
+                  "d": "L'intervention est déclenchée par ##Protectas##, qui a préalablement obtenu la validation de ##M. Nunes##."
+                },
+                {
+                  "a": "Déplacement",
+                  "d": "Le patrouilleur se rend sur place pour la levée de doute, avec le renfort de l'agent REGM."
+                },
+                {
+                  "a": "Levée de doute",
+                  "d": "Désactiver l'alarme — touche ##NO## puis code ~~2244~~ — et contrôler les ##6 salles d'archives##."
+                },
+                {
+                  "a": "Si quelqu'un est présent",
+                  "d": "Demander la légitimation, appeler le ##117## si nécessaire. Ne pas intervenir seul face à une personne."
+                },
+                {
+                  "a": "Si rien n'est constaté",
+                  "d": "Rendre compte à ##M. Nunes par WhatsApp, à toute heure##, réactiver l'alarme, refermer la porte à clé."
+                },
+                {
+                  "a": "Consigner",
+                  "d": "Rapport d'intervention GuardTek dans tous les cas."
+                }
+              ]
+            },
+            {
+              "t": "liste",
+              "titre": "Alarme incendie",
+              "items": [
+                "Intervention sur appel du client ou de Certas.",
+                "Gestion et quittancement d'une ##petite alarme##.",
+                "Si feu confirmé : ##118##, accueil des secours, évacuation des occupants vers les points de rassemblement.",
+                "##Appeler M. Nunes## dans tous les cas."
+              ]
+            },
+            {
+              "t": "num",
+              "titre": "Fuite d'eau — coupure générale",
+              "court": "Fuite d'eau",
+              "items": [
+                {
+                  "a": "Se rendre au pointeau 11",
+                  "d": "Local d'arrivée d'eau, dans les locaux techniques."
+                },
+                {
+                  "a": "Fermer la vanne rouge",
+                  "d": "C'est l'arrivée générale. Coupure ##sur ordre du client ou de l'intendant##, ou en cas de fuite avérée."
+                },
+                {
+                  "a": "Aviser immédiatement",
+                  "d": "##Téléphoner à M. Nunes##, puis l'astreinte RDZ si injoignable."
+                },
+                {
+                  "a": "Consigner",
+                  "d": "Rapport GuardTek immédiat, avec photo."
+                }
+              ]
+            },
+            {
+              "t": "stop",
+              "lab": "Accès au toit",
+              "txt": "##De jour uniquement.## Interdit la nuit, et interdit par vent ou par pluie. ##Informer son binôme avant de monter.##\nItinéraire : porte de secours au milieu du 4e étage, descendre d'un demi-étage, monter les escaliers métalliques jusqu'en haut. Sur le toit, suivre la flèche vers le local technique ##en restant éloigné du bord##."
+            },
+            {
+              "t": "liste",
+              "titre": "Problème technique de 1er niveau",
+              "items": [
+                "Consulter d'abord le ##RETEX sur Teams##.",
+                "Si le doute persiste : ##téléphoner à M. Nunes##.",
+                "En cas d'urgence ou s'il est injoignable : astreinte RDZ, 24h/7j."
+              ]
+            },
+            {
+              "t": "liste",
+              "titre": "Personnes non autorisées",
+              "items": [
+                "Signalement et refoulement des personnes sans abri, squatteurs et taggeurs.",
+                "Rapport GuardTek systématique, avec ##photo## pour les graffitis et les dégradations."
+              ]
+            }
+          ]
+        }
+      ],
+      "blocsRondes": [
+        {
+          "t": "table",
+          "titre": "Horaires",
+          "items": [
+            {
+              "z": "Lun-dim 20h-23h",
+              "d": "Ronde complète intérieure et ronde d'étanchéité du bâtiment principal — environ 45 minutes"
+            },
+            {
+              "z": "Minuit-7h, tous les jours",
+              "d": "Ronde d'étanchéité, contrôle extérieur du parking et du village — environ 30 minutes"
+            },
+            {
+              "z": "Sam · dim · fériés 7h-20h",
+              "d": "Ronde d'étanchéité et contrôle extérieur"
+            }
+          ]
+        },
+        {
+          "t": "stop",
+          "lab": "Numérotation des pointeaux",
+          "txt": "Le cahier des charges place le sprinkler au pointeau 18 et la vanne d'eau au pointeau 21 : ##c'est faux##. Les numéros ci-dessous sont ceux de l'annexe A.02, qui fait foi."
+        },
+        {
+          "t": "table",
+          "titre": "Parcours — bâtiment principal (1 à 20)",
+          "items": [
+            {
+              "z": "1 · 2 · 3",
+              "d": "Entrée du site, puis contour du bâtiment côté voie ferrée. ##Ne pas contrôler la terrasse## signalée dans l'annexe."
+            },
+            {
+              "z": "4",
+              "d": "Entrée des locaux techniques"
+            },
+            {
+              "z": "5 · 6 · 7",
+              "d": "Local TGBT · Local IT · Sous-station"
+            },
+            {
+              "z": "8",
+              "d": "##Local SPRINKLER — contrôle de pression.## Seul le ##manomètre du haut## fait foi : il ne doit pas descendre sous ##10 bars##. Les autres jauges à zéro ou presque sont normales (confirmé par M. Nunes, 29.07.2026)."
+            },
+            {
+              "z": "9 · 10",
+              "d": "Local monobloc · Porte de secours, vérifier le verrouillage"
+            },
+            {
+              "z": "11",
+              "d": "##Local d'arrivée d'eau## — vanne générale rouge, coupure sur ordre ou en cas de fuite"
+            },
+            {
+              "z": "12 à 15",
+              "d": "Côté gauche, étages 1 à 4"
+            },
+            {
+              "z": "16 à 18",
+              "d": "Côté droit, étages 1 à 3 — les tags peuvent être à l'intérieur comme à l'extérieur"
+            },
+            {
+              "z": "19",
+              "d": "Local technique, 4e étage côté droit. Vérifier aussi les toilettes hommes et femmes : absence de fuite."
+            },
+            {
+              "z": "20",
+              "d": "Local ménage, rez côté droit"
+            }
+          ]
+        },
+        {
+          "t": "table",
+          "titre": "Parcours — zone Logements (21 à 23)",
+          "items": [
+            {
+              "z": "21 · 22 · 23",
+              "d": "Villa · Zone technique · Logements"
+            },
+            {
+              "z": "Contrôle",
+              "d": "Fermeture du bâtiment extérieur : ##porte testée manuellement##, fenêtres contrôlées visuellement"
+            }
+          ]
+        },
+        {
+          "t": "table",
+          "titre": "Parcours — parking (24 à 29)",
+          "items": [
+            {
+              "z": "24 · 25 · 26",
+              "d": "Porte intérieure, puis les deux portes extérieures"
+            },
+            {
+              "z": "27 · 28 · 29",
+              "d": "Parking intérieur 1er étage · 2e étage · escalier de secours 2e étage"
+            },
+            {
+              "z": "À contrôler",
+              "d": "Fermeture de toutes les portes, ##état des extincteurs##, issues de secours, et absence de squat ou de dégradation"
+            }
+          ]
+        },
+        {
+          "t": "liste",
+          "titre": "À chaque passage",
+          "items": [
+            "##Lumières automatiques du parking## — rapport GuardTek en cas de dysfonctionnement.",
+            "Issues de secours fermées et non obstruées.",
+            "Absence de problèmes techniques apparents : fuites, dégâts, verrouillage, éclairage défaillant.",
+            "Contrôle extérieur : village, abords, façade côté voie ferrée."
+          ]
+        }
+      ],
+      "blocsNotes": [
+        {
+          "t": "stop",
+          "lab": "Consigne temporaire — fuite d'eau au 1er étage",
+          "txt": "Depuis le 30.09.2026 : fuite au plafond, goutte-à-goutte, origine probable un cumulus en fin de vie. Un seau de rétention est en place — ##le vider à chaque ronde## et noter l'évolution au rapport. ##Consigne à supprimer dès que le technicien est intervenu.##"
+        },
+        {
+          "t": "liste",
+          "titre": "Consignes permanentes",
+          "items": [
+            "##Ne pas pénétrer dans le restaurant## — partie locataire, hors périmètre de la mission (17.09.2026).",
+            "##Sous-station sud##, au centre du bâtiment face au TGBT : un sol mouillé y est ##normal##, M. Nunes teste l'installation (confirmé le 29.07.2026). Inutile de le signaler à chaque passage."
+          ]
+        },
+        {
+          "t": "liste",
+          "titre": "Tenue et comportement",
+          "items": [
+            "Polo et veste sécurité, pantalon noir, chaussures noires.",
+            "Interdit : fumer sur le site, appels personnels sur le site."
+          ]
+        },
+        {
+          "t": "liste",
+          "titre": "Réserves sur les données",
+          "items": [
+            "Cahier des charges du 01.04.2026 et annexes A.01, A.02 et A.03 de la même date.",
+            "##Numérotation des pointeaux## : en cas de divergence, l'annexe A.02 fait foi — elle est illustrée point par point.",
+            "Le CDC annonce deux numéros erronés comme astreinte RDZ : correction à faire dans le document.",
+            "M. Nunes est désigné tantôt « intendant », tantôt « concierge jusqu'à 23h » : il est responsable technique et joignable à toute heure."
+          ]
+        }
       ]
     },
     {
@@ -531,6 +1921,458 @@ window.RDZ_FICHES = {
         "Alarme Incendie 321 482 — procédure centrale Securiton (arrivée sur site, code client 4321, levée de doute, consultation, activation/désactivation d'élément) — consultée intégralement",
         "Intervention Effraction 461 025 — procédure complète (quittancement/enclenchement code 198000, table des 7 groupes et zones, intervention 15 minutes) — consultée intégralement",
         "Mode d'emploi Centrale Feu — manuel générique Securiton MIC (2010), aucune donnée spécifique au site — consulté, référence uniquement"
+      ],
+      "etapes": [
+        {
+          "titre": "Le site",
+          "resume": "Ce que l'agent doit savoir avant d'arriver",
+          "blocs": [
+            {
+              "t": "kv",
+              "items": [
+                {
+                  "k": "PROM incendie",
+                  "v": "321 482",
+                  "code": true
+                },
+                {
+                  "k": "PROM effraction — RDC et étages",
+                  "v": "461 025",
+                  "code": true
+                },
+                {
+                  "k": "PROM effraction — 9e et 10e",
+                  "v": "461 309",
+                  "code": true
+                },
+                {
+                  "k": "Identification Certas",
+                  "v": "Complément à 30, pour les trois transmetteurs"
+                },
+                {
+                  "k": "Client",
+                  "v": "ERGON / SETE — immeuble du Quai du Seujet"
+                },
+                {
+                  "k": "Délai d'intervention",
+                  "v": "##15 minutes## après l'appel Certas"
+                }
+              ]
+            },
+            {
+              "t": "gps",
+              "titre": "Y aller — deux accès",
+              "items": [
+                {
+                  "label": "N°22 — loge de l'intendant, alarme incendie",
+                  "dest": "Quai du Seujet 22, 1201 Genève"
+                },
+                {
+                  "label": "N°24 — alarme effraction",
+                  "dest": "Quai du Seujet 24, 1201 Genève"
+                }
+              ]
+            },
+            {
+              "t": "stop",
+              "lab": "Immeuble multi-locataires",
+              "txt": "SETE, ERGON, EFG, Loomis, Fitness, Bibliothèque de Genève, Klesch, cabinet dentaire au 6e, FER au 5e. ##Vérifier l'étage et le locataire concernés avant d'intervenir## : on n'entre pas chez un locataire au motif qu'une alarme est partie ailleurs dans le bâtiment."
+            },
+            {
+              "t": "liste",
+              "titre": "Moyens à récupérer avant de partir",
+              "items": [
+                "##Badge Seujet## — armoire à clés « Quai Seujet ».",
+                "##Radio## pour la liaison entre agents.",
+                "##Natel d'astreinte## pour le contact Certas.",
+                "##Véhicule RDZ## (Zoé RDZ 134 389) avant 6h30 et après 20h00 — à vélo le reste du temps."
+              ]
+            }
+          ]
+        },
+        {
+          "titre": "Transmetteurs et codes",
+          "resume": "Deux centrales, dans la loge",
+          "blocs": [
+            {
+              "t": "kv",
+              "items": [
+                {
+                  "k": "Centrale effraction",
+                  "v": "Loge de l'intendant — code ~~198000~~, puis touche ON ou OFF"
+                },
+                {
+                  "k": "Centrale incendie",
+                  "v": "Securiton, dans la loge derrière le premier bureau — code client ~~4321~~"
+                },
+                {
+                  "k": "Boîte à clés de la loge",
+                  "v": "Code ~~0741~~"
+                },
+                {
+                  "k": "Clé ascenseur 9e / 10e",
+                  "v": "~~LA4545~~"
+                }
+              ]
+            },
+            {
+              "t": "table",
+              "titre": "Les 7 groupes d'effraction",
+              "items": [
+                {
+                  "z": "Groupe 1",
+                  "d": "RDC — porte Quai A, tourniquets 22 et 24, arcades du 24, passage quai vers 22. Plus le 6e étage, zone 12 (clé incendie)."
+                },
+                {
+                  "z": "Groupe 2",
+                  "d": "RDC — porte du quai de marchandises et sa temporisation"
+                },
+                {
+                  "z": "Groupe 3",
+                  "d": "11e étage — sortie terrasse · 12e étage — sorties balcon et terrasse"
+                },
+                {
+                  "z": "Groupe 4",
+                  "d": "RDC — sortie de secours 24 · 6e étage — sorties de secours 22, 24 et 26 · 10e étage — sortie terrasse et accès EFG"
+                },
+                {
+                  "z": "Groupe 5",
+                  "d": "RDC — portes de sortie de secours quai A et B, porte B du rez"
+                },
+                {
+                  "z": "Groupe 6",
+                  "d": "6e étage — sorties de secours 26"
+                },
+                {
+                  "z": "Groupe 7",
+                  "d": "RDC — porte principale n°22"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "titre": "Points d'accès",
+          "resume": "Comment entrer, ouvrir et ressortir",
+          "blocs": [
+            {
+              "t": "num",
+              "titre": "Arriver et entrer",
+              "items": [
+                {
+                  "a": "Se garer face au portail vert",
+                  "d": "Côté gauche."
+                },
+                {
+                  "a": "Entrer par la porte battante automatique",
+                  "d": "Elle se trouve ##entre les deux tourniquets##."
+                },
+                {
+                  "a": "Badger sur le lecteur de droite",
+                  "d": "Le lecteur noir."
+                },
+                {
+                  "a": "Ouvrir la loge",
+                  "d": "Clé dans la boîte à clés, code ~~0741~~. L'éclairage se trouve ##à droite de la porte##."
+                }
+              ]
+            },
+            {
+              "t": "liste",
+              "titre": "Dans la loge",
+              "items": [
+                "##Centrale effraction##, ##boîte à clés## et ##centrale feu## sont sur et derrière le ##premier bureau##.",
+                "##Trousseau bleu « Sécurité »## et porte-clé « coq » dans la boîte à pass, fermée par un simple aimant.",
+                "##Commande du quai de marchandises## au deuxième bureau — bouton « ouverture quai marchandises », puis badge pour appeler le monte-charge."
+              ]
+            },
+            {
+              "t": "liste",
+              "titre": "Monter aux 9e et 10e étages",
+              "items": [
+                "Badger le clavier de l'ascenseur, puis ##tourner la clé ~~LA4545~~## pour activer le panneau de commande, et sélectionner l'étage."
+              ]
+            },
+            {
+              "t": "num",
+              "titre": "Ressortir — à faire dans cet ordre",
+              "items": [
+                {
+                  "a": "Éteindre l'éclairage de la loge",
+                  "d": ""
+                },
+                {
+                  "a": "Verrouiller la loge",
+                  "d": "Avec la clé du coffre."
+                },
+                {
+                  "a": "Redéposer la clé dans le coffre",
+                  "d": "Code ~~0741~~, en ##masquant l'affichage du code## pendant la saisie."
+                },
+                {
+                  "a": "Sortir",
+                  "d": "Présenter la main devant le boîtier : la porte s'ouvre automatiquement."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "titre": "Clés",
+          "resume": "Trousseau bleu « Sécurité » — loge de l'intendant",
+          "blocs": [
+            {
+              "t": "kv",
+              "items": [
+                {
+                  "k": "Boîte à clés de la loge",
+                  "v": "Code ~~0741~~"
+                },
+                {
+                  "k": "Boîte à pass",
+                  "v": "Fermée par un simple aimant, dans la loge"
+                },
+                {
+                  "k": "Badge Seujet",
+                  "v": "Armoire à clés « Quai Seujet », à la base"
+                }
+              ]
+            },
+            {
+              "t": "liste",
+              "titre": "Composition connue",
+              "items": [
+                "##Trousseau bleu « Sécurité »##.",
+                "##Porte-clé « coq »##.",
+                "##Clé d'ascenseur ~~LA4545~~## — accès aux 9e et 10e étages.",
+                "##Clé du coffre## — sert aussi à verrouiller la loge.",
+                "##Clé incendie 6e étage## — mentionnée dans le groupe 1 d'effraction."
+              ]
+            },
+            {
+              "t": "manque",
+              "txt": "Références des clés et correspondance clé ↔ porte non documentées. Seujet ne figure pas dans l'inventaire ##Clefs IS / RDZ##."
+            },
+            {
+              "t": "liste",
+              "titre": "S'il manque une clé",
+              "items": [
+                "##Pas d'urgence## — rapport et message à Laurent et Lucas.",
+                "##Urgence## (site non hermétique, risque pour le client) — appel direct à Laurent ou Lucas."
+              ]
+            }
+          ]
+        },
+        {
+          "titre": "Qui appeler",
+          "resume": "Dans l'ordre, du plus urgent au technique",
+          "blocs": [
+            {
+              "t": "stop",
+              "lab": "Si le natel est sur un réseau français",
+              "txt": "À Genève, un téléphone accroche souvent une antenne française. Dans ce cas les numéros suisses en 0… ne passent pas, et le 118 ou le 117 tombent sur les secours français. Composer le 112, qui fonctionne sur tous les réseaux, et utiliser les numéros en +41 ci-dessous."
+            },
+            {
+              "t": "tel",
+              "titre": "Urgences",
+              "items": [
+                {
+                  "nom": "Urgence tous réseaux",
+                  "role": "Fonctionne aussi depuis une antenne française — à privilégier en cas de doute",
+                  "num": "112"
+                },
+                {
+                  "nom": "Pompiers",
+                  "role": "Feu confirmé, ou doute non levé dans le délai de 5 minutes",
+                  "num": "118"
+                },
+                {
+                  "nom": "Police",
+                  "role": "Effraction réelle, personne présente, refus de légitimation",
+                  "num": "117"
+                },
+                {
+                  "nom": "Police Municipale",
+                  "role": "Dim-mer 6h-minuit · Jeu-sam 6h-3h",
+                  "num": "+41 22 418 22 22"
+                }
+              ]
+            },
+            {
+              "t": "tel",
+              "titre": "Centrale et astreinte",
+              "items": [
+                {
+                  "nom": "Certas",
+                  "role": "Incendie 321.482 · Effraction 461.025 et 461.309 — complément à 30",
+                  "num": "+41 844 800 811"
+                },
+                {
+                  "nom": "Astreinte RDZ",
+                  "role": "Ligne hiérarchique. Lucas Gimenez (lun-ven) · Laurent Heinrich (week-end et fériés) · Rodolphe De Zordi (en cas d'absence).",
+                  "num": "+41 79 339 13 41"
+                }
+              ]
+            },
+            {
+              "t": "tel",
+              "titre": "Intendant du site — côté RDZ",
+              "items": [
+                {
+                  "nom": "Astreinte Seujet",
+                  "role": "##Ligne du site, de 06h30 à 18h00.## C'est le numéro à composer en premier pour toute question d'exploitation.",
+                  "num": "+41 79 571 45 00"
+                },
+                {
+                  "nom": "M. Romain Soullier",
+                  "role": "##Intendant du site, côté RDZ## — référent direct de l'agent, à ne pas confondre avec le client. Mobile privé, ##hors exploitation uniquement## : numéro français, composable depuis la Suisse.",
+                  "num": "+33 6 45 74 32 96"
+                }
+              ]
+            },
+            {
+              "t": "tel",
+              "titre": "Client et technique",
+              "items": [
+                {
+                  "nom": "M. Cédric Nunes",
+                  "role": "Responsable technique, secteur Seujet — également responsable du site Papeterie. ##Joignable à toute heure, par téléphone de préférence.##",
+                  "num": "+41 79 880 00 65"
+                },
+                {
+                  "nom": "M. De Zordi",
+                  "role": "Directeur RDZ",
+                  "num": "+41 76 634 17 92"
+                }
+              ]
+            },
+            {
+              "t": "manque",
+              "txt": "Il manque les interlocuteurs chez les locataires (EFG, Loomis, Bibliothèque de Genève, FER…) : l'immeuble en compte neuf, et l'agent n'a personne à prévenir directement si l'alarme vient d'une de leurs zones. À demander au client."
+            }
+          ]
+        },
+        {
+          "titre": "Process d'intervention",
+          "resume": "Effraction, incendie, les deux centrales de la loge",
+          "blocs": [
+            {
+              "t": "kv",
+              "items": [
+                {
+                  "k": "Où sont les centrales",
+                  "v": "##Loge de l'intendant##, au rez, accès n°22. Centrale effraction et centrale feu sur et derrière le premier bureau."
+                },
+                {
+                  "k": "Délai",
+                  "v": "Intervention en ##15 minutes## après l'appel Certas"
+                }
+              ]
+            },
+            {
+              "t": "num",
+              "titre": "Alarme effraction — intervention en 15 minutes",
+              "court": "Effraction",
+              "items": [
+                {
+                  "a": "Préparer le départ",
+                  "d": "Passer la centrale feu du site en ##mode direct##. Aviser le patrouilleur d'interrompre sa ronde et de rentrer à la base. Récupérer le ##badge Seujet## dans l'armoire « Quai Seujet », la radio et le natel d'astreinte."
+                },
+                {
+                  "a": "Se rendre sur place",
+                  "d": "Véhicule RDZ avant 6h30 et après 20h00, à vélo le reste du temps. Entrer par le ##n°24##, qui est l'accès effraction."
+                },
+                {
+                  "a": "Localiser le groupe en alarme",
+                  "d": "Sur la centrale effraction de la loge : les ##diodes rouges clignotantes## indiquent les groupes concernés."
+                },
+                {
+                  "a": "Quittancer",
+                  "d": "Saisir ~~198000~~ puis la touche ##OFF##, à répéter ##deux fois## — un bip confirme. L'écran affiche « Groupe ? » : taper le numéro du groupe à désenclencher. La diode s'éteint."
+                },
+                {
+                  "a": "Identifier la zone avant de monter",
+                  "d": "Récupérer le ##fichier PDF du groupe en alarme## : il donne les plans et la localisation exacte des zones. Se reporter au tableau des 7 groupes, étape 2."
+                },
+                {
+                  "a": "Levée de doute sur zone",
+                  "d": "##Ne pas intervenir seul face à une personne présente## : légitimation à distance, et ##117## si nécessaire."
+                },
+                {
+                  "a": "Réenclencher et rendre compte",
+                  "d": "De retour à la loge : même procédure avec la touche ##ON##, puis ##appeler Certas## pour vérifier que tout est en ordre. Rapport GuardTek."
+                }
+              ]
+            },
+            {
+              "t": "num",
+              "titre": "Alarme incendie — centrale Securiton",
+              "court": "Alarme feu",
+              "items": [
+                {
+                  "a": "Activer la centrale",
+                  "d": "Bouton ##9##, puis molette ##16## sur « Autorisations », confirmer, entrer le code client ~~4321~~ et valider avec la molette."
+                },
+                {
+                  "a": "Levée de doute — dans les 3 minutes",
+                  "d": "Bouton ##9##, sélectionner « ##Retardement## » à la molette, valider : un décompte de ##5 minutes## démarre avant la transmission automatique aux pompiers."
+                },
+                {
+                  "a": "Consulter l'alarme ou le dérangement",
+                  "d": "Bouton ##10##, sélectionner l'élément à la molette, puis bouton ##15## pour le détail."
+                },
+                {
+                  "a": "Si le feu est confirmé",
+                  "d": "##118##, accueil et guidage des secours, évacuation. Ne pas réarmer."
+                },
+                {
+                  "a": "Rendre compte",
+                  "d": "Appeler M. Nunes, puis rapport GuardTek."
+                }
+              ]
+            },
+            {
+              "t": "liste",
+              "titre": "Activer ou désactiver un détecteur",
+              "items": [
+                "Sélectionner « Élément », puis « Groupe » pour un ensemble de détecteurs, ou « Sortie ».",
+                "Taper le numéro sur le clavier ##21## — par exemple ~~1074~~ pour le groupe entier, ~~1074.1~~ pour ce seul détecteur.",
+                "##Une zone désactivée ne détecte plus rien## : à réserver aux travaux, avec surveillance, et à réactiver aussitôt."
+              ]
+            },
+            {
+              "t": "stop",
+              "lab": "Mention à vérifier sur place",
+              "txt": "Le document RDZ « Intervention Effraction 461025 » du 17.06.2024 appelle l'étape de mise en mode direct « ##Centrale Incendie REGM## ». Or REGM est un site distinct, sans lien avec Seujet. Probable copier-coller d'un support réutilisé, mais ##aucun document ne l'explique## : à vérifier sur site avant de s'y fier."
+            }
+          ]
+        }
+      ],
+      "blocsRondes": [
+        {
+          "t": "manque",
+          "txt": "##Aucune ronde périodique n'est documentée pour ce site.## Seule la procédure d'intervention d'urgence en 15 minutes l'est. Les plans du 22.02.2024 montrent pourtant un réseau complet de points de contrôle numérotés sur tous les étages et sous-sols, ainsi que plusieurs consoles monobloc à quittancer aux 1er, 2e et 3e étages. ##À clarifier avec M. Soullier, intendant du site## (astreinte Seujet, +41 79 571 45 00) : une ronde régulière est-elle attendue, et selon quel parcours ?"
+        }
+      ],
+      "blocsNotes": [
+        {
+          "t": "liste",
+          "titre": "Monte-charge et quai de marchandises",
+          "items": [
+            "Commande au ##deuxième bureau de la loge##, bouton « ouverture quai marchandises ».",
+            "Badge nécessaire pour appeler l'ascenseur de marchandises."
+          ]
+        },
+        {
+          "t": "liste",
+          "titre": "Réserves sur les données",
+          "items": [
+            "##Correction du 27.08.2026## : une version précédente de cette fiche indiquait que REGM partageait cette centrale et ce badge. C'est faux — REGM est la résidence IHEID du Grand Morillon, PROM 324 199, sans lien avec Seujet.",
+            "##Centrales du 10e étage## : les plans portent des étiquettes « Centrale effraction » et « Centrale feu » dans une zone technique du 10e. Le lien avec les boîtiers de la loge n'est précisé nulle part — à confirmer sur site.",
+            "L'annexe « Asservissement Securiton » est une table technique REL4, sans contenu directement actionnable par un agent.",
+            "Le « Mode d'emploi Centrale Feu » est un manuel générique Securiton MIC de 2010, sans donnée propre au site."
+          ]
+        }
       ]
     },
     {
@@ -567,6 +2409,306 @@ window.RDZ_FICHES = {
       "astreinte": "+41 79 339 13 41 (astreinte RDZ — natel dédié) — le numéro +41 79 749 35 36 précédemment indiqué ici est en réalité le natel de l'agent MDP (matériel de site), pas l'astreinte RDZ ; corrigé le 27.08.2026 sur indication du client.",
       "annexes": [
         "Annexe — Positionnement agent (vue aérienne et vue terrain de l'intersection STOP)"
+      ],
+      "etapes": [
+        {
+          "titre": "Le site",
+          "resume": "Un poste fixe, pas une intervention sur alarme",
+          "blocs": [
+            {
+              "t": "stop",
+              "lab": "Nature du poste",
+              "txt": "DLCC est un ##poste fixe de gestion du trafic##, pas un site sous alarme. ##Aucun transmetteur, aucun code PROM, aucune clé.## L'agent est posté à heure fixe pour orienter les véhicules — il n'y a pas d'intervention déclenchée par Certas."
+            },
+            {
+              "t": "kv",
+              "items": [
+                {
+                  "k": "Client",
+                  "v": "DLCC — David Lloyd Country Club Geneva"
+                },
+                {
+                  "k": "Adresse",
+                  "v": "Route de Collex 49, 1293 Bellevue"
+                },
+                {
+                  "k": "Mission",
+                  "v": "Orientation des véhicules entre le ##parking DLCC## et le ##parking Collex (CLX)##"
+                },
+                {
+                  "k": "Occupation",
+                  "v": "Membres et visiteurs du club · personnel · automobilistes de passage sur la route de Collex"
+                }
+              ]
+            },
+            {
+              "t": "gps",
+              "titre": "Y aller",
+              "items": [
+                {
+                  "label": "Intersection STOP, juste avant les barrières DLCC",
+                  "dest": "Route de Collex 49, 1293 Bellevue"
+                }
+              ]
+            },
+            {
+              "t": "table",
+              "titre": "Horaires du poste",
+              "items": [
+                {
+                  "z": "Semaine",
+                  "d": "18h00 – 20h00"
+                },
+                {
+                  "z": "Week-end",
+                  "d": "10h00 – 13h00"
+                },
+                {
+                  "z": "Renfort",
+                  "d": "Lors d'événements sportifs ou d'affluence exceptionnelle au DLCC"
+                }
+              ]
+            },
+            {
+              "t": "stop",
+              "lab": "Recherche dans l'appli",
+              "txt": "Ce site n'a pas de code PROM. Il se trouve en tapant ##DLCC## ou ##David Lloyd## dans le champ nom du client."
+            }
+          ]
+        },
+        {
+          "titre": "Transmetteurs et codes",
+          "resume": "Sans objet sur ce poste",
+          "blocs": [
+            {
+              "t": "manque",
+              "txt": "##Aucun transmetteur, aucun code PROM, aucune centrale.## Rien à saisir ni à quittancer : la mission est une présence physique de gestion du trafic."
+            }
+          ]
+        },
+        {
+          "titre": "Positionnement",
+          "resume": "Où se tenir et comment orienter",
+          "blocs": [
+            {
+              "t": "stop",
+              "lab": "L'agent ne se stationne pas",
+              "txt": "Il se tient ##à l'intersection STOP, juste avant les barrières DLCC##, de façon à être ##visible des véhicules arrivant par la route de Collex##. ##Ne pas quitter le poste.##"
+            },
+            {
+              "t": "liste",
+              "titre": "Orientation des véhicules",
+              "items": [
+                "##Parking DLCC prioritaire## tant qu'il reste des places. ##CLX est le parking de débordement##, pas une alternative équivalente.",
+                "##Parking DLCC disponible## — orienter et autoriser l'entrée.",
+                "##Parking DLCC complet## — orienter vers le ##parking Collex (CLX)##, avec des gestes clairs.",
+                "##Ne jamais obstruer l'entrée principale.##",
+                "Gestes précis et sécuritaires : l'agent est au milieu d'un flux de circulation."
+              ]
+            },
+            {
+              "t": "liste",
+              "titre": "Tenue selon les conditions",
+              "items": [
+                "##Journée## — tenue réglementaire RDZ complète et visible.",
+                "##Nuit ou faible luminosité## — ##gilet jaune obligatoire et bâton lumineux##.",
+                "##Pluie## — ##cape de pluie obligatoire##. Le poste se tient quelles que soient les conditions météo.",
+                "Interdit : quitter le poste, appels personnels en public."
+              ]
+            },
+            {
+              "t": "liste",
+              "titre": "Équipement obligatoire",
+              "items": [
+                "##Tenue réglementaire RDZ## — en toutes circonstances.",
+                "##Gilet jaune haute visibilité## — de nuit ou par faible luminosité, par-dessus la tenue.",
+                "##Bâton lumineux## — de nuit, pour des gestes précis et visibles.",
+                "##Cape de pluie## — en cas de précipitations.",
+                "##Téléphone de service## — contact client et signalement des incidents."
+              ]
+            }
+          ]
+        },
+        {
+          "titre": "Clés",
+          "resume": "Sans objet sur ce poste",
+          "blocs": [
+            {
+              "t": "manque",
+              "txt": "##Aucune clé, aucun badge, aucun accès à un bâtiment.## L'agent reste à l'extérieur, sur la voie d'accès."
+            }
+          ]
+        },
+        {
+          "titre": "Qui appeler",
+          "resume": "Dans l'ordre, du plus urgent au client",
+          "blocs": [
+            {
+              "t": "stop",
+              "lab": "Si le natel est sur un réseau français",
+              "txt": "Bellevue est proche de la frontière : un téléphone y accroche parfois une antenne française. Dans ce cas les numéros suisses en 0… ne passent pas, et le 118 ou le 117 tombent sur les secours français. Composer le 112, qui fonctionne sur tous les réseaux, et utiliser les numéros en +41 ci-dessous."
+            },
+            {
+              "t": "tel",
+              "titre": "Urgences",
+              "items": [
+                {
+                  "nom": "Urgence tous réseaux",
+                  "role": "Fonctionne aussi depuis une antenne française — à privilégier en cas de doute",
+                  "num": "112"
+                },
+                {
+                  "nom": "Pompiers",
+                  "role": "Feu ou sinistre",
+                  "num": "118"
+                },
+                {
+                  "nom": "Urgences sanitaires",
+                  "role": "Accident de la circulation, blessé",
+                  "num": "144"
+                },
+                {
+                  "nom": "Police",
+                  "role": "Conflit, refus d'obtempérer, accident avec dégâts",
+                  "num": "117"
+                },
+                {
+                  "nom": "Police Municipale",
+                  "role": "Genève",
+                  "num": "+41 22 418 22 22"
+                }
+              ]
+            },
+            {
+              "t": "tel",
+              "titre": "Client et astreinte",
+              "items": [
+                {
+                  "nom": "M. Bouvier",
+                  "role": "Facility Manager DLCC — contact principal. ##À appeler ou avertir par message à chaque prise de service ET à chaque fin de service.##",
+                  "num": "+41 79 613 99 96"
+                },
+                {
+                  "nom": "Astreinte RDZ",
+                  "role": "Ligne hiérarchique. Lucas Gimenez (lun-ven) · Laurent Heinrich (week-end et fériés) · Rodolphe De Zordi (en cas d'absence).",
+                  "num": "+41 79 339 13 41"
+                },
+                {
+                  "nom": "M. De Zordi",
+                  "role": "Directeur RDZ",
+                  "num": "+41 76 634 17 92"
+                }
+              ]
+            },
+            {
+              "t": "stop",
+              "lab": "Erreur dans le cahier des charges",
+              "txt": "Le CDC du 01.04.2026 annonce « Astreinte RDZ 24h/7j : ~~+41 79 749 35 36~~ ». C'est le ##natel de l'agent MDP##, pas l'astreinte. L'astreinte RDZ est le ##+41 79 339 13 41##."
+            }
+          ]
+        },
+        {
+          "titre": "Process d'intervention",
+          "resume": "Prise de service, sinistre, incident",
+          "blocs": [
+            {
+              "t": "num",
+              "titre": "Prise et fin de service",
+              "court": "Prise de poste",
+              "items": [
+                {
+                  "a": "À l'arrivée, contacter M. Bouvier",
+                  "d": "Appel ou message. ##C'est une obligation à chaque service##, pas une formalité ponctuelle."
+                },
+                {
+                  "a": "Se positionner",
+                  "d": "À l'intersection STOP, visible des véhicules arrivant par la route de Collex."
+                },
+                {
+                  "a": "Vérifier sa tenue",
+                  "d": "Gilet jaune et bâton lumineux si la luminosité est faible, cape de pluie s'il pleut."
+                },
+                {
+                  "a": "En fin de service, recontacter M. Bouvier",
+                  "d": "Même canal. Noter les horaires pour le rapport."
+                }
+              ]
+            },
+            {
+              "t": "num",
+              "titre": "Incendie ou sinistre",
+              "court": "Sinistre",
+              "items": [
+                {
+                  "a": "Alerter les secours",
+                  "d": "##118##, ou 112 en cas de doute sur le réseau."
+                },
+                {
+                  "a": "Prévenir M. Bouvier",
+                  "d": "Immédiatement après l'appel aux secours."
+                },
+                {
+                  "a": "Dégager les voies d'accès pompiers",
+                  "d": "##Ne jamais obstruer l'entrée principale.##"
+                },
+                {
+                  "a": "Si le parking sature",
+                  "d": "Orienter ##immédiatement## vers le parking Collex, pour garder les accès libres."
+                },
+                {
+                  "a": "Consigner",
+                  "d": "Rapport GuardTek avec les horaires d'appel, d'arrivée et de départ des secours."
+                }
+              ]
+            },
+            {
+              "t": "stop",
+              "lab": "Imprévu — panne de barrière, accident, intrusion",
+              "txt": "Alerter ##M. Bouvier ET la hiérarchie RDZ##, les deux. ##Ne pas quitter le poste sans autorisation##, même pour aller constater."
+            },
+            {
+              "t": "liste",
+              "titre": "Tout incident",
+              "items": [
+                "Feu, accident, conflit, saturation anormale du parking : ##rapport GuardTek##, au format ##Vu / Fait / Compris##.",
+                "Y faire figurer les ##horaires d'appel, d'arrivée et de départ##."
+              ]
+            },
+            {
+              "t": "liste",
+              "titre": "Missions ponctuelles",
+              "items": [
+                "##Assistance aux usagers## — renseigner sur les accès, les places disponibles et le fonctionnement des barrières.",
+                "##Événements et périodes de pointe## — renfort de la gestion du trafic lors des manifestations sportives ou d'affluence exceptionnelle.",
+                "##Conditions hivernales## — signaler tout problème de visibilité ou de glissance susceptible d'affecter la sécurité du poste."
+              ]
+            }
+          ]
+        }
+      ],
+      "blocsRondes": [
+        {
+          "t": "manque",
+          "txt": "##Pas de ronde sur ce poste## : il s'agit d'une présence statique à l'intersection, pendant les plages horaires définies."
+        }
+      ],
+      "blocsNotes": [
+        {
+          "t": "liste",
+          "titre": "Documents de référence",
+          "items": [
+            "Annexe « Positionnement agent » — vue aérienne et vue terrain de l'intersection STOP."
+          ]
+        },
+        {
+          "t": "liste",
+          "titre": "Réserves sur les données",
+          "items": [
+            "Le site voisin ##ERGON Collex## utilise le même parking CLX : les véhicules du Country Club y stationnent le week-end. Ce n'est pas du stationnement sauvage, et l'agent de Collex ne doit pas les faire déplacer.",
+            "Un seul contact client identifié, M. Bouvier. Pas de suppléant connu en cas d'indisponibilité.",
+            "Dans la colonne « Sécurité » du CDC, M. Bouvier est mentionné comme joignable ##sur accord RDZ## — alors qu'il est à appeler directement pour l'incendie et la technique. Nuance à confirmer : s'applique-t-elle aux seuls sujets de sécurité ?"
+          ]
+        }
       ]
     },
     {
@@ -1663,6 +3805,10 @@ window.RDZ_FICHES = {
                   "code": true
                 },
                 {
+                  "k": "Référence de l'objet",
+                  "v": "612868 — « Domaine Barton », route de Lausanne 132"
+                },
+                {
                   "k": "PROM incendie (restaurant / AJF)",
                   "v": "324 478",
                   "code": true
@@ -1670,6 +3816,40 @@ window.RDZ_FICHES = {
                 {
                   "k": "Identification Certas",
                   "v": "Complément à 30, pour les deux transmetteurs"
+                },
+                {
+                  "k": "Installateur effraction",
+                  "v": "Tyco Integrated Fire & Security (Johnson Controls), Le Mont-sur-Lausanne"
+                },
+                {
+                  "k": "Feuille de transmission",
+                  "v": "Édition du 05.02.2026"
+                }
+              ]
+            },
+            {
+              "t": "table",
+              "titre": "Ce que Certas reçoit du transmetteur",
+              "items": [
+                {
+                  "z": "K01 · K04",
+                  "d": "Alarme effraction · Alarme sabotage"
+                },
+                {
+                  "z": "K02 · K15",
+                  "d": "Alarme agression · Ouverture sous menace"
+                },
+                {
+                  "z": "K09 · K19",
+                  "d": "Perte de connexion urgente · Dérangement de l'installation"
+                },
+                {
+                  "z": "K10 à K13 · K43",
+                  "d": "Coupures de ligne non urgentes · Problèmes de batteries"
+                },
+                {
+                  "z": "K16",
+                  "d": "Test cyclique 24 heures"
                 }
               ]
             },
@@ -1836,6 +4016,11 @@ window.RDZ_FICHES = {
                   "num": "+41 22 908 44 40"
                 },
                 {
+                  "nom": "Sécurité IHEID",
+                  "role": "Permanence du campus — appelée par Certas pendant les heures de présence",
+                  "num": "+41 22 908 59 11"
+                },
+                {
                   "nom": "M. Barla",
                   "role": "Responsable sécurité et incendie IHEID",
                   "num": "+41 22 908 59 63"
@@ -1849,7 +4034,7 @@ window.RDZ_FICHES = {
             },
             {
               "t": "manque",
-              "txt": "##M. Spada, Johnson Controls## — à appeler en cas de dérangement de la centrale AJF. Numéro non communiqué à ce jour : en attente. Sans lui, passer par l'astreinte RDZ."
+              "txt": "##Johnson Controls / Tyco## est l'installateur du système effraction : contact connu uniquement par courriel, ##service.romandie@jci.com##. Le numéro de M. Spada reste à obtenir. En cas de dérangement de centrale hors courriel, passer par l'astreinte RDZ."
             }
           ]
         },
@@ -1869,6 +4054,50 @@ window.RDZ_FICHES = {
                   "v": "Local technique AJF, écran tactile — ~~ID 01~~ / ~~0000~~"
                 }
               ]
+            },
+            {
+              "t": "kv",
+              "titre": "Heures de présence du client",
+              "items": [
+                {
+                  "k": "Lundi à jeudi",
+                  "v": "07h30 – 18h00"
+                },
+                {
+                  "k": "Vendredi",
+                  "v": "07h30 – 17h00"
+                },
+                {
+                  "k": "Le reste du temps",
+                  "v": "##Heures d'absence## — ainsi que les jours fériés genevois"
+                }
+              ]
+            },
+            {
+              "t": "choix",
+              "titre": "Qui Certas appelle en premier, selon le moment",
+              "items": [
+                {
+                  "couleur": "rouge",
+                  "titre": "Effraction ou sabotage, heures d'absence",
+                  "txt": "Certas appelle ##RDZ en premier##, puis envoie le rapport à la Sécurité IHEID et à RDZ. ##C'est le cas de figure de l'agent d'astreinte.##"
+                },
+                {
+                  "couleur": "orange",
+                  "titre": "Effraction ou sabotage, heures de présence",
+                  "txt": "Certas appelle d'abord le ##client## — Sécurité IHEID ou M. Demonte — et non RDZ. L'agent n'intervient que si le client le demande."
+                },
+                {
+                  "couleur": "rouge",
+                  "titre": "Agression ou ouverture sous menace",
+                  "txt": "##24h/24##, Certas appelle ##RDZ en premier##, quelle que soit l'heure. Liste d'urgence : ##Police cantonale##."
+                }
+              ]
+            },
+            {
+              "t": "stop",
+              "lab": "Ce que Certas fait de son côté",
+              "txt": "Pour toute alarme effraction, sabotage, agression ou menace, la ##Police cantonale## figure en liste d'urgence de Certas. Un appel de Certas ne signifie donc pas que la police est déjà partie : se renseigner à la prise d'appel."
             },
             {
               "t": "num",
@@ -1899,7 +4128,7 @@ window.RDZ_FICHES = {
             },
             {
               "t": "manque",
-              "txt": "Cette procédure d'effraction est ##reconstituée## à partir des éléments techniques disponibles et des pratiques des autres sites : le cahier des charges Barton ne contient aucune conduite à tenir sur alarme effraction. À faire valider avant diffusion aux agents."
+              "txt": "Les étapes 1 à 5 ci-dessus décrivent la conduite ##sur place##, reconstituée à partir des éléments techniques : la feuille Certas définit qui appelle qui, pas ce que l'agent fait une fois arrivé. À faire valider avant diffusion aux agents."
             },
             {
               "t": "liste",
@@ -1918,6 +4147,15 @@ window.RDZ_FICHES = {
             {
               "t": "manque",
               "txt": "Conduite à tenir détaillée en cas d'alarme incendie AJF — levée de doute, quittance, asservissements éventuels — non documentée. À construire sur site, comme pour les autres bâtiments."
+            },
+            {
+              "t": "liste",
+              "titre": "Dérangements — pas d'intervention sur site",
+              "items": [
+                "##Coupures de ligne non urgentes et batteries## (K10 à K13, K43) — Certas attend 5 minutes un message de rétablissement, puis envoie un rapport à la Sécurité IHEID, à RDZ et à Tyco. ##Aucun appel à l'agent.##",
+                "##Test cyclique## (K16) — Certas attend les heures ouvrables pour aviser le client. RDZ n'est en liste d'urgence qu'en dernier recours.",
+                "##Perte de connexion urgente et dérangement d'installation## (K09, K19) — RDZ est appelé ##uniquement hors heures de présence##."
+              ]
             }
           ]
         }
@@ -4133,7 +6371,7 @@ window.RDZ_FICHES = {
         },
         {
           "titre": "Clés",
-          "resume": "Pass Moynier — à récupérer à la loge REGM",
+          "resume": "Pass général Moynier — reçu le 28.09.2026",
           "blocs": [
             {
               "t": "kv",
@@ -4141,16 +6379,19 @@ window.RDZ_FICHES = {
                 {
                   "k": "Où le récupérer",
                   "v": "Loge REGM, avant la prise de poste"
-                },
-                {
-                  "k": "Contenu connu",
-                  "v": "Pass pour le bâtiment Moynier"
                 }
               ]
             },
             {
+              "t": "liste",
+              "titre": "Composition connue du trousseau",
+              "items": [
+                "##Pass général Moynier## — profil ##Yves Liardet SA##, référence ~~BW5898~~, carte ~~0000000~~, clé n° ~~16~~. Tête repérée par un disque ##rouge##."
+              ]
+            },
+            {
               "t": "manque",
-              "txt": "Composition exacte du trousseau, références des clés et correspondance clé ↔ porte : non documentées. Moynier ne figure pas non plus dans l'inventaire ##Clefs IS / RDZ##, qui ne couvre que REGM, Papeterie, Collex et MDP."
+              "txt": "Le pass général est le seul élément documenté. Reste à préciser : le trousseau contient-il d'autres clés, et lesquelles ouvrent quoi ? Moynier ne figure pas non plus dans l'inventaire ##Clefs IS / RDZ## — cette référence mériterait d'y être ajoutée."
             },
             {
               "t": "liste",
@@ -4425,21 +6666,465 @@ window.RDZ_FICHES = {
       "statut": "partiel",
       "prom": "Accueil",
       "client": "MSF",
-      "nomComplet": "Médecins Sans Frontières — bouton accueil",
+      "nomComplet": "MSF — bouton accueil (ligne du logigramme reprise dans la fiche MSF principale)",
       "types": [
         "Agression"
       ],
-      "adresse": "Non communiquée"
+      "adresse": "Non communiquée",
+      "archive": true,
+      "archiveLe": "2026-10-01"
     },
     {
-      "statut": "partiel",
+      "statut": "complet",
       "prom": "324 333",
       "client": "MSF",
-      "nomComplet": "Médecins Sans Frontières",
+      "nomComplet": "MSF — Médecins Sans Frontières, siège de Genève",
       "types": [
-        "Incendie"
+        "Incendie",
+        "Agression"
       ],
-      "adresse": "Non communiquée"
+      "adresse": "Route de Ferney 140, 1202 Genève — accès par l'esplanade piétonne",
+      "etapes": [
+        {
+          "titre": "Le site",
+          "resume": "Ce que l'agent doit savoir avant d'arriver",
+          "blocs": [
+            {
+              "t": "kv",
+              "items": [
+                {
+                  "k": "PROM incendie",
+                  "v": "324 333",
+                  "code": true
+                },
+                {
+                  "k": "Alarme agression",
+                  "v": "##Bouton accueil## — sans code PROM numéroté"
+                },
+                {
+                  "k": "Identification Certas",
+                  "v": "Complément à 30"
+                },
+                {
+                  "k": "Client",
+                  "v": "MSF — Médecins Sans Frontières"
+                },
+                {
+                  "k": "Occupation",
+                  "v": "Employés MSF et personnalités invitées. ##Présence possible 24h/7j##, y compris la nuit."
+                }
+              ]
+            },
+            {
+              "t": "gps",
+              "titre": "Y aller",
+              "items": [
+                {
+                  "label": "Accès par l'esplanade piétonne",
+                  "dest": "Route de Ferney 140, 1202 Genève"
+                }
+              ]
+            },
+            {
+              "t": "stop",
+              "lab": "Alarme reliée directement aux pompiers",
+              "txt": "L'alarme incendie part ##directement aux pompiers##. ##Ne jamais quittancer avant leur arrivée et leur accord.## C'est la règle la plus importante de ce site."
+            },
+            {
+              "t": "liste",
+              "titre": "Règles du site",
+              "items": [
+                "Interdit : fumer, appels personnels en public, ##familiarité avec les clients et les prestataires##, ##prise de photos##.",
+                "##Bureaux privés## : ne pas entrer sans autorisation explicite.",
+                "Stationnement au ##parking souterrain REGM##."
+              ]
+            }
+          ]
+        },
+        {
+          "titre": "Transmetteurs et codes",
+          "resume": "Incendie Siemens, bouton agression",
+          "blocs": [
+            {
+              "t": "kv",
+              "items": [
+                {
+                  "k": "Incendie",
+                  "v": "PROM ~~324 333~~, complément à 30 — ##transmission directe aux pompiers##"
+                },
+                {
+                  "k": "Agression",
+                  "v": "Bouton à l'accueil, sans code PROM"
+                },
+                {
+                  "k": "Centrale",
+                  "v": "##Siemens##"
+                }
+              ]
+            },
+            {
+              "t": "stop",
+              "lab": "Exclusion de zones",
+              "txt": "L'exclusion de zones sur la centrale Siemens se fait ##uniquement sur demande du client ou de RDZ##. Jamais de sa propre initiative. Formation disponible sur SharePoint, onglet Formation (annexe I.01)."
+            },
+            {
+              "t": "manque",
+              "txt": "Aucun code d'accès de centrale n'est documenté. À obtenir, en même temps que la confirmation de ce que l'agent est autorisé à manipuler compte tenu de la transmission directe aux pompiers."
+            }
+          ]
+        },
+        {
+          "titre": "Points d'accès",
+          "resume": "Clés, badge et tourniquet",
+          "blocs": [
+            {
+              "t": "liste",
+              "items": [
+                "##Clés du bâtiment MSF## et ##badge d'accès aux étages##, remis à la prise de poste.",
+                "##Téléphone d'astreinte RDZ ou téléphone de patrouille## — à récupérer à la ##REGM##.",
+                "##Compteur manuel## — pour le comptage des fenêtres lors des rondes estivales."
+              ]
+            },
+            {
+              "t": "num",
+              "titre": "Ouvrir l'accès au parking souterrain",
+              "court": "Parking MSF",
+              "items": [
+                {
+                  "a": "Se rendre à la descente MSF",
+                  "d": "L'accès au parking souterrain se trouve sous le bâtiment, signalé par le logo MSF au-dessus de la porte."
+                },
+                {
+                  "a": "Repérer le lecteur de badge",
+                  "d": "Boîtier ##Siemens## blanc, encastré ##sur le mur de gauche##, avant la porte. Il s'allume en bleu."
+                },
+                {
+                  "a": "Présenter le jeton rond vert du trousseau",
+                  "d": "C'est le badge qui commande cette porte — pas la clé."
+                },
+                {
+                  "a": "Attendre l'ouverture complète",
+                  "d": "Puis dégager le passage."
+                }
+              ]
+            },
+            {
+              "t": "stop",
+              "lab": "Le personnel MSF peut vous appeler directement",
+              "txt": "Une affichette est posée à l'entrée du parking : ##« En cas de problème avec l'ouverture de la porte, appeler l'agent de sécurité RDZ au +41 79 339 13 41 »##. Un collaborateur bloqué devant la porte appellera donc directement ce numéro — ce n'est pas une alarme, c'est une demande d'assistance."
+            },
+            {
+              "t": "num",
+              "titre": "Fermeture et verrouillage du tourniquet",
+              "court": "Tourniquet",
+              "items": [
+                {
+                  "a": "Prendre la petite clé du trousseau",
+                  "d": "C'est celle au porte-clé vert."
+                },
+                {
+                  "a": "Tourner la clé vers la gauche",
+                  "d": "Mettre la serrure en ##position 0##."
+                },
+                {
+                  "a": "Laisser le tourniquet finir son tour",
+                  "d": "Le cercle vient rencontrer le trou du support au plafond : c'est ce qui le bloque."
+                },
+                {
+                  "a": "Vérifier",
+                  "d": "##Même verrouillé, le tourniquet reste mobile sur 5 à 10 cm## — c'est normal, ce n'est pas un défaut."
+                },
+                {
+                  "a": "S'il se débloque après un à-coup",
+                  "d": "Refaire la manœuvre : revenir en ##position 1##, puis repasser en ##position 0##."
+                }
+              ]
+            },
+            {
+              "t": "liste",
+              "titre": "Accès du personnel",
+              "items": [
+                "##Oubli de badge## — accompagner la personne.",
+                "##Pendant les heures d'exploitation##, les accès sont gérés par la réception MSF.",
+                "##Hors heures## : n'ouvrir qu'aux personnes pouvant se légitimer. ##Vigilance : du personnel peut avoir été licencié.## Bienveillance de rigueur, et signalement de tout comportement suspect.",
+                "À la fermeture, les occupants qui restent sortent par les ##issues désignées##."
+              ]
+            }
+          ]
+        },
+        {
+          "titre": "Clés",
+          "resume": "Trousseau MSF — relevé du 01.10.2026",
+          "blocs": [
+            {
+              "t": "kv",
+              "items": [
+                {
+                  "k": "Remise",
+                  "v": "Clés du bâtiment MSF et badge d'accès aux étages, à la prise de poste"
+                },
+                {
+                  "k": "Téléphone",
+                  "v": "Astreinte RDZ ou téléphone de patrouille, à récupérer à la REGM"
+                }
+              ]
+            },
+            {
+              "t": "liste",
+              "titre": "Composition du trousseau",
+              "items": [
+                "##Jeton rond vert## — badge d'accès au ##parking souterrain##, à présenter sur le lecteur Siemens.",
+                "##Petite clé à porte-clé vert## — verrouillage du tourniquet d'accès.",
+                "##Clé n° ~~300~~##.",
+                "##Clé ~~RA205906 / 1000~~##."
+              ]
+            },
+            {
+              "t": "manque",
+              "txt": "Les deux clés ~~300~~ et ~~RA205906 / 1000~~ sont au trousseau mais ##leur usage n'est pas identifié## : quelles portes ouvrent-elles ? À renseigner."
+            },
+            {
+              "t": "liste",
+              "titre": "S'il manque une clé",
+              "items": [
+                "##Pas d'urgence## — rapport et message à Laurent et Lucas.",
+                "##Urgence## (site non hermétique, risque pour le client) — appel direct à Laurent ou Lucas."
+              ]
+            }
+          ]
+        },
+        {
+          "titre": "Qui appeler",
+          "resume": "Dans l'ordre, du plus urgent au technique",
+          "blocs": [
+            {
+              "t": "stop",
+              "lab": "Si le natel est sur un réseau français",
+              "txt": "À Genève, un téléphone accroche souvent une antenne française. Dans ce cas les numéros suisses en 0… ne passent pas, et le 118 ou le 117 tombent sur les secours français. Composer le 112, qui fonctionne sur tous les réseaux, et utiliser les numéros en +41 ci-dessous."
+            },
+            {
+              "t": "tel",
+              "titre": "Urgences",
+              "items": [
+                {
+                  "nom": "Urgence tous réseaux",
+                  "role": "Fonctionne aussi depuis une antenne française — à privilégier en cas de doute",
+                  "num": "112"
+                },
+                {
+                  "nom": "Pompiers",
+                  "role": "Feu confirmé — l'alarme leur est de toute façon transmise directement",
+                  "num": "118"
+                },
+                {
+                  "nom": "Police",
+                  "role": "Agression, intrusion, refus de légitimation",
+                  "num": "117"
+                },
+                {
+                  "nom": "Police Municipale",
+                  "role": "Dim-mer 6h-minuit · Jeu-sam 6h-3h",
+                  "num": "+41 22 418 22 22"
+                }
+              ]
+            },
+            {
+              "t": "tel",
+              "titre": "Client — direction du bâtiment",
+              "items": [
+                {
+                  "nom": "M. Besson",
+                  "role": "Direction du bâtiment — ##premier contact hors heures d'exploitation##, notamment pour un dérangement incendie. Mobile.",
+                  "num": "+41 79 251 78 31"
+                },
+                {
+                  "nom": "M. Besson",
+                  "role": "Direction du bâtiment — ligne fixe",
+                  "num": "+41 22 849 83 84"
+                },
+                {
+                  "nom": "M. Salandini",
+                  "role": "Coordinateur Services Généraux — ##sur accord RDZ##",
+                  "num": "+41 79 765 65 40"
+                }
+              ]
+            },
+            {
+              "t": "tel",
+              "titre": "RDZ",
+              "items": [
+                {
+                  "nom": "M. Privat",
+                  "role": "Chargé de sécurité RDZ — mobile suisse",
+                  "num": "+41 79 755 24 76"
+                },
+                {
+                  "nom": "M. Privat",
+                  "role": "Chargé de sécurité RDZ — mobile français",
+                  "num": "+33 6 38 98 91 47"
+                },
+                {
+                  "nom": "Astreinte RDZ",
+                  "role": "Ligne hiérarchique. Lucas Gimenez (lun-ven) · Laurent Heinrich (week-end et fériés) · Rodolphe De Zordi (en cas d'absence).",
+                  "num": "+41 79 339 13 41"
+                },
+                {
+                  "nom": "M. De Zordi",
+                  "role": "Directeur RDZ",
+                  "num": "+41 76 634 17 92"
+                }
+              ]
+            },
+            {
+              "t": "stop",
+              "lab": "Erreur dans le cahier des charges",
+              "txt": "Le CDC du 01.04.2026 annonce « Astreinte RDZ 24h/7j : ~~+41 79 749 35 36~~ ». C'est le ##natel de l'agent MDP##, pas l'astreinte. L'astreinte RDZ est le ##+41 79 339 13 41##."
+            }
+          ]
+        },
+        {
+          "titre": "Process d'intervention",
+          "resume": "Incendie, dérangement, agression",
+          "blocs": [
+            {
+              "t": "stop",
+              "lab": "Règle absolue sur ce site",
+              "txt": "L'alarme incendie est ##reliée directement aux pompiers##. ##Ne pas quittancer avant leur arrivée et leur accord explicite.## Quittancer trop tôt revient à annuler leur engagement."
+            },
+            {
+              "t": "num",
+              "titre": "Alarme incendie",
+              "court": "Alarme feu",
+              "items": [
+                {
+                  "a": "Ne pas quittancer",
+                  "d": "Les pompiers sont déjà engagés. Toute manipulation de la centrale attend leur arrivée et leur accord."
+                },
+                {
+                  "a": "Accueillir et guider les secours",
+                  "d": "C'est la mission principale de l'agent sur cette alarme."
+                },
+                {
+                  "a": "Diriger l'évacuation",
+                  "d": "Vers les points de rassemblement."
+                },
+                {
+                  "a": "Rendre compte",
+                  "d": "Certas, direction du bâtiment, puis rapport."
+                }
+              ]
+            },
+            {
+              "t": "num",
+              "titre": "Quittance des asservissements après alarme",
+              "court": "Asservissements",
+              "items": [
+                {
+                  "a": "Attendre l'accord",
+                  "d": "##Après l'intervention des pompiers seulement.##"
+                },
+                {
+                  "a": "Surpression",
+                  "d": "Remise en fonction."
+                },
+                {
+                  "a": "Portes coupe-feu",
+                  "d": "Remise en fonction."
+                },
+                {
+                  "a": "Ascenseurs",
+                  "d": "Vérifier la remise en service."
+                },
+                {
+                  "a": "Monoblocs",
+                  "d": "Réarmer la ventilation."
+                }
+              ]
+            },
+            {
+              "t": "liste",
+              "titre": "Alarme dérangement incendie",
+              "items": [
+                "##Hors heures d'exploitation## : contacter en priorité ##M. Besson## et/ou ##M. Salandini##.",
+                "##Ne pas quittancer sans leur accord.##",
+                "Consigner l'intervention dans le rapport."
+              ]
+            },
+            {
+              "t": "liste",
+              "titre": "Alarme intrusion ou agression",
+              "items": [
+                "Le ##bouton agression## se trouve à l'accueil.",
+                "Assurer une ##présence physique## et des ##rondes renforcées## en cas d'alerte.",
+                "Personne non autorisée : signalement systématique. ##117## si la situation l'exige."
+              ]
+            },
+            {
+              "t": "manque",
+              "txt": "La conduite à tenir précise en cas d'agression déclenchée depuis l'accueil n'est pas documentée : qui l'agent rejoint, dans quel ordre, et ce qu'il fait des personnes présentes. À rédiger."
+            }
+          ]
+        }
+      ],
+      "blocsRondes": [
+        {
+          "t": "kv",
+          "items": [
+            {
+              "k": "Nuit",
+              "v": "##2 rondes complètes minimum## — une avant minuit, une après"
+            },
+            {
+              "k": "Ronde extérieure",
+              "v": "Une entre 21h00 et 23h00"
+            }
+          ]
+        },
+        {
+          "t": "liste",
+          "titre": "À vérifier à chaque passage",
+          "items": [
+            "Issues de secours fermées et dégagées, panneaux lumineux en état.",
+            "Espaces sensibles.",
+            "##Terrasse côté restaurant## — squat, dégradations, intrusions.",
+            "Problèmes techniques apparents : fuites, dégâts, verrouillage, éclairage de sécurité.",
+            "##Fermeture du tourniquet## — procédure à l'étape 3."
+          ]
+        },
+        {
+          "t": "stop",
+          "lab": "Comptage des fenêtres — rondes d'été",
+          "txt": "Compter les fenêtres ouvertes avec le ##compteur manuel## si le nombre est élevé. Noter le ##temps effectif de ronde##. ##Reporting obligatoire à chaque passage##, et rapport après chaque ronde."
+        }
+      ],
+      "blocsNotes": [
+        {
+          "t": "liste",
+          "titre": "Missions ponctuelles",
+          "items": [
+            "##Objets trouvés## — dépôt à la réception du lundi au vendredi de 8h à 17h. Hors horaires : rapport et dépôt au coffre-fort sécurité.",
+            "##Events MSF## — présence assurée, filtrage de l'entrée si demandé, rapport après l'événement."
+          ]
+        },
+        {
+          "t": "liste",
+          "titre": "Documents de référence",
+          "items": [
+            "I.01 — Mode d'emploi de la centrale incendie Siemens, avec la formation SharePoint.",
+            "S.01 — Fermeture du tourniquet, du 30.05.2025."
+          ]
+        },
+        {
+          "t": "liste",
+          "titre": "Réserves sur les données",
+          "items": [
+            "Le CDC annonce un faux numéro d'astreinte — voir l'avertissement de l'étape 5.",
+            "##Aucun code de centrale## communiqué.",
+            "Le logigramme d'astreinte listait MSF sur deux lignes, « bouton accueil » et incendie 324 333 : les deux sont réunis dans cette fiche.",
+            "Procédure d'ouverture du parking relevée sur site le 01.10.2026, à partir de photos — elle ne figure dans aucun document client."
+          ]
+        }
+      ]
     },
     {
       "statut": "partiel",
@@ -4465,10 +7150,12 @@ window.RDZ_FICHES = {
       "statut": "partiel",
       "prom": "—",
       "client": "Michelle-Nicod",
-      "nomComplet": "IHEID — Résidence étudiante, Rue Michelle-Nicod 8-10, 1202 Genève (site identifié via l'annexe S.03 « Interdiction de site » — aucun cahier des charges reçu pour ce bâtiment, code PROM non communiqué)",
+      "nomComplet": "Doublon — la rue Michelle-Nicod 8-10 est l'adresse de la REGM, le n°4 celle de MSF. Voir ces deux fiches.",
       "types": [],
       "adresse": "Rue Michelle-Nicod 8-10, 1202 Genève",
-      "groupeInterdictions": "IHEID"
+      "groupeInterdictions": "IHEID",
+      "archive": true,
+      "archiveLe": "2026-10-01"
     }
   ]
 };
