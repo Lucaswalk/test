@@ -35,210 +35,6 @@ window.RDZ_FICHES = {
         "Incendie"
       ],
       "adresse": "Chemin des Tuileries 3-5, 1293 Bellevue (accès par portail n°2)",
-      "transmetteurs": [
-        {
-          "label": "Incendie — bâtiment",
-          "code": "466 874"
-        },
-        {
-          "label": "Incendie — piscine",
-          "code": "466 852"
-        },
-        {
-          "label": "Effraction",
-          "code": "461 324"
-        },
-        {
-          "label": "Toutes alarmes",
-          "code": "Complément à 30"
-        }
-      ],
-      "population": "Propriétaires (ponctuel) · Agriculteur (M. Cretegny) · Jardinier (M. Toinet) · Intendant (M. Nunes) · Cuisiniers · Visiteurs. Intrus par le bas du terrain : raccompagner à la sortie ; si refus de donner une pièce d'identité → Police.",
-      "tenue": "Polo + veste sécurité, pantalon noir, chaussures noires. Interdit : fumer/téléphoner devant les clients, utiliser l'ascenseur, entrer sans sur-chaussures, ouvrir le portail n°3, faire la ronde extérieure en véhicule, utiliser les WC, prendre des photos.",
-      "stationnement": "Sous le porche de la porte d'entrée arrière, en respectant le cheminement prescrit. Ronde extérieure à pied uniquement. Prise de poste : annoncer sa position par radio, vérifier le matériel (sur-chaussures), lancer la ronde sur GuardTek.",
-      "acces": [
-        "Sur-chaussures obligatoires avant d'entrer dans le bâtiment.",
-        "Trousseau de clés + badge remis en début de poste (bâtiment BELLEVUE)."
-      ],
-      "manipulationBase": [
-        "##Alarme H24## : prévenir CERTAS avant chaque ouverture/fermeture."
-      ],
-      "zoning": [
-        {
-          "zone": "1",
-          "desc": "Portail entrée 5 (départ de ronde)"
-        },
-        {
-          "zone": "2",
-          "desc": "Porte principale du bâtiment"
-        },
-        {
-          "zone": "3",
-          "desc": "Porte droite passerelle"
-        },
-        {
-          "zone": "4",
-          "desc": "Porte arrière"
-        },
-        {
-          "zone": "5",
-          "desc": "Porte de sortie de secours piscine"
-        },
-        {
-          "zone": "6",
-          "desc": "Portail 3"
-        },
-        {
-          "zone": "7",
-          "desc": "Porte local technique cascade (extérieur)"
-        },
-        {
-          "zone": "8",
-          "desc": "Porte tourniquet"
-        },
-        {
-          "zone": "9",
-          "desc": "Porte de sortie de secours du bâtiment (côté)"
-        },
-        {
-          "zone": "10",
-          "desc": "Porte de gauche passerelle"
-        },
-        {
-          "zone": "11",
-          "desc": "Porte sous passerelle"
-        },
-        {
-          "zone": "12",
-          "desc": "Porte escalier de secours parking (fin de ronde extérieure — pointeau qui marque officiellement la fin du parcours extérieur)"
-        },
-        {
-          "zone": "13",
-          "desc": "Centrale d'alarme du parking"
-        },
-        {
-          "zone": "14",
-          "desc": "Groupe de secours 1 parking"
-        },
-        {
-          "zone": "15",
-          "desc": "Local technique entretien"
-        },
-        {
-          "zone": "16",
-          "desc": "Groupe de secours 2 parking"
-        },
-        {
-          "zone": "17",
-          "desc": "Centrale d'alarme entrée bureau RDC"
-        },
-        {
-          "zone": "18",
-          "desc": "Centrale d'alarme loge sécurité 1er étage"
-        },
-        {
-          "zone": "19",
-          "desc": "Console local technique chaufferie (près porte d'entrée RDC)"
-        },
-        {
-          "zone": "20",
-          "desc": "Console local technique RDC intérieur (production de froid)"
-        },
-        {
-          "zone": "21",
-          "desc": "Console local technique « Carrier » RDC intérieur"
-        },
-        {
-          "zone": "22",
-          "desc": "Zone piscine 1"
-        },
-        {
-          "zone": "23",
-          "desc": "Console technique Minerg piscine"
-        },
-        {
-          "zone": "24",
-          "desc": "Zone piscine 2"
-        },
-        {
-          "zone": "25",
-          "desc": "Console technique piscine"
-        },
-        {
-          "zone": "26",
-          "desc": "Sortie de secours local technique piscine"
-        },
-        {
-          "zone": "27",
-          "desc": "Bureau dernier étage"
-        },
-        {
-          "zone": "28",
-          "desc": "Portail entrée 5 (sortie)"
-        }
-      ],
-      "contacts": [
-        {
-          "nom": "M. Ferlicoq",
-          "role": "Technical Manager ERGON — responsable de site (pas d'intendant permanent)",
-          "tel": "+41 22 959 03 50"
-        },
-        {
-          "nom": "M. Ferlicoq (mobile)",
-          "role": "Technical Manager ERGON",
-          "tel": "+41 79 917 32 40"
-        },
-        {
-          "nom": "M. Ferlicoq — ligne « Client 24/7 »",
-          "role": "Dir. Technique ERGON — usage réservé, nécessite l'accord préalable de Rodolphe ou Guillaume (RDZ)",
-          "tel": "+33 6 75 30 04 63 / +41 22 959 07 20"
-        },
-        {
-          "nom": "M. De Zordi",
-          "role": "Directeur RDZ",
-          "tel": "+41 76 634 17 92"
-        },
-        {
-          "nom": "M. Nunes",
-          "role": "Intendant",
-          "tel": "+41 79 880 00 65"
-        },
-        {
-          "nom": "M. Toinet",
-          "role": "Jardinier — technique jours ouvrables",
-          "tel": "+41 79 752 05 57"
-        },
-        {
-          "nom": "M. Cretegny",
-          "role": "Agriculteur / éleveur",
-          "tel": "+41 22 755 13 50 / +41 79 342 60 47"
-        },
-        {
-          "nom": "M. Guth",
-          "role": "Directeur ERGON",
-          "tel": "+41 79 450 75 21"
-        },
-        {
-          "nom": "TECHNIK-ALARM",
-          "role": "Intrusion/Incendie bâtiment (Tx 466 874)",
-          "tel": "+41 22 797 17 27"
-        },
-        {
-          "nom": "SIEMENS",
-          "role": "Intrusion/Incendie piscine (Tx 466 852)",
-          "tel": "0 842 842 033"
-        }
-      ],
-      "astreinte": "+41 79 339 13 41 (astreinte RDZ — natel dédié) — le numéro +41 79 749 35 36 précédemment indiqué ici est en réalité le natel de l'agent MDP (matériel de site), pas l'astreinte RDZ ; corrigé le 27.08.2026 sur indication du client.",
-      "rondes": "Nuit (lun-dim) : 2 rondes complètes + 2 rondes extérieures minimum, ≥1 passage au terrain mitoyen de jour ET ≥1 passage de nuit. En cas de retard, un seul passage au terrain mitoyen est toléré par nuit — à justifier auprès du superviseur. Samedi/dimanche/fériés (jour) : 2 complètes + 2 extérieures (ou 3 complètes), ~40 min/ronde. Varier les heures de passage (dissuasion).",
-      "consignes": "Procédure alarme effraction (Tx 461 324) : 1) contrôle extérieur complet et vérification des accès ; 2) prévenir son collègue par radio, si RAS entrer dans le bâtiment ; 3) identifier la zone en alarme et investiguer à l'intérieur ; 4) rendre compte à CERTAS, aviser le client si nécessaire, rapport GuardTek. Si effraction réelle constatée : NE PAS ENTRER — appeler immédiatement la Police (117). Procédure CERTAS : appeler dès la fin du contrôle extérieur, avant d'entrer dans le parking ou le bâtiment, pour limiter le temps de déclenchement. Procédure garage : attendre le « Click » d'ouverture complète avant de lancer le réarmement de la zone Garage (temporisation très courte).",
-      "particularites": "Rondes déchets verts : vérifier l'absence de déchets sous les grilles du jardin. Les grilles sont TOUTES sous alarme — ne jamais les déplacer sans accord du client (événement GuardTek avec photos). Fuite d'eau : placer des contenants, protéger moquette/électricité, connaître l'emplacement de la vanne, rester sur place si fuite importante et joindre le superviseur et le client, organiser une intervention externe si besoin. Alarme technique 24h/24 : aviser M. Ferlicoq puis l'astreinte RDZ qui préviendra EQUANS ; en cas de doute, solliciter Rodolphe 24h/24. Incohérences relevées dans le cahier des charges reçu (M.A.J. 01.04.2026, à faire clarifier avec le client) : le document indique à la fois « il n'y a pas d'intendant permanent sur site » et liste M. Nunes comme intendant avec numéro de téléphone actif — statut réel à vérifier ; l'adresse figure comme « Chemin des Tuileries 3 » sur la page de localisation et « 3-5 » ailleurs dans le même document ; la numérotation des annexes ne concorde pas totalement avec les noms de fichiers reçus (A.03/A.04 pour l'interdiction d'entrée selon la source). Le formulaire « Interdiction d'entrée » (annexe A.03/A.04) reçu est un gabarit vierge — aucune interdiction nominative en cours n'a été transmise pour ce site à ce jour.",
-      "annexes": [
-        "A.01 — Ronde : plan et procédure de ronde du site",
-        "A.02 — Liste des pointeaux de ronde (ci-dessus)",
-        "A.03 — Fiche réflexe : procédures d'intervention",
-        "A.04 — Interdiction d'entrée : formulaire vierge et procédure (aucune interdiction nominative reçue à ce jour)"
-      ],
       "majLe": "2026-09-24",
       "majPar": "Gimenez",
       "etapes": [
@@ -512,8 +308,8 @@ window.RDZ_FICHES = {
                   "t": "tel",
                   "items": [
                     {
-                      "nom": "M. Nunes",
-                      "role": "Intendant — statut à confirmer, voir les réserves en bas de fiche",
+                      "nom": "M. Cédric Nunes",
+                      "role": "Responsable technique — ##référent du site##. Joignable à toute heure, par téléphone de préférence.",
                       "num": "+41 79 880 00 65"
                     },
                     {
@@ -724,12 +520,26 @@ window.RDZ_FICHES = {
           "t": "liste",
           "titre": "Réserves sur les données",
           "items": [
-            "Le cahier des charges du 01.04.2026 indique à la fois qu'##il n'y a pas d'intendant permanent## sur site et liste ##M. Nunes comme intendant## avec un numéro actif — statut réel à vérifier.",
+            "Le cahier des charges indique qu'il n'y a ##pas d'intendant permanent sur site##, tout en listant M. Nunes : il est bien le ##référent technique## de Bellevue, sans y être présent en permanence.",
             "L'adresse figure comme « Chemin des Tuileries 3 » sur la page de localisation et « 3-5 » ailleurs dans le même document.",
             "La numérotation des annexes ne concorde pas avec les noms de fichiers reçus : l'interdiction d'entrée est tantôt A.03, tantôt A.04.",
             "Le formulaire « Interdiction d'entrée » reçu est un ##gabarit vierge## : aucune interdiction nominative en cours pour ce site.",
             "##Aucun code de centrale## n'a été communiqué pour ce site."
           ]
+        }
+      ],
+      "transmetteurs": [
+        {
+          "label": "Incendie bâtiment",
+          "code": "466874"
+        },
+        {
+          "label": "Incendie piscine",
+          "code": "466852"
+        },
+        {
+          "label": "Effraction",
+          "code": "461324"
         }
       ]
     },
@@ -743,94 +553,6 @@ window.RDZ_FICHES = {
         "Effraction"
       ],
       "adresse": "Route de Collex 45, 1293 Bellevue",
-      "transmetteurs": [
-        {
-          "label": "Incendie",
-          "code": "320 805"
-        },
-        {
-          "label": "Effraction",
-          "code": "badge/trousseau — pas de code numérique dédié"
-        },
-        {
-          "label": "Toutes alarmes",
-          "code": "Complément à 30"
-        }
-      ],
-      "population": "Ponctuellement des techniciens et visiteurs.",
-      "tenue": "Polo + veste sécurité, pantalon noir, chaussures noires. Sur-chaussures obligatoires en cas de pluie. Interdit : fumer, appels personnels en présence de clients, prendre des photos.",
-      "stationnement": "Devant la grille de chantier d'entrée. Interdiction de faire la ronde extérieure en voiture. Parking occupé le week-end (location probable par le Country Club voisin) : faire un rapport et laisser les véhicules.",
-      "acces": [
-        "##Entrée## : depuis le parking, longer le bâtiment à gauche, descendre l'escalier caché derrière le buisson, ouvrir la porte rouge avec la clé pass.",
-        "##Sortie si portes verrouillées## : ascenseur → niveau -1 → double porte du vestibule (à refermer à clé) → porte de secours au fond du parking.",
-        "Trousseau de clés/badge et téléphone de patrouille à récupérer à la loge REGM avant la prise de poste."
-      ],
-      "manipulationBase": [
-        "##Portes automatiques du hall## : bouton rond central = menu, flèche droite → lettre O = Ouvrir, flèche gauche → lettre F = Fermer/verrouiller, valider avec le bouton central.",
-        "##Porte automatique du sas## : la programmation ne fait aucune distinction semaine/week-end (le mécanisme fonctionne à l'identique tous les jours, malgré le nom de l'annexe « jours fériés/week-end »)."
-      ],
-      "zoning": [
-        {
-          "zone": "1",
-          "desc": "Face arrière du bâtiment — étanchéité (les deux portes de secours, fenêtres, grilles), dégradations (graffitis, déchets)"
-        },
-        {
-          "zone": "2",
-          "desc": "Cabane — traces de squat, déchets, soirées interdites"
-        },
-        {
-          "zone": "3",
-          "desc": "Portes principales — bien verrouillées (la 1ère peut s'ouvrir en semaine, c'est normal)"
-        },
-        {
-          "zone": "4",
-          "desc": "Entrée parking (sous-sol)"
-        },
-        {
-          "zone": "5",
-          "desc": "Local TGBT / chaufferie — mode « chaud » = normal ; vérifier aussi l'arrivée d'eau du bâtiment"
-        },
-        {
-          "zone": "6-7-8",
-          "desc": "RDC / 1er / 2e étage — contrôle du local électrique à chaque étage + vérifier la fermeture des toilettes situées près des ascenseurs"
-        }
-      ],
-      "contacts": [
-        {
-          "nom": "M. Nunes",
-          "role": "Intendant / concierge du site (jusqu'à 23h)",
-          "tel": "+41 79 880 00 65"
-        },
-        {
-          "nom": "M. Ferlicoq",
-          "role": "Technical Manager ERGON",
-          "tel": "+41 22 959 03 50"
-        },
-        {
-          "nom": "M. Ferlicoq (mobile)",
-          "role": "Technical Manager ERGON",
-          "tel": "+41 79 917 32 40"
-        },
-        {
-          "nom": "M. De Zordi",
-          "role": "Directeur RDZ",
-          "tel": "+41 76 634 17 92"
-        },
-        {
-          "nom": "Police Municipale",
-          "role": "Dim-mer 6h-minuit / Jeu-sam 6h-3h",
-          "tel": "+41 22 418 22 22"
-        }
-      ],
-      "astreinte": "+41 22 552 26 99",
-      "rondes": "2 rondes minimum par nuit (1 avant et 1 après minuit) — horaires indicatifs, ronde complète si doute ou bruit inhabituel. 2 rondes extérieures les samedis, dimanches et jours fériés. Passer obligatoirement par la cabane à chaque passage.",
-      "consignes": "Accompagnement du personnel sur site en cas de besoin. Lors de la fermeture, s'assurer que tous les accès sont verrouillés. Personnes non autorisées, parking sauvage ou cabane occupée dans les bois : signaler et consigner. Porte automatique du sas (jours fériés/week-end) : la programmation ne différencie pas semaine/week-end — la 1ère porte s'ouvre pour le facteur, la 2e doit impérativement rester verrouillée. NE PAS intervenir sur la programmation.",
-      "particularites": "Un formulaire « Interdiction d'entrée dans un bâtiment » (Route de Collex 45, 1293 Bellevue — orthographié « Colex » sur le formulaire source, coquille du document d'origine) est disponible en annexe pour notifier une personne interdite de site, avec copie systématique à la Police cantonale ; c'est un gabarit vierge, aucune interdiction nominative n'a été transmise pour ce site à ce jour. Alarme incendie : intervention sur appel client (contacter M. Nunes, concierge). Le tableau des annexes du cahier des charges laisse apparaître une ligne « S.04 / TECHNIQUE / T.03 » tronquée sans description — possible annexe non transmise, à confirmer avec RDZ.",
-      "annexes": [
-        "S.01 — Porte automatique du sas jours fériés/week-end",
-        "S.02 — Ronde extérieure Collex (itinéraire et pointeaux)",
-        "S.03 — Interdiction de site (formulaire vierge, procédure)"
-      ],
       "etapes": [
         {
           "titre": "Le site",
@@ -1077,7 +799,7 @@ window.RDZ_FICHES = {
               "items": [
                 {
                   "nom": "M. Cédric Nunes",
-                  "role": "Responsable technique — ##c'est lui qu'on appelle en cas d'alarme incendie##. Joignable à toute heure, par téléphone de préférence.",
+                  "role": "Responsable technique — ##référent du site##. ##c'est lui qu'on appelle en cas d'alarme incendie##. Joignable à toute heure, par téléphone de préférence.",
                   "num": "+41 79 880 00 65"
                 },
                 {
@@ -1237,6 +959,12 @@ window.RDZ_FICHES = {
             "##Aucun code de centrale## n'a été communiqué pour ce site."
           ]
         }
+      ],
+      "transmetteurs": [
+        {
+          "label": "Incendie",
+          "code": "320805"
+        }
       ]
     },
     {
@@ -1249,97 +977,6 @@ window.RDZ_FICHES = {
         "Effraction"
       ],
       "adresse": "Chemin de la Papeterie 1, 1290 Versoix",
-      "transmetteurs": [
-        {
-          "label": "Incendie",
-          "code": "320 917"
-        },
-        {
-          "label": "Effraction — Archives Versoix",
-          "code": "nom « Archives SETE Versoix » — pas de code numérique dédié"
-        },
-        {
-          "label": "Toutes alarmes",
-          "code": "Complément à 30"
-        }
-      ],
-      "population": "Responsable technique (bureau sur place) · Entreprises locataires · Protectas · Promeneurs et riverains · SDF / squatteurs · Taggeurs.",
-      "tenue": "Polo + veste sécurité, pantalon noir, chaussures noires. Interdit : fumer sur site, appels personnels sur site.",
-      "stationnement": "Sur le parking extérieur du site, devant l'entrée principale.",
-      "acces": [
-        "##Trousseau de clés## : bâtiment principal, locaux techniques, parking, archives.",
-        "##Connecteurs de porte## : salle d'archives 5 et porte du couloir menant au SAS ascenseur."
-      ],
-      "manipulationBase": [
-        "##Clavier alarme Archives## : toucher « NO » pour activer le clavier, saisir le code ~~2244~~ pour armer/désarmer.",
-        "##Centrale d'alarme Archives## dans la salle Archive 1 — contacter M. Nunes AVANT de faire intervenir Technik Alarm."
-      ],
-      "zoning": [
-        {
-          "zone": "Bâtiment principal (pts 1-20)",
-          "desc": "Entrée du site, corridor SAS ; contour du bâtiment côté voie ferrée ; une terrasse est explicitement exclue du contrôle (« Ne pas contrôler cette terrasse ») ; pt 4 entrée locaux techniques puis pt 5/6/7 local TGBT / local IT / local sous-station ; pts 12-15 étages 1-4 côté gauche, pts 16-18 étages 1-3 côté droit ; toilettes H/F contrôlées à chaque étage (fuites) ; pt 19 local technique 4e étage côté droit ; pt 20 local ménage RDC."
-        },
-        {
-          "zone": "18 — Sprinkler",
-          "desc": "Local SPRINKLER — contrôle pression : seuls les 2 manomètres du haut comptent, ne doivent pas être < 10 bars"
-        },
-        {
-          "zone": "21 — Vanne d'eau",
-          "desc": "Local technique — vanne d'arrivée générale d'eau, à couper via la vanne rouge en cas de fuite ou sur ordre du client"
-        },
-        {
-          "zone": "Toit",
-          "desc": "Accès via porte de secours 4e étage (descendre 1/2 étage) → escaliers métalliques → toit ; suivre la flèche en restant loin du bord. Contrôle de JOUR uniquement, interdit la nuit et par vent/pluie — informer son binôme avant de monter"
-        },
-        {
-          "zone": "Archives",
-          "desc": "6 salles d'archives à parcourir lors d'une levée de doute"
-        },
-        {
-          "zone": "Zone Logements (pts 21-23)",
-          "desc": "⚠ Composante résidentielle du site, révélée par l'annexe ronde A.02 — pt 21 Villa, pt 22 zone technique, pt 23 Logements. Contrôle manuel de la fermeture du bâtiment extérieur (porte à la main, fenêtres à l'œil)."
-        },
-        {
-          "zone": "Ronde Parking (pts 24-29)",
-          "desc": "Portes intérieures/extérieures sur plusieurs niveaux de parking (1er et 2e étage), escalier de secours 2e étage. Contrôle : fermeture de toutes les portes, état des extincteurs, état des issues de secours, absence de squat/dégradations."
-        }
-      ],
-      "contacts": [
-        {
-          "nom": "M. Cédric Nunes",
-          "role": "Responsable technique, Espace Versoix — demande à être ##appelé directement## pour tout problème technique, pas seulement avisé par rapport (01.10.2026). WhatsApp à toute heure.",
-          "tel": "+41 79 880 00 65"
-        },
-        {
-          "nom": "M. Ferlicoq",
-          "role": "Technical Manager ERGON",
-          "tel": "+41 22 959 03 50"
-        },
-        {
-          "nom": "M. De Zordi",
-          "role": "Directeur RDZ",
-          "tel": "+41 76 634 17 92"
-        },
-        {
-          "nom": "Police Municipale",
-          "role": "Dim-mer 6h-minuit / Jeu-sam 6h-3h",
-          "tel": "+41 22 418 22 22"
-        },
-        {
-          "nom": "Protectas",
-          "role": "Alerte Archives SETE (centrale « Archives SETE à Versoix »)",
-          "tel": "058 123 02 00"
-        }
-      ],
-      "astreinte": "+41 22 552 26 99 (téléphone de patrouille) — astreinte RDZ : +41 79 339 13 41. Correction (27.08.2026) : le numéro +41 79 749 35 36 précédemment relié ici à « l'astreinte RDZ » est en réalité le natel de l'agent MDP (matériel de site, sans rapport avec ce site Papeterie) ; le lien fait dans une version précédente de cette fiche entre le téléphone de patrouille et ce numéro était donc probablement erroné — à reconfirmer avec le client quel numéro joindre en priorité depuis ce site.",
-      "rondes": "20h-23h (tous les jours) : ronde complète intérieure + ronde d'étanchéité bâtiment principal (~45 min). Minuit-7h : ronde d'étanchéité + contrôle extérieur parking et village (~30 min). Samedi/dimanche/fériés 7h-20h : ronde d'étanchéité + contrôle extérieur. Parcours complet : 29 pointeaux répartis en 3 zones — voir Zoning ci-dessus (bâtiment principal 1-20, zone Logements 21-23, ronde Parking 24-29).",
-      "consignes": "##CONSIGNE TEMPORAIRE — fuite d'eau 1er étage, depuis le 30.09.2026.## Fuite au plafond, goutte-à-goutte, origine probable un cumulus en fin de vie. Un seau de rétention est en place : ##le vider à chaque ronde## pour éviter le débordement, et noter l'évolution au rapport. Consigne à supprimer dès que le technicien est intervenu.\n\nIntervention Archives (24h/7j) : alerte Protectas avec validation de M. Nunes → déplacement du patrouilleur pour levée de doute → désactiver l'alarme et vérifier les 6 salles d'archives → si présence : légitimation + appel 117 si nécessaire ; si RAS : rendre compte à M. Nunes par WhatsApp, réactiver l'alarme, refermer à clé, rédiger un rapport. Bâtiment bureaux : certaines zones sont confiées à des sociétés concurrentes — NE PAS ouvrir ces portes (risque d'intervention armée) ; ne pas entrer dans un bureau privé sans autorisation explicite.",
-      "particularites": "##Problème technique constaté (fuite, panne, dégât) : téléphoner à M. Nunes.## Il l'a demandé explicitement le 01.10.2026 — le rapport écrit ne suffit pas, l'appel permet une intervention le jour même. Pression sprinkler < 10 bars → rapport GuardTek immédiat + contact M. Nunes ou astreinte RDZ. Lumières automatiques du parking : rapport GuardTek en cas de dysfonctionnement. Problèmes techniques 1er niveau : consulter le RETEX sur Teams, sinon M. Nunes (jusqu'à 23h), sinon astreinte RDZ. Le site borde une voie ferrée (contour du bâtiment principal côté voie ferrée, à contrôler lors des rondes) et comprend une composante résidentielle (Villa + Logements, pointeaux 21-23 de la ronde) qui n'était pas documentée précédemment. Voisinage identifié sur le plan : « Coty Geneva SA » et « MR menuiserie agencement ».",
-      "annexes": [
-        "A.01 — Accès toit (procédure sécurisée)",
-        "A.02 — Ronde (parcours complet, 29 pointeaux : bâtiment principal, zone Logements, parking)",
-        "A.03 — Local archives (accès et procédure d'intervention)"
-      ],
       "etapes": [
         {
           "titre": "Le site",
@@ -1550,7 +1187,7 @@ window.RDZ_FICHES = {
               "items": [
                 {
                   "nom": "M. Cédric Nunes",
-                  "role": "Responsable technique du site, Espace Versoix. ##Joignable à toute heure, par téléphone de préférence## — il l'a demandé explicitement. WhatsApp également.",
+                  "role": "Responsable technique — ##référent du site##. du site, Espace Versoix. ##Joignable à toute heure, par téléphone de préférence## — il l'a demandé explicitement. WhatsApp également.",
                   "num": "+41 79 880 00 65"
                 },
                 {
@@ -1831,6 +1468,12 @@ window.RDZ_FICHES = {
             "M. Nunes est désigné tantôt « intendant », tantôt « concierge jusqu'à 23h » : il est responsable technique et joignable à toute heure."
           ]
         }
+      ],
+      "transmetteurs": [
+        {
+          "label": "Incendie — Certas",
+          "code": "320917"
+        }
       ]
     },
     {
@@ -1843,85 +1486,6 @@ window.RDZ_FICHES = {
         "Effraction"
       ],
       "adresse": "Quai du Seujet — accès n°22 (loge intendant, alarme incendie) et n°24 (alarme effraction), 1201 Genève",
-      "transmetteurs": [
-        {
-          "label": "Incendie",
-          "code": "321 482"
-        },
-        {
-          "label": "Effraction — RDC/étages",
-          "code": "461 025"
-        },
-        {
-          "label": "Effraction — 9e/10e étage",
-          "code": "461 309"
-        },
-        {
-          "label": "Toutes alarmes",
-          "code": "Complément à 30"
-        }
-      ],
-      "acces": [
-        "##Arrivée sur site## : se garer face au portail vert (côté gauche), entrer par la porte battante automatique entre les deux tourniquets, badger sur le lecteur de droite (noir).",
-        "##Boîte à clés de la loge## : CODE ~~0741~~.",
-        "##Loge de l'intendant## : éclairage à droite de la porte ; centrale effraction, boîte à clés et centrale feu sur/derrière le premier bureau.",
-        "##Trousseau bleu « Sécurité »## + porte-clé « coq » dans la boîte à pass (fermée par un simple aimant).",
-        "##Sortie## : éteindre l'éclairage, verrouiller la loge avec la clé du coffre, redéposer la clé dans le coffre (code ~~0741~~) en masquant l'affichage du code, puis présenter la main devant le boîtier pour ouvrir la porte automatiquement.",
-        "##Ascenseur vers 9e/10e## : badger le clavier puis tourner la clé « ~~LA4545~~ » pour activer le panneau de commande, sélectionner l'étage."
-      ],
-      "zoning": [
-        {
-          "zone": "Grp 1",
-          "desc": "RDC zones 4/6/8/10/11/13/114 (Porte Quai A, Tourniquet 22 côté loge, Tourniquet 24, Tourniquet 22 côté quai, Porte gauche Arcade rez 24, Passage quai à 22, Porte droite Arcade Rez 24) · 6e étage zone 12 (clé incendie 6e)"
-        },
-        {
-          "zone": "Grp 2",
-          "desc": "RDC zones 1/9 — tempo porte quai marchandises, alarme porte quai de marchandises"
-        },
-        {
-          "zone": "Grp 3",
-          "desc": "11e étage zone 22 (sortie terrasse 11e) · 12e étage zones 23/24 (sortie balcon 12e, sortie terrasse 12e)"
-        },
-        {
-          "zone": "Grp 4",
-          "desc": "RDC zone 7 (sortie de secours 24) · 6e étage zones 14/15/16/17/18 (sorties de secours 22/24/26, 6e) · 10e étage zones 21/150 (sortie terrasse 10e, accès EFG)"
-        },
-        {
-          "zone": "Grp 5",
-          "desc": "RDC zones 2/33 (procédure porte sortie de secours, quai A/B, porte B rez)"
-        },
-        {
-          "zone": "Grp 6",
-          "desc": "6e étage zones 19/20 (sorties de secours 26, 6e)"
-        },
-        {
-          "zone": "Grp 7",
-          "desc": "RDC zone 5 (porte principale n°22)"
-        }
-      ],
-      "contacts": [
-        {
-          "nom": "M. Nunes",
-          "role": "Intendant secteur Seujet",
-          "tel": "+41 79 880 00 65"
-        },
-        {
-          "nom": "M. De Zordi",
-          "role": "Directeur RDZ",
-          "tel": "+41 76 634 17 92"
-        }
-      ],
-      "astreinte": "Astreinte RDZ (natel dédié CERTAS) — voir consignes de prise de service",
-      "rondes": "Intervention en 15 minutes après appel CERTAS : passer la centrale feu du site en mode direct (le support de formation RDZ libelle cette étape « Centrale Incendie REGM » — voir la remarque en particularités) et aviser le patrouilleur d'interrompre sa ronde pour faire retour à la base ; récupérer le badge Seujet dans l'armoire à clés « Quai Seujet » ; radio pour liaison entre agents ; natel d'astreinte pour contact CERTAS ; véhicule RDZ (Zoé RDZ 134 389) à prendre avant 6h30 et après 20h00 (sinon vélo).",
-      "consignes": "Quittancer une alarme (centrale effraction, loge intendant) : localiser la centrale (diodes rouges clignotantes = groupes en alarme) → activer le boîtier (code 198000 + touche OFF, répété 2 fois avec bip) → l'écran affiche « Groupe? » → taper le numéro du groupe à désenclencher → la diode s'éteint. Enclencher une alarme : même procédure avec la touche ON, puis appeler CERTAS pour vérification que tout est en ordre. Après intervention sur zone : récupérer le fichier PDF du groupe en alarme pour obtenir les plans et se rendre sur zone, puis revenir à la loge une fois l'intervention terminée. — Centrale incendie (Securiton, dans la loge, derrière le premier bureau) — CODE CLIENT 4321 : activer la centrale (bouton 9) → molette (16) sur « Autorisations » → confirmer → entrer 4321 → valider (molette). Levée de doute (dans les 3 minutes après début d'alarme) : bouton 9 → sélectionner « Retardement » (molette) → valider → décompte de 5 minutes avant transmission automatique aux pompiers. Consulter une alarme/dérangement : bouton 10 → sélectionner l'élément (molette) → bouton 15 pour le détail. Activer/désactiver un élément (détecteur) : sélectionner « Elément » → « Groupe » (ensemble de détecteurs) ou « Sortie » → taper le numéro (clavier 21) — ex. 1074 = groupe 1074, 1074.1 = détecteur 1074.1 uniquement.",
-      "particularites": "Bâtiment multi-locataires : SETE, ERGON, EFG, Loomis, Fitness, Bibliothèque de Genève, Klesch, Cabinet dentaire (6e étage), FER (5e étage) — bien vérifier l'étage et le locataire concerné avant intervention. Accès monte-charge : depuis le quai de marchandises (commande au 2e bureau de la loge, bouton « ouverture quai marchandises »), badge pour appeler l'ascenseur. Correction (27.08.2026) : une fiche précédente indiquait à tort que le client REGM partageait cette centrale/ce badge avec Seujet — les documents reçus pour REGM (résidence IHEID Grand Morillon, PROM 324 199) confirment qu'il s'agit d'un site totalement distinct, sans lien avec Seujet. Voir fiche REGM séparée. ⚠ Incohérence non résolue : le document RDZ « Intervention Effraction 461025 » (17.06.2024) libelle lui-même l'étape de mise en mode direct de la centrale feu « Centrale Incendie REGM », ce qui semble contredire la correction ci-dessus. Cette mention n'est expliquée par aucun document disponible — possible copier-coller d'un support réutilisé, ou lien historique non documenté entre les deux centrales. Le champ « rondes » ci-dessus a été reformulé prudemment en « la centrale feu du site » plutôt que de reproduire littéralement « REGM » ; à vérifier sur place avant de s'y fier. Ronde/patrouille : les plans (22.02.2024) font apparaître un réseau complet de points de contrôle numérotés sur tous les étages et sous-sols (ex. 151, 251, 1051-1058, 1151/1152, 1251-1254, 1301-1354, 1451-1454, 1551-1553, 1651-1653, 1751-1754, 1851-1854, 1951/1952, 11051) ainsi que plusieurs « consoles monobloc à quittancer » (1er, 2e, 3e étages) — mais aucun document reçu ne précise l'ordre, la fréquence ou la durée d'une ronde régulière sur ce site ; seule la procédure d'intervention d'urgence en 15 minutes (ci-dessus) est documentée. À clarifier auprès du client/CERTAS si une ronde périodique est attendue. Localisation physique : la loge (RDC, accès n°22/24) contient les boîtiers utilisés pour quittancer/enclencher (centrale effraction et centrale feu, sur/derrière le premier bureau). Les plans du 10e étage indiquent en plus des étiquettes « Centrale effraction »/« Centrale feu » dans une zone technique de cet étage — lien avec les boîtiers de la loge non précisé par les documents ; à confirmer sur site.",
-      "annexes": [
-        "Plans du site (tous étages, 1er sous-sol au 12e étage) — consultés intégralement ; confirment la table des 7 groupes ci-dessus, les connexions monte-charge/escaliers entre étages, et les locataires par étage",
-        "Asservissement Securiton (table technique REL4 : points de commande/ventilation) — consulté ; contenu technique non actionnable directement pour un agent, disponible sur demande",
-        "Alarme Incendie 321 482 — procédure centrale Securiton (arrivée sur site, code client 4321, levée de doute, consultation, activation/désactivation d'élément) — consultée intégralement",
-        "Intervention Effraction 461 025 — procédure complète (quittancement/enclenchement code 198000, table des 7 groupes et zones, intervention 15 minutes) — consultée intégralement",
-        "Mode d'emploi Centrale Feu — manuel générique Securiton MIC (2010), aucune donnée spécifique au site — consulté, référence uniquement"
-      ],
       "etapes": [
         {
           "titre": "Le site",
@@ -2235,11 +1799,6 @@ window.RDZ_FICHES = {
               "titre": "Client et technique",
               "items": [
                 {
-                  "nom": "M. Cédric Nunes",
-                  "role": "Responsable technique, secteur Seujet — également responsable du site Papeterie. ##Joignable à toute heure, par téléphone de préférence.##",
-                  "num": "+41 79 880 00 65"
-                },
-                {
                   "nom": "M. De Zordi",
                   "role": "Directeur RDZ",
                   "num": "+41 76 634 17 92"
@@ -2327,7 +1886,7 @@ window.RDZ_FICHES = {
                 },
                 {
                   "a": "Rendre compte",
-                  "d": "Appeler M. Nunes, puis rapport GuardTek."
+                  "d": "Aviser l'##astreinte Seujet## (+41 79 571 45 00) ou, hors exploitation, M. Soullier. Puis rapport GuardTek."
                 }
               ]
             },
@@ -2370,8 +1929,23 @@ window.RDZ_FICHES = {
             "##Correction du 27.08.2026## : une version précédente de cette fiche indiquait que REGM partageait cette centrale et ce badge. C'est faux — REGM est la résidence IHEID du Grand Morillon, PROM 324 199, sans lien avec Seujet.",
             "##Centrales du 10e étage## : les plans portent des étiquettes « Centrale effraction » et « Centrale feu » dans une zone technique du 10e. Le lien avec les boîtiers de la loge n'est précisé nulle part — à confirmer sur site.",
             "L'annexe « Asservissement Securiton » est une table technique REL4, sans contenu directement actionnable par un agent.",
-            "Le « Mode d'emploi Centrale Feu » est un manuel générique Securiton MIC de 2010, sans donnée propre au site."
+            "Le « Mode d'emploi Centrale Feu » est un manuel générique Securiton MIC de 2010, sans donnée propre au site.",
+            "##M. Nunes retiré de cette fiche le 01.10.2026.## Il figurait comme « intendant secteur Seujet » sans aucune source documentaire. Il n'est référent que pour ##Papeterie, Bellevue et Collex##."
           ]
+        }
+      ],
+      "transmetteurs": [
+        {
+          "label": "PROM incendie",
+          "code": "321482"
+        },
+        {
+          "label": "PROM effraction — RDC et étages",
+          "code": "461025"
+        },
+        {
+          "label": "PROM effraction — 9e et 10e",
+          "code": "461309"
         }
       ]
     },
@@ -2384,32 +1958,6 @@ window.RDZ_FICHES = {
         "Poste"
       ],
       "adresse": "Route de Collex 49, 1293 Bellevue (Genève) — Parking DLCC / Parking Collex (CLX)",
-      "population": "Membres et visiteurs du David Lloyd Country Club · Personnel du club · Automobilistes de passage Route de Collex.",
-      "tenue": "Journée : tenue réglementaire RDZ complète et visible. Nuit / faible luminosité : gilet jaune obligatoire + bâton lumineux. Pluie : cape de pluie obligatoire. Interdit : quitter le poste, appels personnels en public.",
-      "stationnement": "L'agent ne se stationne pas : il est positionné à l'intersection STOP, juste avant les barrières DLCC, visible des véhicules arrivant par la Route de Collex.",
-      "manipulationBase": [
-        "##Poste fixe de gestion du trafic## — pas d'alarme ni de code PROM.",
-        "Si parking DLCC disponible : orienter et autoriser vers le parking DLCC.",
-        "Si parking DLCC complet : orienter vers le parking Collex (CLX) avec des gestes clairs."
-      ],
-      "consignes": "Horaires : semaine 18h00-20h00, week-end 10h00-13h00. Contact client à CHAQUE prise de service ET à chaque fin de service : appeler ou envoyer un message à M. Bouvier. Présence continue, gestes précis et sécuritaires, maintien du poste quelles que soient les conditions météo (cape de pluie obligatoire).",
-      "particularites": "Incendie/sinistre : alerter les secours (118), prévenir M. Bouvier, dégager les voies d'accès pompiers, ne jamais obstruer l'entrée principale ; en cas de saturation du parking, orienter immédiatement vers CLX. Tout incident (feu, accident, conflit, saturation anormale) : rapport GuardTek (Vu / Fait / Compris) avec horaires d'appel, d'arrivée et de départ. Renfort lors d'événements sportifs ou d'affluence exceptionnelle au DLCC.",
-      "contacts": [
-        {
-          "nom": "M. Bouvier",
-          "role": "Facility Manager DLCC — contact principal",
-          "tel": "+41 79 613 99 96"
-        },
-        {
-          "nom": "M. De Zordi",
-          "role": "Directeur RDZ",
-          "tel": "+41 76 634 17 92"
-        }
-      ],
-      "astreinte": "+41 79 339 13 41 (astreinte RDZ — natel dédié) — le numéro +41 79 749 35 36 précédemment indiqué ici est en réalité le natel de l'agent MDP (matériel de site), pas l'astreinte RDZ ; corrigé le 27.08.2026 sur indication du client.",
-      "annexes": [
-        "Annexe — Positionnement agent (vue aérienne et vue terrain de l'intersection STOP)"
-      ],
       "etapes": [
         {
           "titre": "Le site",
@@ -3122,7 +2670,7 @@ window.RDZ_FICHES = {
                 },
                 {
                   "nom": "M. Grégory Barla",
-                  "role": "Second numéro, GSM urgence (numéro suisse)",
+                  "role": "Responsable sécurité et incendie IHEID — ##GSM, numéro à utiliser en urgence##",
                   "num": "+41 77 814 23 39"
                 },
                 {
@@ -3226,6 +2774,10 @@ window.RDZ_FICHES = {
                   ]
                 }
               ]
+            },
+            {
+              "t": "manque",
+              "txt": "##Le numéro ~~+33 6 15 84 54 16~~ de M. Barla n'apparaît que sur cette fiche.## Les fiches MDE, MDP, Moynier et Rothschild donnent ~~+41 22 908 59 63~~ et ~~+41 77 814 23 39~~. Numéro privé encore valable, ou périmé ? À confirmer."
             }
           ]
         },
@@ -3431,226 +2983,14 @@ window.RDZ_FICHES = {
         "Effraction"
       ],
       "adresse": "Grand Morillon Student House, Rue Michelle- Nicod 8, 1202 Genève",
+      "majLe": "2026-09-24",
+      "majPar": "Gimenez",
       "transmetteurs": [
         {
-          "label": "Incendie REGM",
-          "code": "324 199"
-        },
-        {
-          "label": "Incendie REGM — code opérateur (identification de zone à la centrale)",
-          "code": "2228"
-        },
-        {
-          "label": "Effraction REGM — code de manipulation (centrale Bavitech, clavier Honeywell)",
-          "code": "200 280"
-        },
-        {
-          "label": "Toutes alarmes (Certas)",
-          "code": "Complément à 30"
+          "label": "PROM incendie (Certas)",
+          "code": "324199"
         }
-      ],
-      "population": "Résidence étudiante IHEID — environ 318 occupants (chambres/studios), répartis sur les bâtiments Morillon (Bât. 10, blocs A-B-C-D) et Budé (Bât. 8, blocs E-F-G-H). Liste des résidents et statut d'occupation consultables sur Starrez (recherche par n° de chambre ou nom, onglet Occupancy Details — le locataire actuel porte le statut « In Room »).",
-      "acces": [
-        "##Contrôle d'accès par badges SALTO## (serrures autonomes à pile) sur les logements et locaux communs.",
-        "##Boîtier PPD## (lecteur portable SALTO) disponible en loge : pour recharger un badge, pour relever le rapport d'ouverture d'une porte (menu « Collecte du rapport d'ouverture », poser l'appareil sur le boîtier puis le connecter au PC — logiciel SALTO, menu Gestion → Rapport d'ouvertures), ou pour un déverrouillage de secours (boîtier d'impulsion de secours dans le coffre à l'administration : mettre les 3 griffes en place et badger)."
-      ],
-      "manipulationBase": [
-        "##Casiers à colis Keynius## — si un résident ne parvient pas à récupérer son colis, procédure réservée aux agents : écran d'accueil → « Login with PIN » → code PIN sécurité ~~768979~~ (ne pas divulguer) → « Manage lockers » → ouvrir le casier communiqué par le résident (ou tous les casiers si l'info est indisponible) ; vérifier l'identité du résident et noter l'intervention au rapport de service.",
-        "##Centrale anti-intrusion## (Bavitech Systems, clavier Honeywell, écran affichant « Grand Morillon » + date/heure) : ⚠ à 23h30, laisser le système s'enclencher automatiquement — ne pas taper le code (consigne affichée directement sur le clavier).",
-        "##Assistance Bavitech## : 022 594 60 60 / info@bavitech.ch (numéro relevé sur l'autocollant du clavier — voir aussi le numéro d'astreinte Bavitech en prestataires techniques, à vérifier lequel est actif).",
-        "##Centrale incendie REGM## — code opérateur ~~2228~~ : ALARME FEU → bouton NOIR (dans les 3 min suivant la réception de l'alarme) → molette pour valider Utilisateur + code → bouton ROUGE (temporisation 5 min) → bouton VERT (réarmement, uniquement après confirmation qu'il s'agit d'une fausse alarme). Procédure complète (fausse alarme / feu naissant / non maîtrisable) dans les Consignes d'intervention ci-dessous."
-      ],
-      "zoning": [
-        {
-          "zone": "Morillon (Bât. 10)",
-          "desc": "4 blocs A · B · C · D — cuisines communes aux niveaux 6-5-4-3-2-1-0"
-        },
-        {
-          "zone": "Budé (Bât. 8)",
-          "desc": "4 blocs E · F · G · H — cuisines communes aux niveaux 6-5-4-3-2-1"
-        },
-        {
-          "zone": "Cuisines 24h/24 (exception)",
-          "desc": "10.32 (Morillon) et 8.32 (Budé) — résidents sans cuisine dans leur logement ; contrôle renforcé (risques incendie/dégradation accrus)"
-        },
-        {
-          "zone": "Salle de jeux",
-          "desc": "Bloc B, 5e et 6e étage — accès direct depuis le couloir, 3 portes d'accès, caméra disponible"
-        },
-        {
-          "zone": "Jardins & potagers",
-          "desc": "Morillon 6D · Budé 5H — potager Budé accessible par l'escalier de secours malgré la poignée Salto, caméra sur le potager Budé"
-        },
-        {
-          "zone": "Annexes diverses",
-          "desc": "Shop, bibliothèque, théâtre, GISA, salles d'études, fitness, salle polyvalente — accès toitures (Morillon et Budé) et caves (-1 Budé, 3 accès) et local vélo (2 accès) fermés en permanence, cadenas code 118"
-        },
-        {
-          "zone": "Effraction — légende groupes (centrale Bavitech)",
-          "desc": "A1 = Commun · A2 = Magasin · A3 = Cafétéria · A4 = Cuisine bât. C · A5 = Bouton vert (garage) · A6 = Issue de secours. Format affiché au clavier en cas d'alarme : [n° de zone] [n° de groupe] [bâtiment] [nom] [étage] — ex. « 1001 A6 Bât Nom étage »."
-        },
-        {
-          "zone": "Effraction — Zone 0000 / Grp A2",
-          "desc": "Shop HUNA (magasin)"
-        },
-        {
-          "zone": "Effraction — Zone 0000 / Grp A3",
-          "desc": "Restaurant BUDE, 3e étage (cafétéria)"
-        },
-        {
-          "zone": "Effraction — Zone 0000 / Grp A4",
-          "desc": "Cuisine RDC Monillon (bât. C)"
-        },
-        {
-          "zone": "Effraction — Zone 4031 / Grp A5 (bouton vert A1) — P58",
-          "desc": "Porte garage côté véhicules Sécurité"
-        },
-        {
-          "zone": "Effraction — Zone 4034 / Grp A5 (bouton vert C1) — P32",
-          "desc": "Garage côté véhicules Maintenance"
-        },
-        {
-          "zone": "Effraction — Zone 4036 / Grp A5 (bouton vert C1) — P20",
-          "desc": "Garage côté fourgon IHEID"
-        },
-        {
-          "zone": "Effraction — Zone 4033 / Grp A5 (bouton vert A1) — P02",
-          "desc": "Garage côté voitures visiteurs"
-        },
-        {
-          "zone": "Effraction — Zone 4082 / Grp A5 (bouton vert A1) — Vélo",
-          "desc": "Garage côté parking à vélo"
-        }
-      ],
-      "rondes": "Ronde de fermeture OBLIGATOIRE à 01h00 (sécurité incendie) : fermeture des cuisines communes, fermeture des jardins/salles de jeux (interdit après 23h00), contrôle des risques incendie/dégradation, prévention de la consommation d'alcool en cuisine. Une ronde préalable vers 23h00 puis 00h00 est recommandée pour prévenir les résidents. Avant la fermeture 01h00 : la centrale incendie repasse en transmission directe dès 23h30 — il faut la repasser en mode DIFFÉRÉE jusqu'à 01h30 pour permettre la fermeture des cuisines sans déclencher d'alarme intempestive. 4 types de rondes : (1) Cuisines — éteindre fours/plaques/hottes/micro-ondes, lumières OFF, fenêtres fermées (sauf forte odeur), contrôle nettoyage (Armanda) et dégradations mobilier ; (2) Jardins & potagers — absence de personnes, vérifier les fuites d'eau ; (3) Salle de jeux — contrôle du mobilier ; (4) Annexes — cuisines restaurant (contrôle incendie, lumières), toitures/caves/local vélo fermés en permanence. Toute anomalie (dégradation, oubli d'extinction, présence non autorisée) → rapport GuardTek (type Sécurité/Incendie selon nature, mentionner bloc + niveau).",
-      "contacts": [
-        {
-          "nom": "M. Barla Gregory",
-          "role": "Responsable sécurité & incendie IHEID — astreinte P1",
-          "tel": "+33 6 15 84 54 16"
-        },
-        {
-          "nom": "M. Barla Gregory",
-          "role": "Astreinte P1 — GSM urgence (second numéro)",
-          "tel": "077 814 23 39"
-        },
-        {
-          "nom": "Christophe Verdon",
-          "role": "Responsable technique REGM (uniquement — pas une ligne d'astreinte RDZ générale, voir ci-dessous)",
-          "tel": "076 548 48 48"
-        }
-      ],
-      "astreinte": "M. Barla (responsable sécurité & incendie IHEID) — Pompiers : 118. Astreinte RDZ générale : +41 79 339 13 41 — personnes d'astreinte RDZ pour l'IHEID : Lucas Gimenez (lun-ven), Laurent Heinrich (week-end/jours fériés), Rodolphe De Zordi (en cas d'absence des autres). M. Verdon (voir contacts ci-dessus) est le responsable technique REGM — à contacter pour les questions techniques du site, pas pour l'astreinte sécurité générale.",
-      "prestataires": [
-        {
-          "service": "Électricité (REGM Morillon)",
-          "societe": "ElTop",
-          "tel": "022 338 21 21",
-          "note": "Répondeur avec n° d'astreinte à partir de 17h et le week-end"
-        },
-        {
-          "service": "Électricité (REGM Budé)",
-          "societe": "Bouygues",
-          "tel": "0844 88 77 88"
-        },
-        {
-          "service": "Ascenseurs (REGM Morillon/Budé)",
-          "societe": "Otis",
-          "tel": "0800 365 24 7",
-          "note": "Bât. A=75NJ9379 · B=75NJ9380 · C=75NJ9381 · E=75NJ9382 · G=75NJ9383 · H=75NJ9384 (restaurant)"
-        },
-        {
-          "service": "Ascenseurs (REGM Budé)",
-          "societe": "AS Ascenseur",
-          "tel": "022 918 50 70 / 0848 82 14 11",
-          "note": "Personnes bloquées dans l'ascenseur — 24h/24, n° installation 10573241"
-        },
-        {
-          "service": "Chauffage / ventilation / eau chaude",
-          "societe": "Alvazzi",
-          "tel": "0800 442 884"
-        },
-        {
-          "service": "Transmission d'alarme",
-          "societe": "Certas",
-          "tel": "0844 800 811",
-          "note": "REGM n°324.199 — faire le complément à 30"
-        },
-        {
-          "service": "Centrale alarme / incendie / vidéo / sono / extinction",
-          "societe": "Chubb Sicli",
-          "tel": "022 794 37 54",
-          "note": "N° site 64100550 · True Vision : admin / Regm@2020"
-        },
-        {
-          "service": "Sanitaire / plomberie",
-          "societe": "Eaux-Secours",
-          "tel": "022 771 40 00"
-        },
-        {
-          "service": "Contrôle accès / anti-intrusion / interphonie",
-          "societe": "Bavitech",
-          "tel": "0900 115 115",
-          "note": "Appeler depuis le n° d'astreinte (le fixe ne fonctionne pas). Autre numéro relevé directement sur l'autocollant du clavier Honeywell de la centrale Grand Morillon : 022 594 60 60 / info@bavitech.ch — deux numéros différents identifiés selon la source, à vérifier lequel est actif."
-        },
-        {
-          "service": "Supervision MCR / sous-station / CO2 parking",
-          "societe": "Bouygues MCR",
-          "tel": "0844 88 77 88"
-        },
-        {
-          "service": "Surpression / protection incendie (Morillon/Budé)",
-          "societe": "Jomos",
-          "tel": "062 386 17 99 / 062 386 33 44"
-        },
-        {
-          "service": "Débouchage / curage colonne de chute",
-          "societe": "Amoudruz SA",
-          "tel": "022 329 05 24"
-        },
-        {
-          "service": "Transmission alarme (appli TUS)",
-          "societe": "TUS Hotline",
-          "tel": "058 910 73 33"
-        },
-        {
-          "service": "Désinfection / dératisation / insectes",
-          "societe": "Léman Nuisible",
-          "tel": "076 475 35 37"
-        },
-        {
-          "service": "Constructions métalliques (volets/fenêtres/portes ext.)",
-          "societe": "Sottas SA",
-          "tel": "079 150 08 08"
-        },
-        {
-          "service": "Vitres",
-          "societe": "Lamelle Glass & Store SA",
-          "tel": "022 782 08 88"
-        },
-        {
-          "service": "Laveries / distributeurs / machines fitness",
-          "societe": "Frères Ischi",
-          "tel": "022 539 18 60 / 076 377 64 87"
-        }
-      ],
-      "consignes": "TRAITEMENT ALARME CENTRALE INCENDIE (fiche réflexe RDZ v1.0, 17.08.2026) — ALARME FEU : dès le déclenchement, un délai de 3 minutes s'écoule avant transmission automatique aux pompiers ; rejoindre immédiatement la centrale (loge sécurité) et enchaîner : 1) Bouton NOIR « Arrêt buzzer » — coupe le buzzer, l'alarme reste active. 2) Molette « Identifier la zone » — code opérateur 2228, lire sur l'écran le bâtiment (Morillon/Budé), le niveau, la zone et le type de détecteur, faire confirmer la localisation via l'application AppVision. 3) Bouton ROUGE « Arrêt sirène » — ouvre une temporisation de 5 minutes pour la levée de doute sur zone (radio ouverte, ne pas courir ; à l'échéance, transmission automatique aux pompiers). Sur zone, selon le constat : RIEN CONSTATÉ (fausse alarme) → bouton VERT pour quittancer/réarmer, quittancer les asservissements, consigner dans le classeur REGM + rapport GuardTek. FEU NAISSANT/maîtrisable → attaquer avec l'équipement à disposition (extincteur et/ou CAF), une fois le feu éteint et vérifié → bouton VERT, asservissements + rapport GuardTek. NON MAÎTRISABLE ou délai dépassé → déclencheur manuel (DM) ou 118 immédiatement, déclencher l'évacuation (procédure ci-dessous), accueil/guidage des secours, réarmement PAR LES POMPIERS UNIQUEMENT. ⚠ STOP : le bouton vert annule la transmission aux pompiers — ne jamais réarmer tant que le feu n'est pas éteint et vérifié, ni lorsque les secours sont engagés. ALARME DÉRANGEMENT : pas de temporisation (aucune transmission aux pompiers) — lire l'emplacement du dérangement à l'écran puis quittancer, consigner dans le classeur REGM + rapport GuardTek ; appeler SICLI (022 794 37 54) si quittance impossible ou alarme qui repart systématiquement. APRÈS TOUTE ALARME : remettre en fonction les asservissements du bâtiment concerné (surpression, ascenseurs, portes coupe-feu, à tous les étages), consigner l'événement dans le classeur REGM + rapport GuardTek ; si intervention des pompiers, aviser M. De Zordi puis l'IHEID ; une zone mise hors service (travaux/permis feu) ne génère plus aucune détection — surveillance humaine obligatoire jusqu'à remise en service en fin de travaux. — ÉVACUATION (5 phases) : 1) Détection — actionner le déclencheur manuel (DM) le plus proche (couloirs/issues de secours tous étages y compris sous-sol, entrées 8A/8B/10A) ; vérifier que la diode rouge clignote. 2) Déclenchement SONO — boîtier en loge sécurité : appuyer sur le bâtiment concerné (Morillon 10A/10B, Budé 8A/8B ou les deux), attendre la diode bleue HOLD puis presser le bouton rouge EVACUATION. 3) Coordination — gilet d'évacuation + mégaphone + liste des résidents (étagères loge sécurité, liste affichée sur le placard). 4) Point de rassemblement — rediriger et recenser les résidents, signaler aux pompiers (118) les chambres de personnes à mobilité réduite. 5) Fin d'intervention — sur autorisation de M. Barla ou des pompiers uniquement : arrêter le message SONO (bouton RESET) et réarmer la centrale. EN AUCUN CAS des personnes ne doivent rentrer avant autorisation explicite. Petite alarme = fermeture des portes coupe-feu ; grande alarme = asservissements complets (ascenseurs, ventilation, clapets, surpression). REMISE EN ROUTE DES ASSERVISSEMENTS après alarme incendie : quittancer les 3 boîtiers de surpression orange (sortie de secours bloc A RDC pour Morillon ; entrée 8B bloc H pour Budé — clé sur arrêt, attendre 10 secondes avant de repasser sur AUTO, sinon un contacteur peut rester bloqué) ; ratisser ensuite tous les étages pour remettre les portes coupe-feu en fonction et quittancer les boutons de ventilation dans l'ordre (Morillon : 8e étage → 5e étage → sous-sol local 1.10 ; Budé : 9e étage → 4e étage local 2.461/2.039 → sous-sol local 2.23) ; vérifier enfin que les ascenseurs se sont bien remis en service automatiquement.",
-      "particularites": "Correction (27.08.2026) : cette fiche mélangeait auparavant des données propres au site voisin MDE (bâtiment distinct, Av. de France 20-22, sa propre fiche complète existe) avec celles de REGM — ces éléments ont été retirés (transmetteur MDE, prestataires réservés à MDE, numéro Certas MDE) pour éviter toute confusion entre les deux sites ; voir fiche MDE séparée pour ces informations. Nouvelle donnée (27.08.2026, photo transmise) : centrale anti-intrusion Bavitech Systems documentée pour la première fois — voir transmetteurs/zoning ci-dessus pour le code de manipulation et la grille des zones/groupes. Nouvelle donnée (27.08.2026, fiche réflexe RDZ v1.0 du 17.08.2026) : procédure complète de traitement de la centrale incendie (code opérateur 2228) intégrée en tête des consignes d'intervention ci-dessous. Correction (27.08.2026, précisée par le client) : le numéro « 079 749 35 36 » cité dans cette fiche réflexe comme astreinte RDZ est en réalité le natel de service de l'agent MDP (matériel de site, sans lien avec REGM) — la vraie astreinte RDZ est +41 79 339 13 41, voir Astreinte téléphonique RDZ ci-dessus. Clarification (27.08.2026) : M. Verdon n'est pas une ligne d'astreinte RDZ mais le responsable technique REGM uniquement — son rôle a été corrigé en conséquence dans les contacts et dans l'astreinte ci-dessus. Contrôle du stationnement/dénonciation : stylo bleu uniquement, infractions codées B31A (interdiction de parquer) / B32A (hors cases) / B37B (circulation interdite) ; feuillet 1 (original) remis à la police sous 10 jours, feuillet 2 (rose) conservé en loge, feuillets 3&4 déposés sur le pare-brise du véhicule ; rapport de dénonciation à saisir dans GuardTek avec photos du véhicule et de la dénonciation remplie. Théâtre REGM : cales-portes disponibles à l'accueil pour maintenir la porte ouverte (à retirer en fin d'utilisation) ; commandes lumières/stores murales (boutons I/O et flèches, à droite de la porte du bas) ou tablette Crestron sous le pupitre ; télécommandes audiovisuelles dans le placard bas de la salle (blanche = HiFi, noire = écrans/TV) — tout éteindre et ranger en fin d'utilisation, vérifier qu'aucune personne ne reste dans la salle.",
-      "annexes": [
-        "Résidents REGM Bat 8 & Bat 10 — liste des occupants et accès (usage interne, éd. 12.06.2026)",
-        "Guide intervention technique REGM/MDE (menuiserie, plomberie, électricité, asservissements, électroménager)",
-        "Contrôles & dénonciations — procédure de contrôle du stationnement",
-        "Contacts urgence REGM/MDE — soir & week-end (tableau complet des prestataires)",
-        "Évacuation incendie REGM — procédure complète",
-        "Ronde de fermeture 01h00 — sécurité incendie",
-        "Caméra Reolink — installation et utilisation de l'application",
-        "Colis Keynius — procédure sécurité",
-        "Rapport d'ouverture SALTO — collecte et lecture PPD",
-        "Utilisation Starrez — recherche de locataire",
-        "Théâtre REGM — guide d'utilisation agent"
-      ],
-      "majLe": "2026-09-24",
-      "majPar": "Gimenez"
+      ]
     },
     {
       "statut": "complet",
@@ -3662,69 +3002,6 @@ window.RDZ_FICHES = {
         "Incendie"
       ],
       "adresse": "Rue de Lausanne 132, 1202 Genève",
-      "transmetteurs": [
-        {
-          "label": "Effraction (Villa + AJF)",
-          "code": "272 601"
-        },
-        {
-          "label": "Incendie (restaurant / AJF)",
-          "code": "324 478"
-        },
-        {
-          "label": "Toutes alarmes",
-          "code": "Complément à 30"
-        }
-      ],
-      "acces": [
-        "##Boîte à clefs Barton## (pavillon D, buanderie) : code ~~0000~~ — ce code est différent des codes d'alarme, ne pas confondre."
-      ],
-      "manipulationBase": [
-        "##Centrale effraction (Villa + AJF)## — clavier situé dans la Villa Barton au niveau du sas d'entrée, à côté du système d'ouverture Dorma Kaba (5 boutons) : code ~~112233~~ puis 0 ou Enter = armer/désarmer l'ensemble du site (Villa+AJF) ; 1 puis Enter = Pavillon AJF seul ; 2 puis Enter = Villa seule.",
-        "##Centrale incendie (restaurant/AJF)## — écran tactile au local technique AJF : bouton Connexion → ID 01 / mot de passe ~~0000~~ → choisir Jour ou Nuit.",
-        "##Local technique Villa (sous-sol)## : contrôle de température 40–60°C, sans alarme sonore associée."
-      ],
-      "zoning": [
-        {
-          "zone": "0 / Enter",
-          "desc": "Armer / désarmer l'ensemble du site (Villa + Pavillon AJF)"
-        },
-        {
-          "zone": "1",
-          "desc": "Pavillon AJF seul (puis Enter)"
-        },
-        {
-          "zone": "2",
-          "desc": "Villa seule (puis Enter)"
-        }
-      ],
-      "contacts": [
-        {
-          "nom": "M. Demonte",
-          "role": "Responsable direct Villa + AJF — téléphone non communiqué, passer par l'astreinte RDZ",
-          "tel": "Non communiqué"
-        },
-        {
-          "nom": "M. Spada (Johnson Controls)",
-          "role": "Dérangement centrale AJF — téléphone non communiqué",
-          "tel": "Non communiqué"
-        }
-      ],
-      "astreinte": "+41 79 339 13 41 (astreinte RDZ 24h/7j — natel dédié). Personnes d'astreinte RDZ pour l'IHEID : Lucas Gimenez (lun-ven), Laurent Heinrich (week-end/jours fériés), Rodolphe De Zordi (en cas d'absence des autres). Correction (27.08.2026) : le numéro +41 79 749 35 36 précédemment indiqué ici est en réalité le natel de l'agent MDP (matériel de site), pas l'astreinte RDZ.",
-      "consignes": "⚠️ Identification client : aucun mécanisme n'est actuellement en place pour ce site (pas de mot de passe ni de code de vérification client). À ce jour, il n'existe pas de procédure fiable pour confirmer l'identité d'une personne se présentant comme le client et demandant par téléphone l'annulation d'une alarme, une mise en test ou une intervention. Point de sécurité opérationnelle à traiter en priorité par RDZ (mot de passe fixe par site, question défi/réponse, ou liste de contacts autorisés avec rappel de vérification). En attendant, toute demande de ce type doit être escaladée à l'astreinte RDZ plutôt que traitée directement sur la base d'un appel entrant. Contrôle du stationnement (voir annexe dédiée) : le site distingue Zone 1 = parking principal, Zone 2 = devant le bâtiment, Zone 3 = accès nord.",
-      "particularites": "Site composé de deux bâtiments sous un même cahier des charges : la Villa Barton et le Pavillon AJF, chacun avec son propre transmetteur (effraction pour l'ensemble Villa+AJF, incendie côté restaurant/AJF). Horaires et procédures du portail/portillon disponibles en annexe. Wifi invités IHEID_GUEST : voucher et procédure de connexion disponibles en annexe.",
-      "annexes": [
-        "Cahier des charges Barton",
-        "Résidents Barton (éd. 12.06.2026)",
-        "Boîte à clefs Barton",
-        "Ouverture Portail",
-        "Fermeture Site",
-        "Ronde extérieure",
-        "Wifi IHEID_GUEST — voucher + procédure (mars 2026)",
-        "Portes SAS",
-        "Ouverture Restaurant",
-        "Contrôle Stationnement"
-      ],
       "groupeInterdictions": "IHEID",
       "etapes": [
         {
@@ -4006,12 +3283,12 @@ window.RDZ_FICHES = {
               "titre": "Client et technique",
               "items": [
                 {
-                  "nom": "M. Demonte",
+                  "nom": "M. Alexandre Demonte",
                   "role": "Responsable direct Villa Barton et AJF",
                   "num": "+41 79 157 77 39"
                 },
                 {
-                  "nom": "M. Demonte",
+                  "nom": "M. Alexandre Demonte",
                   "role": "Ligne fixe Service FM",
                   "num": "+41 22 908 44 40"
                 },
@@ -4021,8 +3298,13 @@ window.RDZ_FICHES = {
                   "num": "+41 22 908 59 11"
                 },
                 {
-                  "nom": "M. Barla",
-                  "role": "Responsable sécurité et incendie IHEID",
+                  "nom": "M. Grégory Barla",
+                  "role": "Responsable sécurité et incendie IHEID — ##GSM, numéro à utiliser en urgence##",
+                  "num": "+41 77 814 23 39"
+                },
+                {
+                  "nom": "M. Grégory Barla",
+                  "role": "Responsable sécurité et incendie IHEID — ##ligne administrative, pas un numéro d'urgence##",
                   "num": "+41 22 908 59 63"
                 },
                 {
@@ -4202,6 +3484,16 @@ window.RDZ_FICHES = {
             "Dix annexes sont référencées par le cahier des charges ; cinq procédures opérationnelles manquent encore."
           ]
         }
+      ],
+      "transmetteurs": [
+        {
+          "label": "PROM effraction (Villa + AJF)",
+          "code": "272601"
+        },
+        {
+          "label": "PROM incendie (restaurant / AJF)",
+          "code": "324478"
+        }
       ]
     },
     {
@@ -4213,86 +3505,6 @@ window.RDZ_FICHES = {
         "Incendie"
       ],
       "adresse": "Rue Rothschild 20, 1202 Genève",
-      "population": "Étudiants et professeurs de toutes nationalités (IHEID) · Personnel administratif IHEID · Employés d'organisations internationales · Employés d'autres organisations locataires.",
-      "tenue": "Polo + veste sécurité, pantalon noir, chaussures noires — tenue obligatoire en tout temps. Interdit : fumer, appels personnels en public, familiarité avec les clients, accès non autorisé aux bureaux.",
-      "stationnement": "Autour du bâtiment, selon les règles du code de la route en vigueur.",
-      "acces": [
-        "##Équipement à récupérer en prise de service## : trousseau (pass bâtiment Rothschild), natel agent MDP +41 79 749 35 36 (téléphone de service du site MDP, disponible 24h/7j/365j — à ne pas confondre avec l'astreinte RDZ, voir ci-dessous), lampe torche (EPI obligatoire pour les rondes nocturnes)."
-      ],
-      "manipulationBase": [
-        "Aucune centrale d'alarme ni code PROM/transmetteur ne figure dans le cahier des charges reçu pour ce site — à vérifier auprès de CERTAS ou de l'astreinte RDZ en cas de doute."
-      ],
-      "zoning": [
-        {
-          "zone": "Porte n°20",
-          "desc": "Fermeture à 20h du lundi au vendredi — sortie ensuite uniquement par l'issue de secours de la tourelle"
-        },
-        {
-          "zone": "Issues secours",
-          "desc": "Vérifiées fermées et dégagées à chaque ronde, intérieur et extérieur — panneaux lumineux OK"
-        },
-        {
-          "zone": "Sous-sol",
-          "desc": "Porte du couloir sous-sol verrouillée à chaque fermeture"
-        },
-        {
-          "zone": "Mezzanine",
-          "desc": "Étage central, côté restaurant & salles conf. — risque squat/SDF, vérification systématique à chaque ronde de nuit"
-        },
-        {
-          "zone": "Façade",
-          "desc": "Vérifier l'absence de tags lors de chaque ronde extérieure"
-        }
-      ],
-      "rondes": "2 rondes de contrôle minimum par nuit (1 avant minuit, 1 après minuit) — vérification des espaces sensibles (issues de secours, mezzanine/étage central, façade) et des problèmes techniques apparents (fuites, dégâts, verrouillage).",
-      "contacts": [
-        {
-          "nom": "M. De Zordi",
-          "role": "Directeur RDZ",
-          "tel": "+41 76 634 17 92"
-        },
-        {
-          "nom": "M. Barla",
-          "role": "Responsable sécurité & incendie",
-          "tel": "+41 22 908 59 63"
-        },
-        {
-          "nom": "M. Demonte",
-          "role": "Directeur Service FM (interventions sur accord RDZ)",
-          "tel": "+41 22 908 44 40"
-        },
-        {
-          "nom": "M. Sicot",
-          "role": "Service FM — technique",
-          "tel": "+41 79 544 70 74"
-        },
-        {
-          "nom": "M. Labrevoir",
-          "role": "Service FM — technique",
-          "tel": "+41 22 908 44 41"
-        },
-        {
-          "nom": "Police Municipale",
-          "role": "Dim-mer 6h-minuit / Jeu-sam 6h-3h",
-          "tel": "+41 22 418 22 22"
-        },
-        {
-          "nom": "Pompiers",
-          "role": "Urgence incendie",
-          "tel": "118"
-        },
-        {
-          "nom": "Police",
-          "role": "Urgence",
-          "tel": "117"
-        }
-      ],
-      "astreinte": "+41 79 339 13 41 (astreinte RDZ 24h/7j/365j — natel dédié). Personnes d'astreinte RDZ pour l'IHEID : Lucas Gimenez (lun-ven), Laurent Heinrich (week-end/jours fériés), Rodolphe De Zordi (en cas d'absence des autres). Correction (27.08.2026) : le numéro +41 79 749 35 36 précédemment indiqué ici est en réalité le natel de l'agent MDP (voir manipulation de base ci-dessus), pas l'astreinte RDZ.",
-      "consignes": "Gestion des accès : accompagner le personnel IHEID en cas d'oubli de badge. Bureaux loués par des locataires privés : ne pas contrôler les locaux, sauf porte forcée ou doute fondé. En cas de présence d'occupants lors de la fermeture : se légitimer, demander l'heure de départ prévue, puis revenir confirmer la fermeture. Alarme incendie : intervention sur appel du client ou des pompiers, accueil des secours, évacuation des lieux vers les points de rassemblement. Objets trouvés : dépôt à la réception (lun-ven 8h-17h) ; hors horaires, établir un rapport et déposer l'objet dans le coffre-fort de sécurité MDP.",
-      "particularites": "Aucun code PROM/transmetteur n'apparaît dans le cahier des charges reçu pour ce site — ne pas en supposer un, vérifier auprès de CERTAS ou de l'astreinte RDZ. Locaux privés occupés par des locataires : ne pas intervenir sauf porte forcée ou doute fondé.",
-      "annexes": [
-        "Cahier des charges Rothschild"
-      ],
       "groupeInterdictions": "IHEID",
       "etapes": [
         {
@@ -4490,8 +3702,13 @@ window.RDZ_FICHES = {
               "titre": "Client et technique",
               "items": [
                 {
-                  "nom": "M. Barla",
-                  "role": "Responsable sécurité et incendie IHEID",
+                  "nom": "M. Grégory Barla",
+                  "role": "Responsable sécurité et incendie IHEID — ##GSM, numéro à utiliser en urgence##",
+                  "num": "+41 77 814 23 39"
+                },
+                {
+                  "nom": "M. Grégory Barla",
+                  "role": "Responsable sécurité et incendie IHEID — ##ligne administrative, pas un numéro d'urgence##",
                   "num": "+41 22 908 59 63"
                 },
                 {
@@ -4500,7 +3717,7 @@ window.RDZ_FICHES = {
                   "num": "+41 79 544 70 74"
                 },
                 {
-                  "nom": "M. Demonte",
+                  "nom": "M. Alexandre Demonte",
                   "role": "Directeur Service FM — interventions sur accord RDZ",
                   "num": "+41 22 908 44 40"
                 },
@@ -4667,119 +3884,6 @@ window.RDZ_FICHES = {
         "Incendie"
       ],
       "adresse": "Av. de France 20-22, 1202 Genève — accès piéton par avenue de France ou passerelle de la Paix",
-      "transmetteurs": [
-        {
-          "label": "Incendie MDE",
-          "code": "323 710"
-        },
-        {
-          "label": "Toutes alarmes (TUS, mode direct 24/7)",
-          "code": "Complément à 30"
-        }
-      ],
-      "population": "Locataires : étudiants et civils de toutes nationalités · employés des organisations internationales · direction IHEID et administration.",
-      "tenue": "Polo + veste sécurité, pantalon noir, chaussures noires. Interdit : fumer/téléphoner en présence des clients, copinage avec clients/staff/étudiants, entrer dans une chambre sans autorisation, regarder dans les chambres lors des rondes en coursives, prendre le pass général hors urgence ou ouverture de chambre (utiliser les clés pompiers dans ce cas).",
-      "stationnement": "Idem MDP — parking souterrain MDP uniquement. Stationnement devant P1/P2 interdit sauf urgence. Signaler tout véhicule stationné sur un accès pompiers.",
-      "acces": [
-        "##Équipement de prise de service## : badge personnel SALTO ; Pass Général à récupérer dans le coffre-fort Sécurité à la MDP (ne pas le prendre hors urgence ou ouverture de chambre) ; natel agent MDP +41 79 749 35 36 (téléphone de service du site MDP, à récupérer à la REGM, disponible 24h/7j/365j — à ne pas confondre avec l'astreinte RDZ, voir ci-dessous) ; matériel de secours sur site (trousse premiers secours, extincteurs, défibrillateur AED).",
-        "Rapport/main courante écrit obligatoire pour chaque incident, objet trouvé ou intervention hors routine."
-      ],
-      "zoning": [
-        {
-          "zone": "Centrale feu mère",
-          "desc": "RDC — poste principal de la centrale incendie Siemens"
-        },
-        {
-          "zone": "Escaliers bât. 20 & 22",
-          "desc": "Chacun équipé de sa propre centrale feu secondaire"
-        },
-        {
-          "zone": "Salles PCR",
-          "desc": "Côté voie ferrée et côté lac — fermeture à 01h00"
-        },
-        {
-          "zone": "Admin MDE",
-          "desc": "Loge admin — doubles de clés de chambre rangés par numéro (accès via clé multipass MDP)"
-        },
-        {
-          "zone": "Fitness",
-          "desc": "Fermeture à 22h00 — vérifier les toilettes"
-        },
-        {
-          "zone": "Locaux techniques RDC",
-          "desc": "Chaufferie/ventilation SIG, local technique IS, local femme de ménage, local déchets, local vélo, laverie, zone poubelle"
-        }
-      ],
-      "rondes": "2 rondes de contrôle minimum par nuit (1 avant minuit, 1 après minuit). Ronde étanchéité au RDC (tester manuellement) + ronde étage (vérifier le verrouillage des accès balcon, ne jamais regarder dans les chambres). Vérifier à chaque ronde : issues de secours fermées/non obstruées avec panneaux lumineux OK, absence de parking sauvage sur l'esplanade et sur les voies de fuite, éléments de sécurité/éclairages/propreté du local poubelle. Fermetures : Salle PCR à 01h00, Salle Fitness à 22h00 (vérifier les toilettes), espaces communs RDC à 01h00 (ronde étanchéité + fermeture testée manuellement). Porte d'entrée sous vidéosurveillance avec rapport d'ouvertures.",
-      "contacts": [
-        {
-          "nom": "M. De Zordi",
-          "role": "Directeur RDZ",
-          "tel": "+41 76 634 17 92"
-        },
-        {
-          "nom": "M. Barla",
-          "role": "Responsable sécurité & incendie",
-          "tel": "+41 22 908 59 63"
-        },
-        {
-          "nom": "M. Barla",
-          "role": "Responsable sécurité & incendie — GSM urgence",
-          "tel": "+41 77 814 23 39"
-        },
-        {
-          "nom": "M. Verdon",
-          "role": "Responsable technique REGM (uniquement, précisé par le client le 27.08.2026 — sa pertinence comme contact pour ce site voisin reste à reconfirmer)",
-          "tel": "+41 76 548 48 48"
-        },
-        {
-          "nom": "Service Housing IHEID",
-          "role": "Lun-ven 8h-17h (option 2)",
-          "tel": "+41 22 908 45 01"
-        },
-        {
-          "nom": "Police Municipale",
-          "role": "Dim-mer 6h-minuit / Jeu-sam 6h-3h",
-          "tel": "+41 22 418 22 22"
-        },
-        {
-          "nom": "Pompiers",
-          "role": "Urgence incendie",
-          "tel": "118"
-        },
-        {
-          "nom": "Police",
-          "role": "Urgence",
-          "tel": "117"
-        }
-      ],
-      "astreinte": "+41 79 339 13 41 (astreinte RDZ 24h/7j/365j — natel dédié). Personnes d'astreinte RDZ pour l'IHEID : Lucas Gimenez (lun-ven), Laurent Heinrich (week-end/jours fériés), Rodolphe De Zordi (en cas d'absence des autres). Correction (27.08.2026) : le numéro +41 79 749 35 36 précédemment indiqué ici est en réalité le natel de l'agent MDP (téléphone de service à récupérer à la REGM, voir manipulation de base ci-dessus), pas l'astreinte RDZ.",
-      "prestataires": [
-        {
-          "service": "Boîtiers centrale alarme incendie",
-          "societe": "Siemens",
-          "tel": "0842 842 033"
-        },
-        {
-          "service": "Éclairages de secours / exutoires",
-          "societe": "Aprotec",
-          "tel": "022 343 81 30"
-        }
-      ],
-      "consignes": "ALARME INCENDIE : intervention sur appel du client ou de CERTAS — prise d'info TUS/CERTAS, levée de doute, réarmement ou appel des secours (118), accueil des secours, guidage de l'évacuation vers les points de rassemblement, coordination avec l'agent MDP/REGM (intervention en moins de 10 minutes). Centrale Siemens FC20xx : accès par code utilisateur à 4 chiffres (niveau 1 = tout le monde/arrêt buzzer ; niveau 2.1 = agent de sécurité, droits restreints ; niveau 2.2 = chargé de sécurité, droits élargis ; niveau 3 = technicien Siemens). En cas d'AVERTISSEMENT ou d'ALARME : appuyer sur « Arrêt signaux sonores » + code à 4 chiffres, lire le lieu de la zone concernée, se rendre sur place pour vérifier — feu confirmé → actionner un déclencheur manuel (transmission à distance immédiate) ; alarme bénigne → « Réarmement ». Une zone mise hors service ne génère plus aucune alarme ni avertissement : à réserver aux cas nécessaires (travaux, détecteur défectueux) et remettre en service dès que possible. Quittance des asservissements après alarme : surpression, portes coupe-feu, ascenseurs, monoblocs. — DISTRIBUTEUR DE CLÉS (si un étudiant ne peut pas récupérer sa clé de chambre au check-in) : vérifier d'abord son identité et sa réservation (listing MDE) ; se rendre à la MDP, prendre la clé multipass au coffre puis les 2 clefs « Boîte clef serrure 2 » ; ouvrir le distributeur dans le couloir, récupérer la clé de la chambre, la remettre au client (proposer un badge via l'ordinateur MDE si besoin) et faire un rapport à housing (agent REGM). Si le distributeur est vide : accéder à la loge admin MDE (clé multipass, code du coffre sur le drive/Guardtek), trouver le double rangé par numéro de chambre — clé d'origine remise sans signature, double uniquement avec signature sur le cahier — rapport à housing obligatoire dans tous les cas. — PERMIS DE FEU : obligatoire pour tout travail par point chaud (soudage, tronçonnage, découpage, meulage) ; formulaire à faire remplir et signer par l'entreprise exécutante avant le début des travaux, caches de protection à poser sur les détecteurs concernés, désactivation de la zone via la centrale feu si nécessaire.",
-      "particularites": "Gestion des poubelles : sortie des conteneurs entre 19h00 (veille) et 6h00 (jour de collecte), emplacement Avenue de France 20-22 ; jours de collecte organique/papier/ordures selon le calendrier de la Ville de Genève, avec reports lors des jours fériés (voir annexe). Assistance PMR : protocole en cas de crise d'épilepsie disponible sur demande. Salage/déneigement : parvis et allée, en collaboration avec le service FM en semaine — prendre l'initiative le week-end. MDE et REGM partagent la même astreinte RDZ et une partie des mêmes prestataires que la résidence voisine REGM (voir fiche REGM).",
-      "annexes": [
-        "Cahier des charges MDE",
-        "Résidents MDE (éd. 12.06.2026)",
-        "Plans SIEMENS — réf. 71013701",
-        "Consigne distributeur de clés MDE",
-        "Guide intervention technique MDE/REGM (fils rouge)",
-        "Gestion des poubelles MDE — calendrier de collecte",
-        "Manuel centrale feu Siemens FC20xx/FT2040",
-        "Notice permis de feu",
-        "Formulaire permis de feu",
-        "Plan RDC MDE (implantation SALTO / centrales feu / locaux techniques)"
-      ],
       "groupeInterdictions": "IHEID",
       "etapes": [
         {
@@ -5015,13 +4119,13 @@ window.RDZ_FICHES = {
               "titre": "Client et hiérarchie",
               "items": [
                 {
-                  "nom": "M. Barla",
-                  "role": "Responsable sécurité et incendie IHEID",
+                  "nom": "M. Grégory Barla",
+                  "role": "Responsable sécurité et incendie IHEID — ##ligne administrative, pas un numéro d'urgence##",
                   "num": "+41 22 908 59 63"
                 },
                 {
-                  "nom": "M. Barla",
-                  "role": "Second numéro, GSM urgence",
+                  "nom": "M. Grégory Barla",
+                  "role": "Responsable sécurité et incendie IHEID — ##GSM, numéro à utiliser en urgence##",
                   "num": "+41 77 814 23 39"
                 },
                 {
@@ -5329,6 +4433,12 @@ window.RDZ_FICHES = {
             "Signaler tout véhicule stationné sur un accès pompiers."
           ]
         }
+      ],
+      "transmetteurs": [
+        {
+          "label": "PROM incendie (Certas)",
+          "code": "323710"
+        }
       ]
     },
     {
@@ -5340,146 +4450,6 @@ window.RDZ_FICHES = {
         "Incendie"
       ],
       "adresse": "Chemin Eugène-Rigot, 1202 Genève (campus Maison de la Paix) — numéro exact non confirmé dans les documents reçus",
-      "transmetteurs": [
-        {
-          "label": "Incendie MDP",
-          "code": "320 984"
-        }
-      ],
-      "population": "Campus tertiaire diurne : bureaux et salles de cours/conférence de l'IHEID et de plusieurs organisations partenaires colocalisées (GICHD, GCSP, DCAF, WBSCD) — forte occupation en journée semaine, très faible le soir/week-end. Locaux privés loués par ces organisations : ne pas y intervenir sauf porte forcée ou doute fondé.",
-      "tenue": "Idem consignes générales RDZ. Discrétion requise dans les zones bureaux/conférence occupées par du personnel d'organisations internationales.",
-      "stationnement": "Parking souterrain P4 (entresol, ~19 places n°16-34) et parkings sous-sol P5 (SS1/SS2) et P6 (SS1, ~730m²). Signaler tout véhicule stationné sur un accès pompiers ou une voie d'évacuation.",
-      "acces": [
-        "##Accès aux centrales feu et locaux techniques## (sprinklers, monoblocs) : badge « Full Access » + Pass Général obligatoires (voir guide « Installations techniques » — accès nécessaire pour rondes, réarmement des monoblocs après alarme, incidents techniques, ou à la demande des pompiers)."
-      ],
-      "manipulationBase": [
-        "##Centrale de détection incendie Siemens FS20## (contrôleurs FC20x0, terminal d'exploitation FT2040) — même système et mêmes niveaux d'accès que MDE : niveau 1 = tout le monde (arrêt buzzer, défilement) ; niveau 2.1 = utilisateur restreint (ex. concierge) ; niveau 2.2 = utilisateur élargi (chargé de sécurité) ; niveau 3 = maintenance Siemens. Codes utilisateur à 4 chiffres — non communiqués dans le manuel générique reçu, à récupérer auprès du responsable sécurité RDZ.",
-        "##RÉARMEMENT DES MONOBLOCS## après levée de doute/quittance d'une alarme incendie (annexe T.01) : 2 groupes de bâtiments, Groupe 1 = Pétale 1 à 4, Groupe 2 = Pétale 5 et 6 (+ parking) ; pour chaque monobloc concerné, sur le boîtier « ~~MCR-TS42~~ » appuyer 5 secondes sur le voyant de quittance rouge, puis contrôler sur le variateur ABB que la fréquence redémarre (≈00.0Hz) ; rouvrir/réenclencher au besoin la porte feu automatique menant à l'interpétale depuis l'escalier du hall Kögler (la pousser suffit). Ascenseurs : après une alarme ils restent bloqués porte ouverte au niveau des sorties — réarmement avec la clé SI (coffre service desk), tourner d'un quart de tour jusqu'à fermeture de la porte.",
-        "##PORTES AUTOMATIQUES P1/P2 bloquées ouvertes## (annexe T.02, ne jamais manipuler sans prévenir le superviseur RDZ au préalable) : contrôler d'abord les boîtiers de commande (P1 : derrière la réception, vers la centrale incendie ; P2 : à gauche de l'entrée P2 sous les extincteurs, clé à récupérer dans le coffre derrière la réception — clé P2 intérieur ≠ P2 extérieur) ; ils doivent être en mode AU (automatique), sinon tourner la clé pour resélectionner AU ; si déjà en AU et dysfonctionnement persistant → réinitialiser via le tableau électrique (prendre le pass général dans le coffre réception, disjoncteur ~~245F3~~ pour P1 au local technique P1N3 entre IT Helpdesk et ascenseurs, ou disjoncteur ~~244F1~~ pour P2 au local technique P2N3 à droite de l'ascenseur P2 — appuyer TEST, attendre 1 min sans passage, remettre en marche, attendre 10 min puis recontrôler). Si le problème persiste : contacter M. Alexandre Demonte au +41 79 157 77 39.",
-        "##GRILLE DE PARKING## (annexe T.03) : fermeture via le boîtier du local sprinkler P6 (fond, en haut à droite) — appuyer MENU puis 2× sur A ; une main et l'inscription OFF confirment la fermeture.",
-        "##BARRIÈRE DE PARKING## (annexe « T.04/T.05 » selon la numérotation du document) : 3 méthodes — 1) boîtier mural à gauche de la sortie parking, bouton ROUGE (bloquer ouverte : bouton rouge + débrancher l'alimentation du panneau au-dessus, prise bleue) ; 2) clés dans le coffre du P1, côté barrière tourner la clé à gauche sur « MANUAL » et soulever manuellement ; 3) à l'arrière de la barrière, ouvrir le boîtier avec la clé et appuyer sur le bouton VERT.",
-        "##CHANGEMENT DE PILES SERRURES KABA/DORMAKABA## (annexe « T.05/T.06 » selon la numérotation du document, piles LR03/AAA) : matériel (clé de démontage KABA ou aimant DORMAKABA + piles) à récupérer au Service Desk P1 (armoire dédiée). KABA : insérer la clé de démontage sur le côté de la poignée, retirer la poignée, retirer le cache, changer les piles en moins de 10 secondes puis remonter. DORMAKABA : placer l'aimant au-dessus du boîtier, soulever pour accéder aux piles, changer en moins de 10 secondes. ⚠️ Au-delà de 10 secondes, risque de déprogrammation de la serrure — en cas de déprogrammation accidentelle, contacter le service FM immédiatement."
-      ],
-      "zoning": [
-        {
-          "zone": "P1",
-          "desc": "100% IHEID. Entresol : 2 auditoires (~400 et ~200 places, dont Auditorium Ivan Pictet). Niv 01 : local serveur, chaufferie gaz, infirmerie, ventilation. Niv 02 : auditoires + bibliothèque. Niv 03 : réception/sécurité/IT/FM/admin, services étudiants, informatique. Niv 04 : bureaux IHEID (P1-401 à 459 — anthropologie/sociologie, économie internationale, droit international, direction), comptabilité, archives. Niv 05-07 : bureaux professeurs. Niv 08 : bureaux + détection incendie par aspiration (VESDA). Niv 09 : accès toiture."
-        },
-        {
-          "zone": "P2",
-          "desc": "IHEID + locataire privé. Niv 01 : local serveur (centrale mère P2N1), accès interpétale, local société de ménage TOPNET. Niv 02 : auditoires + accès bibliothèque. Niv 03 : cafétéria (sortie Chemin Eugène-Rigot), salle de classe X4. Niv 04 : cuisine, archives, salles de réunion, bureaux/cafétéria WBSCD (extinction CO2 cuisine) + « The FAB » (espace événementiel — voir annexe S16, réservations sur Google Sheet externe non accessible depuis cet outil). Niv 05-08 : bureaux IHEID et GICHD, salle de conférence GICHD (92m²/32p). Niv 07 : comptabilité (P2N7). Toiture ~799m²."
-        },
-        {
-          "zone": "P3",
-          "desc": "IHEID + locataires privés. Entresol : vide au-dessus de la bibliothèque. Niv 01-03 : IHEID — salles polyvalentes/exposition, restaurant-cuisine (coupure climatisation dédiée + extinction CO2), bibliothèque, salles de classe. Niv 04 : PRIVÉ — Peace Dividend Initiative (Green Hydrogen Organisation/GH2, Simon Institute for Longterm Governance, Watch & Jewellery Initiative 2030, Principles for Peace Foundation). Niv 05 : IHEID (Hirschman Centre on Democracy, Gender Center). Niv 06-08 : PRIVÉ — GICHD (3 unités)."
-        },
-        {
-          "zone": "P4",
-          "desc": "IHEID + GCSP (privé). Entresol : parking couvert ~1'257m² (19 places n°16-34). Niv 01 : IHEID — groupe électrogène diesel, transformateur, chaufferie (extinction CO2 restaurant P3/P4). Niv 02 : IHEID — accès Chemin Eugène-Rigot, vanne sprinkler, parking. Niv 03-07 : PRIVÉ — GCSP (Geneva Centre for Security Policy), sous-espaces nommés « Discover », « Engage », « Explore », « Shape », « The Creative Spark », salle étudiants IHEID (124m²), réception GCSP. Niv 08/Toiture : locaux techniques/ventilation."
-        },
-        {
-          "zone": "P5",
-          "desc": "IHEID + locataires privés (DCAF notamment). Niv 01 : IHEID — parking souterrain (SS2 ~973m², SS1 ~1'053m²) + vestiaire. Niv 02 : IHEID — réception/entrée, centre de conférence (salle de réunion 288m²). Niv 03 : PRIVÉ — DCAF + EOM + SAS ; bibliothèque, zone d'attente côté IHEID. Niv 04 : PRIVÉ — Interpeace ; local polyvalent 287m², porte à contrôle d'accès Kaba côté IHEID. Niv 05-09 : PRIVÉ — DCAF (bureaux 2.BU.01-16 et suivants), salles de conférence, réception. Datacenter DC1.13 en P5N1 (voir accès GCSP ci-dessous)."
-        },
-        {
-          "zone": "P6",
-          "desc": "IHEID + DCAF (privé) + NOVAE (privé). Bâtiment de forme allongée (distinct des 5 autres). Niv 01 : IHEID — parking souterrain SS1 (~730m², sprinkler) + caves/stockage SS2. Niv 02 : IHEID — archives ; salles de réunion, WC P5/P6, robinet incendie armé RI 6A. Niv 03 : PRIVÉ — DCAF. Niv 04 : INOCCUPÉ (confirmé par le plan d'occupation du 31.01.2024 — à revérifier si périmé). Niv 05-07 : PRIVÉ — DCAF (bureaux 2.BU/3.BU/4.BU-xx, direction). Niv 08/Superstructure : PRIVÉ — NOVAE (Restaurant de la Paix, accès toiture/terrasse) + local « BAR »."
-        },
-        {
-          "zone": "Centrales mères",
-          "desc": "Centrale mère P2N1 (accès 3ème porte) et centrale mère P5N1 (1er couloir à droite en entrant) — voir guide photographique pour l'itinéraire précis."
-        },
-        {
-          "zone": "Monoblocs sous-sol",
-          "desc": "Monobloc P1 sous-sol, monobloc sous-sol P3, monobloc sous-sol P4 — itinéraires d'accès détaillés dans le guide « Installations techniques » (portes vitrées/grises comme repères)."
-        },
-        {
-          "zone": "Accès sprinklers",
-          "desc": "Vannes sprinkler P1-P4 accessibles en entrant par P4 ; vannes P5-P6 par un accès séparé (prendre immédiatement à droite après la porte)."
-        },
-        {
-          "zone": "Point de rassemblement",
-          "desc": "Extérieur du campus — itinéraire fléché dans le guide technique, à confirmer physiquement lors de la prise de service."
-        }
-      ],
-      "rondes": "Fréquence non précisée dans les documents reçus pour ce site — appliquer la fréquence standard RDZ (à confirmer avec le superviseur) en couvrant les 6 bâtiments Pétale, les parkings souterrains et les issues de secours. Vérifier à chaque ronde : fermeture des accès, absence de stationnement sauvage sur voies pompiers, état des extincteurs/RIA, propreté et sécurité des parkings souterrains. — RONDE DE FERMETURE MDP (annexe S07, 7 pointeaux) : P1 Départ (fermer salle S5, éteindre lumières/ordinateur) → Cafétéria (fermer la porte, rentrer les parasols) → Parking/Sprinkler (entrer dans le parking, contrôler toutes les portes, descendre au bas de l'escalier Sprinkler) → parking N1 (sortir via N1 puis via P4) → parking N2/porte coupe-feu (fermer les salles S1 à S4, fermer la porte coupe-feu) → Interpétale/Auditorium (descendre les escaliers, fermer les salles S7 à S9, fermer l'auditorium) → Arrivée/parking N1 (sortie). ⚠️ Le document source contient une incohérence de numérotation des pointeaux entre la séquence écrite (page 3) et les pages photo (pages 4-5) — l'ordre des lieux ci-dessus est fiable, mais les numéros de pointeaux affichés sur les bornes physiques peuvent ne pas correspondre exactement ; à faire vérifier/corriger auprès du client. — FERMETURE SALLES DE COURS (P1/P2) et AUDITORIUMS (annexe S08) : salles de cours — éteindre la vidéoprojection via la tablette murale/bureau (coche ✓), éteindre les lumières (interrupteur variable selon la salle : coin du bureau ou mur), verrouiller les portes. Auditorium Ivan Pictet — si lumières allumées, entrer dans la régie AV (petite salle immédiatement à droite en entrant), appuyer sur l'icône ampoule éteinte en bas à gauche de l'écran de contrôle. Auditorium 2 — tablette noire sur le pupitre blanc au fond de la salle, contrôle lumières + vidéoprojection. — RONDE BIBLIOTHÈQUE (annexe S09, bibliothèque Kathryn et Shelby Cullom Davis) : parcours fléché sur les 2 niveaux (plan disponible), vérifier systématiquement toutes les issues de secours, tous les extincteurs, tous les sanitaires. — MESSAGE DE FERMETURE BIBLIOTHÈQUE (annexe S10, à annoncer 15 min avant fermeture) : « Madame, Monsieur, nous vous informons que la bibliothèque va fermer ses portes dans 15 minutes. Nous vous prions de vous diriger vers la porte de sortie. Si vous avez des documents à emprunter, veuillez le faire dès maintenant. Nous vous remercions de votre attention et vous souhaitons une bonne soirée. » (+ version anglaise disponible).",
-      "contacts": [
-        {
-          "nom": "M. De Zordi",
-          "role": "Directeur RDZ",
-          "tel": "+41 76 634 17 92"
-        },
-        {
-          "nom": "M. Barla",
-          "role": "Responsable sécurité & incendie",
-          "tel": "+41 22 908 59 63"
-        },
-        {
-          "nom": "M. Barla",
-          "role": "Responsable sécurité & incendie — GSM urgence",
-          "tel": "+41 77 814 23 39"
-        },
-        {
-          "nom": "M. Verdon",
-          "role": "Responsable technique REGM (uniquement, précisé par le client le 27.08.2026 — sa pertinence comme contact pour ce site voisin reste à reconfirmer)",
-          "tel": "+41 76 548 48 48"
-        },
-        {
-          "nom": "M. Alexandre Demonte",
-          "role": "IHEID — responsable sécurité / escalade technique (portes automatiques, interdictions de site)",
-          "tel": "+41 79 157 77 39"
-        },
-        {
-          "nom": "M. Johan den Arend",
-          "role": "IHEID — Responsable IT (accès datacenters MDP hors heures de bureau)",
-          "tel": "+41 22 908 57 69"
-        },
-        {
-          "nom": "Police Municipale",
-          "role": "Dim-mer 6h-minuit / Jeu-sam 6h-3h",
-          "tel": "+41 22 418 22 22"
-        },
-        {
-          "nom": "Pompiers",
-          "role": "Urgence incendie",
-          "tel": "118"
-        },
-        {
-          "nom": "Police",
-          "role": "Urgence",
-          "tel": "117"
-        }
-      ],
-      "astreinte": "+41 79 339 13 41 (astreinte RDZ 24h/7j/365j — natel dédié). Personnes d'astreinte RDZ pour l'IHEID : Lucas Gimenez (lun-ven), Laurent Heinrich (week-end/jours fériés), Rodolphe De Zordi (en cas d'absence des autres). Correction (27.08.2026) : le numéro +41 79 749 35 36 précédemment indiqué ici est en réalité le natel de l'agent MDP (matériel de site), pas l'astreinte RDZ.",
-      "consignes": "ALARME INCENDIE : intervention sur appel du client ou de CERTAS — prise d'info TUS/CERTAS, levée de doute, réarmement ou appel des secours (118), accueil des secours, guidage de l'évacuation vers le point de rassemblement. Centrale Siemens FS20/FC20x0 : même fonctionnement que MDE (arrêt signaux sonores + code à 4 chiffres, identification de la zone, vérification sur place, déclencheur manuel si feu confirmé, réarmement si alarme bénigne). Une zone mise hors service ne génère plus d'alarme : à réserver aux cas nécessaires et remettre en service dès que possible. Accès technique (sprinklers, monoblocs, centrales mères) : nécessite le badge Full Access + le Pass Général — voir zoning ci-dessus pour les itinéraires. PERMIS DE FEU pour tout travail par point chaud : même procédure que MDE (formulaire à signer par l'entreprise exécutante avant travaux, caches de protection sur les détecteurs concernés, désactivation de zone si nécessaire) — les documents spécifiques « Notice/Formulaire Permis de feu » n'ont pas été retrouvés dans ce lot, se référer à la fiche MDE en cas de doute. — ACCÈS DATACENTERS GCSP HORS HEURES DE BUREAU (annexe S13, racks DC1.13 en P5N1 et DC2.9 en P2N1, clé + pass dans le coffre sécurité MDP) : règle impérative « aucune ouverture sans présence et vérification d'identité ». GCSP appelle la sécurité par téléphone ; l'agent confirme l'identité de l'appelant, le motif et la durée estimée. Sur place : une des personnes GCSP autorisées doit être physiquement présente (liste fermée — Pascal Siegel, Andrew Landow, Olivier Gardet, Christian Palazzolo) ; contrôler une pièce d'identité officielle (carte d'identité ou passeport) avant toute ouverture ; l'agent ouvre le datacenter puis le rack indiqué, reste présent pendant toute l'intervention, puis referme et vérifie visuellement la fermeture, remet les clés au coffre et note l'heure de fin en main courante. — FILTRAGE BIBLIOTHÈQUE EN PÉRIODE D'EXAMENS (annexe S12) : poste tenu à l'entrée principale aux horaires 09h30-11h30 / 13h30-15h00 / 16h00-18h00 (présence aléatoire hors de ces créneaux selon affluence). Jusqu'à 170 personnes : accès ouvert à tous les étudiants ; au-delà de 170 : accès réservé IHEID uniquement (capacité max. 200) ; toujours autorisés quel que soit le comptage : membres IHEID, organisations locataires (ex. DCAF), professeurs, dépôt/retrait d'ouvrages. Gestion des places apparemment inoccupées : poser un talon de contrôle, si personne ne revient après 1h — étudiant IHEID : rappel courtois ; non-IHEID : rappel + rapport d'incident (photo de la carte d'étudiant si possible). Comptage systématique par catégorie (IHEID/UNIGE/HES/Autres) et rapport via GuardTek « Filtrage Bibliothèque IHEID », incluant le nombre d'évictions et de refus d'accès — feuille de comptage horaire à disposition (annexe S12 bis, formulaire vierge à remplir). — RÉCEPTION : OBJETS TROUVÉS ET FAQ (annexe S14) : objet réclamé — clé rose dans le 2e tiroir du bureau de gauche (pot en verre), chercher dans les armoires, restituer l'objet ; les réceptionnistes ne contrôlent PAS l'identité, mais l'agent de sécurité DOIT systématiquement le faire. Objet trouvé/apporté — noter sur le registre : objet, date, lieu de découverte. FAQ visiteurs : salle de classe → 1ère page du classeur à l'accueil (côté droit) ; bibliothèque → hall P2, descendre les escaliers puis à gauche ; auditorium → hall P2, descendre les escaliers, tout droit ; services étudiants/carrière → P1, en face de la réception ; comptabilité → P2N7 ; IT/technique/autre → orienter vers le FM. — VÉHICULES ÉLECTRIQUES EN CHARGE NON AUTORISÉE (annexe S15, parking) : en cas de branchement non autorisé (voiture, vélo, trottinette électrique) sur une prise non prévue à cet effet — prendre un avis/affichette au poste de sécurité MDP (bac noir à gauche), débrancher uniquement la fiche côté mur (sans aller plus loin), poser l'avis sur le pare-brise du véhicule, rédiger un rapport via GuardTek. — URGENCE HÉMOPHILIE (annexe S04, protocole générique, non lié à une personne nommée) : signes d'alerte — douleur/gonflement articulaire soudain, hématome important ou évolutif, saignement externe persistant, céphalée intense/vomissements/troubles visuels ou d'élocution, douleurs abdominales, sang dans les urines/selles, difficultés respiratoires ou gonflement cou/bouche. Action immédiate : mettre la personne au repos en sécurité, compression directe sur saignement externe, froid + immobilisation sur articulation gonflée, ne JAMAIS donner d'aspirine/ibuprofène/anti-inflammatoires, informer immédiatement le responsable hiérarchique. Appel impératif des secours (144/112) si : saignement persistant malgré compression, traumatisme tête/cou/thorax/abdomen (même léger), malaise/perte de connaissance/convulsions, difficulté respiratoire ou hémorragie interne suspectée. Informer les secours : préciser que la personne est hémophile, type de saignement observé, antécédents connus si disponibles, heure de début des symptômes. Après intervention : rapport détaillé (lieu, heure, symptômes, actions, intervenants) transmis au responsable hiérarchique et au service médical compétent.",
-      "particularites": "Points à vérifier / non confirmés dans les documents reçus : aucun document ne mentionne littéralement l'acronyme « MDP » (déduction faite à partir des plans « P1-P6 » et de la mention « Chemin Eugène-Rigot » — cohérent avec le campus Maison de la Paix de l'IHEID) ; aucun numéro d'adresse précis, aucune fréquence de ronde officielle (hors annexe S07), aucun numéro d'astreinte ou de code de centrale spécifique à ce site n'apparaissait dans ce lot de documents — clarifié depuis par le client (27.08.2026) : voir Astreinte téléphonique RDZ ci-dessus (+41 79 339 13 41) ; le numéro +41 79 749 35 36 est le natel de service de l'agent MDP (matériel de site), pas une ligne d'astreinte RDZ. Le PROM 320 984 provient des données d'origine (logigramme) et n'a pas été reconfirmé dans les nouveaux documents. Plusieurs documents référencés par le client sont des liens externes non accessibles depuis cet outil (SharePoint « Manipulation Centrale SIEMENS », « Redémarrage AML », « Ouverture manuelle des barrières de parking » ; Google Sheets « Liste EPI IHEID » et « Event La Fab ») — à exporter en PDF/téléchargement direct et transmettre si leur contenu doit être intégré. Un document annoncé (« S17 Affiche Véhicules Électriques ») n'est jamais arrivé dans l'espace de dépôt malgré sa mention dans la liste de fichiers — à renvoyer si nécessaire. La numérotation des annexes T (T.02 à T.06 dans le contenu des documents) ne correspond pas toujours au numéro utilisé dans le nom de fichier fourni par le client (ex. fichier « T04_Barriere_Parking » contient en réalité l'annexe « T.05 ») — signalé pour éviter toute confusion de référence. Campus partagé par plusieurs organisations locataires (GICHD, GCSP, DCAF, WBSCD, Peace Dividend Initiative/GH2, Interpeace, NOVAE) : ne pas intervenir dans leurs bureaux/locaux privés sauf porte forcée ou doute fondé — voir plan d'occupation par bâtiment (annexe S06, 31.01.2024, à revérifier si périmé). Note sur une donnée volontairement NON intégrée : l'annexe S05 « Protocole Épilepsie » décrit un protocole médical personnalisé et nominatif pour une étudiante identifiable (traitement, dosage, contact personnel) — ce type de donnée médicale sensible sur une personne privée identifiable n'a pas été reproduit dans cet outil à usage large ; seule son existence est signalée. Si les agents de terrain doivent y avoir accès, ce document devrait rester sur un support séparé et restreint (dossier confidentiel RH/médical), pas dans ce module de consultation générale. En cas de besoin réel, contacter la sécurité campus 24/7 (+41 22 908 59 11) ou le service Bien-être (+41 22 908 43 84 / +41 22 908 57 45).",
-      "annexes": [
-        "Mode d'emploi Siemens FS20/FC20x0 (générique, éd. 08.2022)",
-        "Plans SIEMENS Pétale 1 à 6 — dossier 71015443",
-        "Plan MDP — guide « Installations techniques »",
-        "Liste EPI IHEID (lien externe non intégré)",
-        "Manipulation Centrale SIEMENS (lien externe non intégré)",
-        "S01 Poignées avec Exit Controler",
-        "S02 Bouton Poussoir",
-        "S04 Urgence Hémophilie",
-        "S05 Protocole Épilepsie (non intégré — donnée médicale nominative, voir Particularités)",
-        "S06 Plan d'occupation MDP (31.01.2024)",
-        "S07 MDP Fermeture",
-        "S08 Fermeture Salles Auditoriums",
-        "S09 Ronde Bibliothèque",
-        "S10 Message Fermeture Bibliothèque",
-        "S11 Contacts Étudiant Bibliothèque",
-        "S12 Comptages Bibliothèque + Filtrage Bibliothèque RDZ",
-        "S13 Accès GCSP (Datacenters)",
-        "S14 Procédure Réception",
-        "S15 Parking VE",
-        "S16 Event La Fab (lien externe non intégré)",
-        "T01 Asservissement MDP (réarmement monoblocs/ascenseurs)",
-        "T02 Portes Automatiques P1/P2",
-        "T03 Grille Parking",
-        "T04/T05 Barrière Parking",
-        "T05/T06 Piles KABA/DORMAKABA"
-      ],
       "groupeInterdictions": "IHEID",
       "etapes": [
         {
@@ -5753,13 +4723,13 @@ window.RDZ_FICHES = {
               "titre": "Client et hiérarchie",
               "items": [
                 {
-                  "nom": "M. Barla",
-                  "role": "Responsable sécurité et incendie IHEID",
+                  "nom": "M. Grégory Barla",
+                  "role": "Responsable sécurité et incendie IHEID — ##ligne administrative, pas un numéro d'urgence##",
                   "num": "+41 22 908 59 63"
                 },
                 {
-                  "nom": "M. Barla",
-                  "role": "Second numéro, GSM urgence",
+                  "nom": "M. Grégory Barla",
+                  "role": "Responsable sécurité et incendie IHEID — ##GSM, numéro à utiliser en urgence##",
                   "num": "+41 77 814 23 39"
                 },
                 {
@@ -5802,7 +4772,7 @@ window.RDZ_FICHES = {
                       "num": "+41 22 908 43 84"
                     },
                     {
-                      "nom": "M. Verdon",
+                      "nom": "M. Christophe Verdon",
                       "role": "Responsable technique REGM. Le client a précisé le 27.08.2026 qu'il ne couvre que REGM : sa pertinence pour MDP reste à reconfirmer.",
                       "num": "+41 76 548 48 48"
                     }
@@ -6118,6 +5088,12 @@ window.RDZ_FICHES = {
             }
           ]
         }
+      ],
+      "transmetteurs": [
+        {
+          "label": "PROM incendie",
+          "code": "320984"
+        }
       ]
     },
     {
@@ -6129,102 +5105,6 @@ window.RDZ_FICHES = {
         "Incendie"
       ],
       "adresse": "Rue de Lausanne 120B, 1202 Genève",
-      "transmetteurs": [
-        {
-          "label": "Incendie Moynier",
-          "code": "351 570"
-        },
-        {
-          "label": "Toutes alarmes (TUS, mode direct 24/7)",
-          "code": "Complément à 30"
-        }
-      ],
-      "population": "Étudiants de toutes nationalités, professeurs, employés d'organisations internationales, direction IHEID et administration. Site en accès H24/7 — pas de fermeture du bâtiment.",
-      "tenue": "Polo + veste sécurité, pantalon noir, chaussures noires — tenue obligatoire en tout temps. Interdit : fumer, appels personnels en public, familiarité avec les clients.",
-      "stationnement": "Devant la villa Moynier en cas d'urgence uniquement ; sinon parking Perle du Lac ou Villa Barton. Respecter le code de la route en vigueur.",
-      "acces": [
-        "##Équipement à récupérer avant prise de poste## : trousseau de clés (pass bâtiment Moynier — à récupérer à la loge REGM), natel agent MDP +41 79 749 35 36 (téléphone de service du site MDP, disponible 24h/7j/365j — à ne pas confondre avec l'astreinte RDZ, voir ci-dessous), badge d'accès Kaba IHEID (zones sécurisées), lampe torche (EPI obligatoire pour les rondes nocturnes)."
-      ],
-      "manipulationBase": [
-        "##Centrale incendie## au sous-sol — code d'accès ~~7100~~. Transmetteur incendie ~~351 570~~ en mode direct 24h/7j (Complément à 30).",
-        "##Quittance des asservissements après alarme## : surpression, portes coupe-feu, ascenseurs, monoblocs."
-      ],
-      "zoning": [
-        {
-          "zone": "Sous-sol / centrale",
-          "desc": "Centrale incendie (code 7100). Porte du couloir sous-sol donnant sur l'extérieur : vérifier systématiquement, souvent trouvée ouverte — fermer si nécessaire."
-        },
-        {
-          "zone": "Terrasse côté lac",
-          "desc": "Évacuation obligatoire en fin de soirée — en cas de refus, appeler la police municipale (022 418 22 22)."
-        },
-        {
-          "zone": "Bâtiments Av. de Lausanne",
-          "desc": "De part et d'autre du parking La Perle du Lac — contrôler les façades (graffitis, dégradations) lors des rondes."
-        },
-        {
-          "zone": "Bureaux privés",
-          "desc": "Ne pas entrer sans autorisation, sauf porte forcée ou doute fondé."
-        },
-        {
-          "zone": "Abords / escaliers / terrasse",
-          "desc": "Contrôle squat SDF lors des rondes (escaliers, terrasse côté lac, abords du bâtiment)."
-        }
-      ],
-      "rondes": "1 ronde extérieure entre 20h et 23h + 1 ronde de contrôle après minuit (contrôle de politesse si de la lumière est encore allumée). À chaque ronde : issues de secours fermées/non obstruées avec panneaux lumineux OK, portes et fenêtres fermées, lumières éteintes, porte d'entrée principale fermée, porte du couloir sous-sol contrôlée (souvent ouverte), absence de squat SDF, façades des bâtiments Av. de Lausanne contrôlées (graffitis/dégradations), stationnement sauvage sur le parvis signalé, accès pompiers dégagé. Assistance aux personnes à mobilité réduite lors des évacuations.",
-      "contacts": [
-        {
-          "nom": "M. De Zordi",
-          "role": "Directeur RDZ",
-          "tel": "+41 76 634 17 92"
-        },
-        {
-          "nom": "M. Barla",
-          "role": "Responsable sécurité & incendie",
-          "tel": "+41 22 908 59 63"
-        },
-        {
-          "nom": "M. Demonte",
-          "role": "Directeur Service FM IHEID (sur accord RDZ)",
-          "tel": "+41 22 908 44 40"
-        },
-        {
-          "nom": "M. Demonte",
-          "role": "Directeur Service FM IHEID — GSM (sur accord RDZ)",
-          "tel": "+41 79 157 77 39"
-        },
-        {
-          "nom": "M. Sicot David",
-          "role": "Service FM — responsable technique (lun-ven 8h-17h)",
-          "tel": "+41 79 544 70 74"
-        },
-        {
-          "nom": "M. Labrevoir",
-          "role": "Service FM",
-          "tel": "+41 22 908 44 41"
-        },
-        {
-          "nom": "Police Municipale",
-          "role": "Dim-mer 6h-minuit / Jeu-sam 6h-3h",
-          "tel": "+41 22 418 22 22"
-        },
-        {
-          "nom": "Pompiers",
-          "role": "Urgence incendie",
-          "tel": "118"
-        },
-        {
-          "nom": "Police",
-          "role": "Urgence",
-          "tel": "117"
-        }
-      ],
-      "astreinte": "+41 79 339 13 41 (astreinte RDZ 24h/7j/365j — natel dédié). Personnes d'astreinte RDZ pour l'IHEID : Lucas Gimenez (lun-ven), Laurent Heinrich (week-end/jours fériés), Rodolphe De Zordi (en cas d'absence des autres). Correction (27.08.2026) : le numéro +41 79 749 35 36 précédemment indiqué ici est en réalité le natel de l'agent MDP (téléphone de service à récupérer à la loge REGM, voir manipulation de base ci-dessus), pas l'astreinte RDZ.",
-      "consignes": "ALARME INCENDIE : intervention sur appel du client ou des pompiers — accueil des secours (118), guidage de l'évacuation vers les points de rassemblement, assistance PMR. Reconnaître et quittancer une petite alarme ; quittance des asservissements (surpression, portes coupe-feu, ascenseurs, monoblocs) ; contrôle des voies de fuite incendie et vérification des espaces sensibles. — GESTION DES ACCÈS : accompagner le personnel IHEID en cas d'oubli de badge ; ne pas entrer dans les bureaux privés sans autorisation ; toute personne trouvée dans les bureaux après minuit doit être invitée à quitter les lieux, avec rédaction d'un rapport. — HORAIRES DE FERMETURE DES ESPACES : terrasse côté lac — évacuation obligatoire, en cas de refus appeler la police municipale ; soirée non autorisée sur la terrasse — avertir le binôme et la police municipale immédiatement, ne prendre aucune initiative personnelle ; événement non répertorié — vérifier qu'il est sous contrôle, demander l'heure de fin, contrôler la fermeture des accès extérieurs. — OBJETS TROUVÉS : dépôt à la réception (lun-ven 8h-17h) ; hors horaires, établir un rapport et déposer l'objet dans le coffre-fort de sécurité MDP. — REMPLACEMENT RÉCEPTIONNISTE (au besoin) : recueillir le courrier, renseigner les visiteurs, orienter vers le service FM. — EVENTS AVEC AGENT SUR PLACE : matériel de secours à disposition (trousse premiers secours, extincteurs, défibrillateur AED), surveillance des voies de fuite, filtrage de l'entrée si demandé, sécurité des biens et des personnes. — SALAGE/DÉNEIGEMENT : en collaboration avec le service FM en semaine ; prendre l'initiative le week-end en cas d'événement.",
-      "particularites": "Cahier des charges officiel RDZ (M.A.J. 01.04.2026, refonte complète du document) — données considérées fiables et à jour. Le code d'accès de la centrale incendie (7100) et le code PROM (351 570) proviennent tous deux de ce document ; le PROM correspond à celui déjà présent dans les données d'origine (logigramme), confirmant la cohérence. M. Demonte (Directeur Service FM IHEID) est la même personne déjà identifiée comme contact technique/sécurité sur les fiches MDP et l'annexe S.03 (interdictions de site) — ses coordonnées sont cohérentes sur l'ensemble des documents reçus. Villa Moynier ne figure pas dans la liste des bâtiments couverts par l'annexe S.03 « Interdiction de site » (Maison de la Paix, Villa Barton, Bâtiment Rothschild, Résidence Michelle-Nicod, Résidence Av. de France) — aucune interdiction de site n'est donc rattachée à cette fiche à ce stade.",
-      "annexes": [
-        "Cahier des charges Moynier (M.A.J. 01.04.2026)"
-      ],
       "etapes": [
         {
           "titre": "Le site",
@@ -6459,8 +5339,13 @@ window.RDZ_FICHES = {
               "titre": "Client et technique",
               "items": [
                 {
-                  "nom": "M. Barla",
-                  "role": "Responsable sécurité et incendie IHEID",
+                  "nom": "M. Grégory Barla",
+                  "role": "Responsable sécurité et incendie IHEID — ##GSM, numéro à utiliser en urgence##",
+                  "num": "+41 77 814 23 39"
+                },
+                {
+                  "nom": "M. Grégory Barla",
+                  "role": "Responsable sécurité et incendie IHEID — ##ligne administrative, pas un numéro d'urgence##",
                   "num": "+41 22 908 59 63"
                 },
                 {
@@ -6469,7 +5354,7 @@ window.RDZ_FICHES = {
                   "num": "+41 79 544 70 74"
                 },
                 {
-                  "nom": "M. Demonte",
+                  "nom": "M. Alexandre Demonte",
                   "role": "Directeur Service FM — hors horaires, sur accord RDZ",
                   "num": "+41 79 157 77 39"
                 },
@@ -6488,7 +5373,7 @@ window.RDZ_FICHES = {
                   "t": "tel",
                   "items": [
                     {
-                      "nom": "M. Demonte",
+                      "nom": "M. Alexandre Demonte",
                       "role": "Ligne fixe Service FM",
                       "num": "+41 22 908 44 40"
                     },
@@ -6659,6 +5544,12 @@ window.RDZ_FICHES = {
             "Villa Moynier ne figure pas dans l'annexe S.03 « Interdiction de site » : aucune interdiction rattachée à cette fiche.",
             "La mention des asservissements (surpression, portes coupe-feu, ascenseurs, monoblocs) dans le CDC est une erreur : ces équipements n'existent pas sur le site. À corriger dans le document."
           ]
+        }
+      ],
+      "transmetteurs": [
+        {
+          "label": "PROM incendie",
+          "code": "351570"
         }
       ]
     },
@@ -6954,12 +5845,12 @@ window.RDZ_FICHES = {
               "titre": "RDZ",
               "items": [
                 {
-                  "nom": "M. Privat",
+                  "nom": "M. Florent Privat",
                   "role": "Chargé de sécurité RDZ — mobile suisse",
                   "num": "+41 79 755 24 76"
                 },
                 {
-                  "nom": "M. Privat",
+                  "nom": "M. Florent Privat",
                   "role": "Chargé de sécurité RDZ — mobile français",
                   "num": "+33 6 38 98 91 47"
                 },
@@ -7124,17 +6015,543 @@ window.RDZ_FICHES = {
             "Procédure d'ouverture du parking relevée sur site le 01.10.2026, à partir de photos — elle ne figure dans aucun document client."
           ]
         }
+      ],
+      "transmetteurs": [
+        {
+          "label": "Incendie",
+          "code": "324333"
+        }
       ]
     },
     {
-      "statut": "partiel",
+      "statut": "complet",
       "prom": "323 238",
       "client": "CTN",
-      "nomComplet": "CTN",
+      "nomComplet": "CTN — Centre de Technologies Nouvelles, bâtiments 8 à 18",
       "types": [
         "Incendie"
       ],
-      "adresse": "Non communiquée"
+      "adresse": "Chemin des Aulx 8-18, 1228 Plan-les-Ouates",
+      "etapes": [
+        {
+          "titre": "Le site",
+          "resume": "Ce que l'agent doit savoir avant d'arriver",
+          "blocs": [
+            {
+              "t": "kv",
+              "items": [
+                {
+                  "k": "PROM incendie",
+                  "v": "323 238",
+                  "code": true
+                },
+                {
+                  "k": "N° d'équipement",
+                  "v": "79138193"
+                },
+                {
+                  "k": "Client",
+                  "v": "CTN — Centre de Technologies Nouvelles"
+                },
+                {
+                  "k": "Configuration",
+                  "v": "##Six bâtiments, numérotés 8 à 18##, avec deux niveaux de parking souterrain"
+                },
+                {
+                  "k": "Occupation",
+                  "v": "Personnel des entreprises locataires, employés et visiteurs, livreurs et prestataires"
+                }
+              ]
+            },
+            {
+              "t": "gps",
+              "titre": "Y aller",
+              "items": [
+                {
+                  "label": "Parking visiteurs V-1 à V-12 sur le site",
+                  "dest": "Chemin des Aulx 8-18, 1228 Plan-les-Ouates"
+                }
+              ]
+            },
+            {
+              "t": "stop",
+              "lab": "Sous-sols sans couverture radio ni GSM",
+              "txt": "Certaines zones des sous-sols ##ne captent ni la radio ni le réseau mobile##. ##Informer le centraliste avant d'y pénétrer## — un agent qui descend sans prévenir devient injoignable sans que personne le sache."
+            },
+            {
+              "t": "kv",
+              "titre": "Quand RDZ intervient",
+              "items": [
+                {
+                  "k": "Déclenchement",
+                  "v": "Par ##Certas##, en dehors des heures ouvrables — c'est-à-dire hors lundi à vendredi de 7h30 à 17h00"
+                },
+                {
+                  "k": "Ronde de fermeture",
+                  "v": "Chaque nuit entre 17h00 et 7h30, du lundi au vendredi"
+                },
+                {
+                  "k": "Week-end et fériés",
+                  "v": "Une ronde supplémentaire, à heure aléatoire"
+                }
+              ]
+            },
+            {
+              "t": "liste",
+              "titre": "Règles du site",
+              "items": [
+                "Tenue d'intervention RDZ : polo, veste d'intervention, pantalon noir, rangers.",
+                "Interdit : fumer en public, appels personnels, ##accès non autorisés aux bureaux##.",
+                "##Stationnement interdit devant les accès pompiers et les zones de livraison.##"
+              ]
+            }
+          ]
+        },
+        {
+          "titre": "Transmetteurs et codes",
+          "resume": "Centrales Siemens, trois emplacements",
+          "blocs": [
+            {
+              "t": "kv",
+              "items": [
+                {
+                  "k": "PROM incendie",
+                  "v": "~~323 238~~"
+                },
+                {
+                  "k": "Code utilisateur des centrales",
+                  "v": "~~7100~~",
+                  "code": true
+                },
+                {
+                  "k": "N° d'équipement",
+                  "v": "79138193"
+                },
+                {
+                  "k": "Centrale d'alarme",
+                  "v": "##Certas## — ligne dédiée à ce site"
+                }
+              ]
+            },
+            {
+              "t": "table",
+              "titre": "Où sont les centrales incendie Siemens",
+              "items": [
+                {
+                  "z": "Centrale mère",
+                  "d": "Niveau ##-1##, à l'entrée du parking — repérée par un point jaune sur les plans"
+                },
+                {
+                  "z": "Local de détection RDC",
+                  "d": "##Bâtiment 14##, au rez-de-chaussée"
+                },
+                {
+                  "z": "Local de détection SS-1",
+                  "d": "Sous-sol -1, parking"
+                }
+              ]
+            },
+            {
+              "t": "stop",
+              "lab": "Contradiction dans les documents",
+              "txt": "Le cahier des charges indique « ##pas de code d'accès pour la centrale## », alors que l'annexe A.04 donne un ##code utilisateur ~~7100~~## pour les deux locaux de détection. L'annexe est plus récente et plus précise : c'est elle qui fait foi. À corriger dans le cahier des charges."
+            },
+            {
+              "t": "manque",
+              "txt": "##Le code ~~7100~~ est également attribué à un autre site## dans le tableau des codes RDZ (La Tour / Veyrot 39). Code Siemens standard partagé, ou report d'un site à l'autre ? À confirmer."
+            }
+          ]
+        },
+        {
+          "titre": "Points d'accès",
+          "resume": "La loge CTN 16, puis les bâtiments",
+          "blocs": [
+            {
+              "t": "num",
+              "titre": "Accéder à la loge CTN 16",
+              "court": "Accès loge",
+              "items": [
+                {
+                  "a": "Ouvrir avec le badge",
+                  "d": "Badge d'accès récupéré à la prise de poste."
+                },
+                {
+                  "a": "Traverser jusqu'à la salle de réunion",
+                  "d": ""
+                },
+                {
+                  "a": "Rejoindre la base d'alarme",
+                  "d": ""
+                },
+                {
+                  "a": "Désarmer",
+                  "d": "L'alarme de la loge se désarme depuis cette base."
+                }
+              ]
+            },
+            {
+              "t": "stop",
+              "lab": "Si le badge ne fonctionne pas",
+              "txt": "Une ##télécommande## se trouve dans le ##tiroir du bureau## de la loge. Elle permet d'ouvrir, puis de désarmer ou d'armer l'alarme. C'est la procédure de secours officielle, pas un contournement."
+            },
+            {
+              "t": "liste",
+              "titre": "Dans la loge",
+              "items": [
+                "##Boîte à clés## — sur le mur ##à droite en entrant##. Elle contient le trousseau de ronde avec sa carte, et les trousseaux d'intervention par bâtiment.",
+                "##Pass de la barrière de parking## — dans cette même boîte, ##à gauche##.",
+                "##Clé carrée ou triangle## pour les ascenseurs — dans la ##salle de réunion## de la loge.",
+                "##Boîte à clés Fitness## — code ~~2013~~."
+              ]
+            },
+            {
+              "t": "liste",
+              "titre": "Accès aux bâtiments",
+              "items": [
+                "##Badge## obligatoire pour tous les locataires, et pour l'agent : il ouvre les bâtiments 8 à 18 et le parking.",
+                "##Bureaux privés## : ne pas entrer sans autorisation."
+              ]
+            }
+          ]
+        },
+        {
+          "titre": "Clés",
+          "resume": "Trois trousseaux distincts",
+          "blocs": [
+            {
+              "t": "kv",
+              "items": [
+                {
+                  "k": "Trousseau de la loge",
+                  "v": "Clé d'accès à la loge CTN 16, un badge et des clés — remis à la prise de poste"
+                },
+                {
+                  "k": "Trousseau de ronde",
+                  "v": "Clés des bâtiments 10, 12, 14, 16 et 18, avec la ##carte de ronde## — boîte à clés de la loge"
+                },
+                {
+                  "k": "Trousseau d'intervention",
+                  "v": "Clés spécifiques par bâtiment — ##prendre le pass du bâtiment en alarme##, pas tout le trousseau"
+                }
+              ]
+            },
+            {
+              "t": "table",
+              "titre": "Correspondance clé ↔ bâtiment",
+              "items": [
+                {
+                  "z": "Bâtiment 18",
+                  "d": "Clé ~~NPLG #PP2~~ — 2 portes à verrouiller"
+                },
+                {
+                  "z": "Bâtiment 14",
+                  "d": "Clé ~~NRVK #15~~ — local de la centrale incendie mère"
+                },
+                {
+                  "z": "Bâtiment 12",
+                  "d": "Clé ~~HFNC #PP3~~ — 2 portes à verrouiller"
+                },
+                {
+                  "z": "Bâtiment 10",
+                  "d": "Clé ~~NPLH #PP~~ — salle de sport au 2e étage"
+                }
+              ]
+            },
+            {
+              "t": "manque",
+              "txt": "Les clés des bâtiments ##8 et 16## ne sont pas référencées dans l'annexe de fermeture, alors que le trousseau de ronde est censé couvrir le 16. À compléter."
+            },
+            {
+              "t": "liste",
+              "titre": "S'il manque une clé",
+              "items": [
+                "##Pas d'urgence## — rapport et message à Laurent et Lucas.",
+                "##Urgence## (site non hermétique, risque pour le client) — appel direct à Laurent ou Lucas."
+              ]
+            }
+          ]
+        },
+        {
+          "titre": "Qui appeler",
+          "resume": "Dans l'ordre, du plus urgent au technique",
+          "blocs": [
+            {
+              "t": "stop",
+              "lab": "Si le natel est sur un réseau français",
+              "txt": "Plan-les-Ouates est proche de la frontière : un téléphone y accroche parfois une antenne française. Dans ce cas les numéros suisses en 0… ne passent pas, et le 118 ou le 117 tombent sur les secours français. Composer le 112, qui fonctionne sur tous les réseaux, et utiliser les numéros en +41 ci-dessous."
+            },
+            {
+              "t": "tel",
+              "titre": "Urgences",
+              "items": [
+                {
+                  "nom": "Urgence tous réseaux",
+                  "role": "À privilégier en cas de doute sur le réseau",
+                  "num": "112"
+                },
+                {
+                  "nom": "Pompiers",
+                  "role": "Feu confirmé, doute non levé",
+                  "num": "118"
+                },
+                {
+                  "nom": "Urgences sanitaires",
+                  "role": "Malaise, blessure, personne bloquée en ascenseur avec malaise",
+                  "num": "144"
+                },
+                {
+                  "nom": "Police",
+                  "role": "Intrusion, squat, refus de légitimation",
+                  "num": "117"
+                },
+                {
+                  "nom": "Police Municipale",
+                  "role": "Genève",
+                  "num": "+41 22 418 22 22"
+                }
+              ]
+            },
+            {
+              "t": "tel",
+              "titre": "Centrale et astreinte",
+              "items": [
+                {
+                  "nom": "Certas",
+                  "role": "Centrale d'alarme du site — transmetteur 323 238",
+                  "num": "+41 844 800 422"
+                },
+                {
+                  "nom": "Astreinte RDZ",
+                  "role": "Ligne hiérarchique, 24h/7j. Lucas Gimenez (lun-ven) · Laurent Heinrich (week-end et fériés) · Rodolphe De Zordi (en cas d'absence).",
+                  "num": "+41 79 339 13 41"
+                }
+              ]
+            },
+            {
+              "t": "tel",
+              "titre": "Client et technique",
+              "items": [
+                {
+                  "nom": "M. Serge Wolfersperger",
+                  "role": "Facility Manager CTN — ##sur accord RDZ## pour les sujets sécurité, direct pour la technique",
+                  "num": "+41 79 238 68 07"
+                },
+                {
+                  "nom": "M. Mario Pinto",
+                  "role": "Service technique CTN",
+                  "num": "+41 79 689 28 60"
+                },
+                {
+                  "nom": "M. De Zordi",
+                  "role": "Directeur RDZ — urgences hors heures, et donneur d'ordres en cas de décision à prendre",
+                  "num": "+41 76 634 17 92"
+                }
+              ]
+            },
+            {
+              "t": "stop",
+              "lab": "Deux numéros annoncés comme astreinte",
+              "txt": "Le cahier des charges donne correctement l'##Astreinte Sécurité RDZ : +41 79 339 13 41##, mais ajoute une « Astreinte téléphonique RDZ : ~~+41 79 749 35 36~~ » qui est en réalité le ##natel de l'agent MDP##. Ne pas utiliser ce second numéro."
+            },
+            {
+              "t": "manque",
+              "txt": "Le fichier « CTN Numéros utiles 2026 » fourni en annexe est illisible — format de fichier non exploitable. À retransmettre, il contient probablement les contacts des locataires."
+            },
+            {
+              "t": "manque",
+              "txt": "##Numéro Certas différent des autres sites.## CTN utilise le ~~+41 844 800 422~~, alors que les douze autres fiches utilisent le ~~+41 844 800 811~~. Ligne dédiée, ou erreur du cahier des charges ? À vérifier avant diffusion."
+            }
+          ]
+        },
+        {
+          "titre": "Process d'intervention",
+          "resume": "Incendie, fermeture, pompes, interventions techniques",
+          "blocs": [
+            {
+              "t": "num",
+              "titre": "Alarme incendie",
+              "court": "Alarme feu",
+              "items": [
+                {
+                  "a": "Prendre l'appel de Certas",
+                  "d": "Les interventions sont déclenchées par la centrale, en dehors des heures ouvrables."
+                },
+                {
+                  "a": "Se rendre au local de détection",
+                  "d": "##RDC du bâtiment 14##, ou ##sous-sol -1## du parking selon l'indication. La centrale mère est au niveau -1, à l'entrée du parking."
+                },
+                {
+                  "a": "Accéder à la centrale",
+                  "d": "Code utilisateur ~~7100~~."
+                },
+                {
+                  "a": "Identifier la zone et lever le doute",
+                  "d": "Se rendre sur place avec le ##pass du bâtiment en alarme##, pris dans la boîte à clés de la loge."
+                },
+                {
+                  "a": "Si le feu est confirmé",
+                  "d": "##118##, accueil et guidage des secours, évacuation vers les points de rassemblement."
+                },
+                {
+                  "a": "Rendre compte",
+                  "d": "Certas, astreinte RDZ, puis rapport GuardTeck."
+                }
+              ]
+            },
+            {
+              "t": "num",
+              "titre": "Ronde de fermeture",
+              "court": "Fermeture",
+              "items": [
+                {
+                  "a": "Prendre le trousseau de ronde",
+                  "d": "Boîte à clés de la loge, mur de droite. Il contient les clés des bâtiments 10, 12, 14, 16 et 18, et la carte de ronde."
+                },
+                {
+                  "a": "Entrées des bâtiments au rez",
+                  "d": "##Tester manuellement## chaque porte, puis ##verrouiller##."
+                },
+                {
+                  "a": "Issues de secours — rez et parkings -1 et -2",
+                  "d": "##Fermer SANS verrouiller.## Vérifier qu'elles ne sont pas obstruées et que les panneaux lumineux fonctionnent."
+                },
+                {
+                  "a": "Salle de sport, bâtiment 10 au 2e",
+                  "d": "Clé ~~NPLH #PP~~. ##Vérifier l'absence de personnes sur le terrain ET dans les vestiaires## avant de fermer et verrouiller."
+                },
+                {
+                  "a": "Zones de livraison",
+                  "d": "Verrouiller les portes des bâtiments concernés, vérifier les grilles du garage."
+                },
+                {
+                  "a": "Parking",
+                  "d": "Contrôler l'absence de squat, de dégradation ou d'anomalie."
+                }
+              ]
+            },
+            {
+              "t": "stop",
+              "lab": "Deux règles opposées à ne pas confondre",
+              "txt": "##Portes d'entrée au rez : fermer ET verrouiller.##\n##Issues de secours : fermer SANS verrouiller.##\nVerrouiller une issue de secours bloquerait l'évacuation."
+            },
+            {
+              "t": "num",
+              "titre": "Pompes de relevage",
+              "court": "Pompes",
+              "items": [
+                {
+                  "a": "Reconnaître le défaut",
+                  "d": "Une ##sirène retentit## dans le sous-sol. Les pompes sont repérées par des points bleus sur le plan du parking."
+                },
+                {
+                  "a": "Passer la pompe en MANUEL",
+                  "d": "Pour faire diminuer le niveau d'eau."
+                },
+                {
+                  "a": "Attendre la baisse du niveau",
+                  "d": ""
+                },
+                {
+                  "a": "Repasser en AUTO",
+                  "d": "##Ne pas laisser la pompe en manuel## : elle ne se déclencherait plus seule."
+                },
+                {
+                  "a": "Consigner",
+                  "d": "Rapport GuardTeck."
+                }
+              ]
+            },
+            {
+              "t": "liste",
+              "titre": "Autres interventions techniques",
+              "items": [
+                "##Porte du garage principal, ouverture manuelle## — descendre le bras du système vers le bas, puis manipuler la grille.",
+                "##Grilles du garage## — deux options : la ##poignée rouge##, ou la clé du trousseau de ronde puis manipulation de la grille.",
+                "##Barrière du parking## — pass dans la boîte à clés de la loge, ##à gauche##.",
+                "##Personne bloquée en ascenseur## — clé carrée ou triangle dans la ##salle de réunion de la loge##, ouvrir et faire sortir la personne. Appeler le ##144## en cas de malaise."
+              ]
+            },
+            {
+              "t": "liste",
+              "titre": "Consignes permanentes du site",
+              "items": [
+                "##Chaufferie CTN 10## — doit rester ##ouverte en permanence##.",
+                "##Local poubelle## — ##ne pas le verrouiller##, demande du client.",
+                "##Sous-sols techniques## — contrôler l'ensemble à chaque passage et vérifier que les locaux techniques sont bien fermés."
+              ]
+            }
+          ]
+        }
+      ],
+      "blocsRondes": [
+        {
+          "t": "kv",
+          "items": [
+            {
+              "k": "Lundi à vendredi",
+              "v": "##1 ronde de fermeture par nuit##, entre 17h00 et 7h30"
+            },
+            {
+              "k": "Samedi, dimanche, fériés",
+              "v": "##1 ronde supplémentaire##, à heure aléatoire"
+            }
+          ]
+        },
+        {
+          "t": "liste",
+          "titre": "À contrôler à chaque ronde",
+          "items": [
+            "Entrées des bâtiments au rez : testées manuellement et verrouillées.",
+            "Issues de secours, intérieures et extérieures : fermées, non obstruées, panneaux lumineux en état.",
+            "Parking : squat, dégradations, anomalies.",
+            "Problèmes techniques apparents : fuites, dégâts, verrouillage, ##pompes de relevage##.",
+            "Espaces sensibles.",
+            "##Avant de descendre dans un sous-sol : prévenir le centraliste## — pas de couverture radio ni GSM."
+          ]
+        }
+      ],
+      "blocsNotes": [
+        {
+          "t": "liste",
+          "titre": "Rapports GuardTeck",
+          "items": [
+            "Rédaction ##au fil de l'eau##, pas en fin de poste : c'est ce qui donne la traçabilité horodatée.",
+            "##Une phrase par idée.## Rester factuel : ce que j'ai ##vu, fait, compris##.",
+            "##Ne jamais écrire au conditionnel.## Pas d'abréviation. Orthographe vérifiée.",
+            "Être précis sur les horaires : ##appel, arrivée, départ##.",
+            "##Le résumé ne peut pas être « RAS »## — s'il n'y a rien eu, évoquer l'absence de compréhension du déclenchement.",
+            "En cas d'événement grave, ce support ##peut être repris par la justice##."
+          ]
+        },
+        {
+          "t": "liste",
+          "titre": "Savoir-être et commandement",
+          "items": [
+            "Disponibilité envers le client, y compris au-delà des missions habituelles.",
+            "##Si une demande dépasse le cadre du service## : contacter sans délai l'encadrement RDZ, ##ne pas refuser d'emblée##. Seules les demandes contraires à la réglementation se déclinent.",
+            "##Donneur d'ordres : M. Rodolphe De Zordi.## Sur validation de l'encadrement : astreinte CTN."
+          ]
+        },
+        {
+          "t": "liste",
+          "titre": "Réserves sur les données",
+          "items": [
+            "Cahier des charges du 01.04.2026 et six annexes A.01 à A.06 de la même date.",
+            "##Contradiction## : le CDC annonce qu'il n'y a pas de code de centrale, l'annexe A.04 donne 7100.",
+            "##Second numéro d'astreinte erroné## dans le CDC — voir l'avertissement de l'étape 5.",
+            "Le fichier « CTN Numéros utiles 2026 » est illisible.",
+            "Le code ~~1228~~ du quai de livraison n°8, signalé comme « plus d'actualité », n'apparaît dans aucun document — statut à clarifier.",
+            "Sept plans d'étage sont fournis mais non intégrés ici : ils restent la référence pour localiser une zone.",
+            "Le code ~~1228~~ attribué au quai de livraison correspond aussi au ##NPA de Plan-les-Ouates## : vérifier qu'il s'agit bien d'un code d'accès et non d'une confusion."
+          ]
+        }
+      ],
+      "transmetteurs": [
+        {
+          "label": "PROM incendie",
+          "code": "323238"
+        }
+      ]
     },
     {
       "statut": "partiel",
