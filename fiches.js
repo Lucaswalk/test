@@ -1528,12 +1528,8 @@ window.RDZ_FICHES = {
               "titre": "Y aller — deux accès",
               "items": [
                 {
-                  "label": "N°22 — loge de l'intendant, alarme incendie",
+                  "label": "Entrée du bâtiment — accès unique par le n°22, loge de l'intendant",
                   "dest": "Quai du Seujet 22, 1201 Genève"
-                },
-                {
-                  "label": "N°24 — alarme effraction",
-                  "dest": "Quai du Seujet 24, 1201 Genève"
                 }
               ]
             },
@@ -1551,6 +1547,11 @@ window.RDZ_FICHES = {
                 "##Natel d'astreinte## pour le contact Certas.",
                 "##Véhicule RDZ## (Zoé RDZ 134 389) avant 6h30 et après 20h00 — à vélo le reste du temps."
               ]
+            },
+            {
+              "t": "stop",
+              "lab": "Un seul accès, le n°22",
+              "txt": "Les procédures incendie et SETE indiquent toutes deux l'entrée par le ##n°22##. Le n°24 fait partie de l'adresse du bâtiment mais ##n'est pas une entrée d'intervention##. Se garer face au portail vert, côté gauche."
             }
           ]
         },
@@ -1625,19 +1626,23 @@ window.RDZ_FICHES = {
               "items": [
                 {
                   "a": "Se garer face au portail vert",
-                  "d": "Côté gauche."
+                  "d": "Côté gauche du site."
                 },
                 {
-                  "a": "Entrer par la porte battante automatique",
-                  "d": "Elle se trouve ##entre les deux tourniquets##."
+                  "a": "Entrer par la porte battante",
+                  "d": "Le pupitre à badge est ##sur la gauche##. La porte battante se trouve ##entre les deux tourniquets## : l'ouverture est automatique."
                 },
                 {
-                  "a": "Badger sur le lecteur de droite",
-                  "d": "Le lecteur noir."
+                  "a": "Badger sur le lecteur noir, à droite",
+                  "d": ""
                 },
                 {
-                  "a": "Ouvrir la loge",
-                  "d": "Clé dans la boîte à clés, code ~~0741~~. L'éclairage se trouve ##à droite de la porte##."
+                  "a": "Récupérer la clé de la loge",
+                  "d": "##Immédiatement à gauche, sur le retour du mur##, un coffre à clés renferme le trousseau d'accès à la loge. Code ~~0741~~."
+                },
+                {
+                  "a": "Entrer dans la loge",
+                  "d": "L'interrupteur d'éclairage est ##immédiatement à droite, à l'intérieur##."
                 }
               ]
             },
@@ -1645,9 +1650,11 @@ window.RDZ_FICHES = {
               "t": "liste",
               "titre": "Dans la loge",
               "items": [
-                "##Centrale effraction##, ##boîte à clés## et ##centrale feu## sont sur et derrière le ##premier bureau##.",
-                "##Trousseau bleu « Sécurité »## et porte-clé « coq » dans la boîte à pass, fermée par un simple aimant.",
-                "##Commande du quai de marchandises## au deuxième bureau — bouton « ouverture quai marchandises », puis badge pour appeler le monte-charge."
+                "##Premier bureau## : la ##boîte à clés## et la ##centrale effraction##. La ##centrale feu## est ##derrière## ce premier bureau.",
+                "##Boîte à pass## — au milieu du premier bureau, à gauche de la centrale effraction. Elle n'est fermée que par un ##aimant##.",
+                "##Trousseau bleu « Sécurité »## avec le porte-clé en forme de ##coq## — c'est le trousseau de travail.",
+                "##Trousseau de secours## — à prendre uniquement si le trousseau bleu n'est pas dans la boîte à clés.",
+                "##Second bureau, au fond de la loge## : bouton du haut « ouverture quai marchandise »."
               ]
             },
             {
@@ -1706,11 +1713,11 @@ window.RDZ_FICHES = {
               "t": "liste",
               "titre": "Composition connue",
               "items": [
-                "##Trousseau bleu « Sécurité »##.",
-                "##Porte-clé « coq »##.",
-                "##Clé d'ascenseur ~~LA4545~~## — accès aux 9e et 10e étages.",
+                "##Trousseau bleu « Sécurité »##, reconnaissable au porte-clé en forme de ##coq##.",
+                "##Clé d'ascenseur ~~LA4545~~## — active le panneau de commande pour monter aux 9e et 10e.",
+                "##Clé de blocage d'ascenseur ~~RT9177/64~~## — sur le trousseau coq, pour immobiliser la cabine pendant la ronde.",
                 "##Clé du coffre## — sert aussi à verrouiller la loge.",
-                "##Clé incendie 6e étage## — mentionnée dans le groupe 1 d'effraction."
+                "##Trousseau de secours## — seulement si le trousseau bleu est absent de la boîte à clés."
               ]
             },
             {
@@ -1870,32 +1877,93 @@ window.RDZ_FICHES = {
               "items": [
                 {
                   "a": "Activer la centrale",
-                  "d": "Bouton ##9##, puis molette ##16## sur « Autorisations », confirmer, entrer le code client ~~4321~~ et valider avec la molette."
+                  "d": "Bouton ##9##, molette ##16## sur « Autorisations », confirmer, saisir le code client ~~4321~~ et valider à la molette."
                 },
                 {
                   "a": "Levée de doute — dans les 3 minutes",
-                  "d": "Bouton ##9##, sélectionner « ##Retardement## » à la molette, valider : un décompte de ##5 minutes## démarre avant la transmission automatique aux pompiers."
+                  "d": "##Le délai court dès le début de l'alarme.## Bouton ##9##, sélectionner « ##Retardement## » à la molette ##16##, valider : un décompte de ##5 minutes## démarre avant la transmission aux pompiers."
                 },
                 {
-                  "a": "Consulter l'alarme ou le dérangement",
-                  "d": "Bouton ##10##, sélectionner l'élément à la molette, puis bouton ##15## pour le détail."
+                  "a": "Consulter le détail",
+                  "d": "Bouton ##10## pour sélectionner l'élément, puis bouton ##15## pour le détail de l'alarme ou du dérangement."
                 },
                 {
                   "a": "Si le feu est confirmé",
                   "d": "##118##, accueil et guidage des secours, évacuation. Ne pas réarmer."
                 },
                 {
+                  "a": "Quittancer",
+                  "d": "Bouton ##25##. Répéter la procédure « code client » si nécessaire."
+                },
+                {
                   "a": "Rendre compte",
-                  "d": "Aviser l'##astreinte Seujet## (+41 79 571 45 00) ou, hors exploitation, M. Soullier. Puis rapport GuardTek."
+                  "d": "Astreinte Seujet, puis rapport GuardTek."
                 }
               ]
+            },
+            {
+              "t": "num",
+              "titre": "Fermeture des 9e et 10e étages — transmetteur 461 309",
+              "court": "Fermeture 9-10",
+              "items": [
+                {
+                  "a": "Récupérer le trousseau bleu dans la loge",
+                  "d": "Boîte à pass au premier bureau, fermée par un aimant. Prendre le trousseau au porte-clé ##coq##."
+                },
+                {
+                  "a": "Ouvrir le quai de marchandises",
+                  "d": "Second bureau au fond de la loge, bouton du haut « ouverture quai marchandise ». ##Quitter la loge sans oublier les clés##, puis sortir en passant la main devant le boîtier."
+                },
+                {
+                  "a": "Rejoindre le monte-charge",
+                  "d": "Porte coulissante d'accès au quai, puis porte extérieure du quai de marchandise. ##Badger## pour rendre la commande disponible, puis appuyer sur le bouton d'appel."
+                },
+                {
+                  "a": "Monter au 9e",
+                  "d": "Badger pour autoriser le clavier, tourner la clé ~~LA4545~~ pour activer les boutons, sélectionner le niveau."
+                },
+                {
+                  "a": "Bloquer l'ascenseur",
+                  "d": "Clé ~~RT9177/64~~ du trousseau coq : insertion en position ##horizontale##, puis rotation en position ##verticale## pour bloquer la cabine pendant la ronde."
+                },
+                {
+                  "a": "Ronde du 9e étage",
+                  "d": "Suivre le sens indiqué sur le plan. ##Fenêtres intérieures : fermer sans verrouiller.## Accès sensibles : vérifier par un simple ##poussé-tiré##. Pointeaux à valider au passage."
+                },
+                {
+                  "a": "Contrôler les deux accès à la terrasse du 9e",
+                  "d": "##Premier accès## — à gauche en entrant dans les locaux SETE depuis le hall d'ascenseurs : verrou manuel sous la poignée, à manœuvrer ##vers la droite##.\n##Second accès## — à droite, juste avant la salle de réunion SETE : verrou manuel ##vers la gauche##.\nDans les deux cas, contrôler l'accrochage en exerçant une pression de la main sur le montant, puis vérifier le verrouillage tactilement."
+                },
+                {
+                  "a": "Ronde du 10e étage",
+                  "d": "##Le SAS de la centrale effraction ne se ferme JAMAIS à clé.## Les pointeaux se trouvent derrière la porte."
+                },
+                {
+                  "a": "Armer l'alarme",
+                  "d": "Sur la centrale : code ~~198000~~ ##ou## passage du badge sur le lecteur, attendre l'état ##PRÊT##, choisir le mode d'armement, puis quitter les lieux."
+                },
+                {
+                  "a": "Redéposer le pass",
+                  "d": "Boîte à pass du premier bureau, à gauche de la centrale effraction."
+                },
+                {
+                  "a": "Quitter le site",
+                  "d": "Éteindre l'éclairage, fermer la loge à clé, redéposer la clé dans le coffre ~~0741~~ en ##modifiant l'affichage pour que le code n'apparaisse plus##, puis passer la main devant le boîtier pour sortir."
+                }
+              ]
+            },
+            {
+              "t": "stop",
+              "lab": "Si quelqu'un est présent au 10e — procédure Fermeture 10e",
+              "txt": "##Demande de légitimation polie##, puis prise de contact avec la ##liste d'urgence## pour contrôle. Effectuer une levée de doute.\nPlusieurs portes de cet étage sont ##sensibles au niveau confidentialité## : si l'une d'elles est trouvée ouverte, ##prévenir la liste d'urgence sans délai##. La porte située à droite en entrant doit ##toujours## être fermée."
             },
             {
               "t": "liste",
               "titre": "Activer ou désactiver un détecteur",
               "items": [
-                "Sélectionner « Élément », puis « Groupe » pour un ensemble de détecteurs, ou « Sortie ».",
-                "Taper le numéro sur le clavier ##21## — par exemple ~~1074~~ pour le groupe entier, ~~1074.1~~ pour ce seul détecteur.",
+                "Code client ~~4321~~, puis sélectionner « ##Élément## » et valider à la molette ##16##.",
+                "Choisir ##Groupe## pour un détecteur ou un groupe de détecteurs, ou ##Sortie## pour une sortie.",
+                "Entrer le numéro au clavier numérique ##21## — par exemple ~~1074~~ pour le groupe entier, ~~1074.1~~ pour ce seul détecteur.",
                 "##Une zone désactivée ne détecte plus rien## : à réserver aux travaux, avec surveillance, et à réactiver aussitôt."
               ]
             },
@@ -1909,8 +1977,33 @@ window.RDZ_FICHES = {
       ],
       "blocsRondes": [
         {
+          "t": "kv",
+          "items": [
+            {
+              "k": "Fermeture 9e et 10e",
+              "v": "Ronde documentée, transmetteur ~~461 309~~ — procédure à cocher dans l'étape 6"
+            },
+            {
+              "k": "Reste du bâtiment",
+              "v": "Aucune ronde périodique documentée"
+            }
+          ]
+        },
+        {
+          "t": "liste",
+          "titre": "Ronde de fermeture 9e et 10e — points de contrôle",
+          "items": [
+            "##Fenêtres intérieures## : fermées, ##sans verrouillage##.",
+            "##Accès sensibles## : vérification par poussé-tiré.",
+            "##Portes à badge ou scanner## : fermées et verrouillées.",
+            "##SAS de la centrale effraction au 10e## : fermé mais ##jamais à clé##.",
+            "##Deux accès à la terrasse du 9e## : accrochage et verrou manuel contrôlés.",
+            "##Pointeaux## : ceux du 10e se trouvent derrière la porte."
+          ]
+        },
+        {
           "t": "manque",
-          "txt": "##Aucune ronde périodique n'est documentée pour ce site.## Seule la procédure d'intervention d'urgence en 15 minutes l'est. Les plans du 22.02.2024 montrent pourtant un réseau complet de points de contrôle numérotés sur tous les étages et sous-sols, ainsi que plusieurs consoles monobloc à quittancer aux 1er, 2e et 3e étages. ##À clarifier avec M. Soullier, intendant du site## (astreinte Seujet, +41 79 571 45 00) : une ronde régulière est-elle attendue, et selon quel parcours ?"
+          "txt": "Une ronde périodique sur le ##reste de l'immeuble## reste non documentée, alors que les plans du 22.02.2024 montrent des pointeaux à tous les étages et des consoles monobloc aux 1er, 2e et 3e. ##À clarifier avec M. Soullier, intendant du site## (astreinte Seujet, +41 79 571 45 00)."
         }
       ],
       "blocsNotes": [
@@ -1926,11 +2019,13 @@ window.RDZ_FICHES = {
           "t": "liste",
           "titre": "Réserves sur les données",
           "items": [
+            "Documents reçus le 01.10.2026 : procédure ##Alarme Incendie 321 482## du 26.01.2024 et procédure ##SETE Fermeture 9e-10e 461 309## du 22.02.2024. ##Aucun cahier des charges Seujet n'existe à ce jour## — la fiche est bâtie sur ces procédures et les plans.",
             "##Correction du 27.08.2026## : une version précédente de cette fiche indiquait que REGM partageait cette centrale et ce badge. C'est faux — REGM est la résidence IHEID du Grand Morillon, PROM 324 199, sans lien avec Seujet.",
             "##Centrales du 10e étage## : les plans portent des étiquettes « Centrale effraction » et « Centrale feu » dans une zone technique du 10e. Le lien avec les boîtiers de la loge n'est précisé nulle part — à confirmer sur site.",
             "L'annexe « Asservissement Securiton » est une table technique REL4, sans contenu directement actionnable par un agent.",
             "Le « Mode d'emploi Centrale Feu » est un manuel générique Securiton MIC de 2010, sans donnée propre au site.",
-            "##M. Nunes retiré de cette fiche le 01.10.2026.## Il figurait comme « intendant secteur Seujet » sans aucune source documentaire. Il n'est référent que pour ##Papeterie, Bellevue et Collex##."
+            "##M. Nunes retiré de cette fiche le 01.10.2026.## Il figurait comme « intendant secteur Seujet » sans aucune source documentaire. Il n'est référent que pour ##Papeterie, Bellevue et Collex##.",
+            "L'entrée par le ##n°24## mentionnée dans l'ancienne fiche était erronée : les deux procédures indiquent le ##n°22##."
           ]
         }
       ],
@@ -2665,13 +2760,13 @@ window.RDZ_FICHES = {
               "items": [
                 {
                   "nom": "M. Grégory Barla",
-                  "role": "Responsable sécurité et incendie IHEID — astreinte P1",
-                  "num": "+33 6 15 84 54 16"
+                  "role": "Responsable sécurité et incendie IHEID — ##GSM professionnel, à appeler en premier##",
+                  "num": "+41 77 814 23 39"
                 },
                 {
                   "nom": "M. Grégory Barla",
-                  "role": "Responsable sécurité et incendie IHEID — ##GSM, numéro à utiliser en urgence##",
-                  "num": "+41 77 814 23 39"
+                  "role": "##Numéro privé, en second recours seulement##, s'il est injoignable sur sa ligne professionnelle",
+                  "num": "+33 6 15 84 54 16"
                 },
                 {
                   "nom": "M. Christophe Verdon",
@@ -2774,10 +2869,6 @@ window.RDZ_FICHES = {
                   ]
                 }
               ]
-            },
-            {
-              "t": "manque",
-              "txt": "##Le numéro ~~+33 6 15 84 54 16~~ de M. Barla n'apparaît que sur cette fiche.## Les fiches MDE, MDP, Moynier et Rothschild donnent ~~+41 22 908 59 63~~ et ~~+41 77 814 23 39~~. Numéro privé encore valable, ou périmé ? À confirmer."
             }
           ]
         },
@@ -6157,8 +6248,9 @@ window.RDZ_FICHES = {
               "txt": "Le cahier des charges indique « ##pas de code d'accès pour la centrale## », alors que l'annexe A.04 donne un ##code utilisateur ~~7100~~## pour les deux locaux de détection. L'annexe est plus récente et plus précise : c'est elle qui fait foi. À corriger dans le cahier des charges."
             },
             {
-              "t": "manque",
-              "txt": "##Le code ~~7100~~ est également attribué à un autre site## dans le tableau des codes RDZ (La Tour / Veyrot 39). Code Siemens standard partagé, ou report d'un site à l'autre ? À confirmer."
+              "t": "stop",
+              "lab": "Deux niveaux de code à ne pas confondre",
+              "txt": "Chez RDZ, le ~~7200~~ est le ##code du niveau sécurité##, celui de l'agent — c'est lui qui est utilisé à MDE, MDP et Moynier. Le ~~7100~~ correspondrait au ##niveau technique ou installateur##.\nL'annexe A.04 de ce site indique pourtant ~~7100~~ comme code utilisateur. ##Essayer 7200 si 7100 est refusé##, et faire trancher avant diffusion aux agents."
             }
           ]
         },
@@ -6316,8 +6408,13 @@ window.RDZ_FICHES = {
               "titre": "Centrale et astreinte",
               "items": [
                 {
-                  "nom": "Certas",
-                  "role": "Centrale d'alarme du site — transmetteur 323 238",
+                  "nom": "Certas — urgence 24h/24",
+                  "role": "##Numéro à composer en intervention## — transmetteur 323 238, complément à 30",
+                  "num": "+41 844 800 811"
+                },
+                {
+                  "nom": "Certas — administration",
+                  "role": "Questions administratives uniquement, ##pas en urgence##. C'est ce numéro que donne le cahier des charges du site.",
                   "num": "+41 844 800 422"
                 },
                 {
@@ -6358,8 +6455,9 @@ window.RDZ_FICHES = {
               "txt": "Le fichier « CTN Numéros utiles 2026 » fourni en annexe est illisible — format de fichier non exploitable. À retransmettre, il contient probablement les contacts des locataires."
             },
             {
-              "t": "manque",
-              "txt": "##Numéro Certas différent des autres sites.## CTN utilise le ~~+41 844 800 422~~, alors que les douze autres fiches utilisent le ~~+41 844 800 811~~. Ligne dédiée, ou erreur du cahier des charges ? À vérifier avant diffusion."
+              "t": "stop",
+              "lab": "Erreur dans le cahier des charges",
+              "txt": "Le CDC donne le ~~+41 844 800 422~~ comme contact Certas : c'est le ##numéro administratif##. En intervention, composer le ##+41 844 800 811##, qui est la ligne d'urgence 24h/24."
             }
           ]
         },
