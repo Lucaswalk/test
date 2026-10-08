@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="fr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Quiz IHEID — RDZ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F5F5F5; --panel:#FFFFFF; --ink:#151515; --muted:#5E5E5E; --line:#D6D6D6;
+  --red:#C0392B; --red-ink:#FFFFFF; --ok:#1E7B45; --ok-bg:#E5F3EA; --ko:#B0281C; --ko-bg:#FBE9E7; --pick:#F7E3E0; --pri-bg:#FFF4E0; --pri-ink:#7A4300; --pri-line:#E08A00;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#111111; --panel:#1B1B1B; --ink:#F2F2F2; --muted:#A8A8A8; --line:#333333;
+    --red:#C0392B; --red-ink:#FFFFFF; --ok:#6FD39A; --ok-bg:#16301F; --ko:#FF8A7D; --ko-bg:#3A1A16; --pick:#3A1D1A; --pri-bg:#33240C; --pri-ink:#FFC870; --pri-line:#E08A00;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#111111; --panel:#1B1B1B; --ink:#F2F2F2; --muted:#A8A8A8; --line:#333333;
+  --red:#C0392B; --red-ink:#FFFFFF; --ok:#6FD39A; --ok-bg:#16301F; --ko:#FF8A7D; --ko-bg:#3A1A16; --pick:#3A1D1A; --pri-bg:#33240C; --pri-ink:#FFC870; --pri-line:#E08A00;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{height:100%;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;min-height:100%;background:var(--bg);color:var(--ink);
+  font-family:"Barlow",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;font-size:17px;line-height:1.5}
+.wrap{max-width:640px;margin:0 auto;padding:20px 18px 40px}
+header{display:flex;align-items:center;gap:12px;border-left:6px solid var(--red);padding:4px 0 4px 14px;margin-bottom:22px}
+.badge{width:44px;height:44px;border-radius:50%;background:var(--red);color:var(--red-ink);display:grid;place-items:center;
+  font-family:"Barlow Condensed","Arial Narrow",Arial,sans-serif;font-weight:700;font-size:15px;flex:none}
+h1{font-family:"Barlow Condensed","Arial Narrow",Arial,sans-serif;font-weight:700;font-size:28px;line-height:1.1;margin:0}
+.sub{color:var(--muted);font-size:15px;margin:2px 0 0}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:20px}
+label{display:block;font-weight:600;margin:14px 0 6px}
+input[type=text]{width:100%;font:inherit;padding:12px;border:1px solid var(--line);border-radius:4px;background:var(--bg);color:var(--ink)}
+input[type=text]:focus{outline:3px solid var(--red);outline-offset:1px}
+.btn{display:block;width:100%;margin-top:20px;padding:15px;font:inherit;font-weight:700;font-size:18px;border:0;border-radius:4px;
+  background:var(--red);color:var(--red-ink);cursor:pointer}
+.btn:disabled{opacity:.4;cursor:not-allowed}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.btn:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
+.rules{margin:16px 0 0;padding-left:20px;color:var(--muted);font-size:15px}
+.progress{display:flex;gap:4px;margin-bottom:16px}
+.progress span{flex:1;height:6px;border-radius:3px;background:var(--line)}
+.progress span.done{background:var(--red)}
+.qnum{font-family:"Barlow Condensed","Arial Narrow",Arial,sans-serif;font-weight:600;color:var(--red);font-size:18px}
+.qtext{font-size:21px;font-weight:600;line-height:1.3;margin:4px 0 18px}
+.opt{display:flex;gap:12px;align-items:flex-start;width:100%;text-align:left;font:inherit;color:var(--ink);
+  background:var(--bg);border:2px solid var(--line);border-radius:6px;padding:14px;margin-bottom:10px;cursor:pointer}
+.opt b{flex:none;width:28px;height:28px;border-radius:50%;border:2px solid var(--muted);display:grid;place-items:center;font-size:14px}
+.opt[aria-pressed="true"]{border-color:var(--red);background:var(--pick)}
+.opt[aria-pressed="true"] b{background:var(--red);border-color:var(--red);color:var(--red-ink)}
+.opt:focus-visible{outline:3px solid var(--red);outline-offset:2px}
+.score{text-align:center;padding:10px 0 6px}
+.score .big{font-family:"Barlow Condensed","Arial Narrow",Arial,sans-serif;font-weight:700;font-size:72px;line-height:1}
+.verdict{display:inline-block;margin-top:10px;padding:6px 14px;border-radius:4px;font-weight:700}
+.verdict.ok{background:var(--ok-bg);color:var(--ok)}
+.verdict.ko{background:var(--ko-bg);color:var(--ko)}
+.meta{color:var(--muted);font-size:15px;text-align:center;margin-top:10px}
+h2{font-family:"Barlow Condensed","Arial Narrow",Arial,sans-serif;font-size:22px;margin:26px 0 10px}
+.rev{border-left:4px solid var(--line);padding:4px 0 4px 12px;margin-bottom:16px}
+.rev.ok{border-color:var(--ok)} .rev.ko{border-color:var(--ko)}
+.rev p{margin:2px 0}
+.rev .q{font-weight:600}
+.rev .you{color:var(--ko)} .rev .good{color:var(--ok)}
+.rev .why{color:var(--muted);font-size:15px}
+.hidden{display:none}
+.err{color:var(--ko);font-weight:600;margin:14px 0 0}
+.warn{border-color:var(--red);color:var(--ink);font-weight:600;margin-bottom:16px}
+@media (prefers-reduced-motion:no-preference){.opt{transition:border-color .12s,background .12s}}
+
+.themes{display:grid;gap:10px;margin-top:6px}
+.th{display:flex;justify-content:space-between;align-items:center;gap:12px;width:100%;text-align:left;font:inherit;color:var(--ink);
+  background:var(--bg);border:2px solid var(--line);border-radius:6px;padding:14px;cursor:pointer}
+.th strong{display:block;font-size:18px}
+.th small{color:var(--muted);font-size:14px}
+.th .n{flex:none;font-family:"Barlow Condensed","Arial Narrow",Arial,sans-serif;font-weight:700;color:var(--red);font-size:16px}
+.th[disabled]{opacity:.45;cursor:not-allowed}
+.th:not([disabled]):hover,.th:focus-visible{border-color:var(--red);outline:none}
+.who{color:var(--muted);font-size:15px;margin:0 0 4px}
+.link{background:none;border:0;padding:0;font:inherit;color:var(--red);text-decoration:underline;cursor:pointer}
+
+.chk{display:flex;gap:10px;align-items:flex-start;padding:10px 0;border-bottom:1px solid var(--line)}
+.chk input{width:22px;height:22px;margin-top:2px;accent-color:var(--red);flex:none}
+.chk span small{display:block;color:var(--muted);font-size:14px}
+select{width:100%;font:inherit;padding:12px;border:1px solid var(--line);border-radius:4px;background:var(--bg);color:var(--ink)}
+.linkbox{word-break:break-all;background:var(--bg);border:1px dashed var(--line);border-radius:4px;padding:12px;font-size:14px;margin-top:12px}
+.ok-msg{color:var(--ok);font-weight:600;margin-top:10px}
+.tabs{display:flex;gap:8px;margin-bottom:14px}
+.tabs button{flex:1;font:inherit;font-weight:600;padding:10px;border:2px solid var(--line);border-radius:4px;background:var(--panel);color:var(--ink);cursor:pointer}
+.tabs button[aria-pressed="true"]{border-color:var(--red);color:var(--red)}
+textarea{width:100%;min-height:90px;font:inherit;padding:12px;border:1px solid var(--line);border-radius:4px;background:var(--bg);color:var(--ink)}
+.done-tag{color:var(--ok);font-weight:700}
+
+.prio{border:2px solid var(--pri-line);background:var(--pri-bg);color:var(--pri-ink);border-radius:6px;padding:16px;margin-top:14px}
+.prio h3,.todo h3{margin:0 0 8px;font-family:"Barlow Condensed","Arial Narrow",Arial,sans-serif;font-size:20px}
+.prio ul,.todo ul{margin:0;padding-left:20px}
+.prio li,.todo li{margin-bottom:6px}
+.prio small,.todo small{display:block;opacity:.8;font-size:13px}
+.todo{border:1px solid var(--line);background:var(--panel);border-radius:6px;padding:16px;margin-top:14px}
+.allgood{border:2px solid var(--ok);background:var(--ok-bg);color:var(--ok);border-radius:6px;padding:14px;margin-top:14px;font-weight:600}
+.opt.dk{border-style:dashed;color:var(--muted)}
+.opt.dk b{border-style:dashed}
+.rev .src{font-size:13px;color:var(--muted);font-style:italic}
+.rev.dk{border-color:var(--pri-line)}
+.tag{display:inline-block;font-size:12px;font-weight:700;padding:1px 6px;border-radius:3px;background:var(--pri-bg);color:var(--pri-ink);border:1px solid var(--pri-line);margin-left:6px;vertical-align:middle}
+.maj{color:var(--muted);font-size:13px;text-align:center;margin-top:24px}
+.chk{display:flex;gap:10px;align-items:flex-start;padding:10px 0;border-bottom:1px solid var(--line);cursor:pointer}
+.chk input{width:22px;height:22px;margin-top:2px;accent-color:var(--red);flex:none}
+.chk span small{display:block;color:var(--muted);font-size:14px}
+select{width:100%;font:inherit;padding:12px;border:1px solid var(--line);border-radius:4px;background:var(--bg);color:var(--ink)}
+.linkbox{word-break:break-all;background:var(--bg);border:1px dashed var(--line);border-radius:4px;padding:12px;font-size:14px;margin-top:12px}
+.ok-msg{color:var(--ok);font-weight:600;margin-top:10px}
+.tabs{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px}
+.tabs button{font:inherit;font-weight:600;padding:10px;border:2px solid var(--line);border-radius:4px;background:var(--panel);color:var(--ink);cursor:pointer}
+.tabs button[aria-pressed="true"]{border-color:var(--red);color:var(--red)}
+textarea{width:100%;min-height:90px;font:inherit;padding:12px;border:1px solid var(--line);border-radius:4px;background:var(--bg);color:var(--ink)}
+.sitebar{margin-bottom:14px}
+.situ{font-size:18px;font-weight:600;margin:6px 0 10px}
+.verdict.ko{background:var(--pri-bg);color:var(--pri-ink)}
+</style></head><body>
+<div class="wrap">
+  <header>
+    <div class="badge" aria-hidden="true">RDZ</div>
+    <div><h1 id="h1">Quiz IHEID</h1><p class="sub" id="sub">Formation des agents RDZ</p></div>
+  </header>
+  <div id="warn" class="panel warn">Vous êtes dans un aperçu : le quiz ne peut pas démarrer ici. Fermez cet écran et ouvrez le quiz par son lien, dans Safari ou Chrome.</div>
+
+  <section id="lock" class="panel hidden">
+    <label for="pin">Code formateur</label>
+    <input id="pin" type="password" autocomplete="off">
+    <p id="pinErr" class="err hidden" role="alert">Code incorrect.</p>
+    <button id="pinGo" class="btn">Ouvrir l'espace formateur</button>
+    <p class="rules" style="list-style:none;padding:0;margin-top:16px">Vous êtes agent ? Ouvrez le lien que votre formateur vous a envoyé.</p>
+  </section>
+
+  <section id="trainer" class="hidden">
+    <div class="panel sitebar">
+      <label for="site" style="margin-top:0">Site</label>
+      <select id="site"></select>
+      <p class="rules" style="list-style:none;padding:0;margin-top:8px" id="siteInfo"></p>
+    </div>
+    <div class="tabs">
+      <button id="tabLink" aria-pressed="true">Envoyer un test</button>
+      <button id="tabCheck" aria-pressed="false">Vérifier un résultat</button>
+      <button id="tabScen" aria-pressed="false">Mises en situation</button>
+      <button id="tabSelf" aria-pressed="false">Tester moi-même</button>
+    </div>
+    <div id="pLink" class="panel">
+      <label for="tName" style="margin-top:0">Votre nom (formateur)</label>
+      <input id="tName" type="text" placeholder="Ex. : Lucas Gimenez">
+      <label for="aName">Nom de l'agent</label>
+      <input id="aName" type="text" placeholder="Ex. : Jean Dupont">
+      <label>Thèmes à faire passer</label>
+      <div id="tList"></div>
+      <label for="valid">Le lien reste valable</label>
+      <select id="valid">
+        <option value="today">Aujourd'hui seulement (jusqu'à minuit)</option>
+        <option value="24">24 heures</option>
+        <option value="48">48 heures</option>
+        <option value="168">7 jours</option>
+      </select>
+      <p id="lErr" class="err hidden" role="alert"></p>
+      <button id="mk" class="btn">Créer le lien</button>
+      <div id="out" class="hidden">
+        <div class="linkbox" id="lnk"></div>
+        <button id="share" class="btn">Envoyer le lien à l'agent</button>
+        <button id="copy" class="btn ghost">Copier le lien</button>
+        <p id="copied" class="ok-msg hidden">Copié. Collez-le dans un SMS ou WhatsApp.</p>
+      </div>
+    </div>
+    <div id="pCheck" class="panel hidden">
+      <label for="res" style="margin-top:0">Collez ici le message de résultat reçu de l'agent</label>
+      <textarea id="res"></textarea>
+      <button id="chk" class="btn">Vérifier</button>
+      <p id="chkOut" class="hidden" role="status"></p>
+    </div>
+    <div id="pScen" class="hidden">
+      <div class="themes" id="scList"></div>
+      <div id="scOne" class="panel hidden">
+        <div class="qnum" id="scTitle"></div>
+        <p class="situ" id="scSitu"></p>
+        <label for="scAgent">Agent observé</label>
+        <input id="scAgent" type="text" placeholder="Ex. : Jean Dupont">
+        <label>Actions attendues (cochez ce qui est fait correctement)</label>
+        <div id="scSteps"></div>
+        <div class="prio"><h3>Point d'attention</h3><span id="scWatch"></span></div>
+        <button id="scSend" class="btn">Envoyer le compte rendu</button>
+        <p id="scCopied" class="ok-msg hidden">Compte rendu copié.</p>
+        <button id="scBack" class="btn ghost">Autres mises en situation</button>
+      </div>
+    </div>
+    <div id="pSelf" class="hidden"><div class="themes" id="selfList"></div></div>
+  </section>
+
+  <section id="agent" class="hidden">
+    <div class="panel">
+      <p class="who" id="aHello"></p>
+      <p class="rules" style="list-style:none;padding:0" id="aInfo"></p>
+    </div>
+    <div class="themes" id="aList" style="margin-top:12px"></div>
+  </section>
+
+  <section id="bad" class="panel hidden">
+    <p class="err" id="badMsg"></p>
+    <p class="rules" style="list-style:none;padding:0">Demandez un nouveau lien à votre formateur.</p>
+  </section>
+
+  <section id="quiz" class="panel hidden" aria-live="polite">
+    <div class="progress" id="prog"></div>
+    <div class="qnum" id="qnum"></div>
+    <div class="qtext" id="qtext"></div>
+    <div id="opts"></div>
+    <button id="next" class="btn" disabled>Question suivante</button>
+    <button id="prev" class="btn ghost">Question précédente</button>
+  </section>
+
+  <section id="result" class="hidden">
+    <div class="panel">
+      <div class="score"><div class="big" id="big"></div><div id="sur"></div><div class="verdict" id="verdict"></div></div>
+      <p class="meta" id="meta"></p>
+    </div>
+    <div id="prioBox"></div>
+    <div id="todoBox"></div>
+    <button id="sendRes" class="btn">Envoyer mon résultat au formateur</button>
+    <p id="resCopied" class="ok-msg hidden">Résultat copié. Collez-le dans un message à votre formateur.</p>
+    <h2>Correction détaillée</h2>
+    <div id="review"></div>
+    <button id="again" class="btn ghost">Retour</button>
+  </section>
+  <p class="maj" id="maj"></p>
+</div>
+<script>
+const SITES=[{"id": "regm", "name": "REGM", "full": "Résidence Grand Morillon (Morillon et Budé)", "maj": "CDC REGM du 17.09.2026 · annexes du 01.04.2026 · précisions du 06.10.2026", "themes": [{"id": "n1", "title": "Niveau 1 — Connaître le site", "desc": "Repères, accès, trousseau, règles de base", "q": [{"q": "Quelle est l'adresse de la REGM ?", "o": ["Rue Michelle-Nicod 8-10", "Rue Michelle-Nicod 4", "Avenue de France 20-22", "Route de Collex 49"], "e": "La REGM est au 8-10. Le n°4 de la même rue est MSF, un autre client.", "src": "CDC REGM – Localisation", "pt": "Adresse du site", "crit": false}, {"q": "De quels bâtiments se compose la REGM ?", "o": ["Morillon et Budé", "Morillon et Barton", "Budé et Moynier", "Budé et Rothschild"], "e": "La Résidence Grand Morillon compte deux bâtiments : Morillon et Budé.", "src": "CDC REGM – Localisation", "pt": "Bâtiments du site", "crit": false}, {"q": "Quand la porte de la balade est-elle fermée ?", "o": ["Tous les soirs de 20h30 à 06h00, du vendredi 20h30 au lundi 06h00, et les jours fériés", "Tous les soirs de 22h00 à 06h00, du vendredi 22h00 au lundi 06h00, et les jours fériés", "Tous les soirs de 20h30 à 06h00, du samedi 20h30 au lundi 06h00, sauf les jours fériés", "Uniquement le week-end, du vendredi 20h00 au lundi 06h00, et pendant les vacances"], "e": "Elle est fermée tous les soirs de 20h30 à 06h00, en continu du vendredi 20h30 au lundi 06h00, ainsi que les jours fériés. En cas d'évacuation, on la rouvre immédiatement.", "src": "Précision du responsable de site (oct. 2026)", "pt": "Horaires de la balade", "crit": false}, {"q": "Combien de trousseaux REGM existe-t-il, et où se trouve-t-il ?", "o": ["Un seul trousseau, rangé dans la partie REGM FULL du coffre à clés de la loge", "Deux trousseaux, l'un standard et l'autre FULL, rangés dans le coffre de la loge", "Un seul trousseau, rangé à l'Admin dans le placard situé derrière le desk", "Un seul trousseau, remis en main propre par l'opérateur à son successeur"], "e": "Un seul trousseau, rangé dans la partie REGM FULL du coffre à clés de la loge sécurité.", "src": "Précision du responsable de site (oct. 2026) ; Fiche AMSET REGM – étape 4", "pt": "Trousseau REGM FULL", "crit": false}, {"q": "Vous avez oublié ou perdu votre badge. Où se trouve le badge de secours ?", "o": ["Dans le pylône situé devant la porte du garage", "Dans le placard des objets trouvés, derrière le desk de l'Admin", "Dans le coffre à clés de la loge, avec le trousseau REGM FULL", "Dans le boîtier pompiers, à côté de l'entrée principale"], "e": "Dans le pylône devant la porte du garage. Le code est dans l'étape 3 de la fiche AMSET.", "src": "Fiche AMSET REGM – étape 3", "pt": "Badge de secours", "crit": false}, {"q": "Panne SALTO ou coupure de courant : que se passe-t-il pour l'accès au site ?", "o": ["Les boîtiers tiennent sur batterie ; on entre encore, notamment par la porte de la loge", "Les boîtiers se coupent ; toutes les portes se bloquent jusqu'au retour du courant", "Les boîtiers se coupent ; toutes les portes se déverrouillent et restent ouvertes", "Les boîtiers restent alimentés, mais seuls les badges du Housing fonctionnent encore"], "e": "Les boîtiers SALTO sont autonomes sur batterie : l'accès reste possible, notamment par la porte de la loge.", "src": "Fiche AMSET REGM – étape 3", "pt": "Défaut SALTO", "crit": false}, {"q": "Comment vérifier qu'une personne est bien résidente d'une chambre ?", "o": ["Dans l'application Agent RDZ, onglet Occupancy Details : le locataire en cours est « In Room »", "Dans l'application Agent RDZ, onglet Historique : le nom du dernier badge lu sur la porte", "Dans le listing parking REGM : le nom associé au numéro de la chambre", "Uniquement auprès du Housing, en appelant le service pendant ses horaires"], "e": "L'application Agent RDZ fonctionne partout sur le site, alors que Starrez n'est utilisable qu'à la loge. Le locataire en cours porte le statut « In Room ».", "src": "Fiche AMSET REGM ; Précision du responsable de site (oct. 2026)", "pt": "Identifier un résident", "crit": false}, {"q": "La centrale des pompiers vous appelle pendant une alarme incendie. Que faites-vous ?", "o": ["Je ne quittance ni l'alarme ni les asservissements, et j'attends leurs instructions", "Je quittance l'alarme pour couper la sirène, mais je laisse les asservissements", "Je quittance l'alarme et les asservissements, puis je les attends à l'entrée", "Je réarme la centrale avec le bouton vert pour vérifier si l'alarme revient"], "e": "Les pompiers demandent systématiquement de ne rien quittancer. C'est à eux de décider.", "src": "Précision du responsable de site (oct. 2026)", "pt": "Appel de la centrale des pompiers", "crit": true}, {"q": "Quand les commandes VENTILATION A et C sont-elles concernées ?", "o": ["Seulement si l'alarme n'a pas été maîtrisée à temps et que la surpression est lancée", "À chaque alarme, juste après le quittancement de la centrale incendie", "Lors de chaque ronde incendie, pour vérifier leur bon fonctionnement", "Seulement si la centrale affiche un dérangement sur la ventilation du garage"], "e": "Uniquement si la surpression a été lancée ; en général, ce sont les pompiers qui les quittancent.", "src": "Précision du responsable de site (oct. 2026)", "pt": "Ventilation A et C", "crit": true}, {"q": "Au fitness, que contrôlez-vous, et quand ?", "o": ["Abonnement à jour au nom de l'usager et serviette, surtout en période de forte affluence", "Abonnement à jour au nom de l'usager et serviette, à heures fixes : matin, midi et 18h00", "Abonnement à jour au nom de l'usager uniquement, à chaque ronde, quelle que soit l'affluence", "Serviette uniquement, en fin de soirée, juste avant la fermeture de la salle de fitness"], "e": "On vérifie avec la liste à jour l'abonnement au nom de l'usager et le matériel adéquat (serviette), surtout quand la salle est très fréquentée.", "src": "CDC REGM – Missions Sécurité ; Précision du responsable de site (oct. 2026)", "pt": "Contrôle du fitness", "crit": false}], "ready": true}, {"id": "feu", "title": "Alarmes incendie", "desc": "Centrale Aritech, levée de doute, conduite à tenir", "q": [{"q": "Alarme feu en mode temporisé : combien de temps avant la transmission automatique aux pompiers, et à quoi sert ce délai ?", "o": ["3 minutes, le temps de rejoindre la centrale et de l'acquitter", "5 minutes, le temps de rejoindre la centrale et de l'acquitter", "3 minutes, le temps d'aller vérifier la zone sur place", "10 minutes, le temps de prévenir l'astreinte RDZ par téléphone"], "e": "Les 3 premières minutes servent à rejoindre la centrale. Les 5 minutes viennent ensuite, pour lever le doute sur place.", "src": "Fiche réflexe incendie REGM", "pt": "Temporisation de 3 minutes", "crit": true}, {"q": "D'après l'étiquette « En cas d'alarme feu » de la centrale, dans quel ordre agissez-vous ?", "o": ["Bouton noir, bouton rouge, molette « Opérateur » et code, puis vérification sur place", "Bouton rouge, bouton noir, molette « Opérateur » et code, puis vérification sur place", "Molette « Opérateur » et code, bouton noir, bouton rouge, puis vérification sur place", "Bouton noir, molette « Opérateur » et code, bouton vert, puis vérification sur place"], "e": "1 bouton noir (arrêt buzzer), 2 bouton rouge (sirène), 3 appui sur la molette : session Opérateur, code pré-rempli, 4 vérification sur place, 5 bouton vert uniquement en cas de fausse alarme.", "src": "Étiquette de la centrale incendie", "pt": "Ordre des gestes à la centrale", "crit": true}, {"q": "À la centrale incendie, quel geste arrête le buzzer ?", "o": ["Appuyer sur le bouton noir", "Appuyer sur le bouton rouge", "Appuyer sur le bouton vert", "Tourner la molette"], "e": "Bouton noir : arrêt du buzzer. Ensuite molette pour la zone, bouton rouge pour la sirène, bouton vert pour le réarmement.", "src": "Étiquette de la centrale incendie", "pt": "Arrêt du buzzer", "crit": false}, {"q": "Comment identifiez-vous la zone déclenchée ?", "o": ["En appuyant sur la molette : la session Opérateur s'ouvre, code déjà rempli", "En appuyant sur le bouton rouge, qui affiche la zone sur l'écran", "En appelant CERTAS, qui lit la zone à distance et vous la dicte", "En faisant le tour des étages jusqu'à trouver le détecteur en alarme"], "e": "Un appui sur la molette ouvre la session Opérateur, dont le code est pré-rempli ; on valide, puis on lit la zone (aussi visible dans AppVision).", "src": "Étiquette de la centrale incendie ; Précision du responsable de site (oct. 2026)", "pt": "Identifier la zone", "crit": false}, {"q": "Que déclenche l'appui sur le bouton rouge ?", "o": ["L'arrêt de la sirène et 5 minutes supplémentaires pour lever le doute sur place", "L'arrêt de la sirène et la transmission immédiate de l'alarme aux pompiers", "Le réarmement de la centrale et la remise en place des asservissements", "L'arrêt de la sirène et 3 minutes supplémentaires pour rejoindre la centrale"], "e": "Le bouton rouge arrête la sirène et lance la seconde temporisation de 5 minutes : c'est le temps de la levée de doute.", "src": "Fiche réflexe incendie REGM", "pt": "Bouton rouge et levée de doute", "crit": false}, {"q": "Quand avez-vous le droit d'appuyer sur le bouton vert (réarmement) ?", "o": ["Seulement quand l'alarme est levée ou le feu éteint et vérifié", "Dès l'arrivée à la centrale, pour éviter le déplacement des pompiers", "Pendant l'attaque du feu, pour éviter le déplacement des pompiers", "Juste après le buzzer, pour relancer la temporisation de 3 minutes"], "e": "Étiquette de la centrale : le bouton vert sert à réarmer en cas de fausse alarme. Il annule la transmission aux pompiers ; pompiers sur place, seulement avec leur accord.", "src": "Étiquette de la centrale incendie ; Annexe Évacuation", "pt": "Bouton vert (réarmement)", "crit": true}, {"q": "Pendant la levée de doute, vous découvrez un début de feu maîtrisable. Que faites-vous ?", "o": ["J'attaque avec l'extincteur ou la couverture anti-feu, sans réarmer la centrale", "Je réarme la centrale, puis j'attaque avec l'extincteur ou la couverture", "Je retourne d'abord à la loge pour prévenir l'astreinte RDZ par téléphone", "J'attends l'arrivée des pompiers devant le local, porte grande ouverte"], "e": "Feu maîtrisable : attaque avec l'extincteur ou la couverture anti-feu (CAF), et la centrale n'est pas réarmée tant que le feu n'est pas éteint et vérifié.", "src": "Fiche réflexe incendie REGM", "pt": "Feu maîtrisable", "crit": true}, {"q": "Le feu n'est pas maîtrisable. Que faites-vous ?", "o": ["J'actionne un déclencheur manuel ou j'appelle le 118, puis je lance l'évacuation", "J'appelle le 117, puis j'attaque le feu avec tous les extincteurs de l'étage", "J'appelle l'astreinte RDZ et j'attends ses instructions avant toute action", "Je lance l'évacuation, puis j'appelle SICLI pour qu'il prévienne les pompiers"], "e": "Feu non maîtrisable : DM ou 118, puis procédure d'évacuation.", "src": "Fiche réflexe incendie REGM ; Étiquette de la centrale incendie", "pt": "Feu non maîtrisable", "crit": true}, {"q": "Vous voyez un feu alors qu'aucune alarme ne s'est déclenchée. Quelle est la règle ?", "o": ["Aucune temporisation ne tourne : déclencheur manuel ou 118 d'abord, puis attaque si possible", "Attaquer d'abord le feu : la détection se déclenchera d'elle-même en quelques minutes", "Aller d'abord à la centrale pour lancer manuellement la temporisation de 3 minutes", "Appeler d'abord le responsable sécurité, seul habilité à faire venir les pompiers"], "e": "Pas de compte à rebours en cours, donc rien n'a été transmis : il faut alarmer d'abord.", "src": "Fiche réflexe incendie REGM", "pt": "Feu sans alarme", "crit": true}, {"q": "Quelle est la différence entre une petite et une grande alarme ?", "o": ["La petite ferme les portes coupe-feu ; la grande lance tous les asservissements", "La petite ne concerne qu'un bâtiment ; la grande, Morillon et Budé ensemble", "La petite part chez l'astreinte RDZ ; la grande part directement aux pompiers", "La petite lance les ascenseurs seuls ; la grande ferme les portes coupe-feu"], "e": "Petite alarme : les portes coupe-feu se ferment. Grande alarme : asservissements (ascenseurs, ventilation, clapets, surpression).", "src": "Annexe Évacuation", "pt": "Petite et grande alarme", "crit": false}, {"q": "Dans quel cas appelez-vous SICLI, le mainteneur de la centrale ?", "o": ["Quand l'alarme ne peut pas être quittancée ou qu'elle revient de façon répétée", "À chaque alarme, même fausse, pour qu'il l'enregistre dans son suivi annuel", "Quand le feu n'est pas maîtrisable, pour qu'il prévienne lui-même les pompiers", "Quand la surpression a été lancée et que la ventilation A et C est en marche"], "e": "SICLI intervient sur la centrale : quittance impossible ou alarme récurrente.", "src": "Fiche réflexe incendie REGM ; Annexe Contacts urgence", "pt": "Appel à Chubb Sicli", "crit": false}], "ready": true}, {"id": "evac", "title": "Évacuation", "desc": "DM, SONO, rassemblement, fin d'intervention", "q": [{"q": "Comment actionnez-vous un déclencheur manuel (DM), et comment savez-vous que l'alarme est prise en compte ?", "o": ["Je relève le cache, j'appuie sur le rond noir : la diode rouge clignote", "Je casse la vitre, j'appuie sur le bouton rouge : la sirène démarre", "Je relève le cache, je tourne la clé du DM : la diode verte s'allume", "J'appuie sur le rond noir sans relever le cache : la diode reste fixe"], "e": "Relever le cache plastique, appuyer sur le rond noir. La diode rouge qui clignote confirme la prise en compte.", "src": "Annexe Évacuation – DM", "pt": "Actionner un DM", "crit": true}, {"q": "Sur le boîtier SONO de la loge, dans quel ordre lancez-vous le message d'évacuation ?", "o": ["Choix du bâtiment, attente de la diode bleue HOLD, puis bouton rouge EVACUATION", "Bouton rouge EVACUATION, puis choix du bâtiment, puis attente de la diode HOLD", "Choix du bâtiment, puis bouton RESET, puis bouton rouge EVACUATION pour diffuser", "Bouton micro, puis choix du bâtiment, puis bouton rouge EVACUATION pour diffuser"], "e": "On choisit Morillon, Budé ou les deux, on attend la diode bleue HOLD, puis on appuie sur EVACUATION.", "src": "Annexe Évacuation – SONO", "pt": "Lancer la SONO", "crit": true}, {"q": "À quoi sert le bouton RESET du boîtier SONO ?", "o": ["À arrêter le message ou couper une zone, pas à réarmer la centrale", "À réarmer la centrale incendie une fois l'évacuation terminée", "À relancer le message d'évacuation dans les deux bâtiments", "À passer en message vocal pour parler au micro aux résidents"], "e": "RESET coupe le message ou une zone. Ne pas le confondre avec le réarmement général de la centrale.", "src": "Annexe Évacuation – SONO", "pt": "Bouton RESET", "crit": false}, {"q": "Quel matériel prenez-vous pour l'évacuation ?", "o": ["Gilet et mégaphone (étagères de la loge), liste des résidents (sur le placard)", "Gilet et mégaphone (étagères de la loge), trousseau REGM et badge de secours", "Lampe et talkie-walkie (étagères de la loge), liste des résidents au Housing", "Mégaphone seulement : la liste des résidents est envoyée par le Housing"], "e": "Gilet d'évacuation et mégaphone sur les étagères de la loge, liste des résidents affichée sur le placard.", "src": "Annexe Évacuation", "pt": "Matériel d'évacuation", "crit": false}, {"q": "Que faites-vous de la porte de la balade pendant une évacuation ?", "o": ["Je la rouvre immédiatement", "Je la laisse fermée à clé", "Je la ferme si elle est ouverte", "J'attends l'ordre des pompiers"], "e": "La balade doit être rouverte immédiatement pour ne pas bloquer l'évacuation.", "src": "CDC REGM – Équipement ; Annexe Évacuation", "pt": "Balade pendant l'évacuation", "crit": true}, {"q": "Au point de rassemblement, que signalez-vous aux pompiers ?", "o": ["Les chambres des personnes à mobilité réduite", "Le nombre de détecteurs déclenchés à la centrale", "Les chambres restées ouvertes pendant la ronde", "Les véhicules garés devant l'entrée du parking"], "e": "On recense les occupants avec la liste et on signale au 118 les chambres des personnes à mobilité réduite.", "src": "Annexe Évacuation", "pt": "Personnes à mobilité réduite", "crit": true}, {"q": "Quand les résidents peuvent-ils rentrer dans les bâtiments ?", "o": ["Seulement sur autorisation explicite du responsable sécurité IHEID ou des pompiers", "Dès que la sirène s'arrête et que la centrale indique la fin de l'alarme", "Dès que l'opérateur a terminé le recensement au point de rassemblement", "Seulement sur autorisation de l'astreinte RDZ, contactée par téléphone"], "e": "En aucun cas avant une autorisation explicite (M. Barla ou pompiers). Arrêt de la SONO et réarmement : seulement sur accord.", "src": "Annexe Évacuation", "pt": "Retour dans les bâtiments", "crit": true}, {"q": "D'où peut-on aussi déclencher la SONO, en plus de la loge ?", "o": ["Du poste Admin, des sous-sols Budé et Morillon, et du 8e étage", "Du poste Admin et du fitness, mais pas des sous-sols", "Uniquement de la loge sécurité, nulle part ailleurs", "Des sous-sols et du toit-terrasse, mais pas de l'Admin"], "e": "La SONO se déclenche aussi depuis le poste Admin, les sous-sols Budé et Morillon, et le 8e étage.", "src": "Annexe Évacuation – SONO", "pt": "Autres points de déclenchement SONO", "crit": false}], "ready": true}, {"id": "tech", "title": "Procédures techniques", "desc": "Rondes, asservissements, travaux, missions du site", "q": [{"q": "Lors de la ronde, dans quel état doivent être les issues de secours ?", "o": ["Fermées sans être verrouillées, non obstruées, panneaux lumineux en état", "Fermées et verrouillées à clé, non obstruées, panneaux lumineux en état", "Ouvertes en permanence pour l'aération, panneaux lumineux en état", "Fermées sans être verrouillées, et encombrants rangés contre la porte"], "e": "Une issue de secours verrouillée ou encombrée bloquerait l'évacuation.", "src": "CDC REGM – Missions Sécurité", "pt": "Issues de secours", "crit": true}, {"q": "À quelle fréquence fait-on la ronde de contrôle incendie ?", "o": ["Toutes les 2 à 3 heures", "Une seule fois par nuit", "Toutes les 30 minutes", "Au début et à la fin du service"], "e": "Toutes les 2 à 3 heures : locaux techniques, cuisines, parkings, poubelles, abords, voies de fuite et asservissements.", "src": "CDC REGM – Missions Incendie", "pt": "Fréquence de la ronde incendie", "crit": false}, {"q": "Comment contrôle-t-on la ventilation des locaux techniques pendant la ronde ?", "o": ["À l'oreille, de jour comme de nuit", "À l'oreille, uniquement de nuit", "Sur l'écran de la centrale incendie", "En ouvrant les gaines de ventilation"], "e": "Contrôle auditif, de jour comme de nuit : une ventilation qui ne tourne plus doit être signalée.", "src": "CDC REGM – Missions Incendie", "pt": "Contrôle de la ventilation", "crit": false}, {"q": "Après une alarme, quels asservissements faut-il quittancer ?", "o": ["Surpression, portes coupe-feu, ascenseurs et monoblocs", "Surpression, portes coupe-feu, éclairages de secours et SONO", "Portes coupe-feu et ascenseurs uniquement, jamais la surpression", "Ventilation A et C, ascenseurs, portes coupe-feu et monoblocs"], "e": "Les asservissements REGM : surpression, portes coupe-feu, ascenseurs, monoblocs. La ventilation A et C est un cas à part.", "src": "CDC REGM – Missions Incendie", "pt": "Asservissements à quittancer", "crit": false}, {"q": "Une entreprise doit faire des travaux qui dégagent de la poussière. Que mettez-vous en place ?", "o": ["Caches sur les détecteurs, zones désactivées à la centrale, permis feu rempli", "Caches sur les détecteurs, centrale entièrement coupée, permis feu rempli", "Zones désactivées à la centrale, sans permis feu si les travaux sont courts", "Rien de particulier : le prestataire gère lui-même ses risques d'incendie"], "e": "Caches de protection, désactivation des seules zones concernées, et permis feu rempli par le prestataire.", "src": "CDC REGM – Missions Incendie", "pt": "Travaux et permis feu", "crit": true}, {"q": "Que recherchez-vous pendant la ronde technique ?", "o": ["Fuites, dégâts et défauts de verrouillage", "Fuites, dégâts et chambres restées ouvertes", "Résidents présents dans les espaces communs", "Véhicules mal garés devant les bâtiments"], "e": "Ronde technique : absence de problème apparent sur les équipements (fuites, dégâts, verrouillage).", "src": "CDC REGM – Missions Technique", "pt": "Ronde technique", "crit": false}, {"q": "Quand ouvre-t-on ou ferme-t-on les vannes d'eau ?", "o": ["Sur demande ou en cas d'urgence technique", "À chaque ronde de fermeture, chaque soir", "Uniquement sur ordre écrit de l'Admin", "Jamais : c'est réservé aux techniciens"], "e": "Mission ponctuelle : sur demande ou en urgence technique.", "src": "CDC REGM – Missions Technique", "pt": "Vannes d'eau", "crit": false}, {"q": "En cas de neige, que place-t-on en plus aux entrées des bâtiments ?", "o": ["Des tapis et des panneaux « sol glissant »", "Du sel uniquement, sans autre équipement", "Des barrières pour fermer les entrées", "Des cônes devant chaque porte d'entrée"], "e": "Déneigement et salage des cheminements, puis tapis et panneaux « sol glissant » aux entrées.", "src": "CDC REGM – Missions Technique", "pt": "Neige aux entrées", "crit": false}, {"q": "Lors d'un événement avec agent, que vérifiez-vous en priorité ?", "o": ["Le matériel de secours (trousse, extincteurs, défibrillateur) et les voies de fuite", "La liste des invités, le traiteur et la sonorisation de la salle de l'événement", "Le matériel de secours (trousse, extincteurs, défibrillateur) et le vestiaire", "Les voies de fuite et le nombre de chaises installées pour les participants"], "e": "Événement : matériel de secours, voies de fuite, filtrage de l'entrée si demandé, sécurité des biens et des personnes.", "src": "CDC REGM – Missions Technique", "pt": "Événements avec agent", "crit": false}, {"q": "Le soir, la surpression (protection incendie) de Morillon ou Budé est en défaut. Qui appelez-vous ?", "o": ["Jomos", "Alvazzi", "Aprotec", "Bavitech"], "e": "Jomos : surpression et protection incendie Morillon et Budé (annexe Contacts urgence).", "src": "Annexe Contacts urgence", "pt": "Surpression (Jomos)", "crit": false}, {"q": "Le week-end, plus de chauffage ou d'eau chaude dans un bâtiment REGM. Qui appelez-vous ?", "o": ["Alvazzi", "Jomos", "Eaux-Secours", "Amoudruz SA"], "e": "Alvazzi : chauffage, ventilation et eau chaude, pour tous les bâtiments.", "src": "Annexe Contacts urgence", "pt": "Chauffage et eau chaude (Alvazzi)", "crit": false}, {"q": "Panne du contrôle d'accès ou de l'interphonie : qui appelez-vous, et avec quel téléphone ?", "o": ["Bavitech, depuis le téléphone d'astreinte", "Bavitech, depuis le poste fixe de la loge", "Chubb Sicli, depuis le téléphone d'astreinte", "Certas, depuis le poste fixe de la loge"], "e": "Bavitech, en appelant depuis le numéro d'astreinte : le poste fixe ne fonctionne pas pour ce numéro.", "src": "Annexe Contacts urgence", "pt": "Contrôle d'accès (Bavitech)", "crit": false}, {"q": "Coupure d'électricité à Budé le soir. Qui appelez-vous ?", "o": ["Bouygues", "ElTop", "Alvazzi", "Aprotec"], "e": "Électricité : Bouygues pour Budé, ElTop pour Morillon (et MDE).", "src": "Annexe Contacts urgence", "pt": "Électricité à Budé (Bouygues)", "crit": false}, {"q": "Une personne est bloquée dans un ascenseur à REGM. Quelle entreprise appelez-vous ?", "o": ["Otis", "Jomos", "Bavitech", "Alvazzi"], "e": "Otis gère les ascenseurs de REGM. En cas de malaise de la personne bloquée, appeler aussi le 144.", "src": "Précision du responsable de site (oct. 2026)", "pt": "Ascenseurs (Otis)", "crit": false}], "ready": true}, {"id": "inter", "title": "Interactions", "desc": "Résidents, Admin, personnel IHEID, extérieurs", "q": [{"q": "Un étudiant vient chercher son badge un samedi. Le Housing n'a envoyé aucun mail. Que faites-vous ?", "o": ["Je refuse poliment, je le renvoie au Housing à sa réouverture et je le note dans GUARDTEK", "Je lui remets le badge s'il présente une pièce d'identité, et je le note dans GUARDTEK", "J'appelle le Housing pour obtenir son accord, puis je lui remets le badge et la clé", "Je lui crée un badge provisoire valable jusqu'au lundi matin, et je le note dans GUARDTEK"], "e": "Pas de mail du Housing, pas de remise. On reste courtois et on consigne dans GUARDTEK.", "src": "CDC REGM – Consigne permanente 01", "pt": "Badge sans mail du Housing", "crit": false}, {"q": "Quels sont les horaires du Housing ?", "o": ["Lun-ven 08h00-12h30 et 13h30-17h00, fermé week-ends et jours fériés", "Lun-ven 08h00-12h00 et 13h00-17h00, fermé week-ends et jours fériés", "Lun-ven 08h00-12h30 et 13h30-17h00, ouvert le samedi matin", "Lun-sam 08h00-12h30 et 13h30-17h00, fermé dimanche et jours fériés"], "e": "Lundi au vendredi, 08h00-12h30 et 13h30-17h00. Fermé le week-end et les jours fériés.", "src": "CDC REGM – Consigne permanente 01", "pt": "Horaires du Housing", "crit": false}, {"q": "Dans quel cas peut-on remettre un badge ou une clé hors horaires Housing ?", "o": ["Uniquement si le Housing a envoyé un mail au préalable", "Si l'étudiant présente sa pièce d'identité et son contrat", "Si l'astreinte RDZ donne son accord par téléphone", "Si l'étudiant arrive tard et n'a aucune autre solution"], "e": "Seule exception : un mail préalable du Housing.", "src": "CDC REGM – Consigne permanente 01", "pt": "Exception au mail du Housing", "crit": false}, {"q": "Un résident a déclenché l'alarme par négligence et demande s'il sera facturé. Que répondez-vous ?", "o": ["Je ne dis rien sur une facturation : la décision appartient à l'administration", "Je lui confirme qu'il sera facturé, car c'est la règle pour toute négligence", "Je le rassure : une première alarme par négligence n'est jamais facturée", "Je lui indique le montant habituel facturé par les pompiers pour un déplacement"], "e": "Ne jamais communiquer sur une possible facturation : décision réservée à l'administration.", "src": "CDC REGM – Missions Sécurité", "pt": "Facturation d'une alarme", "crit": false}, {"q": "Un membre du personnel IHEID a oublié son badge. Que faites-vous ?", "o": ["Je l'accompagne pour lui ouvrir les accès dont il a besoin", "Je lui prête le badge de secours qui se trouve dans le pylône", "Je lui crée tout de suite un nouveau badge SALTO à son nom", "Je lui refuse l'accès jusqu'à la réouverture du Housing"], "e": "Le CDC prévoit l'accompagnement du personnel IHEID qui a oublié son badge. Le badge de secours reste réservé à l'opérateur.", "src": "CDC REGM – Missions Sécurité", "pt": "Personnel IHEID sans badge", "crit": false}, {"q": "Une entreprise extérieure arrive pour une intervention. Que faites-vous ?", "o": ["Je l'accompagne sur le lieu de l'intervention", "Je lui prête le trousseau REGM pour circuler seule", "Je lui donne les codes et la laisse travailler seule", "Je la renvoie : seul le Housing reçoit les entreprises"], "e": "Accompagnement des entreprises extérieures : c'est une mission permanente du poste.", "src": "CDC REGM – Missions Technique", "pt": "Entreprises extérieures", "crit": false}, {"q": "Qu'est-ce qui est interdit à l'opérateur ?", "o": ["Fumer ou téléphoner devant les clients, et les relations familières avec résidents ou personnel", "Porter la veste de sécurité dans les bâtiments, et parler anglais avec les résidents", "Fumer ou téléphoner devant les clients, mais rien n'interdit les liens avec les résidents", "Utiliser le téléphone d'astreinte pendant la ronde, et répondre aux questions des résidents"], "e": "Interdits : fumer et téléphoner en présence des clients, copinage avec clients, personnel ou résidents, entrer dans une chambre sans autorisation.", "src": "CDC REGM – Cadre général", "pt": "Interdits de l'opérateur", "crit": false}, {"q": "Pouvez-vous entrer dans la chambre d'un résident ?", "o": ["Jamais sans autorisation", "Oui, lors de chaque ronde", "Oui, si la porte est ouverte", "Oui, si le résident est absent"], "e": "Entrer dans une chambre sans autorisation est interdit.", "src": "CDC REGM – Cadre général", "pt": "Entrer dans une chambre", "crit": false}, {"q": "Un résident vous remet un objet trouvé. Que faites-vous ?", "o": ["Je fais un rapport, puis je le dépose au Housing (desk de l'Admin, sous caméra)", "Je fais un rapport, puis je le garde à la loge jusqu'à ce qu'on le réclame", "Je le garde à la loge sans rapport, le propriétaire viendra le chercher", "Je le remets au premier résident qui dit en être le propriétaire"], "e": "Rapport, puis dépôt au Housing (desk de l'Admin), un endroit couvert par une caméra.", "src": "CDC REGM – Objets trouvés ; Précision du responsable de site (oct. 2026)", "pt": "Objets trouvés", "crit": false}, {"q": "Un résident n'arrive pas à récupérer son colis dans un casier Keynius. Que faites-vous ?", "o": ["Je vérifie son identité, j'ouvre avec le PIN sécurité, je note au rapport", "Je lui donne le PIN sécurité pour qu'il ouvre lui-même son casier Keynius", "Je l'oriente vers le Housing, seul autorisé à ouvrir les casiers Keynius", "J'ouvre tous les casiers pour qu'il retrouve le sien, sans faire de rapport"], "e": "Procédure réservée aux cas où le résident n'y arrive pas seul. Le PIN sécurité ne se divulgue jamais.", "src": "Annexe Colis Keynius", "pt": "Ouvrir un casier Keynius", "crit": false}, {"q": "Comment savoir quel casier Keynius ouvrir ?", "o": ["Le résident a reçu le numéro du casier par e-mail", "Le numéro figure sur l'étiquette du colis en loge", "Le Housing affiche la liste des casiers au desk", "L'écran Keynius l'indique en saisissant le nom"], "e": "On demande au résident le numéro reçu par e-mail. S'il ne l'a pas, il est possible d'ouvrir tous les casiers.", "src": "Annexe Colis Keynius", "pt": "Numéro du casier Keynius", "crit": false}], "ready": true}, {"id": "incivil", "title": "Incivilités et stationnement", "desc": "Personnes non autorisées, fêtes, contrôles et dénonciations", "q": [{"q": "Vous trouvez une personne non autorisée dans un bâtiment. Que faites-vous ?", "o": ["Je contrôle sa légitimation, je la signale, puis je la fais sortir du site", "Je contrôle sa légitimation, puis je la laisse circuler jusqu'à son départ", "Je la fais sortir immédiatement, sans contrôle ni aucun signalement", "J'appelle directement la police, sans aller moi-même à sa rencontre"], "e": "Personne non autorisée : légitimation, signalement, évacuation du site.", "src": "CDC REGM – Missions Sécurité", "pt": "Personne non autorisée", "crit": false}, {"q": "Une fête non autorisée a lieu dans un espace commun. Que faites-vous ?", "o": ["Je contrôle les légitimations, je fais un signalement, puis je fais évacuer", "Je laisse la fête se poursuivre jusqu'à minuit, puis je demande d'arrêter", "Je coupe l'électricité de l'espace pour obliger les participants à partir", "Je note seulement l'événement dans GUARDTEK, sans intervenir sur place"], "e": "Même conduite que pour une personne non autorisée : légitimation, signalement, évacuation.", "src": "CDC REGM – Missions Sécurité", "pt": "Fête non autorisée", "crit": false}, {"q": "Un véhicule est stationné en infraction autour de la résidence. Que faites-vous ?", "o": ["Je remplis une dénonciation, je la dépose sur le pare-brise, puis je fais le rapport GuardTek", "Je remplis une dénonciation, je la garde en loge, puis j'appelle la police municipale", "Je laisse un mot sur le pare-brise, puis je fais le rapport GuardTek avec une photo", "J'appelle une dépanneuse, puis je fais le rapport GuardTek avec une photo du véhicule"], "e": "Vérifier l'infraction, remplir la dénonciation, la déposer sur le pare-brise, faire le rapport GuardTek avec photos.", "src": "Annexe Contrôles et dénonciations", "pt": "Procédure de dénonciation", "crit": false}, {"q": "Pourquoi contrôle-t-on le stationnement sauvage aux abords et sur le parvis ?", "o": ["Pour garder libres les accès des pompiers", "Pour réserver des places aux résidents", "Pour faciliter les livraisons du matin", "Pour éviter les plaintes des voisins"], "e": "Un véhicule mal garé peut bloquer l'accès des pompiers.", "src": "CDC REGM – Missions Sécurité", "pt": "Accès des pompiers", "crit": true}, {"q": "Quand la police municipale est-elle joignable ?", "o": ["Dim-mer 6h-minuit, jeu-sam 6h-3h", "Lun-ven 8h-17h, fermée le week-end", "Dim-mer 6h-3h, jeu-sam 6h-minuit", "Tous les jours, 24 heures sur 24"], "e": "Police municipale : dimanche à mercredi 6h-minuit, jeudi à samedi 6h-3h. En urgence : 117.", "src": "CDC REGM – Contacts", "pt": "Horaires de la police municipale", "crit": false}, {"q": "Un véhicule est garé hors des cases. Quel code d'infraction inscrivez-vous ?", "o": ["B32A", "B31A", "B37B", "B30A"], "e": "B32A : stationner hors des cases (art. 79 OSR).", "src": "Annexe Contrôles et dénonciations", "pt": "Code B32A", "crit": false}, {"q": "Un véhicule est garé sur une place où le parcage est interdit (places visiteurs). Quel code ?", "o": ["B31A", "B32A", "B37B", "B33A"], "e": "B31A : stationner où une interdiction de parquer est signalée (art. 30 OSR).", "src": "Annexe Contrôles et dénonciations", "pt": "Code B31A", "crit": false}, {"q": "Une voiture circule là où la circulation des voitures est interdite. Quel code ?", "o": ["B37B", "B31A", "B32A", "B36B"], "e": "B37B : ne pas observer le signal « Circulation interdite aux voitures automobiles ».", "src": "Annexe Contrôles et dénonciations", "pt": "Code B37B", "crit": false}, {"q": "Avant d'établir une dénonciation, que vérifiez-vous sur le pare-brise ?", "o": ["L'absence de vignette", "La date du contrôle technique", "La présence d'un mot du conducteur", "Le numéro de la place louée"], "e": "Un véhicule muni d'une vignette n'est pas en infraction.", "src": "Annexe Contrôles et dénonciations", "pt": "Vignette", "crit": false}, {"q": "Comment écrivez-vous l'heure et l'année sur une dénonciation ?", "o": ["21H30 et 2026", "21:30 et 2026", "21H30 et 26", "21:30 et 26"], "e": "Heure avec un H (pas de deux-points), année en quatre chiffres. Stylo bleu, écriture lisible, sans faute.", "src": "Annexe Contrôles et dénonciations", "pt": "Heure et année", "crit": false}, {"q": "Comment inscrivez-vous une plaque française récente AB-344-CA ?", "o": ["AB-344-CA/F", "AB344CA/F", "F/AB-344-CA", "AB-344-CA (F)"], "e": "Plaque française : on ajoute /F. Ancien format : 1233DC33/F. Allemagne : /D, avec un tiret à la place de la pastille.", "src": "Annexe Contrôles et dénonciations", "pt": "Plaques étrangères", "crit": false}, {"q": "Que devient chaque feuillet d'une dénonciation ?", "o": ["Original à la police sous 10 jours, copie rose en loge, copie blanche sur le pare-brise", "Original sur le pare-brise, copie rose à la police sous 10 jours, copie blanche en loge", "Original en loge, copie rose sur le pare-brise, copie blanche à la police sous 10 jours", "Original à la police sous 30 jours, copie rose en loge, copie blanche sur le pare-brise"], "e": "Original : police sous 10 jours. Copie rose : loge. Copie blanche et liste d'infractions : pare-brise.", "src": "Annexe Contrôles et dénonciations", "pt": "Feuillets de la dénonciation", "crit": false}, {"q": "Quelles photos joignez-vous au rapport GuardTek de dénonciation ?", "o": ["Le véhicule (plaque et couleur visibles), la dénonciation remplie, le pare-brise avec ses 4 coins", "Le véhicule (plaque seulement), la dénonciation remplie, et une vue générale du parking", "La dénonciation remplie uniquement, posée sur le pare-brise avec ses 4 coins visibles", "Le conducteur et son véhicule, la dénonciation remplie, et le pare-brise avec ses 4 coins"], "e": "Ce rapport peut être demandé par la police pour justifier la dénonciation.", "src": "Annexe Contrôles et dénonciations", "pt": "Photos du rapport GuardTek", "crit": false}], "ready": true}, {"id": "salto", "title": "SALTO", "desc": "Rapport d'ouvertures avec le PPD (création de badges : à venir)", "q": [{"q": "Comment allumez-vous le PPD ?", "o": ["En appuyant sur le bouton rouge", "En appuyant sur le bouton vert", "En le posant sur une serrure", "En le branchant au PC de la loge"], "e": "Le PPD s'allume avec son bouton rouge.", "src": "Annexe SALTO – Rapport d'ouverture", "pt": "Allumer le PPD", "crit": false}, {"q": "Quel menu choisissez-vous sur le PPD pour relever une porte ?", "o": ["COLLECTE DU RAPPORT D'OUVERTURE", "LECTURE DES ÉVÉNEMENTS DE PORTE", "MISE À JOUR DE LA SERRURE", "TRANSFERT DU RAPPORT AU PC"], "e": "On se déplace avec les flèches jusqu'à « COLLECTE DU RAPPORT D'OUVERTURE ».", "src": "Annexe SALTO – Rapport d'ouverture", "pt": "Menu de collecte", "crit": false}, {"q": "Comment se fait la collecte sur la porte ?", "o": ["On pose le PPD sur le boîtier de la serrure jusqu'à la fin de la barre de progression", "On pose le PPD sur le boîtier de la serrure et on le retire dès le premier bip", "On présente un badge sur la serrure, puis on pose le PPD sur le boîtier", "On branche le câble du PPD dans le boîtier de la serrure pendant une minute"], "e": "Le PPD reste sur le boîtier tant que la barre de progression n'est pas arrivée au bout.", "src": "Annexe SALTO – Rapport d'ouverture", "pt": "Collecte sur la porte", "crit": false}, {"q": "Dans le logiciel SALTO, où lisez-vous les données ?", "o": ["Gestion → Rapport d'ouvertures", "Outils → Rapport d'ouvertures", "Gestion → Historique des portes", "Portes → Événements du PPD"], "e": "Après avoir relié le PPD au PC avec son câble : menu Gestion, puis Rapport d'ouvertures.", "src": "Annexe SALTO – Rapport d'ouverture", "pt": "Menu du logiciel", "crit": false}, {"q": "Quel bouton transfère les données du PPD vers le logiciel ?", "o": ["OBTENIR DES ÉVÉNEMENTS DU PPD", "ENVOYER LES ÉVÉNEMENTS AU PPD", "METTRE À JOUR LE PPD", "IMPORTER LE RAPPORT DE PORTE"], "e": "Bouton « OBTENIR DES ÉVÉNEMENTS DU PPD ».", "src": "Annexe SALTO – Rapport d'ouverture", "pt": "Transfert vers le PC", "crit": false}, {"q": "Que doit afficher le PPD pendant le transfert ?", "o": ["CONNECTE AU PC", "TRANSFERT EN COURS", "COLLECTE TERMINÉE", "PORTE MISE À JOUR"], "e": "L'écran indique « CONNECTE AU PC » pendant le transfert.", "src": "Annexe SALTO – Rapport d'ouverture", "pt": "Écran pendant le transfert", "crit": false}, {"q": "Une fois le transfert terminé, que faites-vous ?", "o": ["Je sélectionne la porte dont je viens de relever les données", "Je relance la collecte sur la même porte pour vérification", "J'éteins le PPD et je lis le rapport sur son écran", "J'envoie le rapport au Housing par e-mail sans le lire"], "e": "Il suffit de sélectionner la porte relevée pour afficher ses ouvertures.", "src": "Annexe SALTO – Rapport d'ouverture", "pt": "Lecture du rapport", "crit": false}], "ready": true}, {"id": "secours", "title": "Secours divers", "desc": "Malaises, protocoles, personnes à mobilité réduite", "q": [], "ready": false}], "scen": [{"id": "sc1", "title": "Alarme feu de nuit", "situation": "2h00. La sirène retentit. La centrale indique une alarme dans les étages de Budé. Mode temporisé.", "steps": ["Rejoint la centrale dans les 3 minutes", "Bouton noir : arrêt du buzzer", "Bouton rouge : arrêt de la sirène, début des 5 minutes", "Appui sur la molette : session Opérateur, lecture de la zone", "Se rend sur place avec un moyen d'extinction", "Lève le doute dans les 5 minutes", "Fausse alarme : bouton vert seulement après vérification complète", "Feu : DM ou 118, puis évacuation", "Rapport GuardTek complet"], "watch": "Ne réarme jamais avant d'avoir vérifié. Si la centrale des pompiers appelle : ne rien quittancer."}, {"id": "sc2", "title": "Évacuation générale", "situation": "Le feu n'est pas maîtrisable au 4e étage de Morillon. L'opérateur doit lancer et conduire l'évacuation.", "steps": ["Déclenche un DM ou appelle le 118", "Lance la SONO : bâtiment, diode bleue HOLD, puis EVACUATION", "Prend gilet, mégaphone et liste des résidents", "Rouvre immédiatement la balade", "Guide les occupants vers les points de rassemblement", "Recense avec la liste des résidents", "Signale au 118 les chambres des personnes à mobilité réduite", "Accueille et renseigne les pompiers", "Interdit tout retour sans autorisation explicite", "Arrêt SONO et réarmement seulement sur accord"], "watch": "RESET de la SONO n'est pas le réarmement de la centrale."}, {"id": "sc3", "title": "Nouvel arrivant un dimanche", "situation": "Dimanche 15h. Un étudiant arrive avec ses valises et demande son badge et sa clé. Aucun mail du Housing.", "steps": ["Vérifie s'il existe un mail préalable du Housing", "Refuse poliment la remise", "Explique que le Housing rouvre lundi à 08h00", "Reste courtois du début à la fin", "Note l'échange dans GuardTek"], "watch": "Pas de mail = pas de remise, même devant une situation difficile."}, {"id": "sc4", "title": "Fête non autorisée", "situation": "Vendredi 23h30. Musique forte et une trentaine de personnes dans un espace commun, sans autorisation.", "steps": ["Se présente calmement", "Contrôle la légitimation des personnes présentes", "Fait le signalement", "Fait évacuer l'espace", "Sait qui appeler si la situation dégénère (police municipale selon horaires, 117 en urgence)", "Rapport GuardTek"], "watch": "Ne pas entrer dans une chambre sans autorisation."}, {"id": "sc5", "title": "Véhicule hors des cases", "situation": "21h30. Un véhicule à plaques françaises est garé hors des cases, sans vignette visible.", "steps": ["Vérifie l'absence de vignette", "Choisit le bon code (B32A)", "Remplit la dénonciation au stylo bleu, heure avec H, année en 4 chiffres", "Inscrit la plaque au bon format (/F)", "Original à la police sous 10 jours, copie rose en loge, copie blanche sur le pare-brise", "Photos : véhicule, dénonciation, pare-brise 4 coins", "Rapport GuardTek"], "watch": "Écriture lisible et sans faute : la police peut demander le rapport."}]}, {"id": "mde", "name": "MDE", "full": "Avenue de France 20-22", "maj": "", "themes": [], "scen": []}, {"id": "mdp", "name": "MDP", "full": "Maison de la paix", "maj": "", "themes": [], "scen": []}, {"id": "barton", "name": "Villa Barton", "full": "Villa Barton et Pavillons Barton", "maj": "", "themes": [], "scen": []}, {"id": "moynier", "name": "Moynier", "full": "", "maj": "", "themes": [], "scen": []}, {"id": "rothschild", "name": "Rothschild", "full": "", "maj": "", "themes": [], "scen": []}];
+const SECRET='rdz-iheid-7Qk2-xV9p-2026';
+const PIN_HASH='1R6T2G1D519';
+const L="ABCD", $=id=>document.getElementById(id);
+$('warn').remove();
+const SECTIONS=['lock','trainer','agent','bad','quiz','result'];
+const show=id=>SECTIONS.forEach(s=>$(s).classList.toggle('hidden',s!==id));
+function h(str){let h1=0xdeadbeef,h2=0x41c6ce57;for(let i=0;i<str.length;i++){const c=str.charCodeAt(i);h1=Math.imul(h1^c,2654435761);h2=Math.imul(h2^c,1597334677);}
+ h1=Math.imul(h1^(h1>>>16),2246822507)^Math.imul(h2^(h2>>>13),3266489909);h2=Math.imul(h2^(h2>>>16),2246822507)^Math.imul(h1^(h1>>>13),3266489909);
+ return (4294967296*(2097151&h2)+(h1>>>0)).toString(36).toUpperCase();}
+const b64e=s=>btoa(String.fromCharCode(...new TextEncoder().encode(s))).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,'');
+const b64d=s=>new TextDecoder().decode(Uint8Array.from(atob(s.replace(/-/g,'+').replace(/_/g,'/')),c=>c.charCodeAt(0)));
+const store={get(k){try{return localStorage.getItem(k)}catch(e){return null}},set(k,v){try{localStorage.setItem(k,v)}catch(e){}}};
+const fmt=d=>d.toLocaleDateString('fr-CH')+' à '+d.toLocaleTimeString('fr-CH',{hour:'2-digit',minute:'2-digit'});
+function shuffle(a){a=a.slice();for(let k=a.length-1;k>0;k--){const j=Math.floor(Math.random()*(k+1));[a[k],a[j]]=[a[j],a[k]]}return a}
+function setHead(t,s){$('h1').textContent=t;$('sub').textContent=s;}
+const el=(tag,cls,txt)=>{const x=document.createElement(tag);if(cls)x.className=cls;if(txt!=null)x.textContent=txt;return x;};
+async function shareText(text,msgId){
+  if(navigator.share){try{await navigator.share({text});return;}catch(e){if(e&&e.name==='AbortError')return;}}
+  try{await navigator.clipboard.writeText(text);}catch(e){const t=el('textarea');t.value=text;document.body.appendChild(t);t.select();document.execCommand('copy');t.remove();}
+  if(msgId)$(msgId).classList.remove('hidden');
+}
+function card(title,desc,label,onClick){
+  const b=el('button','th');b.type='button';
+  const s=el('span');s.appendChild(el('strong',null,title));s.appendChild(el('small',null,desc));b.appendChild(s);b.appendChild(el('span','n',label));
+  if(onClick)b.onclick=onClick;else b.disabled=true;return b;
+}
+const site=id=>SITES.find(s=>s.id===id);
+let ctx={mode:null,site:null,agent:'',trainer:'',token:'',themes:[]};
+let th=null,order=[],answers=[],i=0,last=null;
+
+const tok=new URLSearchParams(location.search).get('t');
+if(tok)openAgent(tok);else show('lock');
+
+/* ---------- Formateur ---------- */
+$('pinGo').onclick=()=>{if(h('pin:'+$('pin').value.trim().toUpperCase())!==PIN_HASH){$('pinErr').classList.remove('hidden');return;}$('pinErr').classList.add('hidden');openTrainer();};
+$('pin').addEventListener('keydown',e=>{if(e.key==='Enter')$('pinGo').click();});
+function openTrainer(){
+  ctx.mode='trainer';setHead('Quiz IHEID','Espace formateur');
+  $('tName').value=store.get('rdz_trainer')||'';
+  $('site').innerHTML='';
+  SITES.forEach(s=>{const o=el('option',null,s.name+(s.themes.length?'':' — en préparation'));o.value=s.id;$('site').appendChild(o);});
+  $('site').value=store.get('rdz_site')||'regm'; if(!site($('site').value))$('site').value='regm';
+  $('site').onchange=()=>{store.set('rdz_site',$('site').value);fillSite();};
+  fillSite();tab('Link');show('trainer');
+}
+function fillSite(){
+  const s=site($('site').value);ctx.site=s;
+  $('siteInfo').textContent=s.themes.length?(s.full?s.full+' · ':'')+'Questions à jour : '+s.maj:"Les questions de ce site sont en préparation : il faut d'abord son CDC et ses annexes à jour.";
+  $('maj').textContent=s.themes.length?'Questions à jour : '+s.maj:'';
+  $('tList').innerHTML='';$('selfList').innerHTML='';$('scList').innerHTML='';$('scOne').classList.add('hidden');$('scList').classList.remove('hidden');$('out').classList.add('hidden');
+  if(!s.themes.length){$('tList').appendChild(el('p','rules','Aucun thème disponible pour ce site pour le moment.'));}
+  s.themes.forEach(t=>{
+    if(t.ready){const l=el('label','chk');const c=el('input');c.type='checkbox';c.value=t.id;l.appendChild(c);
+      const sp=el('span');sp.appendChild(el('b',null,t.title));sp.appendChild(el('small',null,t.q.length+' questions'));l.appendChild(sp);$('tList').appendChild(l);}
+    $('selfList').appendChild(t.ready?card(t.title,t.desc,t.q.length+' questions',()=>{ctx.agent=$('tName').value.trim()||'Formateur';ctx.trainer=ctx.agent;begin(t);}):card(t.title,t.desc,'À venir'));
+  });
+  if(!s.scen.length)$('scList').appendChild(el('p','rules','Aucune mise en situation pour ce site pour le moment.'));
+  s.scen.forEach(sc=>$('scList').appendChild(card(sc.title,sc.situation,sc.steps.length+' actions',()=>openScen(sc))));
+}
+function tab(n){['Link','Check','Scen','Self'].forEach(x=>{$('tab'+x).setAttribute('aria-pressed',x===n);$('p'+x).classList.toggle('hidden',x!==n);});}
+['Link','Check','Scen','Self'].forEach(x=>$('tab'+x).onclick=()=>tab(x));
+$('mk').onclick=()=>{
+  const f=$('tName').value.trim(),a=$('aName').value.trim(),s=ctx.site;
+  const ids=[...$('tList').querySelectorAll('input:checked')].map(x=>x.value);
+  const err=!s.themes.length?"Ce site n'a pas encore de questions.":!f?'Indiquez votre nom.':!a?"Indiquez le nom de l'agent.":!ids.length?'Cochez au moins un thème.':'';
+  if(err){$('lErr').textContent=err;$('lErr').classList.remove('hidden');return;}
+  $('lErr').classList.add('hidden');store.set('rdz_trainer',f);
+  const v=$('valid').value;let exp;if(v==='today'){const d=new Date();d.setHours(23,59,59,0);exp=d.getTime();}else exp=Date.now()+(+v)*3600e3;
+  const body=b64e(JSON.stringify({s:s.id,a,f,th:ids,exp,n:Math.random().toString(36).slice(2,8)}));
+  const url=location.origin+location.pathname+'?t='+body+'.'+h(SECRET+body);
+  $('lnk').textContent=url;$('out').classList.remove('hidden');$('copied').classList.add('hidden');
+  const names=ids.map(id=>s.themes.find(x=>x.id===id).title).join(', ');
+  $('share').onclick=()=>shareText(`Bonjour ${a}, voici ton test ${s.name} (${names}), valable jusqu'au ${fmt(new Date(exp))} :\n${url}`,'copied');
+  $('copy').onclick=async()=>{try{await navigator.clipboard.writeText(url);}catch(e){}$('copied').classList.remove('hidden');};
+};
+$('chk').onclick=()=>{
+  const txt=$('res').value,m=txt.match(/Code de contrôle\s*:\s*([A-Z0-9]+)/),line=(txt.match(/^RDZ\|.*$/m)||[])[0],o=$('chkOut');o.classList.remove('hidden');
+  if(!m||!line){o.className='err';o.textContent="Je ne trouve pas le code de contrôle. Collez le message complet de l'agent.";return;}
+  if(h(SECRET+line)===m[1]){o.className='ok-msg';o.textContent="Résultat authentique : il n'a pas été modifié.";}
+  else{o.className='err';o.textContent='Attention : ce résultat a été modifié ou ne vient pas du quiz.';}
+};
+let curScen=null;
+function openScen(sc){
+  curScen=sc;$('scList').classList.add('hidden');$('scOne').classList.remove('hidden');$('scCopied').classList.add('hidden');
+  $('scTitle').textContent=sc.title;$('scSitu').textContent=sc.situation;$('scWatch').textContent=sc.watch;$('scSteps').innerHTML='';
+  sc.steps.forEach(st=>{const l=el('label','chk');const c=el('input');c.type='checkbox';l.appendChild(c);l.appendChild(el('span',null,st));$('scSteps').appendChild(l);});
+  window.scrollTo(0,0);
+}
+$('scBack').onclick=()=>{$('scOne').classList.add('hidden');$('scList').classList.remove('hidden');};
+$('scSend').onclick=()=>{
+  const boxes=[...$('scSteps').querySelectorAll('input')],ok=boxes.filter(b=>b.checked).length;
+  const lines=curScen.steps.map((st,k)=>(boxes[k].checked?'✓ ':'✗ ')+st);
+  const miss=curScen.steps.filter((st,k)=>!boxes[k].checked);
+  const txt=`Mise en situation ${ctx.site.name} – ${curScen.title}\nAgent : ${$('scAgent').value.trim()||'—'}\nFormateur : ${$('tName').value.trim()||'—'}\nLe ${fmt(new Date())}\nActions réussies : ${ok}/${boxes.length}\n\n${lines.join('\n')}`+(miss.length?`\n\nÀ travailler :\n- ${miss.join('\n- ')}`:'');
+  shareText(txt,'scCopied');
+};
+
+/* ---------- Agent ---------- */
+function openAgent(t){
+  ctx.mode='agent';let p=null;
+  try{const [b,sig]=t.split('.');if(h(SECRET+b)!==sig)throw 0;p=JSON.parse(b64d(b));}catch(e){}
+  const s=p&&site(p.s);
+  if(!p||!s){setHead('Quiz IHEID','Lien de test');$('badMsg').textContent="Ce lien n'est pas valide.";show('bad');return;}
+  if(Date.now()>p.exp){setHead('Quiz IHEID','Lien de test');$('badMsg').textContent='Ce lien a expiré le '+fmt(new Date(p.exp))+'.';show('bad');return;}
+  Object.assign(ctx,{site:s,agent:p.a,trainer:p.f,token:t,themes:p.th,exp:p.exp});agentHome();
+}
+function agentHome(){
+  const s=ctx.site;setHead('Quiz '+s.name,'Test de '+ctx.agent);
+  $('aHello').textContent='Bonjour '+ctx.agent+',';
+  $('aInfo').textContent=`Votre formateur (${ctx.trainer}) vous a ouvert le ou les tests ci-dessous pour le site ${s.name}, jusqu'au ${fmt(new Date(ctx.exp))}. Chaque test se passe une fois. Ce n'est pas un examen : le résultat sert à préparer votre formation. Si vous ne connaissez pas une réponse, choisissez « Je ne sais pas » plutôt que de deviner.`;
+  $('maj').textContent='Questions à jour : '+s.maj;$('aList').innerHTML='';
+  ctx.themes.forEach(id=>{const t=s.themes.find(x=>x.id===id);if(!t)return;const done=store.get('rdz_done_'+h(ctx.token+id));
+    $('aList').appendChild(done?card(t.title,t.desc,'Terminé : '+done):card(t.title,t.desc,t.q.length+' questions',()=>begin(t)));});
+  show('agent');window.scrollTo(0,0);
+}
+
+/* ---------- Quiz ---------- */
+function begin(t){th=t;order=t.q.map(()=>shuffle([0,1,2,3]));answers=new Array(t.q.length).fill(null);i=0;setHead('Quiz '+ctx.site.name,t.title);show('quiz');render();}
+function render(){
+  const Q=th.q;
+  $('prog').innerHTML=Q.map((_,k)=>`<span class="${answers[k]!==null?'done':''}"></span>`).join('');
+  $('qnum').textContent=`Question ${i+1} sur ${Q.length}`;$('qtext').textContent=Q[i].q;$('opts').innerHTML='';
+  const addOpt=(val,letter,text,cls)=>{const b=el('button','opt'+(cls?' '+cls:''));b.type='button';b.setAttribute('aria-pressed',answers[i]===val?'true':'false');
+    b.appendChild(el('b',null,letter));b.appendChild(el('span',null,text));b.onclick=()=>{answers[i]=val;render();};$('opts').appendChild(b);};
+  order[i].forEach((orig,pos)=>addOpt(orig,L[pos],Q[i].o[orig]));
+  addOpt(-1,'?','Je ne sais pas','dk');
+  $('next').disabled=answers[i]===null;$('next').textContent=i===Q.length-1?'Terminer et voir mon résultat':'Question suivante';
+  $('prev').classList.toggle('hidden',i===0);window.scrollTo(0,0);
+}
+$('next').onclick=()=>{if(i<th.q.length-1){i++;render();}else finish();};
+$('prev').onclick=()=>{if(i>0){i--;render();}};
+function listBox(cls,title,items){
+  const d=el('div',cls);d.appendChild(el('h3',null,title));const ul=el('ul');
+  items.forEach(({q,a})=>{const li=el('li',null,q.pt+(a===-1?' (ne sait pas)':''));li.appendChild(el('small',null,'À revoir dans : '+q.src));ul.appendChild(li);});
+  d.appendChild(ul);return d;
+}
+function finish(){
+  const Q=th.q,n=Q.length,score=answers.filter(a=>a===0).length,need=Math.ceil(n*0.8),ok=score>=need,d=new Date(),s=ctx.site;
+  show('result');$('big').textContent=score;$('sur').textContent='bonnes réponses sur '+n;
+  const v=$('verdict');v.className='verdict '+(ok?'ok':'ko');v.textContent=ok?'Thème acquis':'À consolider';
+  $('meta').textContent=`${s.name} · ${th.title} · ${ctx.agent} · formateur : ${ctx.trainer} · ${fmt(d)}`;
+  const missed=Q.map((q,k)=>({q,a:answers[k],k})).filter(x=>x.a!==0);
+  const pri=missed.filter(x=>x.q.crit),oth=missed.filter(x=>!x.q.crit);
+  $('prioBox').innerHTML='';$('todoBox').innerHTML='';
+  if(pri.length)$('prioBox').appendChild(listBox('prio','⚠ Points de sécurité prioritaires à revoir',pri));
+  if(oth.length)$('todoBox').appendChild(listBox('todo','Points à revoir',oth));
+  if(!missed.length)$('todoBox').appendChild(el('div','allgood','Aucun point à revoir sur ce thème. Bravo !'));
+  const idx=missed.map(x=>(x.k+1)+(x.a===-1?'?':'')).join(',')||'-';
+  const line=['RDZ',s.name,th.title,ctx.agent,ctx.trainer,score+'/'+n,ok?'ACQUIS':'A CONSOLIDER',fmt(d),idx].join('|');
+  last=`Résultat quiz ${s.name} – ${th.title}\nAgent : ${ctx.agent}\nScore : ${score}/${n} – ${ok?'Thème acquis':'À consolider'}\nLe ${fmt(d)}`
+    +(pri.length?`\n\n⚠ SÉCURITÉ PRIORITAIRE :\n- ${pri.map(x=>x.q.pt+(x.a===-1?' (ne sait pas)':'')).join('\n- ')}`:'')
+    +(oth.length?`\n\nÀ revoir :\n- ${oth.map(x=>x.q.pt+(x.a===-1?' (ne sait pas)':'')).join('\n- ')}`:'')
+    +(!missed.length?'\n\nAucun point à revoir.':'')+`\n\n${line}\nCode de contrôle : ${h(SECRET+line)}`;
+  if(ctx.mode==='agent')store.set('rdz_done_'+h(ctx.token+th.id),score+'/'+n);
+  $('sendRes').classList.toggle('hidden',ctx.mode!=='agent');$('resCopied').classList.add('hidden');
+  $('review').innerHTML='';
+  Q.forEach((q,k)=>{const a=answers[k],good=a===0,r=el('div','rev '+(good?'ok':a===-1?'dk':'ko'));
+    const t=el('p','q',`${k+1}. ${q.q}`);if(q.crit)t.appendChild(el('span','tag','Sécurité'));r.appendChild(t);
+    if(a===-1)r.appendChild(el('p','you','Votre réponse : Je ne sais pas'));else if(!good)r.appendChild(el('p','you','Votre réponse : '+q.o[a]));
+    r.appendChild(el('p','good','Bonne réponse : '+q.o[0]));r.appendChild(el('p','why',q.e));r.appendChild(el('p','src','Source : '+q.src));
+    $('review').appendChild(r);});
+  window.scrollTo(0,0);
+}
+$('sendRes').onclick=()=>shareText(last,'resCopied');
+$('again').onclick=()=>{if(ctx.mode==='agent')agentHome();else{show('trainer');tab('Self');setHead('Quiz IHEID','Espace formateur');}};
+</script></body></html>
