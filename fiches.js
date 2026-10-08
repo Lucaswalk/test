@@ -132,6 +132,11 @@ window.RDZ_FICHES = {
                 {
                   "k": "Identification",
                   "v": "Complément à 30"
+                },
+                {
+                  "k": "Console d'alarme effraction",
+                  "v": "~~198000~~",
+                  "code": true
                 }
               ]
             },
@@ -163,7 +168,7 @@ window.RDZ_FICHES = {
             },
             {
               "t": "manque",
-              "txt": "Aucun code d'accès de centrale n'est documenté pour ce site, ni pour l'effraction ni pour l'incendie. Un agent peut constater une alarme mais ne peut rien quittancer. À obtenir."
+              "txt": "Le code ~~198000~~ de la console effraction est confirmé par le tableau des codes du 05.10.2026. ##Aucun code n'est en revanche documenté pour les deux centrales incendie## (466 874 bâtiment, 466 852 piscine)."
             }
           ]
         },
@@ -289,8 +294,13 @@ window.RDZ_FICHES = {
                   "num": "+41 79 450 75 21"
                 },
                 {
-                  "nom": "M. De Zordi",
-                  "role": "Directeur RDZ",
+                  "nom": "M. Rodolphe De Zordi",
+                  "role": "Directeur RDZ — ##numéro personnel, donneur d'ordres en cas de décision à prendre##",
+                  "num": "+41 79 676 19 80"
+                },
+                {
+                  "nom": "Patrouilleur RDZ",
+                  "role": "##Téléphone de patrouille de nuit.## Ce numéro était celui de M. De Zordi : il a été réattribué au patrouilleur le 05.10.2026.",
                   "num": "+41 76 634 17 92"
                 }
               ]
@@ -517,14 +527,19 @@ window.RDZ_FICHES = {
           ]
         },
         {
-          "t": "liste",
-          "titre": "Réserves sur les données",
-          "items": [
-            "Le cahier des charges indique qu'il n'y a ##pas d'intendant permanent sur site##, tout en listant M. Nunes : il est bien le ##référent technique## de Bellevue, sans y être présent en permanence.",
-            "L'adresse figure comme « Chemin des Tuileries 3 » sur la page de localisation et « 3-5 » ailleurs dans le même document.",
-            "La numérotation des annexes ne concorde pas avec les noms de fichiers reçus : l'interdiction d'entrée est tantôt A.03, tantôt A.04.",
-            "Le formulaire « Interdiction d'entrée » reçu est un ##gabarit vierge## : aucune interdiction nominative en cours pour ce site.",
-            "##Aucun code de centrale## n'a été communiqué pour ce site."
+          "t": "sous",
+          "titre": "Provenance et réserves sur les données",
+          "blocs": [
+            {
+              "t": "liste",
+              "items": [
+                "Le cahier des charges indique qu'il n'y a ##pas d'intendant permanent sur site##, tout en listant M. Nunes : il est bien le ##référent technique## de Bellevue, sans y être présent en permanence.",
+                "L'adresse figure comme « Chemin des Tuileries 3 » sur la page de localisation et « 3-5 » ailleurs dans le même document.",
+                "La numérotation des annexes ne concorde pas avec les noms de fichiers reçus : l'interdiction d'entrée est tantôt A.03, tantôt A.04.",
+                "Le formulaire « Interdiction d'entrée » reçu est un ##gabarit vierge## : aucune interdiction nominative en cours pour ce site.",
+                "##Aucun code de centrale## n'a été communiqué pour ce site."
+              ]
+            }
           ]
         }
       ],
@@ -813,8 +828,13 @@ window.RDZ_FICHES = {
                   "num": "+41 22 959 03 50"
                 },
                 {
-                  "nom": "M. De Zordi",
-                  "role": "Directeur RDZ",
+                  "nom": "M. Rodolphe De Zordi",
+                  "role": "Directeur RDZ — ##numéro personnel, donneur d'ordres en cas de décision à prendre##",
+                  "num": "+41 79 676 19 80"
+                },
+                {
+                  "nom": "Patrouilleur RDZ",
+                  "role": "##Téléphone de patrouille de nuit.## Ce numéro était celui de M. De Zordi : il a été réattribué au patrouilleur le 05.10.2026.",
                   "num": "+41 76 634 17 92"
                 }
               ]
@@ -951,12 +971,17 @@ window.RDZ_FICHES = {
           ]
         },
         {
-          "t": "liste",
-          "titre": "Réserves sur les données",
-          "items": [
-            "Le formulaire d'interdiction orthographie l'adresse « Colex » — coquille du document d'origine.",
-            "Le tableau des annexes du cahier des charges comporte une ligne ##« S.04 / TECHNIQUE / T.03 » tronquée##, sans description : annexe probablement non transmise, à confirmer.",
-            "##Aucun code de centrale## n'a été communiqué pour ce site."
+          "t": "sous",
+          "titre": "Provenance et réserves sur les données",
+          "blocs": [
+            {
+              "t": "liste",
+              "items": [
+                "Le formulaire d'interdiction orthographie l'adresse « Colex » — coquille du document d'origine.",
+                "Le tableau des annexes du cahier des charges comporte une ligne ##« S.04 / TECHNIQUE / T.03 » tronquée##, sans description : annexe probablement non transmise, à confirmer.",
+                "##Aucun code de centrale## n'a été communiqué pour ce site."
+              ]
+            }
           ]
         }
       ],
@@ -1217,8 +1242,13 @@ window.RDZ_FICHES = {
                   "num": "+41 79 339 13 41"
                 },
                 {
-                  "nom": "M. De Zordi",
-                  "role": "Directeur RDZ",
+                  "nom": "M. Rodolphe De Zordi",
+                  "role": "Directeur RDZ — ##numéro personnel, donneur d'ordres en cas de décision à prendre##",
+                  "num": "+41 79 676 19 80"
+                },
+                {
+                  "nom": "Patrouilleur RDZ",
+                  "role": "##Téléphone de patrouille de nuit.## Ce numéro était celui de M. De Zordi : il a été réattribué au patrouilleur le 05.10.2026.",
                   "num": "+41 76 634 17 92"
                 }
               ]
@@ -1459,13 +1489,18 @@ window.RDZ_FICHES = {
           ]
         },
         {
-          "t": "liste",
-          "titre": "Réserves sur les données",
-          "items": [
-            "Cahier des charges du 01.04.2026 et annexes A.01, A.02 et A.03 de la même date.",
-            "##Numérotation des pointeaux## : en cas de divergence, l'annexe A.02 fait foi — elle est illustrée point par point.",
-            "Le CDC annonce deux numéros erronés comme astreinte RDZ : correction à faire dans le document.",
-            "M. Nunes est désigné tantôt « intendant », tantôt « concierge jusqu'à 23h » : il est responsable technique et joignable à toute heure."
+          "t": "sous",
+          "titre": "Provenance et réserves sur les données",
+          "blocs": [
+            {
+              "t": "liste",
+              "items": [
+                "Cahier des charges du 01.04.2026 et annexes A.01, A.02 et A.03 de la même date.",
+                "##Numérotation des pointeaux## : en cas de divergence, l'annexe A.02 fait foi — elle est illustrée point par point.",
+                "Le CDC annonce deux numéros erronés comme astreinte RDZ : correction à faire dans le document.",
+                "M. Nunes est désigné tantôt « intendant », tantôt « concierge jusqu'à 23h » : il est responsable technique et joignable à toute heure."
+              ]
+            }
           ]
         }
       ],
@@ -1595,7 +1630,7 @@ window.RDZ_FICHES = {
                 },
                 {
                   "k": "SETE — effraction",
-                  "v": "~~461 309~~, complément à 30 — alarme au ##10e, au 9e ou au 4e étage## selon le critère Certas."
+                  "v": "~~461 309~~, complément à 30 — alarme au ##9e ou au 10e étage##. ##Le 4e a été séparé## : il relève du transmetteur ~~252 448~~, fiche ##SETE 4e##."
                 },
                 {
                   "k": "Code des deux consoles",
@@ -1649,7 +1684,7 @@ window.RDZ_FICHES = {
             {
               "t": "stop",
               "lab": "Quittance : où, et où elle est impossible",
-              "txt": "##9e et 10e## — quittance depuis la console du ##10e étage##.\n##4e étage## — ##aucune quittance possible sur place##. Appeler ##Mme Delattre##, qui seule peut lever l'alarme.\nUn agent qui cherche à quittancer au 4e perdra du temps sans résultat."
+              "txt": "##9e et 10e## — quittance depuis la console du ##10e étage##.\n##4e étage## — ##ne relève plus de ce transmetteur## depuis octobre 2026 : voir la fiche ##SETE 4e##, transmetteur 252 448."
             }
           ]
         },
@@ -1837,6 +1872,11 @@ window.RDZ_FICHES = {
                   "nom": "M. Romain Soullier",
                   "role": "##Intendant du site, côté RDZ## — référent direct de l'agent, à ne pas confondre avec le client. Mobile privé, ##hors exploitation uniquement## : numéro français, composable depuis la Suisse.",
                   "num": "+33 6 45 74 32 96"
+                },
+                {
+                  "nom": "Door Man — Seujet 24",
+                  "role": "Téléphone de l'agent en poste au ##n°24##, attribué le 05.10.2026.",
+                  "num": "+41 78 209 48 12"
                 }
               ]
             },
@@ -1845,8 +1885,13 @@ window.RDZ_FICHES = {
               "titre": "Client et technique",
               "items": [
                 {
-                  "nom": "M. De Zordi",
-                  "role": "Directeur RDZ",
+                  "nom": "M. Rodolphe De Zordi",
+                  "role": "Directeur RDZ — ##numéro personnel, donneur d'ordres en cas de décision à prendre##",
+                  "num": "+41 79 676 19 80"
+                },
+                {
+                  "nom": "Patrouilleur RDZ",
+                  "role": "##Téléphone de patrouille de nuit.## Ce numéro était celui de M. De Zordi : il a été réattribué au patrouilleur le 05.10.2026.",
                   "num": "+41 76 634 17 92"
                 }
               ]
@@ -1862,7 +1907,7 @@ window.RDZ_FICHES = {
               "items": [
                 {
                   "nom": "Mme Delattre",
-                  "role": "##Alarme au 4e étage## — seule habilitée à quittancer, la quittance étant impossible sur place",
+                  "role": "S.E.T.E. — ##le contact passe uniquement par M. Soullier ou M. De Zordi, jamais à l'initiative de l'agent##. Le 4e étage relève désormais de la fiche SETE 4e.",
                   "num": "+41 76 521 47 17"
                 },
                 {
@@ -2015,7 +2060,7 @@ window.RDZ_FICHES = {
               "items": [
                 {
                   "a": "Réception de l'appel Certas",
-                  "d": "Certas signale une ##ouverture hors horaire d'exploitation##. Noter le ##transmetteur et le groupe concernés## : ~~461 025~~ pour le rez et les étages, ~~461 309~~ pour les 9e, 10e et 4e étages — ##c'est ce dernier qui est le plus souvent ouvert, en particulier les jours fériés##. Ce n'est pas une alarme effraction : quelqu'un est probablement entré légitimement."
+                  "d": "Certas signale une ##ouverture hors horaire d'exploitation##. Noter le ##transmetteur et le groupe concernés## : ~~461 025~~ pour le rez et les étages, ~~461 309~~ pour les 9e et 10e étages — ##c'est ce dernier qui est le plus souvent ouvert, en particulier les jours fériés##. Ce n'est pas une alarme effraction : quelqu'un est probablement entré légitimement."
                 },
                 {
                   "a": "Engagement comme pour une intervention ordinaire",
@@ -2043,7 +2088,7 @@ window.RDZ_FICHES = {
                 },
                 {
                   "a": "Contrôle de fermeture à l'horaire prévu",
-                  "d": "Repasser à l'horaire convenu, vérifier le départ effectif, réarmer puis reconfirmer à Certas. ##Pour les 9e et 10e, suivre la procédure Fermeture 9-10## : elle couvre l'armement et les contrôles de l'étage."
+                  "d": "Repasser à l'horaire convenu, vérifier le départ effectif, réarmer puis reconfirmer à Certas. ##Pour les 9e et 10e, suivre les procédures Ferm. 9e et Ferm. 10e## : elle couvre l'armement et les contrôles de l'étage."
                 },
                 {
                   "a": "Consigner",
@@ -2063,7 +2108,7 @@ window.RDZ_FICHES = {
                 {
                   "couleur": "rouge",
                   "titre": "461 309 — 9e et 10e, locaux SETE",
-                  "txt": "##Le cas le plus fréquent##, notamment les jours fériés. Ce transmetteur couvre le ##10e, le 9e et le 4e étage## selon le critère annoncé par Certas.\n##Y monter## : trousseau bleu, quai de marchandises ouvert depuis le second bureau de la loge, monte-charge, badge puis clé ~~LA4545~~ pour activer les boutons.\n##Sur place## : contrôler les deux accès à la terrasse du 9e et, au 10e, les portes sensibles au niveau confidentialité — ##le SAS de la centrale ne se ferme jamais à clé##.\n##Réarmement## : sur la centrale du 10e, code ~~198000~~ ##ou## passage du badge sur le lecteur, attendre l'état ##PRÊT##, choisir le mode d'armement.\nLa procédure ##Fermeture 9-10## détaille chaque geste si le personnel est reparti.\n##Si l'alarme vient du 4e étage## : la quittance est impossible sur place, appeler ##Mme Delattre##."
+                  "txt": "##Le cas le plus fréquent##, notamment les jours fériés. Ce transmetteur couvre le ##9e et le 10e étage##.\n##Y monter## : trousseau bleu, quai de marchandises ouvert depuis le second bureau de la loge, monte-charge, badge puis clé ~~LA4545~~ pour activer les boutons.\n##Sur place## : contrôler les deux accès à la terrasse du 9e et, au 10e, les portes sensibles au niveau confidentialité — ##le SAS de la centrale ne se ferme jamais à clé##.\n##Réarmement## : sur la centrale du 10e, code ~~198000~~ ##ou## passage du badge sur le lecteur, attendre l'état ##PRÊT##, choisir le mode d'armement.\nLes procédures ##Ferm. 9e## et ##Ferm. 10e## détaillent chaque geste si le personnel est reparti.\n##Alarme au 4e étage## : ce n'est plus ce transmetteur — voir la fiche ##SETE 4e##."
                 }
               ]
             },
@@ -2105,8 +2150,8 @@ window.RDZ_FICHES = {
             },
             {
               "t": "num",
-              "titre": "Fermeture des 9e et 10e étages — transmetteur 461 309",
-              "court": "Fermeture 9-10",
+              "titre": "Fermeture du 9e étage",
+              "court": "Ferm. 9e",
               "items": [
                 {
                   "a": "Récupérer le trousseau bleu dans la loge",
@@ -2125,6 +2170,10 @@ window.RDZ_FICHES = {
                   "d": "Badger pour autoriser le clavier, tourner la clé ~~LA4545~~ pour activer les boutons, sélectionner le niveau."
                 },
                 {
+                  "a": "Prendre et enfiler les surchaussures",
+                  "d": "##En sortant du monte-charge##, placard en bois en face, à côté du local 904. Panneau de gauche, étagère du haut, sachet bleu en haut à droite.\nEnfiler ##par-dessus les rangers##, comme des chaussettes : toute la chaussure doit être couverte jusqu'à la cheville."
+                },
+                {
                   "a": "Bloquer l'ascenseur",
                   "d": "Clé ~~RT9177/64~~ du trousseau coq : insertion en position ##horizontale##, puis rotation en position ##verticale## pour bloquer la cabine pendant la ronde."
                 },
@@ -2133,25 +2182,64 @@ window.RDZ_FICHES = {
                   "d": "Suivre le sens indiqué sur le plan. ##Fenêtres intérieures : fermer sans verrouiller.## Accès sensibles : vérifier par un simple ##poussé-tiré##. Pointeaux à valider au passage."
                 },
                 {
-                  "a": "Contrôler les deux accès à la terrasse du 9e",
+                  "a": "Contrôler les deux accès à la terrasse",
                   "d": "##Premier accès## — à gauche en entrant dans les locaux SETE depuis le hall d'ascenseurs : verrou manuel sous la poignée, à manœuvrer ##vers la droite##.\n##Second accès## — à droite, juste avant la salle de réunion SETE : verrou manuel ##vers la gauche##.\nDans les deux cas, contrôler l'accrochage en exerçant une pression de la main sur le montant, puis vérifier le verrouillage tactilement."
                 },
                 {
-                  "a": "Ronde du 10e étage",
-                  "d": "##Le SAS de la centrale effraction ne se ferme JAMAIS à clé.## Les pointeaux se trouvent derrière la porte."
-                },
-                {
-                  "a": "Armer l'alarme",
-                  "d": "Sur la centrale : code ~~198000~~ ##ou## passage du badge sur le lecteur, attendre l'état ##PRÊT##, choisir le mode d'armement, puis quitter les lieux."
-                },
-                {
-                  "a": "Redéposer le pass",
-                  "d": "Boîte à pass du premier bureau, à gauche de la centrale effraction."
-                },
-                {
-                  "a": "Quitter le site",
-                  "d": "Éteindre l'éclairage, fermer la loge à clé, redéposer la clé dans le coffre ~~0741~~ en ##modifiant l'affichage pour que le code n'apparaisse plus##, puis passer la main devant le boîtier pour sortir."
+                  "a": "Monter au 10e par l'escalier en bois",
+                  "d": "##Ne plus passer par la réception SETE.## Juste derrière la porte de la réception, face à l'ascenseur du 24, prendre ##immédiatement à gauche la porte blanche## : elle donne sur l'escalier en bois, à hauteur du 24. Monter au 10e, badge en main."
                 }
+              ]
+            },
+            {
+              "t": "num",
+              "titre": "Fermeture du 10e étage — circuit complet",
+              "court": "Ferm. 10e",
+              "items": [
+                {
+                  "a": "Salle de séance n°1, côté 24 — pointeau P4",
+                  "d": "Suivre le couloir jusqu'à la ##double porte en bois##. Vérifier que personne ne s'y trouve. La ##porte vitrée côté terrasse## doit être fermée et verrouillée, les autres ouvrants aussi.\nPointeau : pastille blanche ##sur le cadre de la porte de terrasse, à côté de la poignée##.\nÉteindre les lumières, refermer la porte."
+                },
+                {
+                  "a": "Salle de séance n°2, côté 22 Saint-Jean — pointeau P5",
+                  "d": "Depuis l'##espace d'attente avec les fauteuils##, prendre le couloir jusqu'à la porte en bois du fond. Vérifier que personne ne s'y trouve, toutes les fenêtres fermées.\nPointeau : pastille blanche ##sur le meuble bas sous les fenêtres, dans la rangée de prises##.\nÉteindre les lumières, refermer la porte."
+                },
+                {
+                  "a": "Salle n°3 « Bibliothèque », côté 22 Rhône — pointeau P6",
+                  "d": "Couloir jusqu'à la porte en bois du fond. Vérifier que personne ne s'y trouve, ##fenêtres côté Rhône fermées##.\nPointeau : pastille blanche ##sur le meuble bas sous les fenêtres, dans la rangée de prises##.\nÉteindre les lumières, refermer la porte."
+                },
+                {
+                  "a": "Voie d'évacuation verticale du 22 — pointeau P7",
+                  "d": "Suivre le couloir et la signalisation de sortie de secours jusqu'à la porte d'accès à la VEV. Sur le palier du 10e, les ##2 portes d'accès à l'étage## doivent être fermées et verrouillées — ##tirer sans forcer## pour vérifier.\nPointeau : pastille blanche ##sur le cadre inox de la porte blanche, en haut à gauche##."
+                },
+                {
+                  "a": "Rentrer par la VEV dans le local photocopieuse",
+                  "d": "##La porte de la VEV se referme seule.## ##Vérifier d'avoir le badge sur soi avant d'y passer##, sous peine de rester bloqué dans la cage."
+                },
+                {
+                  "a": "Armer la centrale effraction — pointeau P8",
+                  "d": "Dans le local : vérifier que la porte de la VEV s'est refermée. ##Ne rien toucher à la centrale feu.##\nArmer la centrale ~~461 309~~ selon la procédure habituelle. ##Ne jamais fermer ce local à clé.##\nPointeau : pastille blanche ##sur le cadre de la porte en bois##. ##Quitter le local avant la fin du temps d'armement.##"
+                },
+                {
+                  "a": "Sortir et retirer les surchaussures",
+                  "d": "Rejoindre le monte-charge du 10e. ##Retirer les surchaussures à cet endroit## et les jeter dans la ##corbeille noire## de la zone monte-charge. ##Ne pas les remporter, ne pas les laisser à côté de la corbeille.##"
+                }
+              ]
+            },
+            {
+              "t": "stop",
+              "lab": "Surchaussures — consigne permanente",
+              "txt": "Le 10e étage SETE a un ##carrelage noir## : toute trace est immédiatement visible et signalée. Les surchaussures sont ##à usage unique##, une paire neuve à chaque ronde, portées ##sur tout le 10e##.\n##Le non-respect est signalé au responsable de site et consigné au rapport GuardTek.##"
+            },
+            {
+              "t": "liste",
+              "titre": "Règles pendant toute la ronde SETE",
+              "items": [
+                "##Chaque déplacement est une ronde## : entre deux pointeaux, parcourir les couloirs, regarder dans les bureaux ouverts, écouter.",
+                "##Bureau ouvert## : vérifier qu'il est vide, fenêtres fermées, lumières éteintes.",
+                "##Bureau verrouillé## : constater la fermeture, ##ne pas forcer##.",
+                "##Bureau 1 : exclu de la ronde. Ne pas y entrer, en aucun cas.##",
+                "##Anomalie## — personne présente, ouvrant ouvert, dégât : la noter au rapport GuardTek ##et prévenir la centrale RDZ##."
               ]
             },
             {
@@ -2183,7 +2271,11 @@ window.RDZ_FICHES = {
           "items": [
             {
               "k": "Ronde de fermeture 9e et 10e",
-              "v": "##Avant 23h00##, chaque jour — transmetteur 461 309. Procédure à cocher dans l'étape 6."
+              "v": "##Avant 23h00##, chaque jour — transmetteur 461 309. Deux procédures à cocher dans l'étape 6."
+            },
+            {
+              "k": "Extension du 10e étage",
+              "v": "##Depuis le 5 octobre 2026##, période d'essai de 3 semaines : tout l'étage est patrouillé, avec ##4 nouveaux pointeaux## P4 à P8"
             },
             {
               "k": "Ronde d'étanchéité",
@@ -2195,12 +2287,10 @@ window.RDZ_FICHES = {
           "t": "liste",
           "titre": "Ronde de fermeture 9e et 10e — points de contrôle",
           "items": [
-            "##Fenêtres intérieures## : fermées, ##sans verrouillage##.",
-            "##Accès sensibles## : vérification par poussé-tiré.",
-            "##Portes à badge ou scanner## : fermées et verrouillées.",
-            "##SAS de la centrale effraction au 10e## : fermé mais ##jamais à clé##.",
-            "##Deux accès à la terrasse du 9e## : accrochage et verrou manuel contrôlés.",
-            "##Pointeaux## : ceux du 10e se trouvent derrière la porte."
+            "##9e## — fenêtres intérieures fermées sans verrouillage, accès sensibles vérifiés par poussé-tiré, portes à badge fermées et verrouillées, deux accès terrasse contrôlés.",
+            "##10e## — 3 salles de séance (P4, P5, P6), 2 portes de la voie d'évacuation verticale (P7), armement de la centrale (P8).",
+            "##SAS de la centrale effraction## : fermé mais ##jamais à clé##.",
+            "##Surchaussures## portées sur tout le 10e."
           ]
         },
         {
@@ -2240,17 +2330,24 @@ window.RDZ_FICHES = {
           ]
         },
         {
-          "t": "liste",
-          "titre": "Réserves sur les données",
-          "items": [
-            "##Cahier des charges papier du 06.07.2024##, quatre pages photographiées le 02.10.2026 : cadre général, contacts, missions et page des transmetteurs. ##Le document n'existe pas au format numérique.##",
-            "Documents reçus le 01.10.2026 : procédure ##Alarme Incendie 321 482## du 26.01.2024 et procédure ##SETE Fermeture 9e-10e 461 309## du 22.02.2024. ##Aucun cahier des charges Seujet n'existe à ce jour## — la fiche est bâtie sur ces procédures et les plans.",
-            "##Correction du 27.08.2026## : une version précédente de cette fiche indiquait que REGM partageait cette centrale et ce badge. C'est faux — REGM est la résidence IHEID du Grand Morillon, PROM 324 199, sans lien avec Seujet.",
-            "##Centrales du 10e étage## : les plans portent des étiquettes « Centrale effraction » et « Centrale feu » dans une zone technique du 10e. Le lien avec les boîtiers de la loge n'est précisé nulle part — à confirmer sur site.",
-            "L'annexe « Asservissement Securiton » est une table technique REL4, sans contenu directement actionnable par un agent.",
-            "Le « Mode d'emploi Centrale Feu » est un manuel générique Securiton MIC de 2010, sans donnée propre au site.",
-            "##M. Nunes retiré de cette fiche le 01.10.2026.## Il figurait comme « intendant secteur Seujet » sans aucune source documentaire. Il n'est référent que pour ##Papeterie, Bellevue et Collex##.",
-            "L'entrée par le ##n°24## mentionnée dans l'ancienne fiche était erronée : les deux procédures indiquent le ##n°22##."
+          "t": "sous",
+          "titre": "Provenance et réserves sur les données",
+          "blocs": [
+            {
+              "t": "liste",
+              "items": [
+                "##Notices de Romain Soullier, octobre 2026## : QDS-NOT-RON-002-EXT (extension de la ronde au 10e, version 1.1 du 05.10.2026, essai de 3 semaines) et QDS-NOT-SUR-001 (surchaussures). Elles complètent la notice QDS-NOT-RON-002, les deux documents devant être fusionnés plus tard.",
+                "Les notices renvoient les codes à un ##Fichier des codes confidentiel## et n'en citent aucun : la présente fiche, elle, affiche les codes derrière l'écran de déverrouillage.",
+                "##Cahier des charges papier du 06.07.2024##, quatre pages photographiées le 02.10.2026 : cadre général, contacts, missions et page des transmetteurs. ##Le document n'existe pas au format numérique.##",
+                "Documents reçus le 01.10.2026 : procédure ##Alarme Incendie 321 482## du 26.01.2024 et procédure ##SETE Fermeture 9e-10e 461 309## du 22.02.2024. ##Aucun cahier des charges Seujet n'existe à ce jour## — la fiche est bâtie sur ces procédures et les plans.",
+                "##Correction du 27.08.2026## : une version précédente de cette fiche indiquait que REGM partageait cette centrale et ce badge. C'est faux — REGM est la résidence IHEID du Grand Morillon, PROM 324 199, sans lien avec Seujet.",
+                "##Centrales du 10e étage## : les plans portent des étiquettes « Centrale effraction » et « Centrale feu » dans une zone technique du 10e. Le lien avec les boîtiers de la loge n'est précisé nulle part — à confirmer sur site.",
+                "L'annexe « Asservissement Securiton » est une table technique REL4, sans contenu directement actionnable par un agent.",
+                "Le « Mode d'emploi Centrale Feu » est un manuel générique Securiton MIC de 2010, sans donnée propre au site.",
+                "##M. Nunes retiré de cette fiche le 01.10.2026.## Il figurait comme « intendant secteur Seujet » sans aucune source documentaire. Il n'est référent que pour ##Papeterie, Bellevue et Collex##.",
+                "L'entrée par le ##n°24## mentionnée dans l'ancienne fiche était erronée : les deux procédures indiquent le ##n°22##."
+              ]
+            }
           ]
         }
       ],
@@ -2266,6 +2363,337 @@ window.RDZ_FICHES = {
         {
           "label": "PROM effraction — 9e et 10e",
           "code": "461309"
+        }
+      ]
+    },
+    {
+      "statut": "complet",
+      "prom": "252 448",
+      "client": "SETE 4e",
+      "nomComplet": "S.E.T.E. — Société d'Études Techniques et Économiques, 4e étage, QDS 24",
+      "adresse": "Quai du Seujet 24, 1201 Genève — 4e étage",
+      "types": [
+        "Effraction"
+      ],
+      "transmetteurs": [
+        {
+          "label": "PROM effraction",
+          "code": "252448"
+        }
+      ],
+      "etapes": [
+        {
+          "titre": "Le site",
+          "resume": "Ce que l'agent doit savoir avant d'arriver",
+          "blocs": [
+            {
+              "t": "stop",
+              "lab": "Zone récemment séparée",
+              "txt": "Le 4e étage côté 24 était ##intégré au transmetteur 461 309## (9e et 10e). La zone a été ##séparée## et dispose depuis octobre 2026 de son propre numéro. ##Une alarme au 4e n'est plus une alarme SETE 9e-10e## : les clés, l'accès et la procédure sont différents."
+            },
+            {
+              "t": "kv",
+              "items": [
+                {
+                  "k": "PROM effraction",
+                  "v": "252 448",
+                  "code": true
+                },
+                {
+                  "k": "Identification Certas",
+                  "v": "Complément à 30"
+                },
+                {
+                  "k": "Client",
+                  "v": "S.E.T.E. — Société d'Études Techniques et Économiques"
+                },
+                {
+                  "k": "Localisation",
+                  "v": "##4e étage, côté QDS 24##"
+                },
+                {
+                  "k": "Adresse",
+                  "v": "Quai du Seujet 24, 1201 Genève"
+                },
+                {
+                  "k": "Système",
+                  "v": "##Technik Alarm## — anti-effraction"
+                },
+                {
+                  "k": "Couverture incendie",
+                  "v": "Assurée par le transmetteur du bâtiment ~~321 482~~ — voir la fiche ERGON Seujet"
+                }
+              ]
+            },
+            {
+              "t": "gps",
+              "titre": "Y aller",
+              "items": [
+                {
+                  "label": "Entrée QDS 24",
+                  "dest": "Quai du Seujet 24, 1201 Genève"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "titre": "Transmetteurs et codes",
+          "resume": "Un transmetteur dédié, système Technik Alarm",
+          "blocs": [
+            {
+              "t": "kv",
+              "items": [
+                {
+                  "k": "PROM effraction",
+                  "v": "~~252 448~~",
+                  "code": true
+                },
+                {
+                  "k": "Complément",
+                  "v": "À 30 — Certas"
+                },
+                {
+                  "k": "Centrale",
+                  "v": "Boîtier ##Technik Alarm##, au 4e étage"
+                },
+                {
+                  "k": "Quittance",
+                  "v": "##Par badge##, sur le lecteur du boîtier"
+                },
+                {
+                  "k": "Fermeture de la porte",
+                  "v": "Système ##TKU##"
+                }
+              ]
+            },
+            {
+              "t": "stop",
+              "lab": "Le badge ne sert qu'à quittancer",
+              "txt": "Le badge du trousseau ##ne donne aucun accès## : il sert uniquement à quittancer la centrale. ##L'ouverture se fait à la clé.##"
+            },
+            {
+              "t": "manque",
+              "txt": "Le code du coffre Rieffel est renvoyé au ##fichier des codes confidentiel## et ne figure pas sur la fiche télétransmetteur."
+            }
+          ]
+        },
+        {
+          "titre": "Points d'accès",
+          "resume": "Loge 036, puis le 4e par le 24",
+          "blocs": [
+            {
+              "t": "kv",
+              "items": [
+                {
+                  "k": "Où sont les clés",
+                  "v": "##Loge 036##, coffre ##Rieffel##, ##rack jaune, position 4##"
+                },
+                {
+                  "k": "Contenu de la position 4",
+                  "v": "Clé d'accès ##et## badge de quittance, sur le même trousseau"
+                },
+                {
+                  "k": "Notice de référence",
+                  "v": "QDS-NOT-CLE-RDZ-001"
+                }
+              ]
+            },
+            {
+              "t": "liste",
+              "titre": "Cheminement",
+              "items": [
+                "##Ascenseurs QDS 24##, ou ##cage d'escalier de secours QDS 24##.",
+                "Monter jusqu'au ##4e étage##.",
+                "Ouvrir la porte S.E.T.E. avec la clé de la position 4."
+              ]
+            }
+          ]
+        },
+        {
+          "titre": "Clés",
+          "resume": "Rack jaune, position 4 — coffre Rieffel",
+          "blocs": [
+            {
+              "t": "kv",
+              "items": [
+                {
+                  "k": "Emplacement",
+                  "v": "Loge ##036##, coffre ##Rieffel##, rack jaune ##position 4##"
+                },
+                {
+                  "k": "Code du coffre",
+                  "v": "Fichier des codes confidentiel"
+                }
+              ]
+            },
+            {
+              "t": "liste",
+              "titre": "Composition du trousseau",
+              "items": [
+                "##Clé d'accès## — ouvre la porte S.E.T.E. du 4e, fermeture ##TKU##.",
+                "##Badge## — ##quittance de la centrale uniquement##, aucun accès."
+              ]
+            },
+            {
+              "t": "stop",
+              "lab": "Restitution",
+              "txt": "Remettre la clé ##et## le badge en ##position 4 du rack jaune##, puis ##consigner dans le registre##. Un trousseau rendu ailleurs bloque la prochaine intervention."
+            }
+          ]
+        },
+        {
+          "titre": "Qui appeler",
+          "resume": "Dans l'ordre, du plus urgent à l'escalade",
+          "blocs": [
+            {
+              "t": "stop",
+              "lab": "Si le natel est sur un réseau français",
+              "txt": "À Genève, un téléphone accroche souvent une antenne française. Dans ce cas les numéros suisses en 0… ne passent pas, et le 118 ou le 117 tombent sur les secours français. Composer le 112, qui fonctionne sur tous les réseaux, et utiliser les numéros en +41 ci-dessous."
+            },
+            {
+              "t": "tel",
+              "titre": "Urgences",
+              "items": [
+                {
+                  "nom": "Urgence tous réseaux",
+                  "role": "À privilégier en cas de doute sur le réseau",
+                  "num": "112"
+                },
+                {
+                  "nom": "Police",
+                  "role": "Effraction réelle, personne présente, refus de légitimation",
+                  "num": "117"
+                },
+                {
+                  "nom": "Pompiers",
+                  "role": "Feu — la couverture incendie dépend du transmetteur 321 482 du bâtiment",
+                  "num": "118"
+                }
+              ]
+            },
+            {
+              "t": "tel",
+              "titre": "Centrale et technique",
+              "items": [
+                {
+                  "nom": "Certas — télésurveillance 24/7",
+                  "role": "##Ligne indiquée sur la fiche télétransmetteur## pour le 252 448",
+                  "num": "+41 842 842 842"
+                },
+                {
+                  "nom": "Technik Alarm",
+                  "role": "Support technique — anomalie système ou centrale",
+                  "num": "+41 22 797 17 27"
+                }
+              ]
+            },
+            {
+              "t": "tel",
+              "titre": "Escalade RDZ",
+              "items": [
+                {
+                  "nom": "M. Romain Soullier",
+                  "role": "Responsable du site QDS — ##décision, contact client, escalade##",
+                  "num": "+33 6 45 74 32 96"
+                },
+                {
+                  "nom": "Astreinte Seujet",
+                  "role": "Ligne du site, de 06h30 à 18h00",
+                  "num": "+41 79 571 45 00"
+                },
+                {
+                  "nom": "M. Rodolphe De Zordi",
+                  "role": "Directeur RDZ — décision direction et escalade",
+                  "num": "+41 79 676 19 80"
+                }
+              ]
+            },
+            {
+              "t": "stop",
+              "lab": "Mme Delattre — jamais d'initiative de l'agent",
+              "txt": "Le contact avec ##Mme Delattre (S.E.T.E.)## passe ##uniquement par M. Soullier ou M. De Zordi##. ##L'agent ne l'appelle jamais de sa propre initiative##, même pour une alarme au 4e."
+            }
+          ]
+        },
+        {
+          "titre": "Process d'intervention",
+          "resume": "Quittance et armement du 4e",
+          "blocs": [
+            {
+              "t": "num",
+              "titre": "Alarme effraction 252 448 — quittance et armement",
+              "court": "Quittance 4e",
+              "items": [
+                {
+                  "a": "Percevoir le trousseau en loge 036",
+                  "d": "Coffre ##Rieffel##, ##rack jaune position 4##. Le code du coffre est au fichier des codes confidentiel."
+                },
+                {
+                  "a": "Accéder au 4e étage",
+                  "d": "##Ascenseurs QDS 24## ou ##cage d'escalier de secours QDS 24##."
+                },
+                {
+                  "a": "Ouvrir la porte S.E.T.E.",
+                  "d": "Avec la clé de la position 4. ##Vérifier que le système TKU n'est pas déclenché.##"
+                },
+                {
+                  "a": "Quittancer sur le boîtier Technik Alarm",
+                  "d": "##Badger sur le lecteur##, puis ##attendre la confirmation du système##."
+                },
+                {
+                  "a": "Restituer le trousseau en loge",
+                  "d": "Clé ##et## badge en position 4 du rack jaune, puis ##consigner dans le registre##."
+                }
+              ]
+            },
+            {
+              "t": "liste",
+              "titre": "Si une effraction est constatée",
+              "items": [
+                "##Ne pas entrer## si une effraction est visible. Se placer en observation à distance.",
+                "Appeler le ##117##, puis ##M. Soullier## pour la décision et le contact client.",
+                "##Ne pas contacter Mme Delattre directement.##",
+                "Rapport GuardTek dans tous les cas."
+              ]
+            },
+            {
+              "t": "manque",
+              "txt": "##Phase 2 à venir## : un rapport d'intervention propre au transmetteur 252 448 sera créé dans GuardTek, et des pointeaux dédiés seront posés sur le périmètre S.E.T.E. du 4e. À intégrer ici une fois en place."
+            }
+          ]
+        }
+      ],
+      "blocsRondes": [
+        {
+          "t": "manque",
+          "txt": "##Aucune ronde documentée sur ce périmètre à ce jour.## Les pointeaux dédiés sont annoncés pour la phase 2."
+        }
+      ],
+      "blocsNotes": [
+        {
+          "t": "liste",
+          "titre": "À savoir",
+          "items": [
+            "L'##incendie## du 4e dépend du transmetteur du bâtiment ~~321 482~~ : en cas d'alarme feu, se reporter à la fiche ##ERGON Seujet##.",
+            "Les 9e et 10e étages relèvent du transmetteur ~~461 309~~, avec d'autres clés et d'autres procédures."
+          ]
+        },
+        {
+          "t": "sous",
+          "titre": "Provenance et réserves sur les données",
+          "blocs": [
+            {
+              "t": "liste",
+              "items": [
+                "Fiche télétransmetteur ##QDS-TT-252448-001##, octobre 2026, deux pages.",
+                "##Le document porte deux numéros de version## : 1.2 en page 1, 1.1 en page 2. À corriger.",
+                "La fiche indique ##Certas au +41 842 842 842##, alors que les autres sites utilisent le ~~+41 844 800 811~~ en urgence. ##À vérifier avant diffusion.##",
+                "Le ##code du coffre Rieffel## n'est pas sur le document : il renvoie au fichier des codes confidentiel.",
+                "Plan architectural du 4e étage fourni en page 2, avec la zone S.E.T.E. encadrée et le cheminement d'accès — non intégré ici."
+              ]
+            }
+          ]
         }
       ]
     },
@@ -2462,8 +2890,13 @@ window.RDZ_FICHES = {
                   "num": "+41 79 339 13 41"
                 },
                 {
-                  "nom": "M. De Zordi",
-                  "role": "Directeur RDZ",
+                  "nom": "M. Rodolphe De Zordi",
+                  "role": "Directeur RDZ — ##numéro personnel, donneur d'ordres en cas de décision à prendre##",
+                  "num": "+41 79 676 19 80"
+                },
+                {
+                  "nom": "Patrouilleur RDZ",
+                  "role": "##Téléphone de patrouille de nuit.## Ce numéro était celui de M. De Zordi : il a été réattribué au patrouilleur le 05.10.2026.",
                   "num": "+41 76 634 17 92"
                 }
               ]
@@ -2562,19 +2995,29 @@ window.RDZ_FICHES = {
       ],
       "blocsNotes": [
         {
-          "t": "liste",
+          "t": "sous",
           "titre": "Documents de référence",
-          "items": [
-            "Annexe « Positionnement agent » — vue aérienne et vue terrain de l'intersection STOP."
+          "blocs": [
+            {
+              "t": "liste",
+              "items": [
+                "Annexe « Positionnement agent » — vue aérienne et vue terrain de l'intersection STOP."
+              ]
+            }
           ]
         },
         {
-          "t": "liste",
-          "titre": "Réserves sur les données",
-          "items": [
-            "Le site voisin ##ERGON Collex## utilise le même parking CLX : les véhicules du Country Club y stationnent le week-end. Ce n'est pas du stationnement sauvage, et l'agent de Collex ne doit pas les faire déplacer.",
-            "Un seul contact client identifié, M. Bouvier. Pas de suppléant connu en cas d'indisponibilité.",
-            "Dans la colonne « Sécurité » du CDC, M. Bouvier est mentionné comme joignable ##sur accord RDZ## — alors qu'il est à appeler directement pour l'incendie et la technique. Nuance à confirmer : s'applique-t-elle aux seuls sujets de sécurité ?"
+          "t": "sous",
+          "titre": "Provenance et réserves sur les données",
+          "blocs": [
+            {
+              "t": "liste",
+              "items": [
+                "Le site voisin ##ERGON Collex## utilise le même parking CLX : les véhicules du Country Club y stationnent le week-end. Ce n'est pas du stationnement sauvage, et l'agent de Collex ne doit pas les faire déplacer.",
+                "Un seul contact client identifié, M. Bouvier. Pas de suppléant connu en cas d'indisponibilité.",
+                "Dans la colonne « Sécurité » du CDC, M. Bouvier est mentionné comme joignable ##sur accord RDZ## — alors qu'il est à appeler directement pour l'incendie et la technique. Nuance à confirmer : s'applique-t-elle aux seuls sujets de sécurité ?"
+              ]
+            }
           ]
         }
       ]
@@ -2981,7 +3424,7 @@ window.RDZ_FICHES = {
             },
             {
               "t": "tel",
-              "titre": "Client et technique du site",
+              "titre": "Client, technique et hiérarchie",
               "items": [
                 {
                   "nom": "M. Grégory Barla",
@@ -2997,6 +3440,11 @@ window.RDZ_FICHES = {
                   "nom": "M. Christophe Verdon",
                   "role": "Responsable technique REGM — questions techniques du site uniquement",
                   "num": "+41 76 548 48 48"
+                },
+                {
+                  "nom": "M. Rodolphe De Zordi",
+                  "role": "Directeur RDZ — ##numéro personnel, donneur d'ordres en cas de décision à prendre##",
+                  "num": "+41 79 676 19 80"
                 }
               ]
             },
@@ -3624,8 +4072,13 @@ window.RDZ_FICHES = {
                   "num": "+41 22 908 59 63"
                 },
                 {
-                  "nom": "M. De Zordi",
-                  "role": "Directeur RDZ",
+                  "nom": "M. Rodolphe De Zordi",
+                  "role": "Directeur RDZ — ##numéro personnel, donneur d'ordres en cas de décision à prendre##",
+                  "num": "+41 79 676 19 80"
+                },
+                {
+                  "nom": "Patrouilleur RDZ",
+                  "role": "##Téléphone de patrouille de nuit.## Ce numéro était celui de M. De Zordi : il a été réattribué au patrouilleur le 05.10.2026.",
                   "num": "+41 76 634 17 92"
                 }
               ]
@@ -3792,12 +4245,17 @@ window.RDZ_FICHES = {
           ]
         },
         {
-          "t": "liste",
-          "titre": "Réserves sur les données",
-          "items": [
-            "Codes confirmés par le tableau ##Codes divers## du 28.08.2026 : centrale effraction 112233, boîtier buanderie pavillon D 0000.",
-            "Le mot de passe 0000 de la centrale incendie AJF est le code réel, et non une valeur de remplissage.",
-            "Dix annexes sont référencées par le cahier des charges ; cinq procédures opérationnelles manquent encore."
+          "t": "sous",
+          "titre": "Provenance et réserves sur les données",
+          "blocs": [
+            {
+              "t": "liste",
+              "items": [
+                "Codes confirmés par le tableau ##Codes divers## du 28.08.2026 : centrale effraction 112233, boîtier buanderie pavillon D 0000.",
+                "Le mot de passe 0000 de la centrale incendie AJF est le code réel, et non une valeur de remplissage.",
+                "Dix annexes sont référencées par le cahier des charges ; cinq procédures opérationnelles manquent encore."
+              ]
+            }
           ]
         }
       ],
@@ -4038,8 +4496,13 @@ window.RDZ_FICHES = {
                   "num": "+41 22 908 44 40"
                 },
                 {
-                  "nom": "M. De Zordi",
-                  "role": "Directeur RDZ",
+                  "nom": "M. Rodolphe De Zordi",
+                  "role": "Directeur RDZ — ##numéro personnel, donneur d'ordres en cas de décision à prendre##",
+                  "num": "+41 79 676 19 80"
+                },
+                {
+                  "nom": "Patrouilleur RDZ",
+                  "role": "##Téléphone de patrouille de nuit.## Ce numéro était celui de M. De Zordi : il a été réattribué au patrouilleur le 05.10.2026.",
                   "num": "+41 76 634 17 92"
                 }
               ]
@@ -4181,12 +4644,17 @@ window.RDZ_FICHES = {
           ]
         },
         {
-          "t": "liste",
-          "titre": "Réserves sur les données",
-          "items": [
-            "Absence de raccordement Certas confirmée le 29.09.2026 : ce site n'a ni PROM ni transmetteur.",
-            "Le concierge du bâtiment gère la résidence du n°22, hors périmètre RDZ — il n'est pas un recours pour le n°20.",
-            "Emplacement des deux organes relevé lors de la visite de Laurent avec M. Barla, le 15.09.2026."
+          "t": "sous",
+          "titre": "Provenance et réserves sur les données",
+          "blocs": [
+            {
+              "t": "liste",
+              "items": [
+                "Absence de raccordement Certas confirmée le 29.09.2026 : ce site n'a ni PROM ni transmetteur.",
+                "Le concierge du bâtiment gère la résidence du n°22, hors périmètre RDZ — il n'est pas un recours pour le n°20.",
+                "Emplacement des deux organes relevé lors de la visite de Laurent avec M. Barla, le 15.09.2026."
+              ]
+            }
           ]
         }
       ]
@@ -4445,8 +4913,13 @@ window.RDZ_FICHES = {
                   "num": "+41 77 814 23 39"
                 },
                 {
-                  "nom": "M. De Zordi",
-                  "role": "Directeur RDZ",
+                  "nom": "M. Rodolphe De Zordi",
+                  "role": "Directeur RDZ — ##numéro personnel, donneur d'ordres en cas de décision à prendre##",
+                  "num": "+41 79 676 19 80"
+                },
+                {
+                  "nom": "Patrouilleur RDZ",
+                  "role": "##Téléphone de patrouille de nuit.## Ce numéro était celui de M. De Zordi : il a été réattribué au patrouilleur le 05.10.2026.",
                   "num": "+41 76 634 17 92"
                 },
                 {
@@ -5054,8 +5527,13 @@ window.RDZ_FICHES = {
                   "num": "+41 79 157 77 39"
                 },
                 {
-                  "nom": "M. De Zordi",
-                  "role": "Directeur RDZ",
+                  "nom": "M. Rodolphe De Zordi",
+                  "role": "Directeur RDZ — ##numéro personnel, donneur d'ordres en cas de décision à prendre##",
+                  "num": "+41 79 676 19 80"
+                },
+                {
+                  "nom": "Patrouilleur RDZ",
+                  "role": "##Téléphone de patrouille de nuit.## Ce numéro était celui de M. De Zordi : il a été réattribué au patrouilleur le 05.10.2026.",
                   "num": "+41 76 634 17 92"
                 },
                 {
@@ -5675,8 +6153,13 @@ window.RDZ_FICHES = {
                   "num": "+41 79 157 77 39"
                 },
                 {
-                  "nom": "M. De Zordi",
-                  "role": "Directeur RDZ",
+                  "nom": "M. Rodolphe De Zordi",
+                  "role": "Directeur RDZ — ##numéro personnel, donneur d'ordres en cas de décision à prendre##",
+                  "num": "+41 79 676 19 80"
+                },
+                {
+                  "nom": "Patrouilleur RDZ",
+                  "role": "##Téléphone de patrouille de nuit.## Ce numéro était celui de M. De Zordi : il a été réattribué au patrouilleur le 05.10.2026.",
                   "num": "+41 76 634 17 92"
                 }
               ]
@@ -5853,12 +6336,17 @@ window.RDZ_FICHES = {
           ]
         },
         {
-          "t": "liste",
-          "titre": "Réserves sur les données",
-          "items": [
-            "Cahier des charges officiel du 01.04.2026, refonte complète — données fiables.",
-            "Villa Moynier ne figure pas dans l'annexe S.03 « Interdiction de site » : aucune interdiction rattachée à cette fiche.",
-            "La mention des asservissements (surpression, portes coupe-feu, ascenseurs, monoblocs) dans le CDC est une erreur : ces équipements n'existent pas sur le site. À corriger dans le document."
+          "t": "sous",
+          "titre": "Provenance et réserves sur les données",
+          "blocs": [
+            {
+              "t": "liste",
+              "items": [
+                "Cahier des charges officiel du 01.04.2026, refonte complète — données fiables.",
+                "Villa Moynier ne figure pas dans l'annexe S.03 « Interdiction de site » : aucune interdiction rattachée à cette fiche.",
+                "La mention des asservissements (surpression, portes coupe-feu, ascenseurs, monoblocs) dans le CDC est une erreur : ces équipements n'existent pas sur le site. À corriger dans le document."
+              ]
+            }
           ]
         }
       ],
@@ -6176,8 +6664,13 @@ window.RDZ_FICHES = {
                   "num": "+41 79 339 13 41"
                 },
                 {
-                  "nom": "M. De Zordi",
-                  "role": "Directeur RDZ",
+                  "nom": "M. Rodolphe De Zordi",
+                  "role": "Directeur RDZ — ##numéro personnel, donneur d'ordres en cas de décision à prendre##",
+                  "num": "+41 79 676 19 80"
+                },
+                {
+                  "nom": "Patrouilleur RDZ",
+                  "role": "##Téléphone de patrouille de nuit.## Ce numéro était celui de M. De Zordi : il a été réattribué au patrouilleur le 05.10.2026.",
                   "num": "+41 76 634 17 92"
                 }
               ]
@@ -6314,21 +6807,31 @@ window.RDZ_FICHES = {
           ]
         },
         {
-          "t": "liste",
+          "t": "sous",
           "titre": "Documents de référence",
-          "items": [
-            "I.01 — Mode d'emploi de la centrale incendie Siemens, avec la formation SharePoint.",
-            "S.01 — Fermeture du tourniquet, du 30.05.2025."
+          "blocs": [
+            {
+              "t": "liste",
+              "items": [
+                "I.01 — Mode d'emploi de la centrale incendie Siemens, avec la formation SharePoint.",
+                "S.01 — Fermeture du tourniquet, du 30.05.2025."
+              ]
+            }
           ]
         },
         {
-          "t": "liste",
-          "titre": "Réserves sur les données",
-          "items": [
-            "Le CDC annonce un faux numéro d'astreinte — voir l'avertissement de l'étape 5.",
-            "##Aucun code de centrale## communiqué.",
-            "Le logigramme d'astreinte listait MSF sur deux lignes, « bouton accueil » et incendie 324 333 : les deux sont réunis dans cette fiche.",
-            "Procédure d'ouverture du parking relevée sur site le 01.10.2026, à partir de photos — elle ne figure dans aucun document client."
+          "t": "sous",
+          "titre": "Provenance et réserves sur les données",
+          "blocs": [
+            {
+              "t": "liste",
+              "items": [
+                "Le CDC annonce un faux numéro d'astreinte — voir l'avertissement de l'étape 5.",
+                "##Aucun code de centrale## communiqué.",
+                "Le logigramme d'astreinte listait MSF sur deux lignes, « bouton accueil » et incendie 324 333 : les deux sont réunis dans cette fiche.",
+                "Procédure d'ouverture du parking relevée sur site le 01.10.2026, à partir de photos — elle ne figure dans aucun document client."
+              ]
+            }
           ]
         }
       ],
@@ -6664,8 +7167,13 @@ window.RDZ_FICHES = {
                   "num": "+41 79 689 28 60"
                 },
                 {
-                  "nom": "M. De Zordi",
-                  "role": "Directeur RDZ — urgences hors heures, et donneur d'ordres en cas de décision à prendre",
+                  "nom": "M. Rodolphe De Zordi",
+                  "role": "Directeur RDZ — ##numéro personnel, donneur d'ordres en cas de décision à prendre##",
+                  "num": "+41 79 676 19 80"
+                },
+                {
+                  "nom": "Patrouilleur RDZ",
+                  "role": "##Téléphone de patrouille de nuit.## Ce numéro était celui de M. De Zordi : il a été réattribué au patrouilleur le 05.10.2026.",
                   "num": "+41 76 634 17 92"
                 }
               ]
@@ -6856,16 +7364,21 @@ window.RDZ_FICHES = {
           ]
         },
         {
-          "t": "liste",
-          "titre": "Réserves sur les données",
-          "items": [
-            "Cahier des charges du 01.04.2026 et six annexes A.01 à A.06 de la même date.",
-            "##Contradiction## : le CDC annonce qu'il n'y a pas de code de centrale, l'annexe A.04 donne 7100.",
-            "##Second numéro d'astreinte erroné## dans le CDC — voir l'avertissement de l'étape 5.",
-            "Le fichier « CTN Numéros utiles 2026 » est illisible.",
-            "Le code ~~1228~~ du quai de livraison n°8, signalé comme « plus d'actualité », n'apparaît dans aucun document — statut à clarifier.",
-            "Sept plans d'étage sont fournis mais non intégrés ici : ils restent la référence pour localiser une zone.",
-            "Le code ~~1228~~ attribué au quai de livraison correspond aussi au ##NPA de Plan-les-Ouates## : vérifier qu'il s'agit bien d'un code d'accès et non d'une confusion."
+          "t": "sous",
+          "titre": "Provenance et réserves sur les données",
+          "blocs": [
+            {
+              "t": "liste",
+              "items": [
+                "Cahier des charges du 01.04.2026 et six annexes A.01 à A.06 de la même date.",
+                "##Contradiction## : le CDC annonce qu'il n'y a pas de code de centrale, l'annexe A.04 donne 7100.",
+                "##Second numéro d'astreinte erroné## dans le CDC — voir l'avertissement de l'étape 5.",
+                "Le fichier « CTN Numéros utiles 2026 » est illisible.",
+                "Le code ~~1228~~ du quai de livraison n°8, signalé comme « plus d'actualité », n'apparaît dans aucun document — statut à clarifier.",
+                "Sept plans d'étage sont fournis mais non intégrés ici : ils restent la référence pour localiser une zone.",
+                "Le code ~~1228~~ attribué au quai de livraison correspond aussi au ##NPA de Plan-les-Ouates## : vérifier qu'il s'agit bien d'un code d'accès et non d'une confusion."
+              ]
+            }
           ]
         }
       ],
