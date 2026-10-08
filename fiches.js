@@ -3107,6 +3107,46 @@ window.RDZ_FICHES = {
           ]
         },
         {
+          "t": "kv",
+          "titre": "Tâches administratives",
+          "items": [
+            {
+              "k": "Portée",
+              "v": "##Hors mission IHEID## — tâches internes RDZ effectuées depuis la loge"
+            }
+          ]
+        },
+        {
+          "t": "num",
+          "titre": "Imprimer un badge — imprimante Evolis Zenius",
+          "items": [
+            {
+              "a": "Allumer l'imprimante",
+              "d": "Bouton ##power##, situé ##au-dessus du nom ZENIUS##."
+            },
+            {
+              "a": "Prendre un badge vierge",
+              "d": "Boîte rangée dans la ##partie supérieure du meuble à clés##. ##Le tenir par les bords## : ne pas toucher la surface, les traces de doigts ressortent à l'impression."
+            },
+            {
+              "a": "Introduire le badge",
+              "d": "Ouvrir le ##cache rouge##, à côté du bouton power, et y glisser le badge."
+            },
+            {
+              "a": "Ouvrir le modèle sur le PC des vidéos",
+              "d": "##Documents → My Cards → Parking##."
+            },
+            {
+              "a": "Choisir le fichier du site et le corriger",
+              "d": "Ouvrir le fichier Word correspondant au site, puis rectifier les informations à imprimer."
+            },
+            {
+              "a": "Lancer l'impression",
+              "d": "Choisir l'imprimante ##Evolis Zenius## dans la liste, et non l'imprimante par défaut."
+            }
+          ]
+        },
+        {
           "t": "sous",
           "titre": "Historique des corrections de la fiche",
           "blocs": [
