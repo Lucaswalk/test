@@ -3287,6 +3287,97 @@ window.RDZ_FICHES = {
             },
             {
               "t": "table",
+              "titre": "Lire l'affichage du clavier",
+              "items": [
+                {
+                  "z": "Format",
+                  "d": "##[zone] [groupe] [bâtiment] [nom] [étage]## — exemple : « 1001 A6 Bât Nom étage »"
+                },
+                {
+                  "z": "Premier bloc",
+                  "d": "Numéro de la ##zone## — le détecteur ou le contact concerné"
+                },
+                {
+                  "z": "Second bloc",
+                  "d": "Numéro du ##groupe## — la catégorie, voir ci-dessous"
+                }
+              ]
+            },
+            {
+              "t": "table",
+              "titre": "Les groupes d'intrusion",
+              "items": [
+                {
+                  "z": "A1",
+                  "d": "Commun"
+                },
+                {
+                  "z": "A2",
+                  "d": "Magasin"
+                },
+                {
+                  "z": "A3",
+                  "d": "Cafétéria"
+                },
+                {
+                  "z": "A4",
+                  "d": "Cuisine bâtiment C"
+                },
+                {
+                  "z": "A5",
+                  "d": "Bouton vert"
+                },
+                {
+                  "z": "A6",
+                  "d": "Issue de secours"
+                }
+              ]
+            },
+            {
+              "t": "table",
+              "titre": "Zones répertoriées au clavier",
+              "items": [
+                {
+                  "z": "4031 A5 / A1",
+                  "d": "Bouton vert P58 — ##porte garage côté véhicules Sécurité##"
+                },
+                {
+                  "z": "4033 A5 / A1",
+                  "d": "Bouton vert P02 — ##garage côté voitures visiteurs##"
+                },
+                {
+                  "z": "4034 A5 / C1",
+                  "d": "Bouton vert P32 — ##garage côté véhicules Maintenance##"
+                },
+                {
+                  "z": "4036 A5 / C1",
+                  "d": "Bouton vert P20 — ##garage côté fourgon IHEID##"
+                },
+                {
+                  "z": "4082 A5 / A1",
+                  "d": "Bouton vert Vélo — ##garage côté parking à vélo##"
+                },
+                {
+                  "z": "— A2",
+                  "d": "Shop HUNA — ##numéro de zone non renseigné sur l'affiche##"
+                },
+                {
+                  "z": "— A3",
+                  "d": "Restaurant Budé 3e — ##numéro de zone non renseigné##"
+                },
+                {
+                  "z": "— A4",
+                  "d": "Cuisine rez Morillon — ##numéro de zone non renseigné##"
+                }
+              ]
+            },
+            {
+              "t": "stop",
+              "lab": "Messages d'autoprotection",
+              "txt": "Un message du type ##+AUTOPROT.RIO300## ne désigne ##pas une pièce## mais un ##module d'extension## du bus d'alarme : son capot a été ouvert, son câble débranché, ou il a perdu la communication.\n##RIO 3 00## correspond à la ligne 3, module 00, dont les zones portent les numéros ##3001 à 3008##. Les consulter au clavier affiche leur libellé, donc le bâtiment et l'étage.\nToutes les zones de l'affiche ci-dessus sont en ligne 4 : ##la ligne 3 n'y figure pas##."
+            },
+            {
+              "t": "table",
               "titre": "Décodage des groupes d'effraction",
               "items": [
                 {
@@ -3340,6 +3431,10 @@ window.RDZ_FICHES = {
                   "d": "Garage côté parking à vélo"
                 }
               ]
+            },
+            {
+              "t": "manque",
+              "txt": "##Plan d'adressage des modules RIO à obtenir auprès de Bavitech## : il donnerait l'emplacement physique de chaque module, et transformerait un message « AUTOPROT.RIO300 » en localisation directe.\nTrois lignes de l'affiche du clavier portent ##0000 comme numéro de zone## — Shop HUNA, Restaurant Budé 3e et Cuisine rez Morillon : numéros à faire compléter."
             }
           ]
         },
@@ -3599,6 +3694,10 @@ window.RDZ_FICHES = {
                 {
                   "k": "Source",
                   "v": "Fiche réflexe RDZ v1.0 du 17.08.2026"
+                },
+                {
+                  "k": "Baie son — signal d'évacuation",
+                  "v": "##Sous-sol Morillon##, baie technique. Centrale ##ATEIS Boutique SL##, repérée par le bouton rouge ##EVAC## sous capot et l'écran bleu au centre."
                 }
               ]
             },
@@ -3722,6 +3821,10 @@ window.RDZ_FICHES = {
                   "d": "Local ##2.23 Local de ventilation## (console SST01 Budé)."
                 },
                 {
+                  "a": "Quittancer le signal d'évacuation sur la sono",
+                  "d": "Baie son du ##sous-sol Morillon##, centrale ##ATEIS Boutique SL##.\n##1.## Appuyer sur ##OK## pour réveiller l'écran — il affiche le logo ATEIS en veille.\n##2.## Le menu à six icônes apparaît : amener la sélection sur ##RAZ Annonces## avec les flèches ##▲ ▼##.\n##3.## Valider par ##OK##.\n##4.## À la question « ##RAZ Annonces ?## », confirmer par ##OK## — le bouton de droite, pas Annuler.\n##Ne pas toucher à « RAZ Système ».##"
+                },
+                {
                   "a": "Vérifier les ascenseurs",
                   "d": "Ils se quittancent automatiquement, mais il faut contrôler qu'ils sont bien revenus en service."
                 },
@@ -3730,6 +3833,11 @@ window.RDZ_FICHES = {
                   "d": "Classeur REGM et rapport GuardTek. Si les pompiers sont intervenus : aviser M. De Zordi, puis l'IHEID."
                 }
               ]
+            },
+            {
+              "t": "stop",
+              "lab": "Sur la centrale son, deux remises à zéro",
+              "txt": "##RAZ Annonces## coupe le message d'évacuation diffusé : c'est celle qu'on utilise.\n##RAZ Système## réinitialise l'installation entière — ##ne pas y toucher##.\nLe bouton rouge ##EVAC## sous capot, à gauche de l'écran, ##déclenche## l'évacuation : il n'a rien à voir avec la quittance."
             },
             {
               "t": "num",
@@ -3754,7 +3862,7 @@ window.RDZ_FICHES = {
                 },
                 {
                   "a": "Fin d'intervention",
-                  "d": "Sur autorisation de M. Barla ou des pompiers uniquement : arrêter le message SONO (bouton RESET) et réarmer la centrale."
+                  "d": "Sur autorisation de M. Barla ou des pompiers uniquement : arrêter le message SONO (bouton RESET) et réarmer la centrale.\n##Quittancer le signal d'évacuation## sur la centrale ATEIS de la baie son, au sous-sol Morillon : ##OK## pour réveiller l'écran, ##RAZ Annonces## aux flèches, ##OK##, puis ##OK## pour confirmer."
                 }
               ]
             },
