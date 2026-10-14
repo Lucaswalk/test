@@ -3153,6 +3153,7 @@ window.RDZ_FICHES = {
             {
               "t": "liste",
               "items": [
+                "##Quatre points d'intervention## confirmés le 14.10.2026 : loge sécurité, entrée 8B, local SONO sous-sol Budé, local SONO sous-sol Morillon.",
                 "##Déclenchement depuis le sous-sol## relevé le 14.10.2026 d'après les centrales mères Budé 23FC4 et Morillon 23FC7 : sélection des étages puis bouton rouge. ##Analyse terrain, non encore validée par les responsables.##",
                 "##Diode de sélection : bleue##, confirmé sur site le 14.10.2026. ##L'affiche « LA SONO » posée en loge indique une diode verte : elle est erronée et doit être corrigée.## Les renvois à des numéros de boutons, hérités de photos retirées du document, ont été remplacés par les libellés réels.",
                 "##Compléments de M. Barla, 14.10.2026## : classification en bâtiment de grande hauteur soumis à l'AEAI, trois zones d'intervention pompiers, sorties principales et issues de secours, RESET au sous-sol, cinq points de déclenchement de la sono.",
@@ -3748,6 +3749,28 @@ window.RDZ_FICHES = {
               ]
             },
             {
+              "t": "table",
+              "titre": "Où faire les manipulations en cas d'alarme",
+              "items": [
+                {
+                  "z": "Loge sécurité",
+                  "d": "##Centrale principale## — ##seul point où AppVision est consultable##. On y trouve aussi le boîtier SONO, le gilet d'évacuation, le mégaphone et la liste des résidents."
+                },
+                {
+                  "z": "Entrée 8B",
+                  "d": "Report de centrale, côté Budé"
+                },
+                {
+                  "z": "Sous-sol Budé",
+                  "d": "##Local SONO## — centrale Budé 23FC4"
+                },
+                {
+                  "z": "Sous-sol Morillon",
+                  "d": "##Local SONO## — centrale Morillon 23FC7"
+                }
+              ]
+            },
+            {
               "t": "kv",
               "titre": "Alarme feu — les délais qui courent",
               "items": [
@@ -3767,8 +3790,8 @@ window.RDZ_FICHES = {
               "court": "Alarme feu",
               "items": [
                 {
-                  "a": "Rejoindre la centrale en loge sécurité",
-                  "d": "3 minutes s'écoulent entre le déclenchement et la transmission automatique aux pompiers."
+                  "a": "Rejoindre une centrale",
+                  "d": "##Quatre points possibles## : loge sécurité, entrée 8B, local SONO du sous-sol Budé, local SONO du sous-sol Morillon. ##Prendre la plus proche.##\n3 minutes s'écoulent entre le déclenchement et la transmission automatique aux pompiers."
                 },
                 {
                   "a": "Bouton NOIR — Arrêt buzzer",
@@ -3776,8 +3799,8 @@ window.RDZ_FICHES = {
                   "d": "Coupe le buzzer. L'alarme reste active."
                 },
                 {
-                  "a": "Molette — Identifier la zone",
-                  "d": "Code opérateur 2228. Lire à l'écran le bâtiment (Morillon ou Budé), le niveau, la zone et le type de détecteur. Confirmer la localisation dans AppVision."
+                  "a": "Molette — identifier la zone, puis photographier l'écran",
+                  "d": "Code opérateur ~~2228~~. Lire le bâtiment (Morillon ou Budé), le niveau, la zone et le type de détecteur.\n##Photographier l'écran## : rien à recopier, rien à mémoriser, l'information part avec vous sur la zone.\n##AppVision n'est consultable qu'en loge sécurité.## Depuis l'entrée 8B ou un local SONO, ##la photo est la seule trace##."
                 },
                 {
                   "a": "Bouton ROUGE — Arrêt sirène",
