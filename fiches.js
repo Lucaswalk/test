@@ -3153,6 +3153,11 @@ window.RDZ_FICHES = {
             {
               "t": "liste",
               "items": [
+                "##Déclenchement depuis le sous-sol## relevé le 14.10.2026 d'après les centrales mères Budé 23FC4 et Morillon 23FC7 : sélection des étages puis bouton rouge. ##Analyse terrain, non encore validée par les responsables.##",
+                "##Diode de sélection : bleue##, confirmé sur site le 14.10.2026. ##L'affiche « LA SONO » posée en loge indique une diode verte : elle est erronée et doit être corrigée.## Les renvois à des numéros de boutons, hérités de photos retirées du document, ont été remplacés par les libellés réels.",
+                "##Compléments de M. Barla, 14.10.2026## : classification en bâtiment de grande hauteur soumis à l'AEAI, trois zones d'intervention pompiers, sorties principales et issues de secours, RESET au sous-sol, cinq points de déclenchement de la sono.",
+                "##La chaîne du parking Budé n'existe plus## : la consigne d'ouverture pour les pompiers est supprimée.",
+                "##Procédure d'évacuation du 01.04.2026## (REGM — Évacuation, 5 phases) : source de la procédure Évacuation de cette fiche. ##Elle ne précise ni que la sono est indépendante de la détection, ni qui décide du déclenchement## — points ajoutés ici et en attente de confirmation de M. Barla.",
                 "##27.08.2026## — les données du site voisin MDE (bâtiment distinct, av. de France 20-22) ont été retirées de cette fiche : transmetteur, prestataires et numéro Certas propres à MDE. Voir la fiche MDE.",
                 "##27.08.2026## — centrale anti-intrusion Bavitech documentée pour la première fois (photo transmise) : code de manipulation et grille des zones à l'étape 2.",
                 "##27.08.2026## — procédure complète de la centrale incendie intégrée, d'après la fiche réflexe RDZ v1.0 du 17.08.2026.",
@@ -3187,6 +3192,33 @@ window.RDZ_FICHES = {
                 {
                   "k": "Occupation",
                   "v": "≈ 318 résidents, présence permanente jour et nuit"
+                }
+              ]
+            },
+            {
+              "t": "stop",
+              "lab": "Bâtiment de grande hauteur",
+              "txt": "La résidence est un ##bâtiment de grande hauteur##, soumis aux prescriptions ##AEAI##. Cela justifie des mesures techniques et organisationnelles particulières.\n##Conséquence pour l'intervention : la grande échelle sort automatiquement.## Toute alarme transmise engage ce moyen."
+            },
+            {
+              "t": "table",
+              "titre": "Les trois zones d'intervention pompiers",
+              "items": [
+                {
+                  "z": "Zone Morillon",
+                  "d": "Accès côté ##rue Michelle-Nicod##"
+                },
+                {
+                  "z": "Zone Budé",
+                  "d": "Accès vers l'##entrée 8B##"
+                },
+                {
+                  "z": "Zone Parking",
+                  "d": "Parking souterrain"
+                },
+                {
+                  "z": "À quoi ça sert",
+                  "d": "##Annoncer la zone concernée aux pompiers## dès l'appel : c'est elle qui détermine leur point d'engagement."
                 }
               ]
             },
@@ -3458,6 +3490,20 @@ window.RDZ_FICHES = {
               "items": [
                 "##Défaut SALTO ou coupure de courant## — les boîtiers sont autonomes sur batterie, l'accès reste possible. Passer notamment par la porte de la loge sécurité.",
                 "##Badge oublié ou perdu## — un badge de secours se trouve dans le pylône devant la porte du garage, code ~~1357~~."
+              ]
+            },
+            {
+              "t": "table",
+              "titre": "Sorties principales et issues de secours",
+              "items": [
+                {
+                  "z": "Sorties principales",
+                  "d": "10A · 10B · 8A · 8B · Administration · ##route de Ferney## · ##rue Michelle-Nicod##"
+                },
+                {
+                  "z": "Issues de secours",
+                  "d": "##Deux côté rue Michelle-Nicod## et ##deux côté route de Ferney##"
+                }
               ]
             }
           ]
@@ -3741,6 +3787,11 @@ window.RDZ_FICHES = {
               ]
             },
             {
+              "t": "stop",
+              "lab": "Alarme maîtrisée mais non quittancée à temps",
+              "txt": "Si le délai de quittance est dépassé alors que la situation est maîtrisée : ##appeler le 118 pour les aviser##. Cela permet au minimum d'##annuler la grande échelle##, qui sort automatiquement pour ce bâtiment."
+            },
+            {
               "t": "choix",
               "titre": "Sur zone, selon ce qui est constaté",
               "items": [
@@ -3840,6 +3891,11 @@ window.RDZ_FICHES = {
               "txt": "##RAZ Annonces## coupe le message d'évacuation diffusé : c'est celle qu'on utilise.\n##RAZ Système## réinitialise l'installation entière — ##ne pas y toucher##.\nLe bouton rouge ##EVAC## sous capot, à gauche de l'écran, ##déclenche## l'évacuation : il n'a rien à voir avec la quittance."
             },
             {
+              "t": "stop",
+              "lab": "La sono ne part jamais toute seule — à confirmer",
+              "txt": "##Le message d'évacuation n'est pas déclenché automatiquement.## Il n'est ##pas asservi à la détection incendie## et ##pas déclenché par les déclencheurs manuels##. Seule une action volontaire sur le boîtier SONO le lance.\n##Qui décide## : l'agent de sécurité de sa propre initiative en cas de danger avéré, ou sur instruction du chargé de sécurité IHEID.\n##Ces quatre points ne figurent pas dans la procédure du 01.04.2026 : ils sont en attente de confirmation écrite de M. Barla.##"
+            },
+            {
               "t": "num",
               "titre": "Évacuation — 5 phases",
               "court": "Évacuation",
@@ -3850,7 +3906,7 @@ window.RDZ_FICHES = {
                 },
                 {
                   "a": "Déclenchement SONO",
-                  "d": "Boîtier en loge sécurité : appuyer sur le bâtiment concerné (Morillon 10A/10B, Budé 8A/8B, ou les deux), attendre la diode bleue HOLD, puis presser le bouton rouge ÉVACUATION."
+                  "d": "Boîtier SONO de la loge.\n##1.## Sélectionner la zone : « ##Toutes les zones## » pour Budé et Morillon, « ##zone Budé## » pour Budé seul. ##Morillon seul : presser directement le bouton rouge.##\n##2.## Attendre la ##diode bleue##.\n##3.## Soulever le ##clapet de protection## et presser le ##bouton rouge ÉVACUATION##.\n##Rien ne part tant que ce geste n'est pas fait## : ni la détection, ni un déclencheur manuel ne lancent le message."
                 },
                 {
                   "a": "Coordination",
@@ -3865,6 +3921,72 @@ window.RDZ_FICHES = {
                   "d": "Sur autorisation de M. Barla ou des pompiers uniquement : arrêter le message SONO (bouton RESET) et réarmer la centrale.\n##Quittancer le signal d'évacuation## sur la centrale ATEIS de la baie son, au sous-sol Morillon : ##OK## pour réveiller l'écran, ##RAZ Annonces## aux flèches, ##OK##, puis ##OK## pour confirmer."
                 }
               ]
+            },
+            {
+              "t": "table",
+              "titre": "Sélection des zones sur le boîtier SONO",
+              "items": [
+                {
+                  "z": "Toutes les zones",
+                  "d": "Budé ##et## Morillon"
+                },
+                {
+                  "z": "Zone Budé",
+                  "d": "Budé seul"
+                },
+                {
+                  "z": "Bouton rouge direct",
+                  "d": "Morillon seul"
+                },
+                {
+                  "z": "Dans tous les cas",
+                  "d": "Attendre la ##diode bleue##, soulever le ##clapet##, presser le bouton rouge"
+                }
+              ]
+            },
+            {
+              "t": "liste",
+              "titre": "Où la sono peut être déclenchée — cinq points",
+              "items": [
+                "##Loge sécurité## — boîtier principal.",
+                "##Sous-sol Budé.##",
+                "##Sous-sol Morillon## — centrale ATEIS de la baie technique.",
+                "##Poste administration.##",
+                "##8e étage.##"
+              ]
+            },
+            {
+              "t": "num",
+              "titre": "Déclencher la sono depuis le sous-sol",
+              "court": "Sono sous-sol",
+              "items": [
+                {
+                  "a": "Se rendre à la centrale mère",
+                  "d": "##Budé 23FC4## ou ##Morillon 23FC7##, selon le bâtiment. Rack ATEIS ##Boutique SL## et ##VM8##."
+                },
+                {
+                  "a": "Sélectionner les étages concernés",
+                  "d": "Rangée de boutons de droite.\n##Budé## : 7e · 8e · 9e · ESC.E · ESC.G · S.Sol, puis REZ · 1e à 6e.\n##Morillon## : 7e · 8e · 9e · ESC.C · ESC.A · S.Sol · ##Budé##, puis RDC · 1e à 6e."
+                },
+                {
+                  "a": "Presser le bouton rouge ÉVACUATION",
+                  "d": "Il se trouve ##à côté du micro déporté rouge##, au-dessus du bouton RESET."
+                },
+                {
+                  "a": "En cas de doute sur l'étendue",
+                  "d": "##Tout sélectionner.## Mieux vaut évacuer trop large que laisser un étage sans message."
+                }
+              ]
+            },
+            {
+              "t": "stop",
+              "lab": "Les deux centrales ne sont pas symétriques",
+              "txt": "La centrale ##Morillon## porte un bouton ##Budé## : elle peut donc diffuser dans l'autre bâtiment.\nLa centrale ##Budé## ##n'a aucun bouton renvoyant à Morillon##.\n##Manœuvre relevée sur site le 14.10.2026, en attente de validation par les responsables.##"
+            },
+            {
+              "t": "stop",
+              "lab": "Le RESET ne se fait pas à la loge",
+              "txt": "##Le RESET s'effectue au sous-sol##, sur la centrale ATEIS de la baie technique Morillon — et non au boîtier de la loge. Voir la procédure ##QDS-PRO-SONO-001## du 12.10.2026.\nConsigne mise à jour par le chargé de sécurité IHEID."
             },
             {
               "t": "stop",
@@ -4069,6 +4191,28 @@ window.RDZ_FICHES = {
               ]
             },
             {
+              "t": "num",
+              "titre": "Basculer entre service jour et service nuit",
+              "items": [
+                {
+                  "a": "Activer l'écran tactile",
+                  "d": "Centrale incendie du local technique AJF."
+                },
+                {
+                  "a": "Se connecter",
+                  "d": "Toucher ##Connexion##, puis ~~ID 01~~ et mot de passe ~~0000~~."
+                },
+                {
+                  "a": "Toucher le bouton « Jour/Nuit »",
+                  "d": ""
+                },
+                {
+                  "a": "Confirmer le mode",
+                  "d": "##Service JOUR = transmission différée.##\n##Service NUIT = transmission directe.##"
+                }
+              ]
+            },
+            {
               "t": "liste",
               "titre": "Centrale incendie — local technique AJF",
               "items": [
@@ -4092,6 +4236,14 @@ window.RDZ_FICHES = {
               "t": "kv",
               "items": [
                 {
+                  "k": "Badge d'accès",
+                  "v": "##Badge ACCESS MDP## — il ouvre les bâtiments AJF et Villa Barton. ##Cylindres KABA, pas SALTO.##"
+                },
+                {
+                  "k": "Trousseau du site",
+                  "v": "Pris chaque matin par l'##agent MDP##. Le même trousseau couvre ##Moynier, Barton et Rothschild##."
+                },
+                {
                   "k": "Boîte à clefs",
                   "v": "Pavillon D, buanderie — code ~~0000~~. ##Ce code n'est pas un code d'alarme, ne pas confondre.##"
                 }
@@ -4114,20 +4266,32 @@ window.RDZ_FICHES = {
         },
         {
           "titre": "Clés",
-          "resume": "Boîte à clefs du pavillon D",
+          "resume": "Trousseau commun Moynier · Barton · Rothschild",
           "blocs": [
             {
               "t": "kv",
               "items": [
                 {
-                  "k": "Où",
-                  "v": "Boîte à clefs du pavillon D, buanderie — code ~~0000~~"
+                  "k": "Qui le détient",
+                  "v": "L'##agent MDP## le récupère chaque matin"
+                },
+                {
+                  "k": "Portée",
+                  "v": "Un seul trousseau pour ##Moynier, Barton et Rothschild##"
+                },
+                {
+                  "k": "Accès aux bâtiments",
+                  "v": "Par le ##badge ACCESS MDP## — cylindres ##KABA##, et non SALTO"
+                },
+                {
+                  "k": "Boîte à clefs du site",
+                  "v": "Pavillon D, buanderie — code ~~0000~~"
                 }
               ]
             },
             {
               "t": "manque",
-              "txt": "Composition du trousseau, références des clés et correspondance clé ↔ porte : non documentées. Barton ne figure pas dans l'inventaire ##Clefs IS / RDZ##."
+              "txt": "Composition détaillée du trousseau et correspondance clé ↔ porte : ##relevé en cours auprès de l'agent MDP##. Barton ne figure pas dans l'inventaire ##Clefs IS / RDZ##."
             },
             {
               "t": "liste",
@@ -4228,12 +4392,23 @@ window.RDZ_FICHES = {
                   "nom": "Patrouilleur RDZ",
                   "role": "##Téléphone de patrouille de nuit.## Ce numéro était celui de M. De Zordi : il a été réattribué au patrouilleur le 05.10.2026.",
                   "num": "+41 76 634 17 92"
+                },
+                {
+                  "nom": "Johnson Controls — dépannage et urgence",
+                  "role": "##24h/24## — installateur de la centrale incendie AJF",
+                  "num": "+41 21 632 80 10"
+                },
+                {
+                  "nom": "Johnson Controls — piquet national",
+                  "role": "Second recours",
+                  "num": "+41 840 240 365"
                 }
               ]
             },
             {
-              "t": "manque",
-              "txt": "##Johnson Controls / Tyco## est l'installateur du système effraction : contact connu uniquement par courriel, ##service.romandie@jci.com##. Le numéro de M. Spada reste à obtenir. En cas de dérangement de centrale hors courriel, passer par l'astreinte RDZ."
+              "t": "stop",
+              "lab": "Avant d'appeler Johnson Controls",
+              "txt": "##Il n'est pas établi que RDZ soit autorisé à les solliciter directement.## Sans confirmation écrite du client, passer par la ##liste d'urgence## : astreinte RDZ, puis M. Demonte.\nLes deux numéros ci-dessus sont connus et utilisables une fois cette autorisation obtenue."
             }
           ]
         },
@@ -4330,22 +4505,67 @@ window.RDZ_FICHES = {
               "txt": "Les étapes 1 à 5 ci-dessus décrivent la conduite ##sur place##, reconstituée à partir des éléments techniques : la feuille Certas définit qui appelle qui, pas ce que l'agent fait une fois arrivé. À faire valider avant diffusion aux agents."
             },
             {
-              "t": "liste",
-              "titre": "Alarme incendie — restaurant et AJF",
+              "t": "num",
+              "titre": "Alarme incendie — transmetteur 324 478",
+              "court": "Alarme feu",
               "items": [
-                "Transmetteur ~~324 478~~, complément à 30.",
-                "Centrale au ##local technique AJF##, écran tactile : Connexion, ID 01, mot de passe 0000, puis mode Jour ou Nuit.",
-                "##Dérangement de centrale## : M. Spada, Johnson Controls — numéro en attente, passer par l'astreinte RDZ."
+                {
+                  "a": "Activer l'écran tactile",
+                  "d": "Centrale incendie du ##local technique AJF##. Toucher l'écran pour le réveiller."
+                },
+                {
+                  "a": "Se connecter",
+                  "d": "##Passer le badge##, ou toucher ##Connexion## et saisir ~~ID 01~~ / mot de passe ~~0000~~."
+                },
+                {
+                  "a": "Éteindre le son",
+                  "d": "Toucher le ##bouton buzzer##."
+                },
+                {
+                  "a": "Le chrono démarre",
+                  "d": "##À l'extinction du buzzer, un compte à rebours de 5 minutes commence## pour la levée de doute. Se rendre sur la zone affichée."
+                },
+                {
+                  "a": "Si fausse alarme",
+                  "d": "Toucher le bouton vert ##Réarmement##, puis ##confirmer## le réarmement de la centrale."
+                },
+                {
+                  "a": "Si le feu est confirmé",
+                  "d": "##Pousser un bouton poussoir rouge## (déclencheur manuel), appeler le ##118##, accueillir et guider les secours."
+                },
+                {
+                  "a": "Rendre compte",
+                  "d": "Certas au +41 844 800 811, astreinte RDZ, puis rapport GuardTek."
+                }
+              ]
+            },
+            {
+              "t": "num",
+              "titre": "Quittance des asservissements après alarme",
+              "court": "Asservissements",
+              "items": [
+                {
+                  "a": "Se rendre au local technique AJF",
+                  "d": "Aller ##au fond, vers le monobloc##."
+                },
+                {
+                  "a": "Pousser les boutons dans l'ordre",
+                  "d": "##1 — Alarme feu##, puis ##2 — Quittance générale##. L'ordre compte."
+                },
+                {
+                  "a": "Éteindre la sono",
+                  "d": "Appuyer sur le bouton ##STOP##."
+                },
+                {
+                  "a": "Consigner",
+                  "d": "Rapport GuardTek."
+                }
               ]
             },
             {
               "t": "stop",
               "lab": "Fermeture du restaurant AJF",
               "txt": "Depuis le 17.09.2026, les clients du restaurant ##n'enclenchent plus l'alarme## à leur départ. C'est à l'##agent de l'enclencher lui-même## à la fermeture."
-            },
-            {
-              "t": "manque",
-              "txt": "Conduite à tenir détaillée en cas d'alarme incendie AJF — levée de doute, quittance, asservissements éventuels — non documentée. À construire sur site, comme pour les autres bâtiments."
             },
             {
               "t": "liste",
@@ -4355,6 +4575,10 @@ window.RDZ_FICHES = {
                 "##Test cyclique## (K16) — Certas attend les heures ouvrables pour aviser le client. RDZ n'est en liste d'urgence qu'en dernier recours.",
                 "##Perte de connexion urgente et dérangement d'installation## (K09, K19) — RDZ est appelé ##uniquement hors heures de présence##."
               ]
+            },
+            {
+              "t": "manque",
+              "txt": "##Procédure d'évacuation à étoffer## : emplacement des points de rassemblement et équipement mis à disposition sur place. À relever sur site."
             }
           ]
         }
@@ -4545,6 +4769,20 @@ window.RDZ_FICHES = {
           "titre": "Clés",
           "resume": "Pass Rothschild",
           "blocs": [
+            {
+              "t": "kv",
+              "titre": "Trousseau commun",
+              "items": [
+                {
+                  "k": "Qui le détient",
+                  "v": "L'##agent MDP## le récupère chaque matin"
+                },
+                {
+                  "k": "Portée",
+                  "v": "Un seul trousseau pour ##Moynier, Barton et Rothschild##"
+                }
+              ]
+            },
             {
               "t": "kv",
               "items": [
@@ -6195,6 +6433,20 @@ window.RDZ_FICHES = {
           "titre": "Clés",
           "resume": "Pass général Moynier — reçu le 28.09.2026",
           "blocs": [
+            {
+              "t": "kv",
+              "titre": "Trousseau commun",
+              "items": [
+                {
+                  "k": "Qui le détient",
+                  "v": "L'##agent MDP## le récupère chaque matin"
+                },
+                {
+                  "k": "Portée",
+                  "v": "Un seul trousseau pour ##Moynier, Barton et Rothschild##"
+                }
+              ]
+            },
             {
               "t": "kv",
               "items": [
