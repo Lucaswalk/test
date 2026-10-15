@@ -3272,6 +3272,16 @@ window.RDZ_FICHES = {
             {
               "t": "manque",
               "txt": "Adresse postale exacte, et surtout le point GPS de chaque entrée utile (Morillon 10A et 10B, Budé 8A et 8B, accès garage). Sur place : appui long sur la carte Google Maps à l'entrée → les coordonnées s'affichent, il suffit de me les transmettre. L'itinéraire ci-dessus vise le campus et ne remplace pas ça."
+            },
+            {
+              "t": "kv",
+              "titre": "Point de rassemblement",
+              "items": [
+                {
+                  "k": "Emplacement",
+                  "v": "##Esplanade piétonne entre les bâtiments##, repérée par le panneau vert"
+                }
+              ]
             }
           ]
         },
@@ -3937,7 +3947,7 @@ window.RDZ_FICHES = {
                 },
                 {
                   "a": "Point de rassemblement",
-                  "d": "Rediriger et recenser les résidents. Signaler aux pompiers les chambres des personnes à mobilité réduite."
+                  "d": "##Esplanade piétonne entre les bâtiments##, repérée par le ##panneau vert de rassemblement##.\nY rediriger tous les occupants, commencer le recensement, et ##signaler aux pompiers les chambres des personnes à mobilité réduite##."
                 },
                 {
                   "a": "Fin d'intervention",
