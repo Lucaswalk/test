@@ -206,6 +206,15 @@ window.RDZ_FICHES = {
           "resume": "Trousseau remis en début de poste",
           "blocs": [
             {
+              "t": "liste",
+              "titre": "Composition du trousseau",
+              "items": [
+                "##Télécommande de portail## — boîtier noir à deux boutons.",
+                "##Badge bleu## — ouvre la ##porte principale## et ##décode l'alarme au boîtier d'entrée##.",
+                "##Clé## et mousqueton de fixation."
+              ]
+            },
+            {
               "t": "kv",
               "items": [
                 {
@@ -213,10 +222,6 @@ window.RDZ_FICHES = {
                   "v": "Trousseau et badge du bâtiment Bellevue, remis à la prise de poste"
                 }
               ]
-            },
-            {
-              "t": "manque",
-              "txt": "Composition du trousseau, références des clés et correspondance clé ↔ porte : non documentées. Bellevue ne figure pas dans l'inventaire ##Clefs IS / RDZ##. À relever lors d'une prochaine prise de poste."
             },
             {
               "t": "liste",
@@ -3215,7 +3220,11 @@ window.RDZ_FICHES = {
                 },
                 {
                   "z": "Zone Parking",
-                  "d": "Parking souterrain"
+                  "d": "Parking souterrain. Gabarit ##1m90 côté résidence## et ##2m20 côté MSF## : ##aucun véhicule de secours n'y descend##, les pompiers interviennent à pied."
+                },
+                {
+                  "z": "Colonnes de branchement",
+                  "d": "##Colonnes vertes au pied des issues de secours## — Michelle-Nicod 10A et route de Ferney 8B. ##Les garder dégagées##, et pouvoir les désigner aux pompiers à leur arrivée."
                 },
                 {
                   "z": "À quoi ça sert",
@@ -3278,8 +3287,12 @@ window.RDZ_FICHES = {
               "titre": "Point de rassemblement",
               "items": [
                 {
-                  "k": "Emplacement",
-                  "v": "##Esplanade piétonne entre les bâtiments##, repérée par le panneau vert"
+                  "k": "Point principal",
+                  "v": "##Esplanade entre les bâtiments##, repérée par le panneau vert"
+                },
+                {
+                  "k": "Point secondaire",
+                  "v": "##Devant l'entrée MSF##, également signalé par un panneau"
                 }
               ]
             }
@@ -3514,6 +3527,10 @@ window.RDZ_FICHES = {
                 {
                   "z": "Issues de secours",
                   "d": "##Deux côté rue Michelle-Nicod## et ##deux côté route de Ferney##"
+                },
+                {
+                  "z": "Branchement pompiers",
+                  "d": "##Colonne verte## au pied de chaque issue — Michelle-Nicod 10A et Ferney 8B"
                 }
               ]
             }
@@ -3637,6 +3654,11 @@ window.RDZ_FICHES = {
                   "nom": "M. Rodolphe De Zordi",
                   "role": "Directeur RDZ — ##numéro personnel, donneur d'ordres en cas de décision à prendre##",
                   "num": "+41 79 676 19 80"
+                },
+                {
+                  "nom": "Sécurité IHEID — 24h/24",
+                  "role": "##Ligne générale de la sécurité IHEID##, relevée sur les plans d'évacuation affichés",
+                  "num": "+41 22 908 59 11"
                 }
               ]
             },
@@ -3821,8 +3843,8 @@ window.RDZ_FICHES = {
             },
             {
               "t": "stop",
-              "lab": "Alarme maîtrisée mais non quittancée à temps",
-              "txt": "Si le délai de quittance est dépassé alors que la situation est maîtrisée : ##appeler le 118 pour les aviser##. Cela permet au minimum d'##annuler la grande échelle##, qui sort automatiquement pour ce bâtiment."
+              "lab": "Dès le passage en grande alarme : appeler le 118",
+              "txt": "Leur donner la ##localisation du sinistre## et son ##état — maîtrisé ou non##.\nC'est sur ces deux informations que le SIS ##proportionne son intervention##. L'agent ne décide pas des moyens engagés ; il transmet un point de situation."
             },
             {
               "t": "choix",
@@ -3939,7 +3961,7 @@ window.RDZ_FICHES = {
                 },
                 {
                   "a": "Déclenchement SONO",
-                  "d": "Boîtier SONO de la loge.\n##1.## Sélectionner la zone : « ##Toutes les zones## » pour Budé et Morillon, « ##zone Budé## » pour Budé seul. ##Morillon seul : presser directement le bouton rouge.##\n##2.## Attendre la ##diode bleue##.\n##3.## Soulever le ##clapet de protection## et presser le ##bouton rouge ÉVACUATION##.\n##Rien ne part tant que ce geste n'est pas fait## : ni la détection, ni un déclencheur manuel ne lancent le message."
+                  "d": "Micro de la loge. ##On y choisit le bâtiment, pas l'étage.##\n##1.## Presser ##Morillon##, ##Budé## ou ##Morillon et Budé##.\n##2.## Attendre la ##diode bleue HOLD##.\n##3.## Soulever le clapet et presser le ##bouton rouge ÉVACUATION##.\n##Rien ne part tant que ce geste n'est pas fait## : ni la détection, ni un déclencheur manuel ne lancent le message."
                 },
                 {
                   "a": "Coordination",
@@ -3947,7 +3969,7 @@ window.RDZ_FICHES = {
                 },
                 {
                   "a": "Point de rassemblement",
-                  "d": "##Esplanade piétonne entre les bâtiments##, repérée par le ##panneau vert de rassemblement##.\nY rediriger tous les occupants, commencer le recensement, et ##signaler aux pompiers les chambres des personnes à mobilité réduite##."
+                  "d": "##Point principal## : esplanade entre les bâtiments. ##Point secondaire## : devant l'entrée MSF.\nY rediriger tous les occupants, ##les empêcher de regagner le bâtiment sans autorisation##, commencer le recensement sur la liste de présence et ##signaler aux pompiers les chambres des personnes à mobilité réduite##."
                 },
                 {
                   "a": "Fin d'intervention",
@@ -3957,29 +3979,25 @@ window.RDZ_FICHES = {
             },
             {
               "t": "table",
-              "titre": "Sélection des zones sur le boîtier SONO",
+              "titre": "Ce qu'on peut sélectionner, et où",
               "items": [
                 {
-                  "z": "Toutes les zones",
-                  "d": "Budé ##et## Morillon"
+                  "z": "Aux cinq micros",
+                  "d": "##Le bâtiment seulement## — Morillon, Budé, ou les deux."
                 },
                 {
-                  "z": "Zone Budé",
-                  "d": "Budé seul"
-                },
-                {
-                  "z": "Bouton rouge direct",
-                  "d": "Morillon seul"
+                  "z": "Aux centrales mères",
+                  "d": "##Les étages## — sous-sol Budé 23FC4 et sous-sol Morillon 23FC7."
                 },
                 {
                   "z": "Dans tous les cas",
-                  "d": "Attendre la ##diode bleue##, soulever le ##clapet##, presser le bouton rouge"
+                  "d": "Attendre la ##diode bleue##, soulever le ##clapet##, presser le bouton rouge."
                 }
               ]
             },
             {
               "t": "liste",
-              "titre": "Où la sono peut être déclenchée — cinq points",
+              "titre": "Les cinq micros d'évacuation",
               "items": [
                 "##Loge sécurité## — boîtier principal.",
                 "##Sous-sol Budé.##",
@@ -3999,7 +4017,7 @@ window.RDZ_FICHES = {
                 },
                 {
                   "a": "Sélectionner les étages concernés",
-                  "d": "Rangée de boutons de droite.\n##Budé## : 7e · 8e · 9e · ESC.E · ESC.G · S.Sol, puis REZ · 1e à 6e.\n##Morillon## : 7e · 8e · 9e · ESC.C · ESC.A · S.Sol · ##Budé##, puis RDC · 1e à 6e."
+                  "d": "##C'est le seul endroit où l'on choisit les étages.## Rangée de boutons de droite.\n##Budé## : 7e · 8e · 9e · ESC.E · ESC.G · S.Sol, puis REZ · 1e à 6e.\n##Morillon## : 7e · 8e · 9e · ESC.C · ESC.A · S.Sol · ##Budé##, puis RDC · 1e à 6e."
                 },
                 {
                   "a": "Presser le bouton rouge ÉVACUATION",
@@ -4099,6 +4117,10 @@ window.RDZ_FICHES = {
                 {
                   "k": "Particularité",
                   "v": "##Deux bâtiments sous un même cahier des charges##, avec des transmetteurs distincts : l'effraction couvre la Villa et l'AJF, l'incendie couvre le restaurant et l'AJF."
+                },
+                {
+                  "k": "Point de rassemblement",
+                  "v": "##Figuré sur les plans d'évacuation affichés##, plan de situation en bas à droite — ##emplacement exact à relever##"
                 }
               ]
             },
@@ -4290,10 +4312,6 @@ window.RDZ_FICHES = {
                 "##Petit portail d'accès à la buanderie## — ne doit ##plus## être verrouillé, il reste ouvert en permanence (consigne du 17.09.2026).",
                 "##Porte de la buanderie, pavillon D## — ouverture par badge."
               ]
-            },
-            {
-              "t": "manque",
-              "txt": "Cinq annexes de procédure sont citées par le cahier des charges mais n'ont pas été fournies : Ouverture Portail, Fermeture Site, Ronde extérieure, Portes SAS, Ouverture Restaurant. Elles conditionnent la plupart des gestes quotidiens sur ce site."
             }
           ]
         },
@@ -4612,21 +4630,77 @@ window.RDZ_FICHES = {
             {
               "t": "manque",
               "txt": "##Procédure d'évacuation à étoffer## : emplacement des points de rassemblement et équipement mis à disposition sur place. À relever sur site."
+            },
+            {
+              "t": "num",
+              "titre": "Fermeture du site (annexe A.05)",
+              "court": "Fermeture",
+              "items": [
+                {
+                  "a": "Se garer devant la Villa",
+                  "d": ""
+                },
+                {
+                  "a": "Contrôle extérieur",
+                  "d": "Étanchéité du site, volets extérieurs fermés."
+                },
+                {
+                  "a": "Portes automatiques de la Villa en mode sortie",
+                  "d": ""
+                },
+                {
+                  "a": "Fermer l'AJF",
+                  "d": "Contrôle manuel des portes, volets extérieurs, puis ##baisser le volet métallique intérieur## avec le bouton ##LAKAL##. Descendre au ##local technique## et s'assurer qu'aucune alarme n'est active."
+                },
+                {
+                  "a": "Fermer la Villa et la mettre sous alarme",
+                  "d": "Contrôle manuel de ##chaque porte et fenêtre, à tous les étages##."
+                },
+                {
+                  "a": "Tour des pavillons A, B, C et D",
+                  "d": ""
+                }
+              ]
+            },
+            {
+              "t": "stop",
+              "lab": "Erreur dans l'annexe A.09",
+              "txt": "L'annexe donne « Astreinte RDZ : ~~+41 79 749 35 36~~ ». ##C'est le natel de l'agent MDP, pas l'astreinte.## L'astreinte RDZ est le ##+41 79 339 13 41##. Même erreur que dans cinq autres cahiers des charges."
+            },
+            {
+              "t": "liste",
+              "titre": "Ce que montrent les plans d'évacuation affichés",
+              "items": [
+                "##Deux dispositifs distincts## y sont repérés : le ##bouton d'alarme incendie## et le ##bouton d'évacuation sonore##.",
+                "Au ##niveau 0##, ils sont groupés près de l'entrée de la salle. Au ##niveau 1, le restaurant##, ils encadrent la cage d'escalier.",
+                "Cheminements de secours fléchés, et ##point de rassemblement## figuré sur le plan de situation en bas à droite.",
+                "Consigne affichée : ##alarmer, évacuer, éteindre si possible, renseigner les pompiers##. ##Ne pas utiliser l'ascenseur.##"
+              ]
+            },
+            {
+              "t": "manque",
+              "txt": "##Le bouton d'évacuation sonore de l'AJF n'est documenté dans aucune de nos procédures## : emplacement précis, zone couverte et conduite à tenir restent à relever. Les plans le situent aux niveaux 0 et 1."
             }
           ]
         }
       ],
       "blocsRondes": [
         {
-          "t": "manque",
-          "txt": "Les annexes ##Ronde extérieure## et ##Fermeture Site## sont citées par le cahier des charges mais n'ont pas été fournies. La fréquence et le parcours des rondes ne sont donc pas documentés ici."
+          "t": "liste",
+          "titre": "Ronde extérieure — Villa Barton, AJF et pavillons (annexe A.06)",
+          "items": [
+            "##Étanchéité## : vérifier ##par pression ou coulissement## que tout est fermé et verrouillé — ##le contrôle visuel ne suffit pas##.",
+            "##Intégrité## : dégradations, tags, vandalisme. ##Attention particulière aux parties cuivrées des bâtiments.##",
+            "##Squats## : aucun squat ni installation n'est toléré sur l'ensemble du site.",
+            "Repères du plan : ##A## Villa Barton · ##B## AJF · ##C## pavillons · ##1## zone de démotorisation."
+          ]
         },
         {
           "t": "liste",
-          "titre": "Éléments connus",
+          "titre": "Autres contrôles",
           "items": [
-            "##Petit portail d'accès à la buanderie## — reste ouvert en permanence depuis le 17.09.2026, ne plus le verrouiller.",
-            "##Restaurant AJF## — enclencher l'alarme à la fermeture, les clients ne le font plus."
+            "##Contrôle du stationnement## — annexe A.10.",
+            "##Wifi IHEID_GUEST## : voucher par SMS, valable 24 h sur deux appareils — annexes A.01 et A.07."
           ]
         }
       ],
@@ -4650,12 +4724,112 @@ window.RDZ_FICHES = {
           ]
         },
         {
+          "t": "kv",
+          "titre": "Exploitation courante",
+          "items": [
+            {
+              "k": "Portée",
+              "v": "##Hors intervention d'urgence## — gestes du quotidien, annexes A.02, A.04, A.08 et A.09"
+            }
+          ]
+        },
+        {
+          "t": "num",
+          "titre": "Boîte à clefs — ouverture manuelle (annexe A.02)",
+          "items": [
+            {
+              "a": "Vérifier d'abord l'identité et la réservation",
+              "d": "##Un rapport est obligatoire dans tous les cas##, quelle que soit l'issue."
+            },
+            {
+              "a": "Descendre à la buanderie",
+              "d": "En bas des escaliers du ##pavillon D##."
+            },
+            {
+              "a": "Ouvrir la boîte à clefs",
+              "d": "Code ~~0000~~. Y récupérer le pass ##« Boîte à badge »##."
+            },
+            {
+              "a": "Ouvrir la boîte à badge et remettre le pass au client",
+              "d": ""
+            }
+          ]
+        },
+        {
+          "t": "num",
+          "titre": "Ouverture manuelle du portail (annexe A.04)",
+          "items": [
+            {
+              "a": "Quand",
+              "d": "Dysfonctionnement du portail, ou véhicule à faire entrer hors horaires — notamment les ##livraisons du week-end pour le restaurant de l'AJF##."
+            },
+            {
+              "a": "Horaires programmés",
+              "d": "##Lundi au vendredi## : ouvert 06h30–18h00, fermé 18h00–06h30.\n##Week-end## : fermé en continu du vendredi 18h00 au lundi 06h30."
+            },
+            {
+              "a": "Boîtier contact 4 points",
+              "d": "À côté du ##portillon du pavillon D##. Serrure ##JOUR / NUIT## : insérer la clé du trousseau Barton et tourner selon le cas."
+            },
+            {
+              "a": "Rendre compte",
+              "d": "##Rapport sur la durée d'ouverture du portail##, transmis par l'agent de loge à ##M. Sicot, service FM##."
+            }
+          ]
+        },
+        {
+          "t": "num",
+          "titre": "Portes du SAS — changer de mode (annexe A.08)",
+          "items": [
+            {
+              "a": "Appuyer 5 fois sur le bouton Mode 1",
+              "d": "Le voyant se met à clignoter."
+            },
+            {
+              "a": "Appuyer une fois sur le mode souhaité",
+              "d": "##Mode actif = voyant vert fixe.##"
+            },
+            {
+              "a": "Les cinq modes",
+              "d": "##1## fermeture permanente — mode par défaut · ##2## ouverture automatique libre accès · ##3## automatique à l'intérieur, badge à l'extérieur · ##4## ouverture permanente · ##5## libre accès réduit, réglage d'hiver."
+            }
+          ]
+        },
+        {
+          "t": "num",
+          "titre": "Ouverture non prévue du restaurant (annexe A.09)",
+          "items": [
+            {
+              "a": "Signaler avant toute action",
+              "d": "Contacter la sécurité RDZ pour annoncer la ##présence non prévue sur site##."
+            },
+            {
+              "a": "Centrale effraction",
+              "d": "Vérifier son état et la ##désactiver si nécessaire## avant le début des activités."
+            },
+            {
+              "a": "Centrale incendie",
+              "d": "Si les cuisines sont utilisées : ##passer en mode JOUR##. Cela évite l'envoi automatique des pompiers en cas de déclenchement."
+            },
+            {
+              "a": "Pendant l'occupation",
+              "d": "Rester vigilant. Feu non maîtrisable : évacuer et appeler. Feu maîtrisé : gérer la centrale selon la procédure."
+            },
+            {
+              "a": "Au départ",
+              "d": "Informer la sécurité, puis ##remettre la centrale incendie en mode NUIT et réarmer l'effraction##."
+            }
+          ]
+        },
+        {
           "t": "sous",
           "titre": "Provenance et réserves sur les données",
           "blocs": [
             {
               "t": "liste",
               "items": [
+                "Plans d'évacuation du ##pavillon AJF, niveaux 0 et 1##, photographiés le 20.10.2026. Le niveau 1 correspond au ##restaurant##.",
+                "##Annexes A.01 à A.10 reçues le 19.10.2026## : boîte à clefs, portail, fermeture du site, ronde extérieure, wifi, portes SAS, ouverture du restaurant, contrôle du stationnement.",
                 "Codes confirmés par le tableau ##Codes divers## du 28.08.2026 : centrale effraction 112233, boîtier buanderie pavillon D 0000.",
                 "Le mot de passe 0000 de la centrale incendie AJF est le code réel, et non une valeur de remplissage.",
                 "Dix annexes sont référencées par le cahier des charges ; cinq procédures opérationnelles manquent encore."
@@ -4923,6 +5097,11 @@ window.RDZ_FICHES = {
                   "nom": "Patrouilleur RDZ",
                   "role": "##Téléphone de patrouille de nuit.## Ce numéro était celui de M. De Zordi : il a été réattribué au patrouilleur le 05.10.2026.",
                   "num": "+41 76 634 17 92"
+                },
+                {
+                  "nom": "Sécurité IHEID — 24h/24",
+                  "role": "##Ligne générale de la sécurité IHEID##, relevée sur les plans d'évacuation affichés",
+                  "num": "+41 22 908 59 11"
                 }
               ]
             },
@@ -5350,6 +5529,11 @@ window.RDZ_FICHES = {
                   "nom": "Police Municipale",
                   "role": "Dim-mer 6h-minuit · Jeu-sam 6h-3h",
                   "num": "+41 22 418 22 22"
+                },
+                {
+                  "nom": "Sécurité IHEID — 24h/24",
+                  "role": "##Ligne générale de la sécurité IHEID##, relevée sur les plans d'évacuation affichés",
+                  "num": "+41 22 908 59 11"
                 }
               ]
             },
@@ -5687,6 +5871,10 @@ window.RDZ_FICHES = {
                 {
                   "k": "Occupation",
                   "v": "Campus tertiaire diurne : bureaux et salles de cours de l'IHEID et d'organisations partenaires. Forte occupation en semaine, très faible le soir et le week-end."
+                },
+                {
+                  "k": "Point de rassemblement",
+                  "v": "##Dans le parc##, au croisement des chemins près des conteneurs et des bancs — panneau vert de rassemblement sur mât"
                 }
               ]
             },
@@ -5844,21 +6032,31 @@ window.RDZ_FICHES = {
               ]
             },
             {
-              "t": "liste",
-              "titre": "Composition du trousseau",
+              "t": "kv",
+              "titre": "Où se trouve le trousseau",
               "items": [
-                "##Pass général## — ~~SZ9303~~.",
-                "##Clé SI## — ~~MH016845~~ — réarmement des ascenseurs après alarme.",
-                "##Barrières de parking## — ~~n° 005~~.",
-                "##Boîtier des portes automatiques du P2, intérieur## — ~~U15GD~~. Attention : la clé du P2 intérieur n'est pas celle du P2 extérieur.",
-                "##Local SIG au P3N1## — pas de référence.",
-                "##Casier des vestiaires du parking## — ~~6J3626~~.",
-                "##Boîtiers verts du restaurant au P5## — ~~AS168963~~, correspondance encore à vérifier."
+                {
+                  "k": "Coffre à clés",
+                  "v": "Tableau à crochets derrière la réception, avec la ##boîte à badges## et le bac des accessoires"
+                }
+              ]
+            },
+            {
+              "t": "liste",
+              "titre": "Composition du trousseau — relevé du 20.10.2026",
+              "items": [
+                "##Passe général## — clé ##VAKA 6182##, jeton bleu « Passe général ».",
+                "##Pass MDE## — clé ##KABA X0 Patent##, avec une ##clé carrée multi-fonctions## (croix de service).",
+                "##Clé SI pompiers## — étiquette verte, clé ##EVVA M##. Sur le même anneau : ##Control vert RESTO P-5 MEP EXIT## (étiquette orange) et les ##clés des barrières de parking##.",
+                "##Boîtier des portes automatiques P2 extérieur## — étiquette rouge, clé ##U15GD##.",
+                "##Local SI, P3 niveau 1## — étiquette noire, clé ##FISHER##.",
+                "##Casier du vestiaire hommes, parking## — étiquette verte, clé ##6J3626##.",
+                "##Clé ronde ABU 14## — ##usage toujours indéterminé##."
               ]
             },
             {
               "t": "manque",
-              "txt": "Trois clés du trousseau restent non identifiées, y compris dans l'inventaire officiel : ##ABU 14##, ##N1## et ##BU6906 0000##. Rangement dans le coffre MDP, usage inconnu."
+              "txt": "Une seule clé reste sans affectation après le relevé du 20.10.2026 : la ##clé ronde ABU 14##. Les deux autres inconnues de l'inventaire (##N1## et ##BU6906 0000##) n'ont pas été retrouvées au coffre — ##vérifier si elles existent encore##."
             },
             {
               "t": "liste",
@@ -6143,8 +6341,13 @@ window.RDZ_FICHES = {
               ]
             },
             {
-              "t": "manque",
-              "txt": "Procédure d'évacuation propre à MDP et emplacement exact du point de rassemblement : à confirmer physiquement et à documenter."
+              "t": "liste",
+              "titre": "Point de rassemblement",
+              "items": [
+                "##Dans le parc##, au croisement des chemins près des conteneurs et des bancs.",
+                "Repéré par un ##panneau vert de rassemblement sur mât##.",
+                "Y rediriger les occupants, les empêcher de rentrer, et commencer le recensement."
+              ]
             }
           ]
         }
@@ -6290,6 +6493,7 @@ window.RDZ_FICHES = {
             {
               "t": "liste",
               "items": [
+                "##Trousseau et point de rassemblement relevés sur site le 20.10.2026##, photos à l'appui.",
                 "Aucun document ne mentionne littéralement l'acronyme « MDP » : déduction faite à partir des plans P1-P6 et du Chemin Eugène-Rigot.",
                 "Le PROM ##320 984## provient du logigramme d'origine et n'a pas été reconfirmé dans les nouveaux documents.",
                 "La numérotation des annexes T ne correspond pas toujours au nom de fichier fourni par le client — le fichier « T04 Barrière Parking » contient en réalité l'annexe T.05.",
@@ -6594,6 +6798,11 @@ window.RDZ_FICHES = {
                   "nom": "Patrouilleur RDZ",
                   "role": "##Téléphone de patrouille de nuit.## Ce numéro était celui de M. De Zordi : il a été réattribué au patrouilleur le 05.10.2026.",
                   "num": "+41 76 634 17 92"
+                },
+                {
+                  "nom": "Sécurité IHEID — 24h/24",
+                  "role": "##Ligne générale de la sécurité IHEID##, relevée sur les plans d'évacuation affichés",
+                  "num": "+41 22 908 59 11"
                 }
               ]
             },
@@ -7608,6 +7817,41 @@ window.RDZ_FICHES = {
                   "nom": "Patrouilleur RDZ",
                   "role": "##Téléphone de patrouille de nuit.## Ce numéro était celui de M. De Zordi : il a été réattribué au patrouilleur le 05.10.2026.",
                   "num": "+41 76 634 17 92"
+                },
+                {
+                  "nom": "Siemens — détection incendie",
+                  "role": "Transmetteur 323 238",
+                  "num": "+41 22 418 71 96"
+                },
+                {
+                  "nom": "Kaba — accès parking",
+                  "role": "M. Cédric Rognon",
+                  "num": "+41 848 85 86 87"
+                },
+                {
+                  "nom": "Tormax — portails",
+                  "role": "M. Perret",
+                  "num": "+41 21 652 52 42"
+                },
+                {
+                  "nom": "Aprotec — éclairage de secours",
+                  "role": "MM. Rolland et Le Du",
+                  "num": "+41 22 343 81 30"
+                },
+                {
+                  "nom": "Stanley — vidéo",
+                  "role": "M. Brisson",
+                  "num": "+41 22 703 56 00"
+                },
+                {
+                  "nom": "AS Ascenseurs",
+                  "role": "Tous bâtiments sauf CTN 8 — indiquer le n° de dossier 860…",
+                  "num": "+41 848 82 14 11"
+                },
+                {
+                  "nom": "Garattoni — ascenseurs CTN 8",
+                  "role": "Piquet",
+                  "num": "+41 22 346 81 27"
                 }
               ]
             },
@@ -7615,10 +7859,6 @@ window.RDZ_FICHES = {
               "t": "stop",
               "lab": "Deux numéros annoncés comme astreinte",
               "txt": "Le cahier des charges donne correctement l'##Astreinte Sécurité RDZ : +41 79 339 13 41##, mais ajoute une « Astreinte téléphonique RDZ : ~~+41 79 749 35 36~~ » qui est en réalité le ##natel de l'agent MDP##. Ne pas utiliser ce second numéro."
-            },
-            {
-              "t": "manque",
-              "txt": "Le fichier « CTN Numéros utiles 2026 » fourni en annexe est illisible — format de fichier non exploitable. À retransmettre, il contient probablement les contacts des locataires."
             },
             {
               "t": "stop",
