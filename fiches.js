@@ -6269,13 +6269,26 @@ window.RDZ_FICHES = {
                 },
                 {
                   "a": "Rouvrir la porte feu automatique de l'interpétale",
-                  "d": "Depuis l'escalier du hall Kögler — la pousser suffit à la réenclencher."
+                  "d": "Depuis l'escalier du hall Kögler — la pousser suffit à la réenclencher.\n##Fermée, elle ne ressemble pas à une porte## : c'est un panneau plein qui barre tout le passage, au bas de la volée d'escalier. ##Ne pas la prendre pour un cul-de-sac.##"
+                },
+                {
+                  "a": "Rouvrir la porte battante de la bibliothèque",
+                  "d": "Une fois refermée, la porte vitrée ne s'ouvre plus à la poignée. ##Un levier plat est logé dans le montant, côté serrure, à mi-hauteur.##\n##Le tirer vers soi## pour dégager le pêne et libérer le vantail."
+                },
+                {
+                  "a": "Réarmer les portes coupe-feu à boîtier vert",
+                  "d": "Boîtier vert ##MSL Kleinkühnen## monté sous la poignée — bibliothèque à l'entrée du P2, et portes équipées du même dispositif.\n##1.## Le bouton rouge du haut est enfoncé : c'est lui qui a libéré la porte.\n##2.## Introduire la ##clé TOKOZ## du trousseau dans la serrure ##RESET##, au centre du boîtier.\n##3.## ##Tourner vers la droite##, dans le sens de la flèche.\n##4.## Le bouton rouge ressort : la porte est réarmée et reprend sa fonction."
                 },
                 {
                   "a": "Réarmer les ascenseurs",
-                  "d": "Après une alarme, ils restent bloqués porte ouverte au niveau des sorties. Prendre la ##clé SI## au coffre du service desk et tourner d'un quart de tour jusqu'à fermeture de la porte."
+                  "d": "##Serrure rouge sur le montant du palier##, repérée ##O## et ##F##, sous le bouton d'appel. Quittance à la ##clé SI##.\n##L'ascenseur du P5 ne répond qu'à la clé SI de la REGM## : la clé SI de la MDP ne l'ouvre pas. ##Prévoir le déplacement, ou emprunter la clé avant l'intervention.##"
                 }
               ]
+            },
+            {
+              "t": "stop",
+              "lab": "Ascenseur du P5 — clé SI de la REGM",
+              "txt": "##La quittance de l'ascenseur du P5 exige la clé SI de la REGM##, et non celle de la MDP. Constaté à l'exercice du 22.10.2026.\nSans elle, l'asservissement ne peut pas être levé et l'ascenseur reste hors service."
             },
             {
               "t": "num",
@@ -6348,6 +6361,55 @@ window.RDZ_FICHES = {
                 "Repéré par un ##panneau vert de rassemblement sur mât##.",
                 "Y rediriger les occupants, les empêcher de rentrer, et commencer le recensement."
               ]
+            },
+            {
+              "t": "table",
+              "titre": "Repères relevés à l'exercice du 22.10.2026",
+              "items": [
+                {
+                  "z": "Monoblocs restaurant",
+                  "d": "##Deux monoblocs au P5N8##, dont celui de la ##hotte du restaurant du P5##"
+                },
+                {
+                  "z": "Porte coupe-feu coulissante",
+                  "d": "##Couloir P2N1## et ##interpétale P2##, au bas de l'escalier — fermée, elle se présente comme un ##panneau plein## barrant le passage"
+                },
+                {
+                  "z": "Portes coupe-feu bibliothèque",
+                  "d": "Accès bibliothèque, ##entrée du P2## — boîtier vert ##MSL## sous la poignée, réarmement à la ##clé TOKOZ##"
+                },
+                {
+                  "z": "Désenfumage manuel",
+                  "d": "##Boîtier Siemens Sinteso au P3##"
+                },
+                {
+                  "z": "Déclencheur manuel",
+                  "d": "##P5## — actionné lors de l'exercice"
+                },
+                {
+                  "z": "Porte battante bibliothèque",
+                  "d": "S'ouvre par un ##levier plat dans le montant##, à tirer vers soi — ##la poignée seule ne suffit pas##"
+                }
+              ]
+            },
+            {
+              "t": "liste",
+              "titre": "Boîtier de désenfumage manuel du P3",
+              "items": [
+                "##Désenfumage Bibliothèque P3/P4## — boutons ##Auto##, ##Arrêt##, ##Bibliothèque niveau 1##, ##Bibliothèque niveau 2##.",
+                "##Désenfumage niveau 3 P3## — boutons ##Auto##, ##Arrêt##, ##Restaurant niveau 3##.",
+                "À gauche, deux commandes à clé : ##Coupole P3## et ##Coupole P4##, exutoires de fumée, ##ouvrir / fermer##, avec voyants ##panne##, ##OK## et ##ouvert##.",
+                "##Position normale : Auto.## Ne passer en manuel que sur demande du SIS ou du chargé de sécurité."
+              ]
+            },
+            {
+              "t": "stop",
+              "lab": "Anomalie constatée à l'exercice",
+              "txt": "La ventilation a été coupée par le technicien ##en débranchant manuellement un fil##. ##Aucune commande d'arrêt accessible n'a été utilisée.##\nÀ signaler : si c'est le seul moyen de couper la ventilation, un agent seul ne peut pas le faire, et la manœuvre n'est documentée nulle part."
+            },
+            {
+              "t": "manque",
+              "txt": "##Porte battante de la bibliothèque## : reste à confirmer si elle se reverrouille seule après ouverture au levier, et si ce levier équipe d'autres portes du site."
             }
           ]
         }
@@ -6493,6 +6555,7 @@ window.RDZ_FICHES = {
             {
               "t": "liste",
               "items": [
+                "##Exercice d'évacuation du 22.10.2026## : relevés photo sur l'actionnement du DM du P5, la quittance des ascenseurs, les monoblocs du P5N8, les portes coupe-feu du P2 et le boîtier de désenfumage du P3.",
                 "##Trousseau et point de rassemblement relevés sur site le 20.10.2026##, photos à l'appui.",
                 "Aucun document ne mentionne littéralement l'acronyme « MDP » : déduction faite à partir des plans P1-P6 et du Chemin Eugène-Rigot.",
                 "Le PROM ##320 984## provient du logigramme d'origine et n'a pas été reconfirmé dans les nouveaux documents.",
