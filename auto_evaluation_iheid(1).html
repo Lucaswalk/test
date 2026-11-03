@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>RDZ · Auto-évaluation IHEID</title>
+<style>
+:root{--bg:#111111;--panel:#1c1c1c;--line:#2e2e2e;--txt:#f2f2f2;--mut:#a3a3a3;--red:#C0392B;
+--ok:#2e8b57;--rev:#d68910;--no:#c0392b;--na:#5d5d5d;color-scheme:dark;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*,*::before,*::after{box-sizing:inherit}
+html,body{margin:0;background:var(--bg);color:var(--txt);font:16px/1.45 -apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+.wrap{max-width:640px;margin:0 auto;padding:0 16px 120px}
+header{position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);z-index:5;padding:14px 0 10px;border-bottom:3px solid var(--red)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:10}
+.brand{display:flex;align-items:center;gap:10px}
+.logo{width:38px;height:38px;border-radius:50%;background:var(--red);display:grid;place-items:center;font-weight:800;font-size:13px;letter-spacing:.5px}
+h1{font-size:18px;margin:0;font-weight:700}
+.sub{color:var(--mut);font-size:13px}
+.bar{height:6px;background:var(--line);border-radius:3px;margin-top:10px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--red);width:0;transition:width .3s}
+h2{font-size:20px;margin:22px 0 4px}
+p{margin:8px 0}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px;margin:12px 0}
+.card.k{border-left:4px solid var(--red)}
+.q{font-weight:600}
+.tag{display:inline-block;font-size:12px;color:#fff;background:var(--red);border-radius:4px;padding:1px 6px;margin-bottom:6px}
+.doc{font-size:12px;color:var(--mut);margin-top:4px}
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}
+.opts button{min-height:48px;border-radius:8px;border:1px solid var(--line);background:#262626;color:var(--txt);font:inherit;font-size:14px;padding:6px 8px;cursor:pointer}
+.opts button[aria-pressed=true][data-v=S]{background:var(--ok);border-color:var(--ok)}
+.opts button[aria-pressed=true][data-v=R]{background:var(--rev);border-color:var(--rev)}
+.opts button[aria-pressed=true][data-v=J]{background:var(--no);border-color:var(--no)}
+.opts button[aria-pressed=true][data-v=N]{background:var(--na);border-color:var(--na)}
+button:focus-visible,select:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid #fff;outline-offset:2px}
+.nav{position:fixed;left:0;right:0;bottom:0;background:var(--bg);border-top:1px solid var(--line);padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));z-index:6}
+.nav .in{max-width:640px;margin:0 auto;display:flex;gap:10px}
+.btn{flex:1;min-height:50px;border-radius:8px;border:0;font:inherit;font-weight:700;cursor:pointer;background:var(--red);color:#fff}
+.btn.sec{background:#2a2a2a;color:var(--txt);border:1px solid var(--line)}
+.btn:disabled{opacity:.4}
+select,input,textarea{width:100%;font:inherit;padding:12px;border-radius:8px;border:1px solid var(--line);background:#1f1f1f;color:var(--txt)}
+label{display:block;font-weight:600;margin:14px 0 6px}
+.sum li{margin:4px 0}
+.pill{display:inline-block;min-width:26px;text-align:center;border-radius:4px;padding:0 6px;font-weight:700}
+.warn{color:#f5b041}
+table{border-collapse:collapse;font-size:12px}
+th,td{border:1px solid var(--line);padding:4px;text-align:center}
+td.l{text-align:left;min-width:220px}
+.tw{overflow-x:auto}
+.c-S{background:var(--ok)}.c-R{background:var(--rev)}.c-J{background:var(--no)}.c-N{background:var(--na)}
+.hide{display:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header><div class="brand"><div class="logo">RDZ</div><div><h1>Auto-évaluation · sites IHEID</h1><div class="sub" id="who">Formation des agents RDZ</div></div></div>
+<div class="bar"><i id="prog"></i></div></header>
+<main id="app"></main>
+</div>
+<div class="nav"><div class="in" id="nav"></div></div>
+<script>
+const DATA=[{"t": "Résidence Etudiante - REGM IHEID", "i": [{"x": "Intervenir sur alarme incendie + supervision APPVISION", "k": true, "d": "REGM_Procedure_Alarme_Feu"}, {"x": "Asservissements après une alarme incendie / journal évènements", "k": true, "d": "REGM_Procedure_Alarme_Feu"}, {"x": "Salto: édition d'un badge, Check in , Check out", "k": true, "d": "Procédure SALTO – badge résident"}, {"x": "Changement de pile", "k": true, "d": "CDC REGM"}, {"x": "Utilisation videosurveillance de base", "k": true, "d": "CDC REGM"}, {"x": "Connaissance du manuel technique", "k": true, "d": "Manuel technique REGM"}, {"x": "Évacuation : message d'évacuation par la SONO (pas de sirène dans les bâtiments)", "k": true, "d": "REGM_Evacuation_RDZ"}, {"x": "Réarmement de la centrale Aritech et levée de doute", "k": true, "d": "REGM_Procedure_Alarme_Feu"}, {"x": "Remise de badge / clé hors horaires Housing (consigne permanente)", "k": true, "d": "CDC REGM – Consignes permanentes"}, {"x": "Salto: Lecture de porte via ppd", "k": false, "d": "Procédure SALTO – PPD"}, {"x": "Utilisation technique pour event et conférences : ( télé / sono / ordinateur… panneaux , éditions des affiches)", "k": false, "d": "Théâtre REGM"}, {"x": "Lecture Vidéos, type utilisation police. Recherche, enregistrement bavitec", "k": false, "d": ""}, {"x": "Ronde de contrôles technique", "k": false, "d": "CDC REGM"}, {"x": "Ronde de fermeture", "k": false, "d": "Ronde de Fermeture REGM"}, {"x": "Contrôle du  parking REGM (listing)", "k": false, "d": "Appli RDZ : Vérification des accès résidents IHEID"}, {"x": "Contrôle du fitness (listing)", "k": false, "d": "Appli RDZ : Vérification des accès résidents IHEID"}, {"x": "Gestion d'un évent: Administratif et organisationnel", "k": false, "d": "Théâtre REGM"}, {"x": "Salto : création badge usager avec Zone", "k": false, "d": "Procédure SALTO – usagers"}, {"x": "Gestion et lecture Centrale alarme intrusion", "k": false, "d": ""}, {"x": "Recensement des résidents lors d'une évacuation (par nom et par chambre)", "k": false, "d": "Appli recensement évacuation"}, {"x": "Personne bloquée dans un ascenseur : appel Otis et conduite à tenir", "k": false, "d": "CDC REGM"}, {"x": "Contrôles périodiques : extincteurs, éclairages de secours, signalétique (applis RDZ)", "k": false, "d": "Annexe A extincteurs / Annexe B éclairages"}]}, {"t": "Résidence Etudiante - MDE IHEID", "i": [{"x": "SALTO : création d'un badge d'accès client", "k": true, "d": "Procédure SALTO – badge résident"}, {"x": "Gestion des Check in (emplacement clé appartement)", "k": true, "d": "CDC MDE"}, {"x": "Ronde fermeture / Coursive / Salle PCR", "k": true, "d": "CDC MDE"}, {"x": "Gestion des alarmes incendie et dérangement feu", "k": true, "d": "CDC MDE"}, {"x": "Asservissement incendie", "k": false, "d": "CDC MDE"}, {"x": "Gestion des events, soirées", "k": true, "d": "CDC MDE"}, {"x": "Intervention technique (voir manuel technique)", "k": false, "d": "Manuel technique MDE"}, {"x": "Utilisation videosurveillance (Loge REGM + MDP)", "k": false, "d": "CDC MDE"}, {"x": "Spécificité pour accéder au toit en accompagnement entreprises exterieures", "k": false, "d": "CDC MDE"}, {"x": "Évacuation et point de rassemblement MDE", "k": true, "d": "CDC MDE"}, {"x": "Coffre à clé de l'Admin et remise badge hors horaires Housing (consignes permanentes)", "k": false, "d": "CDC MDE – Consignes permanentes"}]}, {"t": "Maison de la Paix MDP IHEID", "i": [{"x": "Ronde de contrôle exterieur", "k": true, "d": "CDC MDP"}, {"x": "Ronde de fermeture des salles de cours , FAB et de la bibliothèque (et message micro)", "k": true, "d": "CDC MDP"}, {"x": "Intervention en cas d'incendie", "k": true, "d": "Fiches I.06 à I.08 MDP"}, {"x": "Situer les Locaux sprinkler et centrale mère", "k": true, "d": "CDC MDP"}, {"x": "Gestion des problemes techniques des portes automatiques", "k": true, "d": "Annexes T01 à T06 MDP"}, {"x": "Connaissance exploitation du batiment (présence possible 24h/24)", "k": false, "d": "CDC MDP"}, {"x": "Centrale incendie Siemens : Utilisation / Intervention / Maintenance", "k": false, "d": "Fiches I.06 à I.08 MDP"}, {"x": "Gestion des E.P.I. (fichier matériel, présence personnel EPi, fichier EPI)", "k": false, "d": "CDC MDP"}, {"x": "Surveillance en ligne des caméras", "k": false, "d": "CDC MDP"}, {"x": "Connaissance affichage SIEMENS (ex : 30294)", "k": false, "d": "Fiches I.06 à I.08 MDP"}, {"x": "Asservissement incendie", "k": false, "d": "Annexes T01 à T06 MDP"}, {"x": "Gestion d'un évent: Administratif et organisationnel", "k": false, "d": "CDC MDP"}, {"x": "Temporisations t1/t2, rappel ascenseurs et remise en service après alarme", "k": false, "d": "Fiches I.06 à I.08 MDP"}, {"x": "Personne interdite de site : conduite à tenir (appel 117)", "k": false, "d": "Annexe S.03 MDP"}]}, {"t": "Rothschild", "i": [{"x": "Rothschild ronde de contrôle et de fermeture", "k": true, "d": "CDC Rothschild"}, {"x": "Rothschild  : Connaissance exploitation du batiment, locataires…", "k": false, "d": "CDC Rothschild"}]}, {"t": "Moynier", "i": [{"x": "Moynier ronde de contrôle avt et ap minuit", "k": true, "d": "CDC Moynier"}, {"x": "Moynier intervention sur alarme incendie ou dérangement", "k": false, "d": "CDC Moynier"}, {"x": "Moynier : Connaissance exploitation du batiment (présence possible 24h/24)", "k": false, "d": "CDC Moynier"}]}, {"t": "Barton et AJF", "i": [{"x": "Barton : Ouverture du site", "k": false, "d": "Annexes A.01 à A.10 Barton"}, {"x": "Ronde de fermeture ( en exploitation), locaux et informatique - Mise sous alarme", "k": true, "d": "Annexes A.01 à A.10 Barton"}, {"x": "Ronde de  contrôle extérieure", "k": false, "d": "Annexes A.01 à A.10 Barton"}, {"x": "Barton: intervention sur alarme effraction", "k": false, "d": "Annexes A.01 à A.10 Barton"}, {"x": "Barton: intervention sur alarme incendie", "k": false, "d": "Centrale Incendie AJF Villa Barton"}, {"x": "Barton : bouton d'évacuation SONO et évacuation du site", "k": false, "d": "Centrale Incendie AJF Villa Barton"}]}, {"t": "Tous sites IHEID – Réflexes communs", "i": [{"x": "Connaître les consignes permanentes du CDC de chaque site", "k": true, "d": "CDC du site – Consignes permanentes"}, {"x": "Premiers secours : appel 144, emplacement du défibrillateur et de la trousse", "k": true, "d": ""}, {"x": "Escalade le week-end : astreinte RDZ, puis responsable site", "k": true, "d": "Logigramme astreinte"}, {"x": "Gestion d'une incivilité ou d'une personne extérieure non autorisée", "k": false, "d": ""}, {"x": "Gestion des clés : trousseaux, boîtes à clés, traçabilité des prêts", "k": false, "d": ""}]}, {"t": "Utilisation rapport et compte rendu", "i": [{"x": "Utilisation de l'appli RDZ (rapports et événements)", "k": true, "d": ""}]}, {"t": "Utilisation véhicule IS/RDZ", "i": [{"x": "Rapport de prise en compte et réintégration véhicule", "k": true, "d": ""}, {"x": "Sensibilisation Entretien et nettoyage véhicule", "k": false, "d": ""}, {"x": "Assurance et dépannage : où trouver les infos ?", "k": false, "d": ""}]}, {"t": "Astreinte sécurité RDZ", "i": [{"x": "Réception appel téléphonique avec logigramme astreinte", "k": true, "d": "Logigramme astreinte"}, {"x": "Transmission rapport sécurité", "k": true, "d": ""}, {"x": "Gestion PDSA et cas-non conforme ( retard / absence)", "k": true, "d": ""}, {"x": "maitrise des fiches de poste selon poste", "k": false, "d": "Fiche de poste REGM"}]}];
+const AGENTS=["Lucas", "Patrick", "Antoine", "Julien", "Romain Y", "Mathieu G", "Killian", "Claude", "Florent W", "Joseph", "Anthony", "Jonas", "Nathanael", "Vincent", "Rodolphe"];
+const TOK={"xqjkh3": "Lucas", "h9crws": "Patrick", "5gnu4h": "Antoine", "phfhe5": "Julien", "ba6nga": "Romain Y", "d2yjak": "Mathieu G", "n5dunb": "Killian", "u6xrb7": "Claude", "fyj85p": "Florent W", "e7suh8": "Joseph", "djz42u": "Anthony", "w4s9qv": "Jonas", "yycqv5": "Nathanael", "m9jbmp": "Vincent", "v42drk": "Rodolphe"};
+const VERSION="IHEID-v3";
+const OPT=[["S","Je sais le faire seul"],["R","Vu, à revoir avec un formateur"],["J","Jamais vu / jamais fait"],["N","Pas concerné"]];
+const LAB=Object.fromEntries(OPT);
+const ITEMS=[];DATA.forEach((s,si)=>s.i.forEach(it=>ITEMS.push({...it,s:si})));
+const $=s=>document.querySelector(s), app=$('#app'), nav=$('#nav');
+let st={agent:"",ans:{},step:0};
+const key=()=> 'rdz_auto_'+VERSION+'_'+st.agent;
+function save(){try{localStorage.setItem(key(),JSON.stringify(st.ans))}catch(e){}}
+function load(){try{st.ans=JSON.parse(localStorage.getItem(key())||'{}')||{}}catch(e){st.ans={}}}
+function esc(t){return String(t).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))}
+function prog(){const n=Object.keys(st.ans).length;$('#prog').style.width=(100*n/ITEMS.length)+'%'}
+function setNav(h){nav.innerHTML=h}
+function sig(name,c){const tk=Object.keys(TOK).find(k=>TOK[k]===name)||'';let h=5381;const s=tk+'|'+name+'|'+c;for(let i=0;i<s.length;i++)h=((h*33)^s.charCodeAt(i))>>>0;return h.toString(36).slice(-5)}
+function home(){
+  const tk=new URLSearchParams(location.search).get('a')||'';const pre=TOK[tk];
+  if(!pre){app.innerHTML=`<h2>Lien personnel requis</h2><p>Cette page s’ouvre uniquement avec le lien personnel que vous avez reçu de votre responsable. Ouvrez à nouveau le lien reçu par message.</p>`;setNav('');return}
+  app.innerHTML=`<h2>Bonjour ${esc(pre)}</h2>
+  <p>Pour chaque compétence, indiquez honnêtement où vous en êtes. Ce n’est pas un examen : vos réponses servent uniquement à organiser les formations dont vous avez besoin.</p>
+  <p>Merci de répondre à toutes les lignes, surtout celles marquées « Indispensable ».</p>
+  <p class="sub">Environ 10 minutes. Vos réponses restent enregistrées sur ce téléphone si vous fermez la page.</p>
+  <p class="sub">Si ce n’est pas votre nom, fermez cette page et prévenez votre responsable.</p>`;
+  setNav(`<button class="btn" id="go">Commencer</button>`);
+  $('#go').onclick=()=>{st.agent=pre;load();$('#who').textContent='Agent : '+pre;st.step=0;section()};
+  prog();
+}
+function section(){
+  const s=DATA[st.step];
+  app.innerHTML=`<h2>${esc(s.t)}</h2><p class="sub">Partie ${st.step+1} sur ${DATA.length}</p>`+
+   s.i.map(it=>{const idx=ITEMS.indexOf(ITEMS.find(x=>x.x===it.x&&x.s===st.step));const v=st.ans[idx];
+   return `<div class="card ${it.k?'k':''}">${it.k?'<span class="tag">Indispensable</span>':''}
+   <div class="q">${esc(it.x)}</div>${it.d?`<div class="doc">Document : ${esc(it.d)}</div>`:''}
+   <div class="opts" data-i="${idx}">${OPT.map(([c,l])=>`<button type="button" data-v="${c}" aria-pressed="${v===c}">${l}</button>`).join('')}</div></div>`}).join('');
+  app.querySelectorAll('.opts').forEach(o=>o.onclick=e=>{const b=e.target.closest('button');if(!b)return;
+    st.ans[o.dataset.i]=b.dataset.v;o.querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',x===b));save();prog()});
+  setNav(`<button class="btn sec" id="prev">${st.step?'Précédent':'Accueil'}</button><button class="btn" id="next">${st.step<DATA.length-1?'Suivant':'Terminer'}</button>`);
+  $('#prev').onclick=()=>{if(st.step){st.step--;section()}else home();scrollTo(0,0)};
+  $('#next').onclick=()=>{if(st.step<DATA.length-1){st.step++;section()}else recap();scrollTo(0,0)};
+  prog();
+}
+function code(){return ITEMS.map((_,i)=>st.ans[i]||'-').join('')}
+function message(){
+  const lines=['Auto-évaluation IHEID – '+st.agent,'Date : '+new Date().toLocaleDateString('fr-CH'),''];
+  const cnt={S:0,R:0,J:0,N:0};ITEMS.forEach((_,i)=>st.ans[i]&&cnt[st.ans[i]]++);
+  lines.push(`Je sais le faire seul : ${cnt.S} · À revoir : ${cnt.R} · Jamais vu : ${cnt.J} · Pas concerné : ${cnt.N}`,'');
+  const need=ITEMS.map((it,i)=>({it,v:st.ans[i]})).filter(o=>o.v==='R'||o.v==='J');
+  if(need.length){lines.push('Besoins de formation :');need.forEach(o=>lines.push(`- ${o.it.k?'[Indispensable] ':''}${o.it.x} (${o.v==='J'?'jamais vu':'à revoir'})`));lines.push('')}
+  lines.push('Code réponse (ne pas modifier) :',`RDZ#${VERSION}#${st.agent}#${code()}#${sig(st.agent,code())}`);
+  return lines.join('\n');
+}
+function recap(){
+  const miss=ITEMS.filter((_,i)=>!st.ans[i]).length;
+  const missK=ITEMS.filter((it,i)=>it.k&&!st.ans[i]).length;
+  app.innerHTML=`<h2>Merci ${esc(st.agent)}</h2>
+  ${miss?`<p class="warn">Il reste ${miss} compétence(s) sans réponse${missK?`, dont ${missK} indispensable(s)`:''}. Vous pouvez revenir en arrière pour les compléter, ou envoyer quand même.</p>`:'<p>Toutes les compétences ont une réponse.</p>'}
+  <p>Touchez « Envoyer mes réponses », puis choisissez WhatsApp, SMS ou e-mail, et envoyez le message à Lucas Gimenez.</p>
+  <div class="card"><pre style="white-space:pre-wrap;margin:0;font-family:inherit;font-size:13px;line-height:1.4">${esc(message())}</pre></div>`;
+  setNav(`<button class="btn sec" id="prev">Précédent</button><button class="btn" id="send">Envoyer mes réponses</button>`);
+  $('#prev').onclick=()=>{st.step=DATA.length-1;section()};
+  $('#send').onclick=async()=>{const m=message();
+    if(navigator.share){try{await navigator.share({title:'Auto-évaluation IHEID – '+st.agent,text:m});return}catch(e){if(e.name==='AbortError')return}}
+    try{await navigator.clipboard.writeText(m);alert('Le message est copié. Collez-le dans WhatsApp ou dans un e-mail à Lucas Gimenez.')}
+    catch(e){location.href='mailto:?subject='+encodeURIComponent('Auto-évaluation IHEID – '+st.agent)+'&body='+encodeURIComponent(m)}};
+  prog();
+}
+/* ---------- Page responsable : #suivi ---------- */
+function suivi(){
+  document.querySelector('.wrap').style.maxWidth='1100px';$('#who').textContent='Page responsable : regrouper les réponses';
+  app.innerHTML=`<h2>Regrouper les réponses</h2>
+  <p>Collez ici les messages reçus des agents (un ou plusieurs à la suite), puis touchez « Afficher le tableau ».</p>
+  <textarea id="in" rows="8" placeholder="Collez les messages ici…"></textarea>
+  <div style="display:flex;gap:10px;margin:12px 0;flex-wrap:wrap"><button class="btn" id="an">Afficher le tableau</button><button class="btn sec" id="cp" disabled>Copier pour Excel</button></div>
+  <div id="res"></div>`;
+  setNav('');document.querySelector('.nav').style.display='none';
+  let R={};
+  $('#an').onclick=()=>{R={};const re=/RDZ#([^#\n]+)#([^#\n]+)#([SRJN-]+)(?:#([0-9a-z]+))?/g;let m,bad=[],forged=[];
+    while((m=re.exec($('#in').value))){const nm=m[2].trim();if(m[1]!==VERSION||m[3].length!==ITEMS.length){bad.push(nm);continue}
+      if(!AGENTS.includes(nm)||m[4]!==sig(nm,m[3])){forged.push(nm);continue}R[nm]=m[3]}
+    const names=[...AGENTS.filter(a=>R[a]),...Object.keys(R).filter(a=>!AGENTS.includes(a))];
+    if(!names.length){$('#res').innerHTML=(forged.length?`<p class="warn">Réponse(s) refusée(s), code modifié : ${forged.map(esc).join(', ')}</p>`:'')+'<p class="warn">Aucun code réponse valable trouvé. Vérifiez que la ligne commençant par « RDZ# » a bien été collée.</p>';return}
+    let h=`<p>${names.length} agent(s) : ${names.map(esc).join(', ')}</p>${bad.length?`<p class="warn">Réponse(s) d’une ancienne version ignorée(s) : ${bad.map(esc).join(', ')}</p>`:''}${forged.length?`<p class="warn">Réponse(s) refusée(s), code modifié ou ne venant pas du lien personnel : ${forged.map(esc).join(', ')}</p>`:''}
+    <div class="tw"><table><tr><th class="l">Compétence</th><th>Indisp.</th>${names.map(n=>`<th>${esc(n)}</th>`).join('')}</tr>`;
+    let k=0;DATA.forEach(s=>{h+=`<tr><td class="l" colspan="${names.length+2}" style="background:#333;font-weight:700">${esc(s.t)}</td></tr>`;
+      s.i.forEach(it=>{h+=`<tr><td class="l">${esc(it.x)}</td><td>${it.k?'X':''}</td>${names.map(n=>{const v=R[n][k];return `<td class="c-${v}" title="${v==='-'?'':LAB[v]}">${v==='-'?'':v}</td>`}).join('')}</tr>`;k++})});
+    h+=`<tr><td class="l"><b>Indispensables « seul »</b></td><td></td>${names.map(n=>{let a=0,t=0;ITEMS.forEach((it,i)=>{if(it.k){t++;if(R[n][i]==='S')a++}});return `<td><b>${a}/${t}</b></td>`}).join('')}</tr></table></div>
+    <p class="sub">S = seul · R = à revoir · J = jamais vu · N = pas concerné</p>`;
+    $('#res').innerHTML=h;$('#cp').disabled=false};
+  $('#cp').onclick=async()=>{const map={S:'Acquis',R:'En cours',J:'Non vu',N:'',"-":''};const rows=[];let k=0;
+    DATA.forEach(s=>{rows.push(AGENTS.map(()=>'').join('\t'));s.i.forEach(()=>{rows.push(AGENTS.map(a=>R[a]?map[R[a][k]]:'').join('\t'));k++})});
+    try{await navigator.clipboard.writeText(rows.join('\n'));alert('Copié. Dans Excel, onglet « Suivi IHEID », cliquez sur la case C5 (sous « Lucas »), puis faites Coller.')}
+    catch(e){alert('La copie automatique a échoué sur cet appareil. Utilisez un ordinateur.')}};
+}
+if(location.hash==='#suivi')suivi();else home();
+</script>
+</body>
+</html>
